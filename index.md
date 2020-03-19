@@ -20,7 +20,7 @@ var s = "JavaScript syntax highlighting";
 alert(s);
 ```
  
-```{#mycode .python .numberLines}
+```{#mycode .python}
 s = "Python syntax highlighting"
 print s
 ```
