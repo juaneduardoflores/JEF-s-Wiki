@@ -32,21 +32,59 @@
       }
     </style>
     <link rel="stylesheet" href="pandoc.css" />
+    <script src="./assets/js/jquery-1.7.1.min.js"></script>
+    <script src="./navbutton.js"></script>
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+      function my_code() {
+        if (window.innerWidth < 608) {
+          document.getElementById("navbtn").style.display = "block";
+          document.getElementById("navoptions").style.display = "none";
+          document.getElementById("navbtnoptions").style.display = "block";
+        } else if (window.innerWidth > 607) {
+          document.getElementById("navbtn").style.display = "none";
+          document.getElementById("navoptions").style.display = "block";
+          document.getElementById("navbtnoptions").style.display = "none";
+        }
+      }
+
+      window.onload = my_code;
+    </script>
   </head>
   <body>
-    <h1 id="Header">Juan Eduardo Flores</h1>
-    <nav>
-      <ul>
-        <li><a href="default.asp">Work</a></li>
-        <li><a href="contact.asp">Fun</a></li>
-        <li><a href="news.asp">Teaching</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
-      </ul>
-    </nav>
+    <header>
+      <h1 id="Header" align="center">Juan Eduardo Flores</h1>
+      <div align="center">
+        <button id="navbtn" type="button" class="block" onclick="toggleMenu()">
+          ☰
+        </button>
+        <nav id="navbtnoptions">
+          <ul id="menu">
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="default.asp">Work</a></li>
+            <li><a href="news.asp">Blog</a></li>
+            <li><a href="about.asp">CV</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <nav id="navoptions" role="navigation">
+        <ul>
+          <li><a href="default.asp">Home</a></li>
+          <li>|</li>
+          <li><a href="default.asp">Work</a></li>
+          <li>|</li>
+          <li><a href="news.asp">Blog</a></li>
+          <li>|</li>
+          <li><a href="about.asp">CV</a></li>
+          <li>|</li>
+          <li><a href="contact.asp">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <p>
       This is a test paragraph.<br />
       This is a <a href="markdown">markdown</a> file.

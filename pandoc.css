@@ -9,13 +9,6 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-}
-
 body {
   color: #444;
   font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman",
@@ -23,28 +16,86 @@ body {
   font-size: 24px;
   line-height: 1.7;
   padding: 1em;
-  *//* margin: auto; */
+  margin: auto;
   margin: 0;
-  max-width: 42em;
+  /* max-width: 42em; */
   background: #fefefe;
 }
 
-a {
-  color: #0645ad;
-  text-decoration: none;
-  /* padding: 2vw; */
+button {
+  padding: 2px;
+  /* border: 2px solid #fff; */
+  border-radius: 5px;
+  font-size: 1em;
+  /* background: transparent; */
+  /* color: #fff; */
+
+  width: 100%;
+  display: none;
 }
 
-li {
-  list-style-type: none;
+#navoptions {
+  width: 100vw;
+  display: none;
+  /* background-color: #d6efff; */
+  /* text-align: center; */
+}
 
-  margin: 0 2vw 0 0;
+#navbtnoptions {
+  width: 100vw;
+  display: none;
+  /* background-color: #d6efff; */
+  /* text-align: center; */
+}
+
+#nav.is-active {
+  display: block;
+}
+
+nav.is-active {
+  display: flex;
+}
+
+#navoptions ul {
+  margin: 0;
+  padding: 0 1em 0 0;
+  text-align: center;
+  /* background-color: #d6efff; */
+
+  /* display: flex; */
+}
+
+#navoptions li {
+  list-style-type: none;
+  display: inline-block;
+
+  margin: 0 1em 0 0;
   font-size: 3hv;
 }
 
-nav {
-  width: 100vw;
+#navbtnoptions ul {
+  margin: 0;
+  padding: 0 1em 0 0;
+  text-align: center;
+  position: relative;
+
+  display: none;
+}
+
+#navbtnoptions li {
+  list-style-type: none;
+  display: block;
   background-color: #d6efff;
+
+  margin: 0 1em 0 0;
+  font-size: 3hv;
+  position: relative;
+}
+
+nav a {
+  color: #0645ad;
+  text-decoration: none;
+  /* padding: 2vw; */
 }
 
 /* a:visited { */
@@ -101,6 +152,7 @@ h6 {
   color: #111;
   line-height: 125%;
   margin-top: 0.5em;
+  margin-bottom: 0.25em;
   font-weight: normal;
 }
 
@@ -110,9 +162,9 @@ h6 {
 /*   font-weight: bold; */
 /* } */
 
-/* h1 { */
-/*   font-size: 2.5em; */
-/* } */
+h1 {
+  font-size: 0.8em;
+}
 
 /* h2 { */
 /*   font-size: 2em; */
