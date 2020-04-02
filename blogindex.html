@@ -1,14 +1,69 @@
 <head>
   <meta charset="utf-8" />
   <title>Juan's Blog</title>
+  <link rel="stylesheet" href="pandoc.css" />
+  <script src="./navbutton.js"></script>
+  <script type="text/javascript">
+    function my_code() {
+      if (window.innerWidth < 608) {
+        document.getElementById("navbtn").style.display = "block";
+        document.getElementById("navoptions").style.display = "none";
+        document.getElementById("navbtnoptions").style.display = "block";
+      } else if (window.innerWidth > 607) {
+        document.getElementById("navbtn").style.display = "none";
+        document.getElementById("navoptions").style.display = "block";
+        document.getElementById("navbtnoptions").style.display = "none";
+      }
+    }
+
+    window.onload = my_code;
+  </script>
 </head>
 <body>
   <header>
-    <h2 align="center">Juan's Blog</h2>
+    <h1 id="Header" align="center">
+      <a href="index.html">Juan Eduardo Flores</a>
+    </h1>
+    <div align="center">
+      <button id="navbtn" type="button" class="block" onclick="toggleMenu()">
+        ☰
+      </button>
+      <nav id="navbtnoptions">
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="default.asp">Work</a></li>
+          <li><a href="blogindex.html">Blog</a></li>
+          <li><a href="about.asp">CV</a></li>
+          <li><a href="contact.asp">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <nav id="navoptions" role="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>|</li>
+        <li><a href="default.asp">Work</a></li>
+        <li>|</li>
+        <li><a href="blogindex.html">Blog</a></li>
+        <li>|</li>
+        <li><a href="about.asp">CV</a></li>
+        <li>|</li>
+        <li><a href="contact.asp">Contact</a></li>
+      </ul>
+    </nav>
+
     <div class="grid-container">
-      <div class="grid-item">1</div>
-      <div class="grid-item">2</div>
-      <div class="grid-item">3</div>
+      <div class="grid-item">
+        <a href="dailychart.html">Daily Productivity Chart</a>
+        <a target="_blank" href="dailychart.html">
+          <br />
+          <img src="./images/day.png" />
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="pedagogyindex.html">Programming Notes</a>
+      </div>
+      <div class="grid-item"><a href="playground.html">Playground</a></div>
       <div class="grid-item">4</div>
       <div class="grid-item">5</div>
       <div class="grid-item">6</div>
