@@ -108,7 +108,7 @@ a:hover {
 }
 
 .grid-container {
-  display: grid;
+  display: inline-grid;
 }
 
 /* a:active { */
