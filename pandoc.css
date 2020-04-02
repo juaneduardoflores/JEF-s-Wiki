@@ -107,6 +107,10 @@ a:hover {
   background-color: #c6e9ff;
 }
 
+.grid-container {
+  display: grid;
+}
+
 /* a:active { */
 /*   color: #faa700; */
 /* } */
