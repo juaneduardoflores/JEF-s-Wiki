@@ -4,7 +4,7 @@ title: MySite
 
 [#](#) Introduction
 
-This is a test paragraph.  
+This is a test [paragraph](paragraph).  
 This is a [markdown](markdown) file.
   
 This is now added text.
