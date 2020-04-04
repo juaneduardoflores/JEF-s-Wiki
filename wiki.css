@@ -349,3 +349,7 @@ table td {
     page-break-after: avoid;
   }
 }
+
+em {
+  color: red;
+}
