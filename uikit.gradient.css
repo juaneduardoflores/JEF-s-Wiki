@@ -9,7 +9,7 @@
  */
 html {
   /* 1 */
-  font: normal 14px / 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font: normal 14px / 20px "Helvetica Neue", Helvetica, Arial, sans-serif; */
   /* 2 */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -233,10 +233,10 @@ h4,
 h5,
 h6 {
   margin: 0 0 15px 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  color: #444;
-  text-transform: none;
+  /* /1* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; *1/ */
+  /* font-weight: normal; */
+  /* color: #444; */
+  /* text-transform: none; */
 }
 /*
  * Margins
@@ -467,7 +467,7 @@ iframe {
  * Remove margin from the last-child
  */
 .uk-grid > * > :last-child {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 /* Grid gutter
  ========================================================================== */
