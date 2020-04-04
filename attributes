@@ -11,7 +11,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-          <title>HTML.html</title>
+          <title>attributes</title>
 
     <script
       type="text/javascript"
@@ -43,8 +43,6 @@
     
   </head>
   <body>
-       <h3 id="html">HTML</h3>
-<p>Table of Contents</p>
-<p><a href="htmlbasics.html">Basics</a></p> 
+       <p>This is the markdown</p> 
   </body>
 </html>

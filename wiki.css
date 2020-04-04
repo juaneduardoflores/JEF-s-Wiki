@@ -139,6 +139,10 @@ samp {
   font-size: 0.98em;
 }
 
+code {
+  font-weight: bold;
+}
+
 pre {
   white-space: pre;
   white-space: pre-wrap;
