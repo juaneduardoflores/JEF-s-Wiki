@@ -116,16 +116,18 @@
         <div class="uk-width-medium-3-4">
           <h2 id="basics">Basics</h2>
           <p style="font-size: 13px;">
-          Notes taken from Jon Duckett’s Book “HTML &amp; CSS: Design and Build Websites”
+          Notes taken from Ch.1 of Jon Duckett’s Book “HTML &amp; CSS: Design and Build Websites”
           </p>
           <hr />
+          <h3 id="intro">Intro</h3>
+          <p>HTML describes the structure of web pages and it stands for HyperText Markup Language. The HyperText part refers to the fact that HTML allows you to create links from one page to another easily.<br />
+          A markup language allows you to annotate text, and these annotations provide additional meaning to the contents of a document</p>
           <p><em> :tag: </em> | <em> :element: </em></p>
-          <p>HTML describes the structure of web pages.<br />
-          The HTML code that are within angle brackets (<code>&lt;</code> , <code>&gt;</code>) are called HTML elements. Elements are usually made up of two tags: an opening tag and a closing tag.</p>
-          <p>The terms “tag” and “elements” are often used interchangeably. Strictly speaking, however, an element comprises the opening tag and the closing tag and any content that lies between them.</p>
+          <p>The HTML code that are written within <code>tags</code>, which are the components that contain opening and closing angle brackets (<code>&lt;</code> , <code>&gt;</code>), are called HTML elements. Elements are usually made up of these two tags (opening and closing), but may also just contain one.</p>
+          <p>The terms “tag” and “elements” are often used interchangeably. Strictly speaking, however, an element comprises the opening tag and the closing tag and any content that may lie between them.</p>
           <p>For example:</p>
           <div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;p&gt;</span> This is a paragraph. <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <p>This whole thing can be considered an <code>element</code>. while <code style="color: #204a87;">&lt;p&gt;</code> and <code style="color: #204a87">&lt;/p&gt;</code> can be considered <code>tags</code>.</p>
+          <p>This whole thing can be considered an <code>element</code>. while <code style="color: #204a87;">&lt;p&gt;</code> and <code style="color: #204a87">&lt;/p&gt;</code> are considered to be <code>tags</code>.</p>
           <p style="text-align: center; font-weight: bold;">
           ———
           </p>
@@ -133,13 +135,15 @@
           <p>Attributes tell us more about elements. They provide additional information about the contents of an element. They are made up of two parts: A <code>name</code> and a <code>value</code>.</p>
           <p>For example:</p>
           <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;p</span><span class="ot"> lang=</span><span class="st">&quot;en-us&quot;</span><span class="kw">&gt;</span> This paragraph is in English <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <p>The attribute <code>name</code> indicates what kind of extra information you are supplying about the element’s content. It is written in lowercase. In the example above, <a href="htmllang.html"><code style="color: #8f5902;">lang</code></a> is the name of the attribute. The <code>value</code> is the information or setting for the attribute. It should be placed in double quotes. In this case <code style="color: #4e9a06;">“en-us”</code> is the value indicating that the language of the text is in US-English. Remember that there is an (<code style="color: #8f5902">=</code>) sign between the <code>name</code> and <code>value</code>, and that it is written inside the first tag of the element.</p>
+          <p>The attribute <code>name</code> indicates what kind of extra information you are supplying about the element’s content. It is written in lowercase. In the example above, <a href="htmllang.html"><code style="color: #8f5902;">lang</code></a> is the name of the attribute. The <code>value</code> is the information or setting for the attribute. It should be placed in double quotes. In this case <code style="color: #4e9a06;">“en-us”</code> is the value indicating that the language of the text is in US-English. Remember that there is an (<code style="color: #8f5902">=</code>) sign between the <code>name</code> and <code>value</code>, and that it is written inside the opening tag of the element.</p>
           <p>Most attribute values are either pre-defined or follow a stipulated format. Check <a href="htmlattributes.html">here</a> for a list of all attribute names, along with their corresponding values and formats.</p>
           <p style="text-align: center; font-weight: bold;">
           ———
           </p>
-          <p><em> :body: </em> | <em> :head: </em> | <em> :title: </em></p>
-          <p><code>&lt;body&gt;</code> : Everything in the <code>&lt;body&gt;</code> element is shown inside the main browser window.</p>
+          <p><em> :head: </em> | <em> :body: </em> | <em> :title: </em></p>
+          <p><code>&lt;head&gt;</code> : The <code>&lt;head&gt;</code> element contains information <i>about</i> the page.<br />
+          <code>&lt;body&gt;</code> : Everything in the <code>&lt;body&gt;</code> element is shown inside the main browser window.<br />
+          <code>&lt;title&gt;</code> : The content inside the <code>&lt;title&gt;</code> is displayed on the top of the browser, usually on the title bar or tab of the webpage. The title of this page is “Basics”.</p>
         </div>
       </div>
       <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
