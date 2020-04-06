@@ -82,7 +82,7 @@ strong {
   /* font-family: Consolas, monospace, serif; */
   /* 3 */
   /* color: #d05; */
-  /* white-space: nowrap; */
+  white-space: nowrap;
   /* padding: 0 4px; */
   /* border: 1px solid #ddd; */
   /* border-radius: 3px; */

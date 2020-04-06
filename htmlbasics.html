@@ -104,26 +104,31 @@
           >
             <div class="uk-panel uk-panel-box menu-begin">
                <ul>
+<li><a href="#intro"><u>Intro</u></a>
+<ul>
 <li><a href="#tag-element"><em>tag</em> &amp; <em>element</em></a></li>
 <li><a href="#attribute"><em> attribute </em></a></li>
 <li><a href="#head-body-title"><em>head</em>, <em>body</em>, &amp; <em>title</em></a></li>
+</ul></li>
+<li><a href="#semantic-and-structural-markup"><u>Semantic and Structural Markup</u></a>
+<ul>
+<li><a href="#headings"><em>headings</em></a></li>
+<li><a href="#paragraphs"><em>paragraphs</em></a></li>
+</ul></li>
 </ul> 
             </div>
           </div>
         </div>
 
         <div class="uk-width-medium-3-4">
-          <p><link href="style.css" rel="stylesheet"></link></p>
           <p style="font-size: 28px; font-weight: bold; margin:0;">
           Basics
           </p>
           <p style="font-size: 13px;">
-          Notes taken from Ch.1 of Jon Duckett’s Book “HTML &amp; CSS: Design and Build Websites”
+          Notes taken from Jon Duckett’s Book “HTML &amp; CSS: Design and Build Websites”
           </p>
           <hr />
-          <p style="font-size: 1.5em; margin: 0;">
-          Intro
-          </p>
+          <h3 id="intro"><u>Intro</u></h3>
           <p>HTML describes the structure of web pages and it stands for HyperText Markup Language. The HyperText part refers to the fact that HTML allows you to create links from one page to another easily.<br />
           A markup language allows you to annotate text, and these annotations provide additional meaning to the contents of a document</p>
           <h4 id="tag-element"><em>tag</em> &amp; <em>element</em></h4>
@@ -140,14 +145,61 @@
           <p>For example:</p>
           <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;p</span><span class="ot"> lang=</span><span class="st">&quot;en-us&quot;</span><span class="kw">&gt;</span> This paragraph is in English <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
           <p>The attribute <code>name</code> indicates what kind of extra information you are supplying about the element’s content. It is written in lowercase. In the example above, <a href="htmllang.html"><code style="color: #8f5902;">lang</code></a> is the name of the attribute. The <code>value</code> is the information or setting for the attribute. It should be placed in double quotes. In this case <code style="color: #4e9a06;">“en-us”</code> is the value indicating that the language of the text is in US-English. Remember that there is an (<code style="color: #8f5902">=</code>) sign between the <code>name</code> and <code>value</code>, and that it is written inside the opening tag of the element.</p>
-          <p>Most attribute values are either pre-defined or follow a stipulated format. Check <a href="htmlattributes.html">here</a> for a list of all attribute names, along with their corresponding values and formats.</p>
+          <p>Most attribute values are either pre-defined or follow a stipulated format. Check <a href="attributes/htmlattributes.html">here</a> for a list of all attribute names, along with their corresponding values and formats.</p>
           <p style="text-align: center; font-weight: bold;">
           ———
           </p>
           <h4 id="head-body-title"><em>head</em>, <em>body</em>, &amp; <em>title</em></h4>
           <p><code>&lt;head&gt;</code> : The <code>&lt;head&gt;</code> element contains information <i>about</i> the page.<br />
           <code>&lt;body&gt;</code> : Everything in the <code>&lt;body&gt;</code> element is shown inside the main browser window.<br />
-          <code>&lt;title&gt;</code> : The content inside the <code>&lt;title&gt;</code> is displayed on the top of the browser, usually on the title bar or tab of the webpage. The title of this page is “Basics”.</p>
+          <code>&lt;title&gt;</code> : The content inside the <code>&lt;title&gt;</code> is displayed on the top of the browser, usually on the title bar or tab of the webpage. The title of this page is “Basics”. <br /> <br /></p>
+          <h3 id="semantic-and-structural-markup"><u>Semantic and Structural Markup</u></h3>
+          <p><code>Structural Markup</code>: the elements that you can use to describe both headings and paragraphs.<br />
+          <code>Semantic Markup</code>: provides extra information; such as where emphasis is placed in a sentence.</p>
+          <h4 id="headings"><em>headings</em></h4>
+          <p>HTML has six “levels” of headings. <code style="color: #204a87;">&lt;h1&gt;</code> is used for main headings. <code style="color: #204a87;">&lt;h2&gt;</code> is used for subheadings. As you go on, the heading font size gets smaller.</p>
+          <p>For example:</p>
+          <h1 style="background: beige; margin: 0;">
+          This is a Main Heading
+          </h1>
+          <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;h1&gt;</span> This is a Main Heading <span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
+          <h2 style="background: beige;">
+          This is a subheading of level 2
+          </h2>
+          <div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;h2&gt;</span> This is a subheading of level 2 <span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+          <h3 style="background: beige;">
+          This is a subheading of level 3
+          </h3>
+          <div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;h3&gt;</span> This is a subheading of level 3 <span class="kw">&lt;/h3&gt;</span></span></code></pre></div>
+          <h4 style="background: beige;">
+          This is a subheading of level 4
+          </h4>
+          <div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;h4&gt;</span> This is a subheading of level 4 <span class="kw">&lt;/h4&gt;</span></span></code></pre></div>
+          <h5 style="background: beige;">
+          This is a subheading of level 5
+          </h5>
+          <div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;h5&gt;</span> This is a subheading of level 5 <span class="kw">&lt;/h5&gt;</span></span></code></pre></div>
+          <h6 style="background: beige;">
+          This is a subheading of level 6
+          </h6>
+          <div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;h6&gt;</span> This is a subheading of level 6 <span class="kw">&lt;/h6&gt;</span></span></code></pre></div>
+          <h4 id="paragraphs"><em>paragraphs</em></h4>
+          <p>To create a paragraph, surround the words that make up the paragraph with an opening <code style="color: #204a87;">&lt;p&gt;</code> and a closing <code style="color: #204a87;">&lt;/p&gt;</code> tag. By default, a browser will show each paragraph on a new line with some space between it and any subsequent paragraphs.</p>
+          For example:
+          <p style="background: beige;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a></span>
+          <span id="cb9-2"><a href="#cb9-2"></a><span class="kw">&lt;p&gt;</span>    </span>
+          <span id="cb9-3"><a href="#cb9-3"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</span>
+          <span id="cb9-4"><a href="#cb9-4"></a>sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua.</span>
+          <span id="cb9-5"><a href="#cb9-5"></a>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </span>
+          <span id="cb9-6"><a href="#cb9-6"></a>aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</span>
+          <span id="cb9-7"><a href="#cb9-7"></a>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</span>
+          <span id="cb9-8"><a href="#cb9-8"></a>occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit</span>
+          <span id="cb9-9"><a href="#cb9-9"></a>anim id est laborum. </span>
+          <span id="cb9-10"><a href="#cb9-10"></a><span class="kw">&lt;/p&gt;</span></span>
+          <span id="cb9-11"><a href="#cb9-11"></a></span></code></pre></div>
         </div>
       </div>
       <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
