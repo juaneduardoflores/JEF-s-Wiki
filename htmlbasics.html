@@ -10,10 +10,7 @@
       href="images/apple-touch-icon.png"
     />
 
-        <link
-      rel="stylesheet"
-      href="uikit.gradient.css"
-    />
+        <link rel="stylesheet" href="uikit.gradient.css" />
     
     <link rel="stylesheet" href="style.css" />
     <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
@@ -107,7 +104,15 @@
           >
             <div class="uk-panel uk-panel-box menu-begin">
                <ul>
-<li><a href="#basics">Basics</a></li>
+<li><a href="#basics">Basics</a>
+<ul>
+<li><a href="#intro">Intro</a>
+<ul>
+<li><a href="#tag-element"><em>tag</em> &amp; <em>element</em></a></li>
+<li><a href="#attribute"><em>attribute</em></a></li>
+<li><a href="#head-body-title"><em>head</em>, <em>body</em>, &amp; <em>title</em></a></li>
+</ul></li>
+</ul></li>
 </ul> 
             </div>
           </div>
@@ -122,8 +127,8 @@
           <h3 id="intro">Intro</h3>
           <p>HTML describes the structure of web pages and it stands for HyperText Markup Language. The HyperText part refers to the fact that HTML allows you to create links from one page to another easily.<br />
           A markup language allows you to annotate text, and these annotations provide additional meaning to the contents of a document</p>
-          <p><em> :tag: </em> | <em> :element: </em></p>
-          <p>The HTML code that are written within <code>tags</code>, which are the components that contain opening and closing angle brackets (<code>&lt;</code> , <code>&gt;</code>), are called HTML elements. Elements are usually made up of these two tags (opening and closing), but may also just contain one.</p>
+          <h4 id="tag-element"><em>tag</em> &amp; <em>element</em></h4>
+          <p>The HTML code that are written within <code>tags</code>, which are the components that contain opening and closing angle brackets (<code>&lt;</code> , <code>&gt;</code>), are called HTML <code>elements.</code> Elements are usually made up of these two tags (opening and closing), but may also just contain one.</p>
           <p>The terms “tag” and “elements” are often used interchangeably. Strictly speaking, however, an element comprises the opening tag and the closing tag and any content that may lie between them.</p>
           <p>For example:</p>
           <div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;p&gt;</span> This is a paragraph. <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
@@ -131,7 +136,7 @@
           <p style="text-align: center; font-weight: bold;">
           ———
           </p>
-          <p><em> :attribute: </em></p>
+          <h4 id="attribute"><em>attribute</em></h4>
           <p>Attributes tell us more about elements. They provide additional information about the contents of an element. They are made up of two parts: A <code>name</code> and a <code>value</code>.</p>
           <p>For example:</p>
           <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;p</span><span class="ot"> lang=</span><span class="st">&quot;en-us&quot;</span><span class="kw">&gt;</span> This paragraph is in English <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
@@ -140,7 +145,7 @@
           <p style="text-align: center; font-weight: bold;">
           ———
           </p>
-          <p><em> :head: </em> | <em> :body: </em> | <em> :title: </em></p>
+          <h4 id="head-body-title"><em>head</em>, <em>body</em>, &amp; <em>title</em></h4>
           <p><code>&lt;head&gt;</code> : The <code>&lt;head&gt;</code> element contains information <i>about</i> the page.<br />
           <code>&lt;body&gt;</code> : Everything in the <code>&lt;body&gt;</code> element is shown inside the main browser window.<br />
           <code>&lt;title&gt;</code> : The content inside the <code>&lt;title&gt;</code> is displayed on the top of the browser, usually on the title bar or tab of the webpage. The title of this page is “Basics”.</p>
