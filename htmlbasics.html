@@ -18,14 +18,15 @@
     <script src="uikit.js"></script>
     <script src="scripts.js"></script>
     <script src="jquery.sticky-kit.js"></script>
+    <!-- <script src="%root_path%assets/google-code-prettify/prettify.js"></script> -->
 
     <meta name="generator" content="pandoc-uikit" />
-         <title>Basics</title>
-    <style type="text/css">
-      code {
-        white-space: pre;
-      }
-    </style>
+         <!-- <title>Basics</title> -->
+    <!-- <style type="text/css"> -->
+    <!--   code { -->
+    <!--     white-space: pre; -->
+    <!--   } -->
+    <!-- </style> -->
          <style type="text/css">
       pre > code.sourceCode { white-space: pre; position: relative; }
       pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
@@ -117,7 +118,6 @@
 <li><a href="#b"><em>&lt;b&gt;</em></a></li>
 <li><a href="#i"><em>&lt;i&gt;</em></a></li>
 <li><a href="#sup-sub"><em>&lt;sup&gt;</em>, <em>&lt;sub&gt;</em></a></li>
-<li><a href="#white-space-collapsing"><em>white space collapsing</em></a></li>
 <li><a href="#br"><em>&lt;br /&gt;</em></a></li>
 <li><a href="#hr"><em>&lt;hr /&gt;</em></a></li>
 <li><a href="#strong-em"><em>&lt;strong&gt;</em>, <em>&lt;em&gt;</em></a></li>
@@ -128,268 +128,1065 @@
 <li><a href="#address"><em>&lt;address&gt;</em></a></li>
 <li><a href="#ins-del-s"><em>&lt;ins&gt;</em>, <em>&lt;del&gt;</em>, <em>&lt;s&gt;</em></a></li>
 </ul></li>
+<li><a href="#lists"><u>Lists</u></a>
+<ul>
+<li><a href="#li"><em>&lt;li&gt;</em></a></li>
+<li><a href="#ol"><em>&lt;ol&gt;</em></a></li>
+<li><a href="#ul"><em>&lt;ul&gt;</em></a></li>
+<li><a href="#dl-dt-dd"><em>&lt;dl&gt;</em>, <em>&lt;dt&gt;</em>, <em>&lt;dd&gt;</em></a></li>
+</ul></li>
+<li><a href="#links"><u>Links</u></a>
+<ul>
+<li><a href="#a"><em>&lt;a&gt;</em></a></li>
+</ul></li>
+<li><a href="#images"><u>Images</u></a></li>
 </ul> 
             </div>
           </div>
         </div>
 
         <div class="uk-width-medium-3-4">
-          <p style="font-size: 28px; font-weight: bold; margin:0;">
-          Basics
-          </p>
-          <p style="font-size: 13px;">
-          Notes taken from Jon Duckett’s Book “HTML &amp; CSS: Design and Build Websites”
-          </p>
-          <hr />
-          <h3 id="intro"><u>Intro</u></h3>
-          <p>HTML describes the structure of web pages and it stands for HyperText Markup Language. The HyperText part refers to the fact that HTML allows you to create links from one page to another easily.<br />
-          A markup language allows you to annotate text, and these annotations provide additional meaning to the contents of a document</p>
-          <h4 id="tag-element"><em>tag</em>, <em>element</em></h4>
-          <p>The HTML code that are written within <code>tags</code>, which are the components that contain opening and closing angle brackets (<code>&lt;</code> , <code>&gt;</code>), are called HTML <code>elements</code>. Elements are usually made up of these two tags (opening and closing), but may also just contain one.</p>
-          <p>The terms “tag” and “element” are often used interchangeably. Strictly speaking, however, an element comprises the opening tag and the closing tag and any content that may lie between them.</p>
-          <p>For example:</p>
-          <p style="background: beige;">
-          This is a paragraph.
-          </p>
-          <div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;p&gt;</span> This is a paragraph. <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <p>This whole thing can be considered an <code>element</code>. while <code style="color: #204a87;">&lt;p&gt;</code> and <code style="color: #204a87">&lt;/p&gt;</code> are considered to be <code>tags</code>.</p>
-          <p style="text-align: center; font-weight: bold;">
-          ———
-          </p>
-          <h4 id="attribute"><em> attribute </em></h4>
-          <p>Attributes tell us more about elements. They provide additional information about the contents of an element. They are made up of two parts: A <code>name</code> and a <code>value</code>.</p>
-          For example:
-          <p lang="en-us" style="background: beige;">
-          This paragraph is in English
-          </p>
-          <div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;p</span><span class="ot"> lang=</span><span class="st">&quot;en-us&quot;</span><span class="kw">&gt;</span> This paragraph is in English <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <p>The attribute <code>name</code> indicates what kind of extra information you are supplying about the element’s content. It is written in lowercase. In the example above, <a href="htmllang.html"><code style="color: #8f5902;">lang</code></a> is the name of the attribute. The <code>value</code> is the information or setting for the attribute. It should be placed in double quotes. In this case <code style="color: #4e9a06;">“en-us”</code> is the value indicating that the language of the text is in US-English. Remember that there is an (<code style="color: #8f5902">=</code>) sign between the <code>name</code> and <code>value</code>, and that it is written inside the opening tag of the element.</p>
-          <p>Most attribute values are either pre-defined or follow a stipulated format. Check <a href="attributes/htmlattributes.html">here</a> for a list of all attribute names, along with their corresponding values and formats.</p>
-          <p style="text-align: center; font-weight: bold;">
-          ———
-          </p>
-          <h4 id="head-body-title"><em>&lt;head&gt;</em>, <em>&lt;body&gt;</em>, <em>&lt;title&gt;</em></h4>
-          <p><code>&lt;head&gt;</code> : The <code>&lt;head&gt;</code> element contains information <i>about</i> the page.<br />
-          <code>&lt;body&gt;</code> : Everything in the <code>&lt;body&gt;</code> element is shown inside the main browser window.<br />
-          <code>&lt;title&gt;</code> : The content inside the <code>&lt;title&gt;</code> is displayed on the top of the browser, usually on the title bar or tab of the webpage. The title of this page is “Basics”. <br /> <br /></p>
-          <h3 id="semantic-and-structural-markup"><u>Semantic and Structural Markup</u></h3>
-          <p><code>Structural Markup</code>: the elements that you can use to describe both headings and paragraphs.<br />
-          <code>Semantic Markup</code>: provides extra information; such as where emphasis is placed in a sentence. The reason to use these elements is not to affect the appearance, but because there are programs such as screen readers or search engines that use this extra information. A screen reader may add emphasis to a word when reading it out loud to a user.</p>
-          <h4 id="h1-h2-h3-h4-h5-h6"><em>&lt;h1&gt;</em>, <em>&lt;h2&gt;</em>, <em>&lt;h3&gt;</em>, <em>&lt;h4&gt;</em>, <em>&lt;h5&gt;</em>, <em>&lt;h6&gt;</em></h4>
-          <p>HTML has six “levels” of headings. <code style="color: #204a87;">&lt;h1&gt;</code> is used for main headings. <code style="color: #204a87;">&lt;h2&gt;</code> is used for subheadings. As you go on, the heading font size gets smaller.</p>
-          <p>For example:</p>
-          <h1 style="background: beige; margin: 0;">
-          This is a Main Heading
-          </h1>
-          <div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;h1&gt;</span> This is a Main Heading <span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
-          <h2 style="background: beige;">
-          This is a subheading of level 2
-          </h2>
-          <div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;h2&gt;</span> This is a subheading of level 2 <span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
-          <h3 style="background: beige;">
-          This is a subheading of level 3
-          </h3>
-          <div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;h3&gt;</span> This is a subheading of level 3 <span class="kw">&lt;/h3&gt;</span></span></code></pre></div>
-          <h4 style="background: beige;">
-          This is a subheading of level 4
-          </h4>
-          <div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;h4&gt;</span> This is a subheading of level 4 <span class="kw">&lt;/h4&gt;</span></span></code></pre></div>
-          <h5 style="background: beige;">
-          This is a subheading of level 5
-          </h5>
-          <div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;h5&gt;</span> This is a subheading of level 5 <span class="kw">&lt;/h5&gt;</span></span></code></pre></div>
-          <h6 style="background: beige;">
-          This is a subheading of level 6
-          </h6>
-          <div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;h6&gt;</span> This is a subheading of level 6 <span class="kw">&lt;/h6&gt;</span></span></code></pre></div>
-          <h4 id="p"><em>&lt;p&gt;</em></h4>
-          <p>To create a paragraph, surround the words that make up the paragraph with an opening <code style="color: #204a87;">&lt;p&gt;</code> and a closing <code style="color: #204a87;">&lt;/p&gt;</code> tag. By default, a browser will show each paragraph on a new line with some space between it and any subsequent paragraphs.</p>
-          For example:
-          <p style="background: beige;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;p&gt;</span>    </span>
-          <span id="cb9-2"><a href="#cb9-2"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua.</span>
-          <span id="cb9-3"><a href="#cb9-3"></a>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollitanim id est laborum. </span>
-          <span id="cb9-4"><a href="#cb9-4"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="b"><em>&lt;b&gt;</em></h4>
-          By enclosing words in the tags <code style="color: #204a87;">&lt;b&gt;</code> and <code style="color: #204a87;">&lt;/b&gt;</code> we can make characters appear bold. For example:
-          <p style="background: beige; text-align:center;">
-          <b>This is bold text</b>
-          </p>
-          <div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">&lt;b&gt;</span> This is bold text <span class="kw">&lt;/b&gt;</span></span></code></pre></div>
-          <h4 id="i"><em>&lt;i&gt;</em></h4>
-          <p>By enclosing words in the tags <code style="color: #204a87;">&lt;i&gt;</code> and <code style="color: #204a87;">&lt;/i&gt;</code> we can make characters appear italic. The <code style="color: #204a87;">&lt;i&gt;</code> element also represents a section of text that would be said in a different way from surrounding content - such as technical terms, names of ships, foreign words, thoughts, or other terms that would usually be italicized.</p>
-          For example:
-          <p style="background: beige; text-align:center;">
-          <i>This is italicized text</i>
-          </p>
-          <div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">&lt;i&gt;</span> This is italicized text <span class="kw">&lt;/i&gt;</span></span></code></pre></div>
-          <h4 id="sup-sub"><em>&lt;sup&gt;</em>, <em>&lt;sub&gt;</em></h4>
-          <p>The <code style="color: #204a87;">&lt;sup&gt;</code> element is used to contain characters that should be superscript such as suffixes of dates or mathematical concepts like raising a number to a power such as 2<sup>2</sup>.</p>
-          For example:<br />
+          <!-- <p id="basics" style="font-size: 28px; font-weight: bold; margin:0;">
+Basics
+</p>
+<p style="font-size: 13px;">
+Notes taken from Jon Duckett’s Book “HTML &amp; CSS: Design and Build Websites”
+</p>
+<hr />
+<h3 id="intro"><u>Intro</u></h3>
+<p>HTML describes the structure of web pages and it stands for HyperText Markup Language. The HyperText part refers to the fact that HTML allows you to create links from one page to another easily.<br />
+A markup language allows you to annotate text, and these annotations provide additional meaning to the contents of a document</p>
+<h4 id="tag-element"><em>tag</em>, <em>element</em></h4>
+<p>The HTML code that are written within <code>tags</code>, which are the components that contain opening and closing angle brackets (<code>&lt;</code> , <code>&gt;</code>), are called HTML <code>elements</code>. Elements are usually made up of these two tags (opening and closing), but may also just contain one.</p>
+<p>The terms “tag” and “element” are often used interchangeably. Strictly speaking, however, an element comprises the opening tag and the closing tag and any content that may lie between them.</p>
+<p>For example:</p>
+<p style="background: beige;">
+This is a paragraph.
+</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;p&gt;</span> This is a paragraph. <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>This whole thing can be considered an <code>element</code>. while <code style="color: #204a87;">&lt;p&gt;</code> and <code style="color: #204a87">&lt;/p&gt;</code> are considered to be <code>tags</code>.</p>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="attribute"><em> attribute </em></h4>
+<p>Attributes tell us more about elements. They provide additional information about the contents of an element. They are made up of two parts: A <code>name</code> and a <code>value</code>.</p>
+For example:
+<p lang="en-us" style="background: beige;">
+This paragraph is in English
+</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;p</span><span class="ot"> lang=</span><span class="st">&quot;en-us&quot;</span><span class="kw">&gt;</span> This paragraph is in English <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>The attribute <code>name</code> indicates what kind of extra information you are supplying about the element’s content. It is written in lowercase. In the example above, <a href="htmllang.html"><code style="color: #8f5902;">lang</code></a> is the name of the attribute. The <code>value</code> is the information or setting for the attribute. It should be placed in double quotes. In this case <code style="color: #4e9a06;">“en-us”</code> is the value indicating that the language of the text is in US-English. Remember that there is an (<code style="color: #8f5902">=</code>) sign between the <code>name</code> and <code>value</code>, and that it is written inside the opening tag of the element.</p>
+<p>Most attribute values are either pre-defined or follow a stipulated format. Check <a href="attributes/htmlattributes.html">here</a> for a list of all attribute names, along with their corresponding values and formats.</p>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="head-body-title"><em>&lt;head&gt;</em>, <em>&lt;body&gt;</em>, <em>&lt;title&gt;</em></h4>
+<p><code>&lt;head&gt;</code> : The <code>&lt;head&gt;</code> element contains information <i>about</i> the page.<br />
+<code>&lt;body&gt;</code> : Everything in the <code>&lt;body&gt;</code> element is shown inside the main browser window.<br />
+<code>&lt;title&gt;</code> : The content inside the <code>&lt;title&gt;</code> is displayed on the top of the browser, usually on the title bar or tab of the webpage. The title of this page is “Basics”. <br /> <br /></p>
+<h3 id="semantic-and-structural-markup"><u>Semantic and Structural Markup</u></h3>
+<p><code>Structural Markup</code>: the elements that you can use to describe both headings and paragraphs.<br />
+<code>Semantic Markup</code>: provides extra information; such as where emphasis is placed in a sentence. The reason to use these elements is not to affect the appearance, but because there are programs such as screen readers or search engines that use this extra information. A screen reader may add emphasis to a word when reading it out loud to a user.</p>
+<h4 id="h1-h2-h3-h4-h5-h6"><em>&lt;h1&gt;</em>, <em>&lt;h2&gt;</em>, <em>&lt;h3&gt;</em>, <em>&lt;h4&gt;</em>, <em>&lt;h5&gt;</em>, <em>&lt;h6&gt;</em></h4>
+<p>HTML has six “levels” of headings. <code style="color: #204a87;">&lt;h1&gt;</code> is used for main headings. <code style="color: #204a87;">&lt;h2&gt;</code> is used for subheadings. As you go on, the heading font size gets smaller.</p>
+<p>For example:</p>
+<h1 style="background: beige; margin: 0;">
+This is a Main Heading
+</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;h1&gt;</span> This is a Main Heading <span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
+<h2 style="background: beige;">
+This is a subheading of level 2
+</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;h2&gt;</span> This is a subheading of level 2 <span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<h3 style="background: beige;">
+This is a subheading of level 3
+</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;h3&gt;</span> This is a subheading of level 3 <span class="kw">&lt;/h3&gt;</span></span></code></pre></div>
+<h4 style="background: beige;">
+This is a subheading of level 4
+</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;h4&gt;</span> This is a subheading of level 4 <span class="kw">&lt;/h4&gt;</span></span></code></pre></div>
+<h5 style="background: beige;">
+This is a subheading of level 5
+</h5>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;h5&gt;</span> This is a subheading of level 5 <span class="kw">&lt;/h5&gt;</span></span></code></pre></div>
+<h6 style="background: beige;">
+This is a subheading of level 6
+</h6>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;h6&gt;</span> This is a subheading of level 6 <span class="kw">&lt;/h6&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="p"><em>&lt;p&gt;</em></h4>
+<p>To create a paragraph, surround the words that make up the paragraph with an opening <code style="color: #204a87;">&lt;p&gt;</code> and a closing <code style="color: #204a87;">&lt;/p&gt;</code> tag. By default, a browser will show each paragraph on a new line with some space between it and any subsequent paragraphs.</p>
+For example:
+<p style="background: beige;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;p&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </span>
+<span id="cb9-3"><a href="#cb9-3"></a>sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. </span>
+<span id="cb9-4"><a href="#cb9-4"></a>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
+<span id="cb9-5"><a href="#cb9-5"></a>nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</span>
+<span id="cb9-6"><a href="#cb9-6"></a>in reprehenderit in voluptate velit esse cillum dolore eu</span>
+<span id="cb9-7"><a href="#cb9-7"></a>fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non</span>
+<span id="cb9-8"><a href="#cb9-8"></a>proident, sunt in culpa qui officia deserunt mollitanim id</span>
+<span id="cb9-9"><a href="#cb9-9"></a>est laborum.</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="b"><em>&lt;b&gt;</em></h4>
+By enclosing words in the tags <code style="color: #204a87;">&lt;b&gt;</code> and <code style="color: #204a87;">&lt;/b&gt;</code> we can make characters appear bold. For example:
+<p style="background: beige; text-align:center;">
+<b>This is bold text</b>
+</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">&lt;b&gt;</span> This is bold text <span class="kw">&lt;/b&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="i"><em>&lt;i&gt;</em></h4>
+<p>By enclosing words in the tags <code style="color: #204a87;">&lt;i&gt;</code> and <code style="color: #204a87;">&lt;/i&gt;</code> we can make characters appear italic. The <code style="color: #204a87;">&lt;i&gt;</code> element also represents a section of text that would be said in a different way from surrounding content - such as technical terms, names of ships, foreign words, thoughts, or other terms that would usually be italicized.</p>
+For example:
+<p style="background: beige; text-align:center;">
+<i>This is italicized text</i>
+</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">&lt;i&gt;</span> This is italicized text <span class="kw">&lt;/i&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="sup-sub"><em>&lt;sup&gt;</em>, <em>&lt;sub&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;sup&gt;</code> element is used to contain characters that should be superscript such as suffixes of dates or mathematical concepts like raising a number to a power such as 2<sup>2</sup>.</p>
+For example:<br />
 
-          <p style="background: beige;">
-          On the 4<sup>th</sup> of September you will learn about E=MC<sup>2</sup>.
-          </p>
-          <div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a>On the 4<span class="kw">&lt;sup&gt;</span>th<span class="kw">&lt;/sup&gt;</span> of September you will learn about E=MC<span class="kw">&lt;sup&gt;</span>2<span class="kw">&lt;/sup&gt;</span>.</span></code></pre></div>
-          <p>The <code style="color: #204a87;">&lt;sup&gt;</code> element is used to contain characters that should be subscript. It is commonly used with foot notes or chemical formulas such as H<sub>2</sub>O.</p>
-          For example:
-          <p style="background: beige;">
-          The amount of CO<sub>2</sub> in the atmosphere grew by 2ppm in 2009<sub>1</sub>.
-          </p>
-          <div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1"></a>The amount of CO<span class="kw">&lt;sub&gt;</span>2<span class="kw">&lt;/sub&gt;</span> in the atmosphere grew by 2ppm in 2009<span class="kw">&lt;sub&gt;</span>1<span class="kw">&lt;/sub&gt;</span>.</span></code></pre></div>
-          <h4 id="white-space-collapsing"><em>white space collapsing</em></h4>
-          <p>When the browser comes across two or more spaces next to each other, it only displays one space. Similarly if it comes across a line break, it treats that as a single space too. This is known as <code>white space collapsing</code>. Some web page authors take advantage of white space collapsing to indent their code in order to make it easier to follow.</p>
-          For example:
-          <p style="background:beige; margin:0; padding:0;">
-          The moon is drifting away from Earth.
-          </p>
-          <p style="background:beige; margin:0; padding:0;">
-          The moon is drifting away from Earth.
-          </p>
-          <p style="background:beige; margin:0; padding:0;">
-          The moon is drifting away from Earth
-          </p>
-          <div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">&lt;p&gt;</span> The moon is drifting away from Earth. <span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb14-2"><a href="#cb14-2"></a><span class="kw">&lt;p&gt;</span> The moon            is drifting away from Earth.<span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb14-3"><a href="#cb14-3"></a><span class="kw">&lt;p&gt;</span> The moon is drifting away from</span>
-          <span id="cb14-4"><a href="#cb14-4"></a></span>
-          <span id="cb14-5"><a href="#cb14-5"></a>          Earth<span class="kw">&lt;/p&gt;</span> </span></code></pre></div>
-          <h4 id="br"><em>&lt;br /&gt;</em></h4>
-          <p>If you wanted to add a line break inside the middle of a paragraph you can use the line break tag <code style="color: #204a87;">&lt;br /&gt;</code>.</p>
-          For example:
-          <p style="background:beige;">
-          The Earth<br /> gets one hundred tons heavier every day <br /> due to falling space dust.
-          </p>
-          <div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;p&gt;</span>The Earth<span class="kw">&lt;br</span> <span class="kw">/&gt;</span> gets one hundred tons heavier every day <span class="kw">&lt;br</span> <span class="kw">/&gt;</span> due to falling space dust.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="hr"><em>&lt;hr /&gt;</em></h4>
-          <p>To create a break between themes — such as a change of topic in a book or a new scene in a play — you can add a horizontal rule between sections using the <code style="color: #204a87;">&lt;hr /&gt;</code>. tag.</p>
-          For example:
-          <p style="background:beige; margin:0; padding:0;">
-          Venus is the only planet that rotates clockwise.
-          </p>
-          <hr style="background:beige; margin:0; padding:0;">
-          <p style="background:beige; margin:0; padding:0;">
-          Jupiter is bigger than all the other planets combined.
-          </p>
-          <div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;p&gt;</span>Venus is the only planet that rotates clockwise.<span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb16-2"><a href="#cb16-2"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
-          <span id="cb16-3"><a href="#cb16-3"></a><span class="kw">&lt;p&gt;</span>Jupiter is bigger than all the other planets combined.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="strong-em"><em>&lt;strong&gt;</em>, <em>&lt;em&gt;</em></h4>
-          <p>The use of the <code style="color: #204a87;">&lt;strong&gt;</code> element indicates that its content has strong importance. For example, the words contained in this element might be said with strong emphasis.</p>
-          <p>By default, browsers will show the contents of a <code style="color: #204a87;">&lt;strong&gt;</code> element in bold.</p>
-          For example:<br />
+<p style="background: beige;">
+On the 4<sup>th</sup> of September you will learn about E=MC<sup>2</sup>.
+</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a>On the 4<span class="kw">&lt;sup&gt;</span>th<span class="kw">&lt;/sup&gt;</span> of September you will learn about E=MC<span class="kw">&lt;sup&gt;</span>2<span class="kw">&lt;/sup&gt;</span>.</span></code></pre></div>
+<p>The <code style="color: #204a87;">&lt;sup&gt;</code> element is used to contain characters that should be subscript. It is commonly used with foot notes or chemical formulas such as H<sub>2</sub>O.</p>
+For example:
+<p style="background: beige;">
+The amount of CO<sub>2</sub> in the atmosphere grew by 2ppm in 2009<sub>1</sub>.
+</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1"></a>The amount of CO<span class="kw">&lt;sub&gt;</span>2<span class="kw">&lt;/sub&gt;</span> in the atmosphere grew by 2ppm in 2009<span class="kw">&lt;sub&gt;</span>1<span class="kw">&lt;/sub&gt;</span>.</span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h5 id="white-space-collapsing"><b>white space collapsing</b>:</h5>
+<p>When the browser comes across two or more spaces next to each other, it only displays one space. Similarly if it comes across a line break, it treats that as a single space too. This is known as <code>white space collapsing</code>. Some web page authors take advantage of white space collapsing to indent their code in order to make it easier to follow.</p>
+For example:
+<p style="background:beige; margin:0; padding:0;">
+The moon is drifting away from Earth.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+The moon is drifting away from Earth.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+The moon is drifting away from Earth
+</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">&lt;p&gt;</span> The moon is drifting away from Earth. <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">&lt;p&gt;</span> The moon            is drifting away from Earth.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="kw">&lt;p&gt;</span> The moon is drifting away from</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a>          Earth<span class="kw">&lt;/p&gt;</span> </span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="br"><em>&lt;br /&gt;</em></h4>
+<p>If you wanted to add a line break inside the middle of a paragraph you can use the line break tag <code style="color: #204a87;">&lt;br /&gt;</code>.</p>
+For example:
+<p style="background:beige;">
+The Earth<br /> gets one hundred tons heavier every day <br /> due to falling space dust.
+</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;p&gt;</span>The Earth<span class="kw">&lt;br</span> <span class="kw">/&gt;</span> gets one hundred tons heavier every day <span class="kw">&lt;br</span> <span class="kw">/&gt;</span> due to falling space dust.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="hr"><em>&lt;hr /&gt;</em></h4>
+<p>To create a break between themes — such as a change of topic in a book or a new scene in a play — you can add a horizontal rule between sections using the <code style="color: #204a87;">&lt;hr /&gt;</code>. tag.</p>
+For example:
+<p style="background:beige; margin:0; padding:0;">
+Venus is the only planet that rotates clockwise.
+</p>
+<hr style="background:beige; margin:0; padding:0;">
+<p style="background:beige; margin:0; padding:0;">
+Jupiter is bigger than all the other planets combined.
+</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;p&gt;</span>Venus is the only planet that rotates clockwise.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">&lt;p&gt;</span>Jupiter is bigger than all the other planets combined.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="strong-em"><em>&lt;strong&gt;</em>, <em>&lt;em&gt;</em></h4>
+<p>The use of the <code style="color: #204a87;">&lt;strong&gt;</code> element indicates that its content has strong importance. For example, the words contained in this element might be said with strong emphasis.</p>
+<p>By default, browsers will show the contents of a <code style="color: #204a87;">&lt;strong&gt;</code> element in bold.</p>
+For example:<br />
 
-          <p style="background:beige; margin:0; padding:0;">
-          <strong>Beware:</strong> Pickpockets operate in this area.
-          </p>
-          <p style="background:beige; margin:0; padding:0;">
-          This toy has many small pieces and is <strong>not suitable for children under five years old</strong>.
-          </p>
-          <div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">&lt;p&gt;&lt;strong&gt;</span>Beware:<span class="kw">&lt;/strong&gt;</span> Pickpockets operate in this area.<span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb17-2"><a href="#cb17-2"></a><span class="kw">&lt;p&gt;</span>This toy has many small pieces and is <span class="kw">&lt;strong&gt;</span>not suitable for children under five years old.<span class="kw">&lt;/strong&gt;&lt;/p&gt;</span></span></code></pre></div>
-          <p>The <code style="color: #204a87;">&lt;em&gt;</code> element indicates emphasis that subtly changes the meaning of a sentence.</p>
-          <p>By default, browsers will show the contents of an <code style="color: #204a87;">&lt;em&gt;</code> element in italic.</p>
-          For example:<br />
+<p style="background:beige; margin:0; padding:0;">
+<strong>Beware:</strong> Pickpockets operate in this area.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+This toy has many small pieces and is <strong>not suitable for children under five years old</strong>.
+</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">&lt;p&gt;&lt;strong&gt;</span>Beware:<span class="kw">&lt;/strong&gt;</span> Pickpockets operate in this area.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">&lt;p&gt;</span>This toy has many small pieces and is <span class="kw">&lt;strong&gt;</span>not suitable for children under five years old.<span class="kw">&lt;/strong&gt;&lt;/p&gt;</span></span></code></pre></div>
+<p>The <code style="color: #204a87;">&lt;em&gt;</code> element indicates emphasis that subtly changes the meaning of a sentence.</p>
+<p>By default, browsers will show the contents of an <code style="color: #204a87;">&lt;em&gt;</code> element in italic.</p>
+For example:<br />
 
-          <p style="background:beige; margin:0; padding:0;">
-          I <em>think</em> Ivy was the first.
-          </p>
-          <p style="background:beige; margin:0; padding:0;">
-          I think <em>Ivy</em> was the first.
-          </p>
-          <p style="background:beige; margin:0; padding:0;">
-          I think Ivy was the <em>first</em>.
-          </p>
-          <div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">&lt;p&gt;</span>I <span class="kw">&lt;em&gt;</span>think<span class="kw">&lt;/em&gt;</span> Ivy was the first.<span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb18-2"><a href="#cb18-2"></a><span class="kw">&lt;p&gt;</span>I think <span class="kw">&lt;em&gt;</span>Ivy<span class="kw">&lt;/em&gt;</span> was the first.<span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb18-3"><a href="#cb18-3"></a><span class="kw">&lt;p&gt;</span>I think Ivy was the <span class="kw">&lt;em&gt;</span>first<span class="kw">&lt;/em&gt;</span>.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="blockquote-q"><em>&lt;blockquote&gt;</em>, <em>&lt;q&gt;</em></h4>
-          <p>The <code style="color: #204a87;">&lt;blockquote&gt;</code> element is used for longer quotes that take up an entire paragraph. Note how the <code style="color: #204a87;">&lt;p&gt;</code> element is still used inside the <code style="color: #204a87;">&lt;blockquote&gt;</code> element.</p>
-          <p>Browsers tend to indent the contents of the <code style="color: #204a87;">&lt;blockquote&gt;</code> element, however you should not use this element just to indent a piece of text — rather you should achieve this effect using CSS.</p>
-          <p>The <code style="color: #204a87;">&lt;q&gt;</code> element is used for shorter quotes that sit within a paragraph.</p>
-          <p>Both elements may use the <a href="htmlcite.html"><code style="color: #8f5902;">cite</code></a> attribute to indicate where the quote is from. It’s value should be a URL that will have more information about the source of the quotation.</p>
-          For example:<br />
+<p style="background:beige; margin:0; padding:0;">
+I <em>think</em> Ivy was the first.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+I think <em>Ivy</em> was the first.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+I think Ivy was the <em>first</em>.
+</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">&lt;p&gt;</span>I <span class="kw">&lt;em&gt;</span>think<span class="kw">&lt;/em&gt;</span> Ivy was the first.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">&lt;p&gt;</span>I think <span class="kw">&lt;em&gt;</span>Ivy<span class="kw">&lt;/em&gt;</span> was the first.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="kw">&lt;p&gt;</span>I think Ivy was the <span class="kw">&lt;em&gt;</span>first<span class="kw">&lt;/em&gt;</span>.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="blockquote-q"><em>&lt;blockquote&gt;</em>, <em>&lt;q&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;blockquote&gt;</code> element is used for longer quotes that take up an entire paragraph. Note how the <code style="color: #204a87;">&lt;p&gt;</code> element is still used inside the <code style="color: #204a87;">&lt;blockquote&gt;</code> element.</p>
+<p>Browsers tend to indent the contents of the <code style="color: #204a87;">&lt;blockquote&gt;</code> element, however you should not use this element just to indent a piece of text — rather you should achieve this effect using CSS.</p>
+<p>The <code style="color: #204a87;">&lt;q&gt;</code> element is used for shorter quotes that sit within a paragraph.</p>
+<p>Both elements may use the <a href="htmlcite.html"><code style="color: #8f5902;">cite</code></a> attribute to indicate where the quote is from. It’s value should be a URL that will have more information about the source of the quotation.</p>
+For example:<br />
 
-          <blockquote cite="http://en.wikipedia.org/wiki/Winnie-the-Pooh">
-          <p style="background: beige; margin:0; padding:0;">
-          Did you ever stop to think, and forget to start again?
-          </p>
-          </blockquote>
-          <p style="background: beige; margin:0; padding:0;">
-          As A.A. Milne said. <q>Some people talk to animals. Not many listen though. That’s the problem</q>
-          </p>
-          <div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;blockquote</span><span class="ot"> cite=</span><span class="st">&quot;http://en.wikipedia.org/wiki/Winnie-the-Pooh&quot;</span><span class="kw">&gt;&lt;p&gt;</span>Did you ever stop to think, and forget to start again?<span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb19-2"><a href="#cb19-2"></a><span class="kw">&lt;/blockquote&gt;</span> </span>
-          <span id="cb19-3"><a href="#cb19-3"></a><span class="kw">&lt;p&gt;</span>As A.A. Milne said. <span class="kw">&lt;q&gt;</span>Some people talk to animals. Not many listen though. That&#39;s the problem<span class="kw">&lt;/q&gt;&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="abbr"><em>&lt;abbr&gt;</em></h4>
-          <p>If you use an abbreviation or an acronym, then the <code style="color: #204a87;">&lt;abbr&gt;</code> element can be used. A <a href="htmltitle.html"><code style="color: #8f5902;">title</code></a> attribute on the opening tag is used to specify the full term.</p>
-          <p>In HTML4 there was a separate <code style="color: #204a87;">&lt;acronym&gt;</code> element for acronyms. To spell out the full form of the acronym, it also used the title attribute. In HTML5, we use the <code style="color: #204a87;">&lt;abbr&gt;</code> element for both abbreviations and acronyms.</p>
-          For example:<br />
+<blockquote cite="http://en.wikipedia.org/wiki/Winnie-the-Pooh">
+<p style="background: beige; margin:0; padding:0;">
+Did you ever stop to think, and forget to start again?
+</p>
+</blockquote>
+<p style="background: beige; margin:0; padding:0;">
+As A.A. Milne said. <q>Some people talk to animals. Not many listen though. That’s the problem</q>
+</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;blockquote</span><span class="ot"> cite=</span><span class="st">&quot;http://en.wikipedia.org/wiki/Winnie-the-Pooh&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">&lt;p&gt;</span>Did you ever stop to think, and forget to start again?<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="kw">&lt;/blockquote&gt;</span> </span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="kw">&lt;p&gt;</span>As A.A. Milne said. <span class="kw">&lt;q&gt;</span>Some people talk to animals. Not many listen though. That&#39;s the problem<span class="kw">&lt;/q&gt;&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="abbr"><em>&lt;abbr&gt;</em></h4>
+<p>If you use an abbreviation or an acronym, then the <code style="color: #204a87;">&lt;abbr&gt;</code> element can be used. A <a href="htmltitle.html"><code style="color: #8f5902;">title</code></a> attribute on the opening tag is used to specify the full term.</p>
+<p>In HTML4 there was a separate <code style="color: #204a87;">&lt;acronym&gt;</code> element for acronyms. To spell out the full form of the acronym, it also used the title attribute. In HTML5, we use the <code style="color: #204a87;">&lt;abbr&gt;</code> element for both abbreviations and acronyms.</p>
+For example:<br />
 
-          <p style="background:beige;">
-          <abbr title="Professor">Prof</abbr> Stephen Hawking is a theoretical physicist and cosmologist.
-          </p>
-          <div class="sourceCode" id="cb20"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">&lt;p&gt;&lt;abbr</span><span class="ot"> title=</span><span class="st">&quot;Professor&quot;</span><span class="kw">&gt;</span>Prof<span class="kw">&lt;/abbr&gt;</span> Stephen Hawking is a theoretical physicist and cosmologist.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="cite"><em>&lt;cite&gt;</em></h4>
-          <p>When you are referencing a piece of work such as a book, film or research paper, the <code style="color: #204a87;">&lt;cite&gt;</code> element can be used to indicate where the citation is from.<br />
-          Browsers will render the content of a <code style="color: #204a87;">&lt;cite&gt;</code> element in italics.</p>
-          For example:<br />
+<p style="background:beige;">
+<abbr title="Professor">Prof</abbr> Stephen Hawking is a theoretical physicist and cosmologist.
+</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">&lt;p&gt;&lt;abbr</span><span class="ot"> title=</span><span class="st">&quot;Professor&quot;</span><span class="kw">&gt;</span>Prof<span class="kw">&lt;/abbr&gt;</span> Stephen Hawking is a theoretical physicist and cosmologist.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="cite"><em>&lt;cite&gt;</em></h4>
+<p>When you are referencing a piece of work such as a book, film or research paper, the <code style="color: #204a87;">&lt;cite&gt;</code> element can be used to indicate where the citation is from.<br />
+Browsers will render the content of a <code style="color: #204a87;">&lt;cite&gt;</code> element in italics.</p>
+For example:<br />
 
-          <p style="background:beige;">
-          <cite>A Brief History of Time</cite> by Stephen Hawking has sold over ten million copies worldwide.
-          </p>
-          <div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">&lt;p&gt;&lt;cite&gt;</span>A Brief History of Time<span class="kw">&lt;/cite&gt;</span> by Stephen Hawking has sold over ten million copies worldwide.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="dfn"><em>&lt;dfn&gt;</em></h4>
-          <p>The first time you explain some new terminology (perhaps an academic concept or some jargon) in a document, it is known as the defining instance of it.</p>
-          <p>The <code style="color: #204a87;">&lt;dfn&gt;</code> element is used to indicate the defining instance of a new term. Some browsers show the <code style="color: #204a87;">&lt;dfn&gt;</code> element in italics.</p>
-          For example:<br />
+<p style="background:beige;">
+<cite>A Brief History of Time</cite> by Stephen Hawking has sold over ten million copies worldwide.
+</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">&lt;p&gt;&lt;cite&gt;</span>A Brief History of Time<span class="kw">&lt;/cite&gt;</span> by Stephen Hawking has sold over ten million copies worldwide.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="dfn"><em>&lt;dfn&gt;</em></h4>
+<p>The first time you explain some new terminology (perhaps an academic concept or some jargon) in a document, it is known as the defining instance of it.</p>
+<p>The <code style="color: #204a87;">&lt;dfn&gt;</code> element is used to indicate the defining instance of a new term. Some browsers show the <code style="color: #204a87;">&lt;dfn&gt;</code> element in italics.</p>
+For example:<br />
 
-          <p style="background:beige;">
-          A <dfn>black hole</dfn> is a region of space from which nothing, not even light, can escape.
-          </p>
-          <div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;background:beige;&quot;</span><span class="kw">&gt;</span>A <span class="kw">&lt;dfn&gt;</span>black hole<span class="kw">&lt;/dfn&gt;</span> is a region of space from which nothing, not even light, can escape.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="address"><em>&lt;address&gt;</em></h4>
-          <p>The <code style="color: #204a87;">&lt;address&gt;</code> element’s use is to contain contact details for the author of the page.<br />
-          It can contain a physical address, but it does not have to. For example, it may also contain a phone number or email address.</p>
-          <p>Browsers often display the content of the <code style="color: #204a87;">&lt;address&gt;</code> element in italics.</p>
-          For example:<br />
+<p style="background:beige;">
+A <dfn>black hole</dfn> is a region of space from which nothing, not even light, can escape.
+</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">&lt;p&gt;</span>A <span class="kw">&lt;dfn&gt;</span>black hole<span class="kw">&lt;/dfn&gt;</span> is a region of space from which nothing, not even light, can escape.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="address"><em>&lt;address&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;address&gt;</code> element’s use is to contain contact details for the author of the page.<br />
+It can contain a physical address, but it does not have to. For example, it may also contain a phone number or email address.</p>
+<p>Browsers often display the content of the <code style="color: #204a87;">&lt;address&gt;</code> element in italics.</p>
+For example:<br />
 
-          <address>
-          <p style="background:beige; margin:0; padding:0;">
-          <a href="mailto:homer@example.org">homer@example.org</a>
-          </p>
-          <p style="background:beige; margin:0; padding: 0;">
-          742 Evergreen Terrace, Springfield.
-          </p>
-          <div class="sourceCode" id="cb23"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">&lt;address&gt;&lt;p&gt;&lt;a</span><span class="ot"> ahref=</span><span class="st">&quot;mailto:homer@example.org&quot;</span><span class="kw">&gt;</span>homer@example.org<span class="kw">&lt;/a&gt;&lt;/p&gt;</span></span>
-          <span id="cb23-2"><a href="#cb23-2"></a><span class="kw">&lt;p&gt;</span>742 Evergreen Terrace, Springfield.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <h4 id="ins-del-s"><em>&lt;ins&gt;</em>, <em>&lt;del&gt;</em>, <em>&lt;s&gt;</em></h4>
-          <p>The <code style="color: #204a87;">&lt;ins&gt;</code> element can be used to show that has been inserted into a document, while the <code style="color: #204a87;">&lt;del&gt;</code> element can show text that has been deleted from it.<br />
-          The content of an <code style="color: #204a87;">&lt;ins&gt;</code> element is usually underlined, while the content of a <code style="color: #204a87;">&lt;del&gt;</code> element usually has a line through it.</p>
-          For example:<br />
+<address>
+<p style="background:beige; margin:0; padding:0;">
+<a href="mailto:homer@example.org">homer@example.org</a>
+</p>
+<p style="background:beige; margin:0; padding: 0;">
+742 Evergreen Terrace, Springfield.
+</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">&lt;address&gt;&lt;p&gt;&lt;a</span><span class="ot"> ahref=</span><span class="st">&quot;mailto:homer@example.org&quot;</span><span class="kw">&gt;</span>homer@example.org<span class="kw">&lt;/a&gt;&lt;/p&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="kw">&lt;p&gt;</span>742 Evergreen Terrace, Springfield.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="ins-del-s"><em>&lt;ins&gt;</em>, <em>&lt;del&gt;</em>, <em>&lt;s&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;ins&gt;</code> element can be used to show that has been inserted into a document, while the <code style="color: #204a87;">&lt;del&gt;</code> element can show text that has been deleted from it.<br />
+The content of an <code style="color: #204a87;">&lt;ins&gt;</code> element is usually underlined, while the content of a <code style="color: #204a87;">&lt;del&gt;</code> element usually has a line through it.</p>
+For example:<br />
 
-          <p style="background:beige;">
-          It was the <del>worst</del> <ins>best</ins> idea she had ever had.
-          </p>
-          <div class="sourceCode" id="cb24"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">&lt;p&gt;</span>It was the <span class="kw">&lt;del&gt;</span>worst<span class="kw">&lt;/del&gt;</span> <span class="kw">&lt;ins&gt;</span>best<span class="kw">&lt;/ins&gt;</span> idea she had ever had.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
-          <p>The <code style="color: #204a87;">&lt;s&gt;</code> element indicates something that is no longer accurate or relevant (but that should not be deleted)</p>
-          <p>Visually the content of an <code style="color: #204a87;">&lt;s&gt;</code> element will usually be displayed with a line through the center.</p>
-          For example:<br />
+<p style="background:beige;">
+It was the <del>worst</del> <ins>best</ins> idea she had ever had.
+</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">&lt;p&gt;</span>It was the <span class="kw">&lt;del&gt;</span>worst<span class="kw">&lt;/del&gt;</span> <span class="kw">&lt;ins&gt;</span>best<span class="kw">&lt;/ins&gt;</span> idea she had ever had.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>The <code style="color: #204a87;">&lt;s&gt;</code> element indicates something that is no longer accurate or relevant (but that should not be deleted)</p>
+<p>Visually the content of an <code style="color: #204a87;">&lt;s&gt;</code> element will usually be displayed with a line through the center.</p>
+For example:<br />
 
-          <p style="background:beige; margin:0; padding:0;">
-          Laptop computer:
-          </p>
-          <p style="background:beige; margin:0; padding:0;">
-          <s>Was $995</s>
-          </p>
-          <p style="background:beige; margin:0; padding:0;">
-          Now only $375
-          </p>
-          <div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">&lt;p&gt;</span>Laptop computer:<span class="kw">&lt;/p&gt;</span></span>
-          <span id="cb25-2"><a href="#cb25-2"></a><span class="kw">&lt;p&gt;&lt;s&gt;</span>Was $995<span class="kw">&lt;/s&gt;&lt;/p&gt;</span></span>
-          <span id="cb25-3"><a href="#cb25-3"></a><span class="kw">&lt;p&gt;</span>Now only $375<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="background:beige; margin:0; padding:0;">
+Laptop computer:
+</p>
+<p style="background:beige; margin:0; padding:0;">
+<s>Was $995</s>
+</p>
+<p style="background:beige; margin:0; padding:0;">
+Now only $375
+</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">&lt;p&gt;</span>Laptop computer:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">&lt;p&gt;&lt;s&gt;</span>Was $995<span class="kw">&lt;/s&gt;&lt;/p&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="kw">&lt;p&gt;</span>Now only $375<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<h3 id="lists"><u>Lists</u></h3>
+<h4 id="li"><em>&lt;li&gt;</em></h4>
+<p>Each item in a list is placed between the opening <code style="color: #204a87;">&lt;li&gt;</code> tag and its closing <code style="color: #204a87;">&lt;/li&gt;</code> tag. The li stands for “list item”.</p>
+<p>Browsers indent lists by default.</p>
+<h4 id="ol"><em>&lt;ol&gt;</em></h4>
+<p>An ordered list is created with the <code style="color: #204a87;">&lt;ol&gt;</code> element.</p>
+For example:<br />
+
+<ol style="background:beige;">
+<li>
+Chop potatoes into quarters
+</li>
+<li>
+Simmer in salted water for 15-20 minutes until tender
+</li>
+<li>
+Heat milk, butter and nutmeg
+</li>
+<li>
+Drain potatoes and mash
+</li>
+<li>
+Mix in the milk mixture
+</li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">&lt;ol&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="kw">&lt;li&gt;</span>Chop potatoes into quarters<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="kw">&lt;li&gt;</span>Simmer in salted water for 15-20 minutes until tender<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="kw">&lt;li&gt;</span>Heat milk, butter and nutmeg<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="kw">&lt;li&gt;</span>Drain potatoes and mash<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="kw">&lt;li&gt;</span>Mix in the milk mixture<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="kw">&lt;/ol&gt;</span></span></code></pre></div>
+<h4 id="ul"><em>&lt;ul&gt;</em></h4>
+<p>An unordered list is created with the <code style="color: #204a87;">&lt;ul&gt;</code> element.</p>
+For example:<br />
+
+<ul style="background:beige;">
+<li>
+1kg King Edward potatoes
+</li>
+<li>
+100ml milk
+</li>
+<li>
+50g salted butter
+</li>
+<li>
+Freshly grated nutmeg
+</li>
+<li>
+Salt and pepper to taste
+</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="kw">&lt;li&gt;</span>1kg King Edward potatoes<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="kw">&lt;li&gt;</span>100ml milk<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="kw">&lt;li&gt;</span>50g salted butter<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="kw">&lt;li&gt;</span>Freshly grated nutmeg<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="kw">&lt;li&gt;</span>Salt and pepper to taste<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<h4 id="dl-dt-dd"><em>&lt;dl&gt;</em>, <em>&lt;dt&gt;</em>, <em>&lt;dd&gt;</em></h4>
+<p>The definition list is created with the <code style="color: #204a87;">&lt;dl&gt;</code> element and usually consists of a series of terms and their definitions. Inside the <code style="color: #204a87;">&lt;dl&gt;</code> element you will usually see pairs of <code style="color: #204a87;">&lt;dt&gt;</code> and <code style="color: #204a87;">&lt;dd&gt;</code> elements.</p>
+<p>The <code style="color: #204a87;">&lt;dt&gt;</code> element is used to contain the term being defined, while <code style="color: #204a87;">&lt;dd&gt;</code> is used to contain the definition.</p>
+For example:<br />
+<d1 style="background:beige;">
+<dt style="background:beige;">
+Sashimi
+</dt>
+<dd style="background:beige;">
+Sliced raw fish that is served with condiments such as shredded daikon radish or ginger root, wasabi and soy sauce
+</dd>
+<dt style="background:beige;">
+Scale
+</dt>
+<dd style="background:beige;">
+A device used to accurately measure the weight of ingredients
+</dd>
+<dd style="background:beige;">
+A technique by which the scales are removed from the skin of a fish
+</dd>
+<dt style="background:beige;">
+Scamorze
+</dt>
+<dt style="background:beige;">
+Scamorzo
+</dt>
+<dd style="background:beige;">
+An Italian cheese usually made from whole cow’s milk (although it was traditionally made from buffalo milk)
+</dd>
+<p></d1></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">&lt;d1&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="kw">&lt;dt&gt;</span>Sashimi<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="kw">&lt;dd&gt;</span>Sliced raw fish that is served with condiments </span>
+<span id="cb28-4"><a href="#cb28-4"></a>      such as shredded daikon radish or ginger root,</span>
+<span id="cb28-5"><a href="#cb28-5"></a>      wasabi and soy sauce<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>  <span class="kw">&lt;dt&gt;</span>Scale<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="kw">&lt;dd&gt;</span>A device used to accurately measure the </span>
+<span id="cb28-8"><a href="#cb28-8"></a>      weight of ingredients<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="kw">&lt;dd&gt;</span>A technique by which the scales are removed</span>
+<span id="cb28-10"><a href="#cb28-10"></a>      from the skin of a fish<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>  <span class="kw">&lt;dt&gt;</span>Scamorze<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a>  <span class="kw">&lt;dt&gt;</span>Scamorzo<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="kw">&lt;dd&gt;</span>An Italian cheese usually made from whole cow&#39;s</span>
+<span id="cb28-14"><a href="#cb28-14"></a>      milk (although it was traditionally made from buffalo milk)<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a><span class="kw">&lt;/d1&gt;</span></span></code></pre></div>
+<h5 id="nested-lists"><b>nested lists</b>:</h5>
+<p>You can put a second list inside an <code style="color: #204a87;">&lt;li&gt;</code> element to create a sublist or nested list.</p>
+<p>For example:</p>
+<ul style="background:beige;">
+<li>
+Mousses
+</li>
+<li>
+Pastries
+</li>
+<ul>
+<li>
+Croissant
+</li>
+<li>
+Mille-feuille
+</li>
+<li>
+Palmier
+</li>
+<li>
+Profiterole
+</li>
+</ul>
+<li>
+Tarts
+</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="kw">&lt;li&gt;</span>Mousses<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="kw">&lt;li&gt;</span>Pastries<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>    <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>      <span class="kw">&lt;li&gt;</span>Croissant<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>      <span class="kw">&lt;li&gt;</span>Mille-feuille<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>      <span class="kw">&lt;li&gt;</span>Palmier<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>      <span class="kw">&lt;li&gt;</span>Profiterole<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>    <span class="kw">&lt;/ul&gt;</span> </span>
+<span id="cb29-10"><a href="#cb29-10"></a>  <span class="kw">&lt;li&gt;</span>Tarts<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<h3 id="links"><u>Links</u></h3>
+<p>There are several types of links:</p>
+<ul>
+<li>
+Links from one website to another
+</li>
+<li>
+Links from one page to another on the same website
+</li>
+<li>
+Links from one part of the web page to another part of the same page
+</li>
+<li>
+Links that open in a new browser window
+</li>
+<li>
+Links that start up your email program and address a new email to someone
+</li>
+</ul>
+<h4 id="a"><em>&lt;a&gt;</em></h4>
+<p>Links are created using the <code style="color: #204a87;">&lt;a&gt;</code> element with the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute. When you link to a different website, you use the absolute URL. URL stands for Uniform Resource Locator.</p>
+<p>For example:</p>
+<p style="background:beige;">
+<a href="http://www.rottentomatoes.com">Metacritic</a>
+</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.rottentomatoes.com&quot;</span><span class="kw">&gt;</span>Metacritic<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h5 id="linking-to-other-pages-on-the-same-site"><b>linking to other pages on the same site</b>:</h5>
+<p>When linking to another page on the same site, you do not need to specify the domain name in the URL. You can use a shorthand known as a <code>relative URL</code>. If all the pages of the site are in the same folder, then the value of the href attribute is just the name of the file.</p>
+<p>For example:</p>
+<p>
+<ul style="background:beige;">
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li>
+<a href="work.html">Work</a>
+</li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</ul>
+</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">&lt;p&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;index.html&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about.html&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;work.html&quot;</span><span class="kw">&gt;</span>Work<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;contact.html&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a>  <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<h5 id="email-links"><b>email links</b>:</h5>
+<p>To create an email link you start similarly with the <code style="color: #204a87;">&lt;a&gt;</code> element and the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute but instead of an absolute or relative URL you enter <code>mailto:</code> followed by an email.</p>
+<p>For example:<br />
+<a style="background:beige;" href="mailto:juaneduardoflores@gmail.com"> Email Juan</a></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;mailto:juaneduardoflores@gmail.com&quot;</span><span class="kw">&gt;</span>Email Juan<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h5 id="opening-links-in-a-new-window"><b>opening links in a new window</b>:</h5>
+<p>If you want a link to open in a new window, you can use the <a href="htmltarget.html"><code style="color: #8f5902;">target</code></a></a> attribute on the opening <code style="color: #204a87;">&lt;a&gt;</code> tag. The value of this attribute should be <code>_blank</code>.</p>
+<p>For example:<br />
+<a style="background:beige" href="http://www.imdb.com" target="_blank">Internet Movie Database</a></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.imbd.com&quot;</span><span class="ot"> target=</span><span class="st">&quot;_blank&quot;</span><span class="kw">&gt;</span>Internet Movie Database<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h5 id="linking-to-a-specific-part-of-the-same-page"><b>linking to a specific part of the same page</b>:</h5>
+<p>This page has these links on the top left side that take you to specific parts of this page. The way this is achieved is by using the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute. You can use this on any HTML element. In this page’s case, there is an <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> for every 2nd, 3rd, or 4th level header.</p>
+<p>The value of the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute should start with a letter or an underscore (not a number or any other character) and, on a single page, no two <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attributes should have the same value.</p>
+<p>To link to an element that uses the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute you use the <code style="color: #204a87;">&lt;a&gt;</code> element again, but the value of the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a> attribute starts with the <code>#</code> symbol, followed by the value of the id attribute of the element you want to link to.</p>
+<p>For example:<br />
+<a style="background:beige" href="#basics">basics</a> - takes you to the top header with the id “basics”.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#basics&quot;</span><span class="kw">&gt;</span>basics<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h3 id="images"><u>Images</u></h3> -->
+
+          <p id="basics" style="font-size: 28px; font-weight: bold; margin:0;">
+Basics
+</p>
+<p style="font-size: 13px;">
+Notes taken from Jon Duckett’s Book “HTML &amp; CSS: Design and Build Websites”
+</p>
+<hr />
+<h3 id="intro"><u>Intro</u></h3>
+<p>HTML describes the structure of web pages and it stands for HyperText Markup Language. The HyperText part refers to the fact that HTML allows you to create links from one page to another easily.<br />
+A markup language allows you to annotate text, and these annotations provide additional meaning to the contents of a document</p>
+<h4 id="tag-element"><em>tag</em>, <em>element</em></h4>
+<p>The HTML code that are written within <code>tags</code>, which are the components that contain opening and closing angle brackets (<code>&lt;</code> , <code>&gt;</code>), are called HTML <code>elements</code>. Elements are usually made up of these two tags (opening and closing), but may also just contain one.</p>
+<p>The terms “tag” and “element” are often used interchangeably. Strictly speaking, however, an element comprises the opening tag and the closing tag and any content that may lie between them.</p>
+<p>For example:</p>
+<p style="background: beige;">
+This is a paragraph.
+</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;p&gt;</span> This is a paragraph. <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>This whole thing can be considered an <code>element</code>. while <code style="color: #204a87;">&lt;p&gt;</code> and <code style="color: #204a87">&lt;/p&gt;</code> are considered to be <code>tags</code>.</p>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="attribute"><em> attribute </em></h4>
+<p>Attributes tell us more about elements. They provide additional information about the contents of an element. They are made up of two parts: A <code>name</code> and a <code>value</code>.</p>
+For example:
+<p lang="en-us" style="background: beige;">
+This paragraph is in English
+</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;p</span><span class="ot"> lang=</span><span class="st">&quot;en-us&quot;</span><span class="kw">&gt;</span> This paragraph is in English <span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>The attribute <code>name</code> indicates what kind of extra information you are supplying about the element’s content. It is written in lowercase. In the example above, <a href="htmllang.html"><code style="color: #8f5902;">lang</code></a> is the name of the attribute. The <code>value</code> is the information or setting for the attribute. It should be placed in double quotes. In this case <code style="color: #4e9a06;">“en-us”</code> is the value indicating that the language of the text is in US-English. Remember that there is an (<code style="color: #8f5902">=</code>) sign between the <code>name</code> and <code>value</code>, and that it is written inside the opening tag of the element.</p>
+<p>Most attribute values are either pre-defined or follow a stipulated format. Check <a href="attributes/htmlattributes.html">here</a> for a list of all attribute names, along with their corresponding values and formats.</p>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="head-body-title"><em>&lt;head&gt;</em>, <em>&lt;body&gt;</em>, <em>&lt;title&gt;</em></h4>
+<p><code>&lt;head&gt;</code> : The <code>&lt;head&gt;</code> element contains information <i>about</i> the page.<br />
+<code>&lt;body&gt;</code> : Everything in the <code>&lt;body&gt;</code> element is shown inside the main browser window.<br />
+<code>&lt;title&gt;</code> : The content inside the <code>&lt;title&gt;</code> is displayed on the top of the browser, usually on the title bar or tab of the webpage. The title of this page is “Basics”. <br /> <br /></p>
+<h3 id="semantic-and-structural-markup"><u>Semantic and Structural Markup</u></h3>
+<p><code>Structural Markup</code>: the elements that you can use to describe both headings and paragraphs.<br />
+<code>Semantic Markup</code>: provides extra information; such as where emphasis is placed in a sentence. The reason to use these elements is not to affect the appearance, but because there are programs such as screen readers or search engines that use this extra information. A screen reader may add emphasis to a word when reading it out loud to a user.</p>
+<h4 id="h1-h2-h3-h4-h5-h6"><em>&lt;h1&gt;</em>, <em>&lt;h2&gt;</em>, <em>&lt;h3&gt;</em>, <em>&lt;h4&gt;</em>, <em>&lt;h5&gt;</em>, <em>&lt;h6&gt;</em></h4>
+<p>HTML has six “levels” of headings. <code style="color: #204a87;">&lt;h1&gt;</code> is used for main headings. <code style="color: #204a87;">&lt;h2&gt;</code> is used for subheadings. As you go on, the heading font size gets smaller.</p>
+<p>For example:</p>
+<h1 style="background: beige; margin: 0;">
+This is a Main Heading
+</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;h1&gt;</span> This is a Main Heading <span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
+<h2 style="background: beige;">
+This is a subheading of level 2
+</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;h2&gt;</span> This is a subheading of level 2 <span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<h3 style="background: beige;">
+This is a subheading of level 3
+</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;h3&gt;</span> This is a subheading of level 3 <span class="kw">&lt;/h3&gt;</span></span></code></pre></div>
+<h4 style="background: beige;">
+This is a subheading of level 4
+</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">&lt;h4&gt;</span> This is a subheading of level 4 <span class="kw">&lt;/h4&gt;</span></span></code></pre></div>
+<h5 style="background: beige;">
+This is a subheading of level 5
+</h5>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;h5&gt;</span> This is a subheading of level 5 <span class="kw">&lt;/h5&gt;</span></span></code></pre></div>
+<h6 style="background: beige;">
+This is a subheading of level 6
+</h6>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;h6&gt;</span> This is a subheading of level 6 <span class="kw">&lt;/h6&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="p"><em>&lt;p&gt;</em></h4>
+<p>To create a paragraph, surround the words that make up the paragraph with an opening <code style="color: #204a87;">&lt;p&gt;</code> and a closing <code style="color: #204a87;">&lt;/p&gt;</code> tag. By default, a browser will show each paragraph on a new line with some space between it and any subsequent paragraphs.</p>
+For example:
+<p style="background: beige;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;p&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </span>
+<span id="cb9-3"><a href="#cb9-3"></a>sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. </span>
+<span id="cb9-4"><a href="#cb9-4"></a>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
+<span id="cb9-5"><a href="#cb9-5"></a>nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</span>
+<span id="cb9-6"><a href="#cb9-6"></a>in reprehenderit in voluptate velit esse cillum dolore eu</span>
+<span id="cb9-7"><a href="#cb9-7"></a>fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non</span>
+<span id="cb9-8"><a href="#cb9-8"></a>proident, sunt in culpa qui officia deserunt mollitanim id</span>
+<span id="cb9-9"><a href="#cb9-9"></a>est laborum.</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="b"><em>&lt;b&gt;</em></h4>
+By enclosing words in the tags <code style="color: #204a87;">&lt;b&gt;</code> and <code style="color: #204a87;">&lt;/b&gt;</code> we can make characters appear bold. For example:
+<p style="background: beige; text-align:center;">
+<b>This is bold text</b>
+</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">&lt;b&gt;</span> This is bold text <span class="kw">&lt;/b&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="i"><em>&lt;i&gt;</em></h4>
+<p>By enclosing words in the tags <code style="color: #204a87;">&lt;i&gt;</code> and <code style="color: #204a87;">&lt;/i&gt;</code> we can make characters appear italic. The <code style="color: #204a87;">&lt;i&gt;</code> element also represents a section of text that would be said in a different way from surrounding content - such as technical terms, names of ships, foreign words, thoughts, or other terms that would usually be italicized.</p>
+For example:
+<p style="background: beige; text-align:center;">
+<i>This is italicized text</i>
+</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">&lt;i&gt;</span> This is italicized text <span class="kw">&lt;/i&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="sup-sub"><em>&lt;sup&gt;</em>, <em>&lt;sub&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;sup&gt;</code> element is used to contain characters that should be superscript such as suffixes of dates or mathematical concepts like raising a number to a power such as 2<sup>2</sup>.</p>
+For example:<br />
+
+<p style="background: beige;">
+On the 4<sup>th</sup> of September you will learn about E=MC<sup>2</sup>.
+</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a>On the 4<span class="kw">&lt;sup&gt;</span>th<span class="kw">&lt;/sup&gt;</span> of September you will learn about E=MC<span class="kw">&lt;sup&gt;</span>2<span class="kw">&lt;/sup&gt;</span>.</span></code></pre></div>
+<p>The <code style="color: #204a87;">&lt;sup&gt;</code> element is used to contain characters that should be subscript. It is commonly used with foot notes or chemical formulas such as H<sub>2</sub>O.</p>
+For example:
+<p style="background: beige;">
+The amount of CO<sub>2</sub> in the atmosphere grew by 2ppm in 2009<sub>1</sub>.
+</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1"></a>The amount of CO<span class="kw">&lt;sub&gt;</span>2<span class="kw">&lt;/sub&gt;</span> in the atmosphere grew by 2ppm in 2009<span class="kw">&lt;sub&gt;</span>1<span class="kw">&lt;/sub&gt;</span>.</span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h5 id="white-space-collapsing"><b>white space collapsing</b>:</h5>
+<p>When the browser comes across two or more spaces next to each other, it only displays one space. Similarly if it comes across a line break, it treats that as a single space too. This is known as <code>white space collapsing</code>. Some web page authors take advantage of white space collapsing to indent their code in order to make it easier to follow.</p>
+For example:
+<p style="background:beige; margin:0; padding:0;">
+The moon is drifting away from Earth.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+The moon is drifting away from Earth.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+The moon is drifting away from Earth
+</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">&lt;p&gt;</span> The moon is drifting away from Earth. <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">&lt;p&gt;</span> The moon            is drifting away from Earth.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="kw">&lt;p&gt;</span> The moon is drifting away from</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a>          Earth<span class="kw">&lt;/p&gt;</span> </span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="br"><em>&lt;br /&gt;</em></h4>
+<p>If you wanted to add a line break inside the middle of a paragraph you can use the line break tag <code style="color: #204a87;">&lt;br /&gt;</code>.</p>
+For example:
+<p style="background:beige;">
+The Earth<br /> gets one hundred tons heavier every day <br /> due to falling space dust.
+</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;p&gt;</span>The Earth<span class="kw">&lt;br</span> <span class="kw">/&gt;</span> gets one hundred tons heavier every day <span class="kw">&lt;br</span> <span class="kw">/&gt;</span> due to falling space dust.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="hr"><em>&lt;hr /&gt;</em></h4>
+<p>To create a break between themes — such as a change of topic in a book or a new scene in a play — you can add a horizontal rule between sections using the <code style="color: #204a87;">&lt;hr /&gt;</code>. tag.</p>
+For example:
+<p style="background:beige; margin:0; padding:0;">
+Venus is the only planet that rotates clockwise.
+</p>
+<hr style="background:beige; margin:0; padding:0;">
+<p style="background:beige; margin:0; padding:0;">
+Jupiter is bigger than all the other planets combined.
+</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">&lt;p&gt;</span>Venus is the only planet that rotates clockwise.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">&lt;p&gt;</span>Jupiter is bigger than all the other planets combined.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="strong-em"><em>&lt;strong&gt;</em>, <em>&lt;em&gt;</em></h4>
+<p>The use of the <code style="color: #204a87;">&lt;strong&gt;</code> element indicates that its content has strong importance. For example, the words contained in this element might be said with strong emphasis.</p>
+<p>By default, browsers will show the contents of a <code style="color: #204a87;">&lt;strong&gt;</code> element in bold.</p>
+For example:<br />
+
+<p style="background:beige; margin:0; padding:0;">
+<strong>Beware:</strong> Pickpockets operate in this area.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+This toy has many small pieces and is <strong>not suitable for children under five years old</strong>.
+</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">&lt;p&gt;&lt;strong&gt;</span>Beware:<span class="kw">&lt;/strong&gt;</span> Pickpockets operate in this area.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">&lt;p&gt;</span>This toy has many small pieces and is <span class="kw">&lt;strong&gt;</span>not suitable for children under five years old.<span class="kw">&lt;/strong&gt;&lt;/p&gt;</span></span></code></pre></div>
+<p>The <code style="color: #204a87;">&lt;em&gt;</code> element indicates emphasis that subtly changes the meaning of a sentence.</p>
+<p>By default, browsers will show the contents of an <code style="color: #204a87;">&lt;em&gt;</code> element in italic.</p>
+For example:<br />
+
+<p style="background:beige; margin:0; padding:0;">
+I <em>think</em> Ivy was the first.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+I think <em>Ivy</em> was the first.
+</p>
+<p style="background:beige; margin:0; padding:0;">
+I think Ivy was the <em>first</em>.
+</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">&lt;p&gt;</span>I <span class="kw">&lt;em&gt;</span>think<span class="kw">&lt;/em&gt;</span> Ivy was the first.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">&lt;p&gt;</span>I think <span class="kw">&lt;em&gt;</span>Ivy<span class="kw">&lt;/em&gt;</span> was the first.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="kw">&lt;p&gt;</span>I think Ivy was the <span class="kw">&lt;em&gt;</span>first<span class="kw">&lt;/em&gt;</span>.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="blockquote-q"><em>&lt;blockquote&gt;</em>, <em>&lt;q&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;blockquote&gt;</code> element is used for longer quotes that take up an entire paragraph. Note how the <code style="color: #204a87;">&lt;p&gt;</code> element is still used inside the <code style="color: #204a87;">&lt;blockquote&gt;</code> element.</p>
+<p>Browsers tend to indent the contents of the <code style="color: #204a87;">&lt;blockquote&gt;</code> element, however you should not use this element just to indent a piece of text — rather you should achieve this effect using CSS.</p>
+<p>The <code style="color: #204a87;">&lt;q&gt;</code> element is used for shorter quotes that sit within a paragraph.</p>
+<p>Both elements may use the <a href="htmlcite.html"><code style="color: #8f5902;">cite</code></a> attribute to indicate where the quote is from. It’s value should be a URL that will have more information about the source of the quotation.</p>
+For example:<br />
+
+<blockquote cite="http://en.wikipedia.org/wiki/Winnie-the-Pooh">
+<p style="background: beige; margin:0; padding:0;">
+Did you ever stop to think, and forget to start again?
+</p>
+</blockquote>
+<p style="background: beige; margin:0; padding:0;">
+As A.A. Milne said. <q>Some people talk to animals. Not many listen though. That’s the problem</q>
+</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;blockquote</span><span class="ot"> cite=</span><span class="st">&quot;http://en.wikipedia.org/wiki/Winnie-the-Pooh&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">&lt;p&gt;</span>Did you ever stop to think, and forget to start again?<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="kw">&lt;/blockquote&gt;</span> </span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="kw">&lt;p&gt;</span>As A.A. Milne said. <span class="kw">&lt;q&gt;</span>Some people talk to animals. Not many listen though. That&#39;s the problem<span class="kw">&lt;/q&gt;&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="abbr"><em>&lt;abbr&gt;</em></h4>
+<p>If you use an abbreviation or an acronym, then the <code style="color: #204a87;">&lt;abbr&gt;</code> element can be used. A <a href="htmltitle.html"><code style="color: #8f5902;">title</code></a> attribute on the opening tag is used to specify the full term.</p>
+<p>In HTML4 there was a separate <code style="color: #204a87;">&lt;acronym&gt;</code> element for acronyms. To spell out the full form of the acronym, it also used the title attribute. In HTML5, we use the <code style="color: #204a87;">&lt;abbr&gt;</code> element for both abbreviations and acronyms.</p>
+For example:<br />
+
+<p style="background:beige;">
+<abbr title="Professor">Prof</abbr> Stephen Hawking is a theoretical physicist and cosmologist.
+</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">&lt;p&gt;&lt;abbr</span><span class="ot"> title=</span><span class="st">&quot;Professor&quot;</span><span class="kw">&gt;</span>Prof<span class="kw">&lt;/abbr&gt;</span> Stephen Hawking is a theoretical physicist and cosmologist.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="cite"><em>&lt;cite&gt;</em></h4>
+<p>When you are referencing a piece of work such as a book, film or research paper, the <code style="color: #204a87;">&lt;cite&gt;</code> element can be used to indicate where the citation is from.<br />
+Browsers will render the content of a <code style="color: #204a87;">&lt;cite&gt;</code> element in italics.</p>
+For example:<br />
+
+<p style="background:beige;">
+<cite>A Brief History of Time</cite> by Stephen Hawking has sold over ten million copies worldwide.
+</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">&lt;p&gt;&lt;cite&gt;</span>A Brief History of Time<span class="kw">&lt;/cite&gt;</span> by Stephen Hawking has sold over ten million copies worldwide.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="dfn"><em>&lt;dfn&gt;</em></h4>
+<p>The first time you explain some new terminology (perhaps an academic concept or some jargon) in a document, it is known as the defining instance of it.</p>
+<p>The <code style="color: #204a87;">&lt;dfn&gt;</code> element is used to indicate the defining instance of a new term. Some browsers show the <code style="color: #204a87;">&lt;dfn&gt;</code> element in italics.</p>
+For example:<br />
+
+<p style="background:beige;">
+A <dfn>black hole</dfn> is a region of space from which nothing, not even light, can escape.
+</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">&lt;p&gt;</span>A <span class="kw">&lt;dfn&gt;</span>black hole<span class="kw">&lt;/dfn&gt;</span> is a region of space from which nothing, not even light, can escape.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="address"><em>&lt;address&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;address&gt;</code> element’s use is to contain contact details for the author of the page.<br />
+It can contain a physical address, but it does not have to. For example, it may also contain a phone number or email address.</p>
+<p>Browsers often display the content of the <code style="color: #204a87;">&lt;address&gt;</code> element in italics.</p>
+For example:<br />
+
+<address>
+<p style="background:beige; margin:0; padding:0;">
+<a href="mailto:homer@example.org">homer@example.org</a>
+</p>
+<p style="background:beige; margin:0; padding: 0;">
+742 Evergreen Terrace, Springfield.
+</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">&lt;address&gt;&lt;p&gt;&lt;a</span><span class="ot"> ahref=</span><span class="st">&quot;mailto:homer@example.org&quot;</span><span class="kw">&gt;</span>homer@example.org<span class="kw">&lt;/a&gt;&lt;/p&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="kw">&lt;p&gt;</span>742 Evergreen Terrace, Springfield.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
+<h4 id="ins-del-s"><em>&lt;ins&gt;</em>, <em>&lt;del&gt;</em>, <em>&lt;s&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;ins&gt;</code> element can be used to show that has been inserted into a document, while the <code style="color: #204a87;">&lt;del&gt;</code> element can show text that has been deleted from it.<br />
+The content of an <code style="color: #204a87;">&lt;ins&gt;</code> element is usually underlined, while the content of a <code style="color: #204a87;">&lt;del&gt;</code> element usually has a line through it.</p>
+For example:<br />
+
+<p style="background:beige;">
+It was the <del>worst</del> <ins>best</ins> idea she had ever had.
+</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">&lt;p&gt;</span>It was the <span class="kw">&lt;del&gt;</span>worst<span class="kw">&lt;/del&gt;</span> <span class="kw">&lt;ins&gt;</span>best<span class="kw">&lt;/ins&gt;</span> idea she had ever had.<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>The <code style="color: #204a87;">&lt;s&gt;</code> element indicates something that is no longer accurate or relevant (but that should not be deleted)</p>
+<p>Visually the content of an <code style="color: #204a87;">&lt;s&gt;</code> element will usually be displayed with a line through the center.</p>
+For example:<br />
+
+<p style="background:beige; margin:0; padding:0;">
+Laptop computer:
+</p>
+<p style="background:beige; margin:0; padding:0;">
+<s>Was $995</s>
+</p>
+<p style="background:beige; margin:0; padding:0;">
+Now only $375
+</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">&lt;p&gt;</span>Laptop computer:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">&lt;p&gt;&lt;s&gt;</span>Was $995<span class="kw">&lt;/s&gt;&lt;/p&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="kw">&lt;p&gt;</span>Now only $375<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<h3 id="lists"><u>Lists</u></h3>
+<h4 id="li"><em>&lt;li&gt;</em></h4>
+<p>Each item in a list is placed between the opening <code style="color: #204a87;">&lt;li&gt;</code> tag and its closing <code style="color: #204a87;">&lt;/li&gt;</code> tag. The li stands for “list item”.</p>
+<p>Browsers indent lists by default.</p>
+<h4 id="ol"><em>&lt;ol&gt;</em></h4>
+<p>An ordered list is created with the <code style="color: #204a87;">&lt;ol&gt;</code> element.</p>
+For example:<br />
+
+<ol style="background:beige;">
+<li>
+Chop potatoes into quarters
+</li>
+<li>
+Simmer in salted water for 15-20 minutes until tender
+</li>
+<li>
+Heat milk, butter and nutmeg
+</li>
+<li>
+Drain potatoes and mash
+</li>
+<li>
+Mix in the milk mixture
+</li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">&lt;ol&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="kw">&lt;li&gt;</span>Chop potatoes into quarters<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="kw">&lt;li&gt;</span>Simmer in salted water for 15-20 minutes until tender<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="kw">&lt;li&gt;</span>Heat milk, butter and nutmeg<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="kw">&lt;li&gt;</span>Drain potatoes and mash<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="kw">&lt;li&gt;</span>Mix in the milk mixture<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="kw">&lt;/ol&gt;</span></span></code></pre></div>
+<h4 id="ul"><em>&lt;ul&gt;</em></h4>
+<p>An unordered list is created with the <code style="color: #204a87;">&lt;ul&gt;</code> element.</p>
+For example:<br />
+
+<ul style="background:beige;">
+<li>
+1kg King Edward potatoes
+</li>
+<li>
+100ml milk
+</li>
+<li>
+50g salted butter
+</li>
+<li>
+Freshly grated nutmeg
+</li>
+<li>
+Salt and pepper to taste
+</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="kw">&lt;li&gt;</span>1kg King Edward potatoes<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="kw">&lt;li&gt;</span>100ml milk<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a>  <span class="kw">&lt;li&gt;</span>50g salted butter<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="kw">&lt;li&gt;</span>Freshly grated nutmeg<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="kw">&lt;li&gt;</span>Salt and pepper to taste<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<h4 id="dl-dt-dd"><em>&lt;dl&gt;</em>, <em>&lt;dt&gt;</em>, <em>&lt;dd&gt;</em></h4>
+<p>The definition list is created with the <code style="color: #204a87;">&lt;dl&gt;</code> element and usually consists of a series of terms and their definitions. Inside the <code style="color: #204a87;">&lt;dl&gt;</code> element you will usually see pairs of <code style="color: #204a87;">&lt;dt&gt;</code> and <code style="color: #204a87;">&lt;dd&gt;</code> elements.</p>
+<p>The <code style="color: #204a87;">&lt;dt&gt;</code> element is used to contain the term being defined, while <code style="color: #204a87;">&lt;dd&gt;</code> is used to contain the definition.</p>
+For example:<br />
+<d1 style="background:beige;">
+<dt style="background:beige;">
+Sashimi
+</dt>
+<dd style="background:beige;">
+Sliced raw fish that is served with condiments such as shredded daikon radish or ginger root, wasabi and soy sauce
+</dd>
+<dt style="background:beige;">
+Scale
+</dt>
+<dd style="background:beige;">
+A device used to accurately measure the weight of ingredients
+</dd>
+<dd style="background:beige;">
+A technique by which the scales are removed from the skin of a fish
+</dd>
+<dt style="background:beige;">
+Scamorze
+</dt>
+<dt style="background:beige;">
+Scamorzo
+</dt>
+<dd style="background:beige;">
+An Italian cheese usually made from whole cow’s milk (although it was traditionally made from buffalo milk)
+</dd>
+<p></d1></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">&lt;d1&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="kw">&lt;dt&gt;</span>Sashimi<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="kw">&lt;dd&gt;</span>Sliced raw fish that is served with condiments </span>
+<span id="cb28-4"><a href="#cb28-4"></a>      such as shredded daikon radish or ginger root,</span>
+<span id="cb28-5"><a href="#cb28-5"></a>      wasabi and soy sauce<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>  <span class="kw">&lt;dt&gt;</span>Scale<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="kw">&lt;dd&gt;</span>A device used to accurately measure the </span>
+<span id="cb28-8"><a href="#cb28-8"></a>      weight of ingredients<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="kw">&lt;dd&gt;</span>A technique by which the scales are removed</span>
+<span id="cb28-10"><a href="#cb28-10"></a>      from the skin of a fish<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>  <span class="kw">&lt;dt&gt;</span>Scamorze<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a>  <span class="kw">&lt;dt&gt;</span>Scamorzo<span class="kw">&lt;/dt&gt;</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="kw">&lt;dd&gt;</span>An Italian cheese usually made from whole cow&#39;s</span>
+<span id="cb28-14"><a href="#cb28-14"></a>      milk (although it was traditionally made from buffalo milk)<span class="kw">&lt;/dd&gt;</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a><span class="kw">&lt;/d1&gt;</span></span></code></pre></div>
+<h5 id="nested-lists"><b>nested lists</b>:</h5>
+<p>You can put a second list inside an <code style="color: #204a87;">&lt;li&gt;</code> element to create a sublist or nested list.</p>
+<p>For example:</p>
+<ul style="background:beige;">
+<li>
+Mousses
+</li>
+<li>
+Pastries
+</li>
+<ul>
+<li>
+Croissant
+</li>
+<li>
+Mille-feuille
+</li>
+<li>
+Palmier
+</li>
+<li>
+Profiterole
+</li>
+</ul>
+<li>
+Tarts
+</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="kw">&lt;li&gt;</span>Mousses<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="kw">&lt;li&gt;</span>Pastries<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a>    <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>      <span class="kw">&lt;li&gt;</span>Croissant<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>      <span class="kw">&lt;li&gt;</span>Mille-feuille<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>      <span class="kw">&lt;li&gt;</span>Palmier<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>      <span class="kw">&lt;li&gt;</span>Profiterole<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>    <span class="kw">&lt;/ul&gt;</span> </span>
+<span id="cb29-10"><a href="#cb29-10"></a>  <span class="kw">&lt;li&gt;</span>Tarts<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<h3 id="links"><u>Links</u></h3>
+<p>There are several types of links:</p>
+<ul>
+<li>
+Links from one website to another
+</li>
+<li>
+Links from one page to another on the same website
+</li>
+<li>
+Links from one part of the web page to another part of the same page
+</li>
+<li>
+Links that open in a new browser window
+</li>
+<li>
+Links that start up your email program and address a new email to someone
+</li>
+</ul>
+<h4 id="a"><em>&lt;a&gt;</em></h4>
+<p>Links are created using the <code style="color: #204a87;">&lt;a&gt;</code> element with the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute. When you link to a different website, you use the absolute URL. URL stands for Uniform Resource Locator.</p>
+<p>For example:</p>
+<p style="background:beige;">
+<a href="http://www.rottentomatoes.com">Metacritic</a>
+</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.rottentomatoes.com&quot;</span><span class="kw">&gt;</span>Metacritic<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h5 id="linking-to-other-pages-on-the-same-site"><b>linking to other pages on the same site</b>:</h5>
+<p>When linking to another page on the same site, you do not need to specify the domain name in the URL. You can use a shorthand known as a <code>relative URL</code>. If all the pages of the site are in the same folder, then the value of the href attribute is just the name of the file.</p>
+<p>For example:</p>
+<p>
+<ul style="background:beige;">
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="about.html">About</a>
+</li>
+<li>
+<a href="work.html">Work</a>
+</li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
+</ul>
+</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">&lt;p&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">&lt;ul&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;index.html&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about.html&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;work.html&quot;</span><span class="kw">&gt;</span>Work<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;contact.html&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a>  <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<h5 id="email-links"><b>email links</b>:</h5>
+<p>To create an email link you start similarly with the <code style="color: #204a87;">&lt;a&gt;</code> element and the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute but instead of an absolute or relative URL you enter <code>mailto:</code> followed by an email.</p>
+<p>For example:<br />
+<a style="background:beige;" href="mailto:juaneduardoflores@gmail.com"> Email Juan</a></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;mailto:juaneduardoflores@gmail.com&quot;</span><span class="kw">&gt;</span>Email Juan<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h5 id="opening-links-in-a-new-window"><b>opening links in a new window</b>:</h5>
+<p>If you want a link to open in a new window, you can use the <a href="htmltarget.html"><code style="color: #8f5902;">target</code></a></a> attribute on the opening <code style="color: #204a87;">&lt;a&gt;</code> tag. The value of this attribute should be <code>_blank</code>.</p>
+<p>For example:<br />
+<a style="background:beige" href="http://www.imdb.com" target="_blank">Internet Movie Database</a></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.imbd.com&quot;</span><span class="ot"> target=</span><span class="st">&quot;_blank&quot;</span><span class="kw">&gt;</span>Internet Movie Database<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h5 id="linking-to-a-specific-part-of-the-same-page"><b>linking to a specific part of the same page</b>:</h5>
+<p>This page has these links on the top left side that take you to specific parts of this page. The way this is achieved is by using the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute. You can use this on any HTML element. In this page’s case, there is an <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> for every 2nd, 3rd, or 4th level header.</p>
+<p>The value of the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute should start with a letter or an underscore (not a number or any other character) and, on a single page, no two <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attributes should have the same value.</p>
+<p>To link to an element that uses the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute you use the <code style="color: #204a87;">&lt;a&gt;</code> element again, but the value of the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a> attribute starts with the <code>#</code> symbol, followed by the value of the id attribute of the element you want to link to.</p>
+<p>For example:<br />
+<a style="background:beige" href="#basics">basics</a> - takes you to the top header with the id “basics”.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#basics&quot;</span><span class="kw">&gt;</span>basics<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h3 id="images"><u>Images</u></h3> 
         </div>
       </div>
       <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
