@@ -139,7 +139,10 @@
 <ul>
 <li><a href="#a"><em>&lt;a&gt;</em></a></li>
 </ul></li>
-<li><a href="#images"><u>Images</u></a></li>
+<li><a href="#images"><u>Images</u></a>
+<ul>
+<li><a href="#img"><em>&lt;img&gt;</em></a></li>
+</ul></li>
 </ul> 
             </div>
           </div>
@@ -358,7 +361,7 @@ I think Ivy was the <em>first</em>.
 For example:<br />
 
 <blockquote cite="http://en.wikipedia.org/wiki/Winnie-the-Pooh">
-<p style="background: beige; margin:0; padding:0;">
+<p style="background: beige;">
 Did you ever stop to think, and forget to start again?
 </p>
 </blockquote>
@@ -511,6 +514,9 @@ Salt and pepper to taste
 <span id="cb27-5"><a href="#cb27-5"></a>  <span class="kw">&lt;li&gt;</span>Freshly grated nutmeg<span class="kw">&lt;/li&gt;</span></span>
 <span id="cb27-6"><a href="#cb27-6"></a>  <span class="kw">&lt;li&gt;</span>Salt and pepper to taste<span class="kw">&lt;/li&gt;</span></span>
 <span id="cb27-7"><a href="#cb27-7"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
 <h4 id="dl-dt-dd"><em>&lt;dl&gt;</em>, <em>&lt;dt&gt;</em>, <em>&lt;dd&gt;</em></h4>
 <p>The definition list is created with the <code style="color: #204a87;">&lt;dl&gt;</code> element and usually consists of a series of terms and their definitions. Inside the <code style="color: #204a87;">&lt;dl&gt;</code> element you will usually see pairs of <code style="color: #204a87;">&lt;dt&gt;</code> and <code style="color: #204a87;">&lt;dd&gt;</code> elements.</p>
 <p>The <code style="color: #204a87;">&lt;dt&gt;</code> element is used to contain the term being defined, while <code style="color: #204a87;">&lt;dd&gt;</code> is used to contain the definition.</p>
@@ -617,14 +623,13 @@ Links that start up your email program and address a new email to someone
 <h4 id="a"><em>&lt;a&gt;</em></h4>
 <p>Links are created using the <code style="color: #204a87;">&lt;a&gt;</code> element with the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute. When you link to a different website, you use the absolute URL. URL stands for Uniform Resource Locator.</p>
 <p>For example:</p>
-<p style="background:beige;">
+<p style="background:beige; text-align:center;">
 <a href="http://www.rottentomatoes.com">Metacritic</a>
 </p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.rottentomatoes.com&quot;</span><span class="kw">&gt;</span>Metacritic<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <h5 id="linking-to-other-pages-on-the-same-site"><b>linking to other pages on the same site</b>:</h5>
 <p>When linking to another page on the same site, you do not need to specify the domain name in the URL. You can use a shorthand known as a <code>relative URL</code>. If all the pages of the site are in the same folder, then the value of the href attribute is just the name of the file.</p>
 <p>For example:</p>
-<p>
 <ul style="background:beige;">
 <li>
 <a href="index.html">Home</a>
@@ -639,15 +644,12 @@ Links that start up your email program and address a new email to someone
 <a href="contact.html">Contact</a>
 </li>
 </ul>
-</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">&lt;p&gt;</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">&lt;ul&gt;</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;index.html&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about.html&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-5"><a href="#cb31-5"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;work.html&quot;</span><span class="kw">&gt;</span>Work<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-6"><a href="#cb31-6"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;contact.html&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-7"><a href="#cb31-7"></a>  <span class="kw">&lt;/ul&gt;</span></span>
-<span id="cb31-8"><a href="#cb31-8"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;index.html&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about.html&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;work.html&quot;</span><span class="kw">&gt;</span>Work<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;contact.html&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
 <h5 id="email-links"><b>email links</b>:</h5>
 <p>To create an email link you start similarly with the <code style="color: #204a87;">&lt;a&gt;</code> element and the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute but instead of an absolute or relative URL you enter <code>mailto:</code> followed by an email.</p>
 <p>For example:<br />
@@ -655,17 +657,68 @@ Links that start up your email program and address a new email to someone
 <div class="sourceCode" id="cb32"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;mailto:juaneduardoflores@gmail.com&quot;</span><span class="kw">&gt;</span>Email Juan<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <h5 id="opening-links-in-a-new-window"><b>opening links in a new window</b>:</h5>
 <p>If you want a link to open in a new window, you can use the <a href="htmltarget.html"><code style="color: #8f5902;">target</code></a></a> attribute on the opening <code style="color: #204a87;">&lt;a&gt;</code> tag. The value of this attribute should be <code>_blank</code>.</p>
-<p>For example:<br />
-<a style="background:beige" href="http://www.imdb.com" target="_blank">Internet Movie Database</a></p>
+<p>For example:</p>
+<p style="background:beige; text-align:center;">
+<a style="background:beige" href="http://www.imdb.com" target="_blank">Internet Movie Database</a>
+</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.imbd.com&quot;</span><span class="ot"> target=</span><span class="st">&quot;_blank&quot;</span><span class="kw">&gt;</span>Internet Movie Database<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <h5 id="linking-to-a-specific-part-of-the-same-page"><b>linking to a specific part of the same page</b>:</h5>
 <p>This page has these links on the top left side that take you to specific parts of this page. The way this is achieved is by using the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute. You can use this on any HTML element. In this page’s case, there is an <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> for every 2nd, 3rd, or 4th level header.</p>
 <p>The value of the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute should start with a letter or an underscore (not a number or any other character) and, on a single page, no two <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attributes should have the same value.</p>
 <p>To link to an element that uses the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute you use the <code style="color: #204a87;">&lt;a&gt;</code> element again, but the value of the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a> attribute starts with the <code>#</code> symbol, followed by the value of the id attribute of the element you want to link to.</p>
-<p>For example:<br />
-<a style="background:beige" href="#basics">basics</a> - takes you to the top header with the id “basics”.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#basics&quot;</span><span class="kw">&gt;</span>basics<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
-<h3 id="images"><u>Images</u></h3> -->
+<p>For example:</p>
+<p style="background:beige; text-align:center;">
+<a href="#basics">basics</a>
+</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">&lt;!-- takes you to the top header --&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#basics&quot;</span><span class="kw">&gt;</span>basics<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h3 id="images"><u>Images</u></h3>
+<h4 id="img"><em>&lt;img&gt;</em></h4>
+<p>To add an image into the page you need to use the <code style="color: #204a87;">&lt;img&gt;</code> element. This is an <code>empty element</code> (which means there is no closing tag). It must carry two attributes: <a href="htmlsrc.html"><code style="color: #8f5902;">src</code></a> and <a href="htmlalt.html"><code style="color: #8f5902;">alt</code></a>.</p>
+<p>The <a href="htmlsrc.html"><code style="color: #8f5902;">src</code></a> attribute tells the browser where it can find the image file. This will usually be a relative URL pointing to an image on your own site. For example, it could be located in a folder called “images”.</p>
+<p>The <a href="htmlalt.html"><code style="color: #8f5902;">alt</code></a> attribute provides a text description of the image which describes the image if you cannot see it.</p>
+<p>There is also the optional <a href="htmltitle.html"><code style="color: #8f5902;">title</code></a> attribute to provide additional information about the image. Most browsers will display the content of this attribute in a tooltip when the users hovers over the image.</p>
+<h5 id="height-width-of-images"><b>height &amp; width of images</b>:</h5>
+<p>You can specify the size of the image by providing the dimensions using the <a href="htmlwidth.html"><code style="color: #8f5902;">width</code></a> and <a href="htmlheight.html"><code style="color: #8f5902;">height</code></a> attributes.</p>
+<p>For example:</p>
+<p style="text-align:center; background:beige;">
+<img src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="120" height="160" align="center"/>
+</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;text-align:center;&quot;</span><span class="kw">&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> title=</span><span class="st">&quot;woof!&quot;</span><span class="ot"> width=</span><span class="st">&quot;200&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="ot"> align=</span><span class="st">&quot;center&quot;</span><span class="kw">/&gt;&lt;/p&gt;</span></span></code></pre></div>
+<h5 id="where-to-place-images-in-your-code"><b>where to place images in your code</b>:</h5>
+<p>You can place an image in several places for different results.</p>
+<p>For example:</p>
+<ul>
+<li>
+before a paragraph
+</li>
+<li>
+Inside the start of a paragraph
+</li>
+<li>
+in the middle of a paragraph
+</li>
+</ul>
+<p style="background:beige; margin:0;">
+<img src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="40" height="400"/>
+</p>
+<p style="background:beige; margin:0;">
+There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.
+</p>
+<hr style="background:beige; margin:0;"/>
+<p style="background:beige; margin:0;">
+<img align="bottom" src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="40" height="400"/> There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.
+</p>
+<hr style="background:beige; margin:0;"/>
+<p style="background:beige; margin:0;">
+There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual <img src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="40" height="400"/> migrations, and many more perform shorter irregular journeys.
+</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> width=</span><span class="st">&quot;200&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="kw">/&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="kw">&lt;p&gt;</span>There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="kw">&lt;p&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> width=</span><span class="st">&quot;200&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="kw">/&gt;</span> There are  areound 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="kw">&lt;p&gt;</span>There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> width=</span><span class="st">&quot;40&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="kw">/&gt;</span> migrations, and many more perform shorter irregular journeys.<span class="kw">&lt;/p&gt;</span></span></code></pre></div> -->
 
           <p id="basics" style="font-size: 28px; font-weight: bold; margin:0;">
 Basics
@@ -879,7 +932,7 @@ I think Ivy was the <em>first</em>.
 For example:<br />
 
 <blockquote cite="http://en.wikipedia.org/wiki/Winnie-the-Pooh">
-<p style="background: beige; margin:0; padding:0;">
+<p style="background: beige;">
 Did you ever stop to think, and forget to start again?
 </p>
 </blockquote>
@@ -1032,6 +1085,9 @@ Salt and pepper to taste
 <span id="cb27-5"><a href="#cb27-5"></a>  <span class="kw">&lt;li&gt;</span>Freshly grated nutmeg<span class="kw">&lt;/li&gt;</span></span>
 <span id="cb27-6"><a href="#cb27-6"></a>  <span class="kw">&lt;li&gt;</span>Salt and pepper to taste<span class="kw">&lt;/li&gt;</span></span>
 <span id="cb27-7"><a href="#cb27-7"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<p style="text-align: center; font-weight: bold;">
+———
+</p>
 <h4 id="dl-dt-dd"><em>&lt;dl&gt;</em>, <em>&lt;dt&gt;</em>, <em>&lt;dd&gt;</em></h4>
 <p>The definition list is created with the <code style="color: #204a87;">&lt;dl&gt;</code> element and usually consists of a series of terms and their definitions. Inside the <code style="color: #204a87;">&lt;dl&gt;</code> element you will usually see pairs of <code style="color: #204a87;">&lt;dt&gt;</code> and <code style="color: #204a87;">&lt;dd&gt;</code> elements.</p>
 <p>The <code style="color: #204a87;">&lt;dt&gt;</code> element is used to contain the term being defined, while <code style="color: #204a87;">&lt;dd&gt;</code> is used to contain the definition.</p>
@@ -1138,14 +1194,13 @@ Links that start up your email program and address a new email to someone
 <h4 id="a"><em>&lt;a&gt;</em></h4>
 <p>Links are created using the <code style="color: #204a87;">&lt;a&gt;</code> element with the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute. When you link to a different website, you use the absolute URL. URL stands for Uniform Resource Locator.</p>
 <p>For example:</p>
-<p style="background:beige;">
+<p style="background:beige; text-align:center;">
 <a href="http://www.rottentomatoes.com">Metacritic</a>
 </p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.rottentomatoes.com&quot;</span><span class="kw">&gt;</span>Metacritic<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <h5 id="linking-to-other-pages-on-the-same-site"><b>linking to other pages on the same site</b>:</h5>
 <p>When linking to another page on the same site, you do not need to specify the domain name in the URL. You can use a shorthand known as a <code>relative URL</code>. If all the pages of the site are in the same folder, then the value of the href attribute is just the name of the file.</p>
 <p>For example:</p>
-<p>
 <ul style="background:beige;">
 <li>
 <a href="index.html">Home</a>
@@ -1160,15 +1215,12 @@ Links that start up your email program and address a new email to someone
 <a href="contact.html">Contact</a>
 </li>
 </ul>
-</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">&lt;p&gt;</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">&lt;ul&gt;</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;index.html&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about.html&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-5"><a href="#cb31-5"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;work.html&quot;</span><span class="kw">&gt;</span>Work<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-6"><a href="#cb31-6"></a>    <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;contact.html&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
-<span id="cb31-7"><a href="#cb31-7"></a>  <span class="kw">&lt;/ul&gt;</span></span>
-<span id="cb31-8"><a href="#cb31-8"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;index.html&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about.html&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;work.html&quot;</span><span class="kw">&gt;</span>Work<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;contact.html&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;&lt;/li&gt;</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
 <h5 id="email-links"><b>email links</b>:</h5>
 <p>To create an email link you start similarly with the <code style="color: #204a87;">&lt;a&gt;</code> element and the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a></a> attribute but instead of an absolute or relative URL you enter <code>mailto:</code> followed by an email.</p>
 <p>For example:<br />
@@ -1176,17 +1228,68 @@ Links that start up your email program and address a new email to someone
 <div class="sourceCode" id="cb32"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;mailto:juaneduardoflores@gmail.com&quot;</span><span class="kw">&gt;</span>Email Juan<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <h5 id="opening-links-in-a-new-window"><b>opening links in a new window</b>:</h5>
 <p>If you want a link to open in a new window, you can use the <a href="htmltarget.html"><code style="color: #8f5902;">target</code></a></a> attribute on the opening <code style="color: #204a87;">&lt;a&gt;</code> tag. The value of this attribute should be <code>_blank</code>.</p>
-<p>For example:<br />
-<a style="background:beige" href="http://www.imdb.com" target="_blank">Internet Movie Database</a></p>
+<p>For example:</p>
+<p style="background:beige; text-align:center;">
+<a style="background:beige" href="http://www.imdb.com" target="_blank">Internet Movie Database</a>
+</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://www.imbd.com&quot;</span><span class="ot"> target=</span><span class="st">&quot;_blank&quot;</span><span class="kw">&gt;</span>Internet Movie Database<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
 <h5 id="linking-to-a-specific-part-of-the-same-page"><b>linking to a specific part of the same page</b>:</h5>
 <p>This page has these links on the top left side that take you to specific parts of this page. The way this is achieved is by using the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute. You can use this on any HTML element. In this page’s case, there is an <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> for every 2nd, 3rd, or 4th level header.</p>
 <p>The value of the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute should start with a letter or an underscore (not a number or any other character) and, on a single page, no two <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attributes should have the same value.</p>
 <p>To link to an element that uses the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute you use the <code style="color: #204a87;">&lt;a&gt;</code> element again, but the value of the <a href="htmlhref.html"><code style="color: #8f5902;">href</code></a> attribute starts with the <code>#</code> symbol, followed by the value of the id attribute of the element you want to link to.</p>
-<p>For example:<br />
-<a style="background:beige" href="#basics">basics</a> - takes you to the top header with the id “basics”.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#basics&quot;</span><span class="kw">&gt;</span>basics<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
-<h3 id="images"><u>Images</u></h3> 
+<p>For example:</p>
+<p style="background:beige; text-align:center;">
+<a href="#basics">basics</a>
+</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">&lt;!-- takes you to the top header --&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#basics&quot;</span><span class="kw">&gt;</span>basics<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<h3 id="images"><u>Images</u></h3>
+<h4 id="img"><em>&lt;img&gt;</em></h4>
+<p>To add an image into the page you need to use the <code style="color: #204a87;">&lt;img&gt;</code> element. This is an <code>empty element</code> (which means there is no closing tag). It must carry two attributes: <a href="htmlsrc.html"><code style="color: #8f5902;">src</code></a> and <a href="htmlalt.html"><code style="color: #8f5902;">alt</code></a>.</p>
+<p>The <a href="htmlsrc.html"><code style="color: #8f5902;">src</code></a> attribute tells the browser where it can find the image file. This will usually be a relative URL pointing to an image on your own site. For example, it could be located in a folder called “images”.</p>
+<p>The <a href="htmlalt.html"><code style="color: #8f5902;">alt</code></a> attribute provides a text description of the image which describes the image if you cannot see it.</p>
+<p>There is also the optional <a href="htmltitle.html"><code style="color: #8f5902;">title</code></a> attribute to provide additional information about the image. Most browsers will display the content of this attribute in a tooltip when the users hovers over the image.</p>
+<h5 id="height-width-of-images"><b>height &amp; width of images</b>:</h5>
+<p>You can specify the size of the image by providing the dimensions using the <a href="htmlwidth.html"><code style="color: #8f5902;">width</code></a> and <a href="htmlheight.html"><code style="color: #8f5902;">height</code></a> attributes.</p>
+<p>For example:</p>
+<p style="text-align:center; background:beige;">
+<img src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="120" height="160" align="center"/>
+</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">&lt;p</span><span class="ot"> style=</span><span class="st">&quot;text-align:center;&quot;</span><span class="kw">&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> title=</span><span class="st">&quot;woof!&quot;</span><span class="ot"> width=</span><span class="st">&quot;200&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="ot"> align=</span><span class="st">&quot;center&quot;</span><span class="kw">/&gt;&lt;/p&gt;</span></span></code></pre></div>
+<h5 id="where-to-place-images-in-your-code"><b>where to place images in your code</b>:</h5>
+<p>You can place an image in several places for different results.</p>
+<p>For example:</p>
+<ul>
+<li>
+before a paragraph
+</li>
+<li>
+Inside the start of a paragraph
+</li>
+<li>
+in the middle of a paragraph
+</li>
+</ul>
+<p style="background:beige; margin:0;">
+<img src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="40" height="400"/>
+</p>
+<p style="background:beige; margin:0;">
+There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.
+</p>
+<hr style="background:beige; margin:0;"/>
+<p style="background:beige; margin:0;">
+<img align="bottom" src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="40" height="400"/> There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.
+</p>
+<hr style="background:beige; margin:0;"/>
+<p style="background:beige; margin:0;">
+There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual <img src="images/woof.bmp" alt="A pic of a dog" title="woof!" width="40" height="400"/> migrations, and many more perform shorter irregular journeys.
+</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> width=</span><span class="st">&quot;200&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="kw">/&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="kw">&lt;p&gt;</span>There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="kw">&lt;p&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> width=</span><span class="st">&quot;200&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="kw">/&gt;</span> There are  areound 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual migrations, and many more perform shorter irregular journeys.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="kw">&lt;p&gt;</span>There are around 10,000 living species of birds that inhabit different ecosystems from the Arctic to the Antarctic. Many species undertake long distance annual <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/woof.bmp&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A pic of a dog&quot;</span><span class="ot"> width=</span><span class="st">&quot;40&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="kw">/&gt;</span> migrations, and many more perform shorter irregular journeys.<span class="kw">&lt;/p&gt;</span></span></code></pre></div> 
         </div>
       </div>
       <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>

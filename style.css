@@ -64,7 +64,7 @@ p {
 }
 
 img {
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 h1,
@@ -226,7 +226,7 @@ dd:last-child {
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 /* figure { */
