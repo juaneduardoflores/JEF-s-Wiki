@@ -154,6 +154,12 @@
 <ul>
 <li><a href="#form"><em>&lt;form&gt;</em></a></li>
 <li><a href="#input"><em>&lt;input&gt;</em></a></li>
+<li><a href="#textarea"><em>&lt;textarea&gt;</em></a></li>
+<li><a href="#select"><em>&lt;select&gt;</em></a></li>
+<li><a href="#option"><em>&lt;option&gt;</em></a></li>
+<li><a href="#button"><em>&lt;button&gt;</em></a></li>
+<li><a href="#label"><em>&lt;label&gt;</em></a></li>
+<li><a href="#fieldset-legend"><em>&lt;fieldset&gt;</em>, <em>&lt;legend&gt;</em></a></li>
 </ul></li>
 </ul> 
             </div>
@@ -1149,7 +1155,197 @@ Username: <input type="text" name="username" size="15" maxlength="30" />
 <span id="cb44-2"><a href="#cb44-2"></a>  <span class="kw">&lt;p&gt;</span>Username:</span>
 <span id="cb44-3"><a href="#cb44-3"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;username&quot;</span><span class="ot"> size=</span><span class="st">&quot;15&quot;</span><span class="ot"> maxlength=</span><span class="st">&quot;30&quot;</span> <span class="kw">/&gt;</span> </span>
 <span id="cb44-4"><a href="#cb44-4"></a>  <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div> -->
+<span id="cb44-5"><a href="#cb44-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="password-input"><b>password input</b>:</h5>
+<p>If you want a password input, you can give the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute the value of <code style="color:#4e9a06;">“password”</code>. The text box acts like a single-line text input, except the characters are blocked out.</p>
+<h4 id="textarea"><em>&lt;textarea&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;textarea&gt;</code> element is used to create a multi-line text input. Unlike other input elements this is not an empty element. It should therefore have an opening and a closing tag.</p>
+<p>For example:</p>
+<form action="http://www.example.com/comments.php" style="background:beige;">
+<p>
+What did you think of this gig?
+</p>
+<textarea name="comments">Enter your comments...</textarea>
+</form>
+<div class="sourceCode" id="cb45"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/comments.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="kw">&lt;p&gt;</span>What did you think of this gig?<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>  <span class="kw">&lt;textarea</span><span class="ot"> name=</span><span class="st">&quot;comments&quot;</span><span class="kw">&gt;</span>Enter your comments...<span class="kw">&lt;/textarea&gt;</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="radio-button"><b>radio button</b>:</h5>
+<p>To create a radio button, add the <code style="color:#4e9a06;">“radio”</code> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute.</p>
+<p>The values of the <a href="htmlname.html"><code style="color: #8f5902;">name</code></a> and <a href="htmlvalue.html"><code style="color: #8f5902;">value</code></a> attributes are sent to the server when the user selects and submits the form.</p>
+<p>the <a href="htmlchecked.html"><code style="color: #8f5902;">checked</code></a> attribute can be used to indicate which value (if any) should be selected when the page loads. Only one radio button in a group should use this attribute.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+Please select your favorite genre:
+</p>
+<br /> <input type="radio" name="genre" value="rock" checked="checked">Rock</input> <input type="radio" name="genre" value="pop">Pop</input> <input type="radio" name="genre" value="jazz">Jazz</input>
+</form>
+<div class="sourceCode" id="cb46"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="kw">&lt;p&gt;</span>Please select your favorite genre:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>  <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;genre&quot;</span><span class="ot"> value=</span><span class="st">&quot;rock&quot;</span><span class="ot"> checked=</span><span class="st">&quot;checked&quot;</span><span class="kw">&gt;</span>Rock<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;genre&quot;</span><span class="ot"> value=</span><span class="st">&quot;pop&quot;</span><span class="kw">&gt;</span>Pop<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;genre&quot;</span><span class="ot"> value=</span><span class="st">&quot;jazz&quot;</span><span class="kw">&gt;</span>Jazz<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="checkbox"><b>checkbox</b>:</h5>
+<p>To use a checkbox, enter the <code style="color:#4e9a06;">“checkbox”</code> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute.</p>
+<p>The <a href="htmlname.html"><code style="color: #8f5902;">name</code></a>, <a href="htmlvalue.html"><code style="color: #8f5902;">value</code></a>, and <a href="htmlchecked.html"><code style="color: #8f5902;">checked</code></a> attributes behave similarly to the radio button.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+Please select your favorite music service(s): <br /> <input type="checkbox" name="service" value="itunes" checked="checked"> iTunes</input> <input type="checkbox" name="service" value="lastfm"> Last.fm</input> <input type="checkbox" name="service" value="spotify"> Spotify</input>
+</p>
+</form>
+<div class="sourceCode" id="cb47"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="kw">&lt;p&gt;</span>Please select your favorite music service(s):</span>
+<span id="cb47-3"><a href="#cb47-3"></a>    <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> name=</span><span class="st">&quot;service&quot;</span><span class="ot"> value=</span><span class="st">&quot;itunes&quot;</span><span class="ot"> checked=</span><span class="st">&quot;checked&quot;</span><span class="kw">&gt;</span> iTunes<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> name=</span><span class="st">&quot;service&quot;</span><span class="ot"> value=</span><span class="st">&quot;lastfm&quot;</span><span class="kw">&gt;</span> Last.fm<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> name=</span><span class="st">&quot;service&quot;</span><span class="ot"> value=</span><span class="st">&quot;spotify&quot;</span><span class="kw">&gt;</span> Spotify<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h4 id="select"><em>&lt;select&gt;</em></h4>
+<p>A drop down list box (also known as a select box) allows users to select one option from a drop down list. A <code style="color: #204a87;">&lt;select&gt;</code> element is used to create it. It contains two or more <code style="color: #204a87;">&lt;option&gt;</code> elements.</p>
+<h4 id="option"><em>&lt;option&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;option&gt;</code> element is used to specify the options that the user can select from.</p>
+<h5 id="selected"><a href="htmlselected.html"><code style="color: #8f5902;">selected</code></a></h5>
+<p>The <a href="htmlselected.html"><code style="color: #8f5902;">selected</code></a> attribute can be used to indicate the option that should be selected when the page loads. If not used, the first option will be shows when the page loads.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+What device do you listen to music on?
+</p>
+<select name="devices"> <option value="ipod">iPod</option> <option value="radio">Radio</option> <option value="Computer">Computer</option> </select>
+</form>
+<div class="sourceCode" id="cb48"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="kw">&lt;p&gt;</span> What device do you listen to music on? <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;devices&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;ipod&quot;</span><span class="kw">&gt;</span>iPod<span class="kw">&lt;/option&gt;</span> </span>
+<span id="cb48-5"><a href="#cb48-5"></a>      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;radio&quot;</span><span class="kw">&gt;</span>Radio<span class="kw">&lt;/option&gt;</span> </span>
+<span id="cb48-6"><a href="#cb48-6"></a>      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;Computer&quot;</span><span class="kw">&gt;</span>Computer<span class="kw">&lt;/option&gt;</span> </span>
+<span id="cb48-7"><a href="#cb48-7"></a>    <span class="kw">&lt;/select&gt;</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="multiple-select-box"><b>multiple select box</b>:</h5>
+<p>You can turn a drop down select box into a box that shows more than one option by adding the <a href="htmlsize.html"><code style="color: #8f5902;">size</code></a> attribute. Its value should be the number of options you want to show at once.</p>
+<p>You can also allow users to select multiple options from this list by adding the <a href="htmlmultiple.html"><code style="color: #8f5902;">multiple</code></a> attribute with a value of <code style="color:#4e9a06;">“multiple”</code>. It is a good idea to tell users if they can select more than one option at a time, and that to select multiple options you use the <code>control</code> key on PC and the <code>command</code> key on Mac.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+Do you play any of the following instruments? (You can select more than one option)
+</p>
+<select name="instruments" size="3" multiple="multiple"> <option value="guitar" selected="selected">Guitar</option> <option value="drums">Drums</option> <option value="keyboard">Keyboard</option> <option value="bass">Bass</option> </select>
+</form>
+<div class="sourceCode" id="cb49"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="kw">&lt;p&gt;</span>Do you play any of the following instruments? (You can select more than one option)<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;instruments&quot;</span><span class="ot"> size=</span><span class="st">&quot;3&quot;</span><span class="ot"> multiple=</span><span class="st">&quot;multiple&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;guitar&quot;</span><span class="ot"> selected=</span><span class="st">&quot;selected&quot;</span><span class="kw">&gt;</span>Guitar<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;drums&quot;</span><span class="kw">&gt;</span>Drums<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;keyboard&quot;</span><span class="kw">&gt;</span>Keyboard<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;bass&quot;</span><span class="kw">&gt;</span>Bass<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a>  <span class="kw">&lt;/select&gt;</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="file-input-box"><b>file input box</b>:</h5>
+<p>If you want to allow users to upload a file you will need a file input box. To use it, use the <code style="color: #4e9a06;">“file”</code> value for the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute. When you are allowing users to upload files, the <a href="htmlmethod.html"><code style="color: #8f5902;">method</code></a> attribute must have a value of <code style="color: #4e9a06;">“post”</code style="color: #4e9a06;">.</p>
+<p>For example:</p>
+<form action="http://www.example.com/upload.php" method="post" style="background:beige;">
+<p>
+Upload your song in MP3 format:
+</p>
+<input type="file" name="user-song" /><br /> <input type="submit" value="Upload" />
+</form>
+<div class="sourceCode" id="cb50"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/upload.php&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>  <span class="kw">&lt;p&gt;</span>Upload your song in MP3 format:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb50-3"><a href="#cb50-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;file&quot;</span><span class="ot"> name=</span><span class="st">&quot;user-song&quot;</span> <span class="kw">/&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Upload&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="submit-button"><b>submit button</b>:</h5>
+<p>To use a submit button, enter the <code style="color: #4e9a06;">“submit”</code style="color: #4e9a06;"> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute. The submit button is used to send a form to the server. It can use a <a href="htmlname.html"><code style="color: #8f5902;">name</code></a> attribute but it does need to have one. The <a href="htmlvalue.html"><code style="color: #8f5902;">value</code></a> attribute is used to control the text htat appears on a button.</p>
+<p>For example:</p>
+<form action="http://www.example.com/subscribe.php" style="background:beige;">
+<p>
+Subscribe to our email list:
+</p>
+<input type="text" name="email" /> <input type="submit" name="subscribe" value="subscribe" />
+</form>
+<div class="sourceCode" id="cb51"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb51-1"><a href="#cb51-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/subscribe.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>  <span class="kw">&lt;p&gt;</span>Subscribe to our email list:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb51-3"><a href="#cb51-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;email&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb51-4"><a href="#cb51-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> name=</span><span class="st">&quot;subscribe&quot;</span><span class="ot"> value=</span><span class="st">&quot;subscribe&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<p>If you want to use an image for the submit button you can give the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute the value of <code style="color: #4e9a06;">“image”</code>. The <a href="htmlsrc.html"><code style="color: #8f5902;">src</code></a>, <a href="htmlwidth.html"><code style="color: #8f5902;">width</code></a>, <a href="htmlheight.html"><code style="color: #8f5902;">height</code></a>, and <a href="htmlalt.html"><code style="color: #8f5902;">alt</code></a> attributes work the same way as they do with the <code style="color: #204a87;">&lt;img&gt;</code> element.</p>
+<p>For example:</p>
+<form action="http://www.example.org/subscribe.php" style="background:beige;">
+<p>
+Subscribe to our email list:
+</p>
+<input type="text" name="email" /> <input type="image" src="images/subscribe.png" width="70" />
+</form>
+<div class="sourceCode" id="cb52"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb52-1"><a href="#cb52-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.org/subscribe.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="kw">&lt;p&gt;</span>Subscribe to our email list:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb52-3"><a href="#cb52-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;email&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb52-4"><a href="#cb52-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;image&quot;</span><span class="ot"> src=</span><span class="st">&quot;images/subscribe.png&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h4 id="button"><em>&lt;button&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;button&gt;</code> element was introduced to allow users moer control over how their buttons appear, and to allow other elements to appear inside the button. This means you can combine text and images.</p>
+<p>If you put the <code style="color: #4e9a06;">“hidden”</code> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute, then it will hide the element from the webpage. In the following example the input element is hidden.</p>
+<p>For example:</p>
+<form action="http://www.example.com/add.php" style="background:beige;">
+<button>
+<img src="images/subscribe.png" alt="add" /> Add
+</button>
+<input type="hidden" name="bookmark" value="lyrics" />
+</form>
+<div class="sourceCode" id="cb53"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb53-1"><a href="#cb53-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/add.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>  <span class="kw">&lt;button&gt;</span> <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/subscribe.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;add&quot;</span> <span class="kw">/&gt;</span> Add<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb53-3"><a href="#cb53-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;hidden&quot;</span><span class="ot"> name=</span><span class="st">&quot;bookmark&quot;</span><span class="ot"> value=</span><span class="st">&quot;lyrics&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h4 id="label"><em>&lt;label&gt;</em></h4>
+<p>Each form control should have its own <code style="color: #204a87;">&lt;label&gt;</code> element as this makes the form accessible to vision-impaired users. There are two ways the <a href="htmllabel.html"><code style="color: #8f5902;">label</code></a> attribute can be used as demonstrated in the following example.</p>
+<p>The <a href="htmlfor.html"><code style="color: #8f5902;">for</code></a> attribute states which form control the label belongs to. The value of the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute is used to uniquely identify an element from all other elements on a page.</p>
+<p>For example:</p>
+<p style="background:beige;">
+<label>Age: <input type="text" name="age"/></label> <br /> Gender: <input id="female" type="radio" name="gender" value="f"> <label for="female">Female</label> <input id="male" type="radio" name="gender" value="m"> <label for="male">male</label>
+</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb54-1"><a href="#cb54-1"></a><span class="kw">&lt;label&gt;</span>Age: <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;age&quot;</span><span class="kw">/&gt;&lt;/label&gt;</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a>Gender:</span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;female&quot;</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;gender&quot;</span><span class="ot"> value=</span><span class="st">&quot;f&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;female&quot;</span><span class="kw">&gt;</span>Female<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;male&quot;</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;gender&quot;</span><span class="ot"> value=</span><span class="st">&quot;m&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-7"><a href="#cb54-7"></a><span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;male&quot;</span><span class="kw">&gt;</span>male<span class="kw">&lt;/label&gt;</span></span></code></pre></div>
+<h5 id="grouping-form-elements"><b>grouping form elements</b>:</h5>
+<h4 id="fieldset-legend"><em>&lt;fieldset&gt;</em>, <em>&lt;legend&gt;</em></h4>
+<p>You can group related form controls together inside a <code style="color: #204a87;">&lt;fieldset&gt;</code> element. This is useful for longer forms. The <code style="color: #204a87;">&lt;legend&gt;</code> element can come directly after the opening <code style="color: #204a87;">&lt;fieldset&gt;</code> tag and contains a caption which helps identify the purpose of that group of form controls.</p>
+<p>For example:</p>
+<fieldset style="background:beige;">
+<legend>Contact details</legend> <label>Email:<br /> <input type="text" name="email" /></label><br /> <label>Mobile:<br /> <input type="text" name="mobile" /></label><br /> <label>Telephone:<br /> <input type="text" name="telephone" /></label><br />
+</fieldset>
+<div class="sourceCode" id="cb55"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb55-1"><a href="#cb55-1"></a><span class="kw">&lt;fieldset&gt;</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>  <span class="kw">&lt;legend&gt;</span>Contact details<span class="kw">&lt;/legend&gt;</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a>  <span class="kw">&lt;label&gt;</span>Email:<span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;email&quot;</span> <span class="kw">/&gt;&lt;/label&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a>  <span class="kw">&lt;label&gt;</span>Mobile:<span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;mobile&quot;</span> <span class="kw">/&gt;&lt;/label&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a>  <span class="kw">&lt;label&gt;</span>Telephone:<span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-8"><a href="#cb55-8"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;telephone&quot;</span> <span class="kw">/&gt;&lt;/label&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-9"><a href="#cb55-9"></a><span class="kw">&lt;/fieldset&gt;</span></span></code></pre></div>
+<h5 id="form-validation"><b>form validation</b>:</h5>
+<p>Form validation is when a message appears from a form control saying that it has not been filled in correctly. Traditionally, form validation has been performed using JavaScript but HTML5 introduced validation and leaving the work to the browser.<br />
+Validation helps ensure the user enter information in a form that the server will be able to understand when the form is submitted.</p>
+<p>The <a href="htmlrequired.html"><code style="color: #8f5902;">required</code></a> attribute is used with a value of <code style="color: #4e9a06;">“required”</code style="color: #4e9a06;"> to make a form control required.</p>
+<p>For example:</p>
+<form action="http://www.example.com/login/" method="post" style="background:beige;">
+<label for="username">Username:</label> <input type="text" name="username" required="required" /><br /> <label for="password">Password:</label> <input type="password" name="password" required="required" /><br /> <input type="submit" value="Submit" />
+</form >
+<div class="sourceCode" id="cb56"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb56-1"><a href="#cb56-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/login/&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;username&quot;</span><span class="kw">&gt;</span>Username:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb56-3"><a href="#cb56-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;username&quot;</span><span class="ot"> required=</span><span class="st">&quot;required&quot;</span> <span class="kw">/&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb56-4"><a href="#cb56-4"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;password&quot;</span><span class="kw">&gt;</span>Password:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;password&quot;</span><span class="ot"> name=</span><span class="st">&quot;password&quot;</span><span class="ot"> required=</span><span class="st">&quot;required&quot;</span> <span class="kw">/&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Submit&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb56-7"><a href="#cb56-7"></a><span class="kw">&lt;/form</span> <span class="kw">&gt;</span></span></code></pre></div> -->
 
           <p id="basics" style="font-size: 28px; font-weight: bold; margin:0;">
 Basics
@@ -2139,7 +2335,197 @@ Username: <input type="text" name="username" size="15" maxlength="30" />
 <span id="cb44-2"><a href="#cb44-2"></a>  <span class="kw">&lt;p&gt;</span>Username:</span>
 <span id="cb44-3"><a href="#cb44-3"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;username&quot;</span><span class="ot"> size=</span><span class="st">&quot;15&quot;</span><span class="ot"> maxlength=</span><span class="st">&quot;30&quot;</span> <span class="kw">/&gt;</span> </span>
 <span id="cb44-4"><a href="#cb44-4"></a>  <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div> 
+<span id="cb44-5"><a href="#cb44-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="password-input"><b>password input</b>:</h5>
+<p>If you want a password input, you can give the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute the value of <code style="color:#4e9a06;">“password”</code>. The text box acts like a single-line text input, except the characters are blocked out.</p>
+<h4 id="textarea"><em>&lt;textarea&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;textarea&gt;</code> element is used to create a multi-line text input. Unlike other input elements this is not an empty element. It should therefore have an opening and a closing tag.</p>
+<p>For example:</p>
+<form action="http://www.example.com/comments.php" style="background:beige;">
+<p>
+What did you think of this gig?
+</p>
+<textarea name="comments">Enter your comments...</textarea>
+</form>
+<div class="sourceCode" id="cb45"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/comments.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="kw">&lt;p&gt;</span>What did you think of this gig?<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>  <span class="kw">&lt;textarea</span><span class="ot"> name=</span><span class="st">&quot;comments&quot;</span><span class="kw">&gt;</span>Enter your comments...<span class="kw">&lt;/textarea&gt;</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="radio-button"><b>radio button</b>:</h5>
+<p>To create a radio button, add the <code style="color:#4e9a06;">“radio”</code> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute.</p>
+<p>The values of the <a href="htmlname.html"><code style="color: #8f5902;">name</code></a> and <a href="htmlvalue.html"><code style="color: #8f5902;">value</code></a> attributes are sent to the server when the user selects and submits the form.</p>
+<p>the <a href="htmlchecked.html"><code style="color: #8f5902;">checked</code></a> attribute can be used to indicate which value (if any) should be selected when the page loads. Only one radio button in a group should use this attribute.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+Please select your favorite genre:
+</p>
+<br /> <input type="radio" name="genre" value="rock" checked="checked">Rock</input> <input type="radio" name="genre" value="pop">Pop</input> <input type="radio" name="genre" value="jazz">Jazz</input>
+</form>
+<div class="sourceCode" id="cb46"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="kw">&lt;p&gt;</span>Please select your favorite genre:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>  <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;genre&quot;</span><span class="ot"> value=</span><span class="st">&quot;rock&quot;</span><span class="ot"> checked=</span><span class="st">&quot;checked&quot;</span><span class="kw">&gt;</span>Rock<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;genre&quot;</span><span class="ot"> value=</span><span class="st">&quot;pop&quot;</span><span class="kw">&gt;</span>Pop<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;genre&quot;</span><span class="ot"> value=</span><span class="st">&quot;jazz&quot;</span><span class="kw">&gt;</span>Jazz<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="checkbox"><b>checkbox</b>:</h5>
+<p>To use a checkbox, enter the <code style="color:#4e9a06;">“checkbox”</code> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute.</p>
+<p>The <a href="htmlname.html"><code style="color: #8f5902;">name</code></a>, <a href="htmlvalue.html"><code style="color: #8f5902;">value</code></a>, and <a href="htmlchecked.html"><code style="color: #8f5902;">checked</code></a> attributes behave similarly to the radio button.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+Please select your favorite music service(s): <br /> <input type="checkbox" name="service" value="itunes" checked="checked"> iTunes</input> <input type="checkbox" name="service" value="lastfm"> Last.fm</input> <input type="checkbox" name="service" value="spotify"> Spotify</input>
+</p>
+</form>
+<div class="sourceCode" id="cb47"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="kw">&lt;p&gt;</span>Please select your favorite music service(s):</span>
+<span id="cb47-3"><a href="#cb47-3"></a>    <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> name=</span><span class="st">&quot;service&quot;</span><span class="ot"> value=</span><span class="st">&quot;itunes&quot;</span><span class="ot"> checked=</span><span class="st">&quot;checked&quot;</span><span class="kw">&gt;</span> iTunes<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> name=</span><span class="st">&quot;service&quot;</span><span class="ot"> value=</span><span class="st">&quot;lastfm&quot;</span><span class="kw">&gt;</span> Last.fm<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>    <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;checkbox&quot;</span><span class="ot"> name=</span><span class="st">&quot;service&quot;</span><span class="ot"> value=</span><span class="st">&quot;spotify&quot;</span><span class="kw">&gt;</span> Spotify<span class="kw">&lt;/input&gt;</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h4 id="select"><em>&lt;select&gt;</em></h4>
+<p>A drop down list box (also known as a select box) allows users to select one option from a drop down list. A <code style="color: #204a87;">&lt;select&gt;</code> element is used to create it. It contains two or more <code style="color: #204a87;">&lt;option&gt;</code> elements.</p>
+<h4 id="option"><em>&lt;option&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;option&gt;</code> element is used to specify the options that the user can select from.</p>
+<h5 id="selected"><a href="htmlselected.html"><code style="color: #8f5902;">selected</code></a></h5>
+<p>The <a href="htmlselected.html"><code style="color: #8f5902;">selected</code></a> attribute can be used to indicate the option that should be selected when the page loads. If not used, the first option will be shows when the page loads.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+What device do you listen to music on?
+</p>
+<select name="devices"> <option value="ipod">iPod</option> <option value="radio">Radio</option> <option value="Computer">Computer</option> </select>
+</form>
+<div class="sourceCode" id="cb48"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="kw">&lt;p&gt;</span> What device do you listen to music on? <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;devices&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;ipod&quot;</span><span class="kw">&gt;</span>iPod<span class="kw">&lt;/option&gt;</span> </span>
+<span id="cb48-5"><a href="#cb48-5"></a>      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;radio&quot;</span><span class="kw">&gt;</span>Radio<span class="kw">&lt;/option&gt;</span> </span>
+<span id="cb48-6"><a href="#cb48-6"></a>      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;Computer&quot;</span><span class="kw">&gt;</span>Computer<span class="kw">&lt;/option&gt;</span> </span>
+<span id="cb48-7"><a href="#cb48-7"></a>    <span class="kw">&lt;/select&gt;</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="multiple-select-box"><b>multiple select box</b>:</h5>
+<p>You can turn a drop down select box into a box that shows more than one option by adding the <a href="htmlsize.html"><code style="color: #8f5902;">size</code></a> attribute. Its value should be the number of options you want to show at once.</p>
+<p>You can also allow users to select multiple options from this list by adding the <a href="htmlmultiple.html"><code style="color: #8f5902;">multiple</code></a> attribute with a value of <code style="color:#4e9a06;">“multiple”</code>. It is a good idea to tell users if they can select more than one option at a time, and that to select multiple options you use the <code>control</code> key on PC and the <code>command</code> key on Mac.</p>
+<p>For example:</p>
+<form action="http://www.example.com/profile.php" style="background:beige;">
+<p>
+Do you play any of the following instruments? (You can select more than one option)
+</p>
+<select name="instruments" size="3" multiple="multiple"> <option value="guitar" selected="selected">Guitar</option> <option value="drums">Drums</option> <option value="keyboard">Keyboard</option> <option value="bass">Bass</option> </select>
+</form>
+<div class="sourceCode" id="cb49"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/profile.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="kw">&lt;p&gt;</span>Do you play any of the following instruments? (You can select more than one option)<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;instruments&quot;</span><span class="ot"> size=</span><span class="st">&quot;3&quot;</span><span class="ot"> multiple=</span><span class="st">&quot;multiple&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;guitar&quot;</span><span class="ot"> selected=</span><span class="st">&quot;selected&quot;</span><span class="kw">&gt;</span>Guitar<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;drums&quot;</span><span class="kw">&gt;</span>Drums<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;keyboard&quot;</span><span class="kw">&gt;</span>Keyboard<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a>    <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;bass&quot;</span><span class="kw">&gt;</span>Bass<span class="kw">&lt;/option&gt;</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a>  <span class="kw">&lt;/select&gt;</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="file-input-box"><b>file input box</b>:</h5>
+<p>If you want to allow users to upload a file you will need a file input box. To use it, use the <code style="color: #4e9a06;">“file”</code> value for the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute. When you are allowing users to upload files, the <a href="htmlmethod.html"><code style="color: #8f5902;">method</code></a> attribute must have a value of <code style="color: #4e9a06;">“post”</code style="color: #4e9a06;">.</p>
+<p>For example:</p>
+<form action="http://www.example.com/upload.php" method="post" style="background:beige;">
+<p>
+Upload your song in MP3 format:
+</p>
+<input type="file" name="user-song" /><br /> <input type="submit" value="Upload" />
+</form>
+<div class="sourceCode" id="cb50"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb50-1"><a href="#cb50-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/upload.php&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>  <span class="kw">&lt;p&gt;</span>Upload your song in MP3 format:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb50-3"><a href="#cb50-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;file&quot;</span><span class="ot"> name=</span><span class="st">&quot;user-song&quot;</span> <span class="kw">/&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Upload&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h5 id="submit-button"><b>submit button</b>:</h5>
+<p>To use a submit button, enter the <code style="color: #4e9a06;">“submit”</code style="color: #4e9a06;"> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute. The submit button is used to send a form to the server. It can use a <a href="htmlname.html"><code style="color: #8f5902;">name</code></a> attribute but it does need to have one. The <a href="htmlvalue.html"><code style="color: #8f5902;">value</code></a> attribute is used to control the text htat appears on a button.</p>
+<p>For example:</p>
+<form action="http://www.example.com/subscribe.php" style="background:beige;">
+<p>
+Subscribe to our email list:
+</p>
+<input type="text" name="email" /> <input type="submit" name="subscribe" value="subscribe" />
+</form>
+<div class="sourceCode" id="cb51"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb51-1"><a href="#cb51-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/subscribe.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>  <span class="kw">&lt;p&gt;</span>Subscribe to our email list:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb51-3"><a href="#cb51-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;email&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb51-4"><a href="#cb51-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> name=</span><span class="st">&quot;subscribe&quot;</span><span class="ot"> value=</span><span class="st">&quot;subscribe&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<p>If you want to use an image for the submit button you can give the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute the value of <code style="color: #4e9a06;">“image”</code>. The <a href="htmlsrc.html"><code style="color: #8f5902;">src</code></a>, <a href="htmlwidth.html"><code style="color: #8f5902;">width</code></a>, <a href="htmlheight.html"><code style="color: #8f5902;">height</code></a>, and <a href="htmlalt.html"><code style="color: #8f5902;">alt</code></a> attributes work the same way as they do with the <code style="color: #204a87;">&lt;img&gt;</code> element.</p>
+<p>For example:</p>
+<form action="http://www.example.org/subscribe.php" style="background:beige;">
+<p>
+Subscribe to our email list:
+</p>
+<input type="text" name="email" /> <input type="image" src="images/subscribe.png" width="70" />
+</form>
+<div class="sourceCode" id="cb52"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb52-1"><a href="#cb52-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.org/subscribe.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="kw">&lt;p&gt;</span>Subscribe to our email list:<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb52-3"><a href="#cb52-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;email&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb52-4"><a href="#cb52-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;image&quot;</span><span class="ot"> src=</span><span class="st">&quot;images/subscribe.png&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h4 id="button"><em>&lt;button&gt;</em></h4>
+<p>The <code style="color: #204a87;">&lt;button&gt;</code> element was introduced to allow users moer control over how their buttons appear, and to allow other elements to appear inside the button. This means you can combine text and images.</p>
+<p>If you put the <code style="color: #4e9a06;">“hidden”</code> value to the <a href="htmltype.html"><code style="color: #8f5902;">type</code></a> attribute, then it will hide the element from the webpage. In the following example the input element is hidden.</p>
+<p>For example:</p>
+<form action="http://www.example.com/add.php" style="background:beige;">
+<button>
+<img src="images/subscribe.png" alt="add" /> Add
+</button>
+<input type="hidden" name="bookmark" value="lyrics" />
+</form>
+<div class="sourceCode" id="cb53"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb53-1"><a href="#cb53-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/add.php&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>  <span class="kw">&lt;button&gt;</span> <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/subscribe.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;add&quot;</span> <span class="kw">/&gt;</span> Add<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb53-3"><a href="#cb53-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;hidden&quot;</span><span class="ot"> name=</span><span class="st">&quot;bookmark&quot;</span><span class="ot"> value=</span><span class="st">&quot;lyrics&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<h4 id="label"><em>&lt;label&gt;</em></h4>
+<p>Each form control should have its own <code style="color: #204a87;">&lt;label&gt;</code> element as this makes the form accessible to vision-impaired users. There are two ways the <a href="htmllabel.html"><code style="color: #8f5902;">label</code></a> attribute can be used as demonstrated in the following example.</p>
+<p>The <a href="htmlfor.html"><code style="color: #8f5902;">for</code></a> attribute states which form control the label belongs to. The value of the <a href="htmlid.html"><code style="color: #8f5902;">id</code></a> attribute is used to uniquely identify an element from all other elements on a page.</p>
+<p>For example:</p>
+<p style="background:beige;">
+<label>Age: <input type="text" name="age"/></label> <br /> Gender: <input id="female" type="radio" name="gender" value="f"> <label for="female">Female</label> <input id="male" type="radio" name="gender" value="m"> <label for="male">male</label>
+</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb54-1"><a href="#cb54-1"></a><span class="kw">&lt;label&gt;</span>Age: <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;age&quot;</span><span class="kw">/&gt;&lt;/label&gt;</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a>Gender:</span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;female&quot;</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;gender&quot;</span><span class="ot"> value=</span><span class="st">&quot;f&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;female&quot;</span><span class="kw">&gt;</span>Female<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a><span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;male&quot;</span><span class="ot"> type=</span><span class="st">&quot;radio&quot;</span><span class="ot"> name=</span><span class="st">&quot;gender&quot;</span><span class="ot"> value=</span><span class="st">&quot;m&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb54-7"><a href="#cb54-7"></a><span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;male&quot;</span><span class="kw">&gt;</span>male<span class="kw">&lt;/label&gt;</span></span></code></pre></div>
+<h5 id="grouping-form-elements"><b>grouping form elements</b>:</h5>
+<h4 id="fieldset-legend"><em>&lt;fieldset&gt;</em>, <em>&lt;legend&gt;</em></h4>
+<p>You can group related form controls together inside a <code style="color: #204a87;">&lt;fieldset&gt;</code> element. This is useful for longer forms. The <code style="color: #204a87;">&lt;legend&gt;</code> element can come directly after the opening <code style="color: #204a87;">&lt;fieldset&gt;</code> tag and contains a caption which helps identify the purpose of that group of form controls.</p>
+<p>For example:</p>
+<fieldset style="background:beige;">
+<legend>Contact details</legend> <label>Email:<br /> <input type="text" name="email" /></label><br /> <label>Mobile:<br /> <input type="text" name="mobile" /></label><br /> <label>Telephone:<br /> <input type="text" name="telephone" /></label><br />
+</fieldset>
+<div class="sourceCode" id="cb55"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb55-1"><a href="#cb55-1"></a><span class="kw">&lt;fieldset&gt;</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>  <span class="kw">&lt;legend&gt;</span>Contact details<span class="kw">&lt;/legend&gt;</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a>  <span class="kw">&lt;label&gt;</span>Email:<span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;email&quot;</span> <span class="kw">/&gt;&lt;/label&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a>  <span class="kw">&lt;label&gt;</span>Mobile:<span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;mobile&quot;</span> <span class="kw">/&gt;&lt;/label&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a>  <span class="kw">&lt;label&gt;</span>Telephone:<span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-8"><a href="#cb55-8"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;telephone&quot;</span> <span class="kw">/&gt;&lt;/label&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb55-9"><a href="#cb55-9"></a><span class="kw">&lt;/fieldset&gt;</span></span></code></pre></div>
+<h5 id="form-validation"><b>form validation</b>:</h5>
+<p>Form validation is when a message appears from a form control saying that it has not been filled in correctly. Traditionally, form validation has been performed using JavaScript but HTML5 introduced validation and leaving the work to the browser.<br />
+Validation helps ensure the user enter information in a form that the server will be able to understand when the form is submitted.</p>
+<p>The <a href="htmlrequired.html"><code style="color: #8f5902;">required</code></a> attribute is used with a value of <code style="color: #4e9a06;">“required”</code style="color: #4e9a06;"> to make a form control required.</p>
+<p>For example:</p>
+<form action="http://www.example.com/login/" method="post" style="background:beige;">
+<label for="username">Username:</label> <input type="text" name="username" required="required" /><br /> <label for="password">Password:</label> <input type="password" name="password" required="required" /><br /> <input type="submit" value="Submit" />
+</form >
+<div class="sourceCode" id="cb56"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb56-1"><a href="#cb56-1"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;http://www.example.com/login/&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;username&quot;</span><span class="kw">&gt;</span>Username:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb56-3"><a href="#cb56-3"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> name=</span><span class="st">&quot;username&quot;</span><span class="ot"> required=</span><span class="st">&quot;required&quot;</span> <span class="kw">/&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb56-4"><a href="#cb56-4"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;password&quot;</span><span class="kw">&gt;</span>Password:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;password&quot;</span><span class="ot"> name=</span><span class="st">&quot;password&quot;</span><span class="ot"> required=</span><span class="st">&quot;required&quot;</span> <span class="kw">/&gt;&lt;br</span> <span class="kw">/&gt;</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Submit&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb56-7"><a href="#cb56-7"></a><span class="kw">&lt;/form</span> <span class="kw">&gt;</span></span></code></pre></div> 
         </div>
       </div>
       <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
