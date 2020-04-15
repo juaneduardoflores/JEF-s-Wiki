@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/apple-touch-icon.png"
+    />
+
+        <link rel="stylesheet" href="uikit.gradient.css" />
+    
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="uikit.js"></script>
+    <script src="scripts.js"></script>
+    <script src="jquery.sticky-kit.js"></script>
+    <!-- <script src="%root_path%assets/google-code-prettify/prettify.js"></script> -->
+
+    <meta name="generator" content="pandoc-uikit" />
+         <!-- <title>UltiSnips</title> -->
+    <!-- <style type="text/css"> -->
+    <!--   code { -->
+    <!--     white-space: pre; -->
+    <!--   } -->
+    <!-- </style> -->
+        
+  </head>
+
+  <body>
+    <div
+      class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom"
+    >
+      <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-4">
+          <div
+            class="uk-overflow-container"
+            data-uk-sticky="{top:25,media: 768}"
+          >
+            <div class="uk-panel uk-panel-box menu-begin">
+               <ul>
+<li><a href="#ultisnips">UltiSnips</a>
+<ul>
+<li><a href="#ultisnipsaddfiletypes-command">:UltiSnipsAddFiletypes Command</a></li>
+<li><a href="#triggers">Triggers</a></li>
+<li><a href="#basic-syntax">Basic Syntax</a></li>
+<li><a href="#escaping-characters">Escaping Characters</a></li>
+<li><a href="#visual-placeholder">Visual Placeholder</a></li>
+<li><a href="#interpolation">Interpolation</a>
+<ul>
+<li><a href="#shellcode">Shellcode</a></li>
+<li><a href="#vimscript">Vimscript</a></li>
+<li><a href="#python">Python</a></li>
+</ul></li>
+<li><a href="#tabstops-and-placeholders">Tabstops and Placeholders</a>
+<ul>
+<li><a href="#default-text">Default Text</a></li>
+</ul></li>
+<li><a href="#mirrors">Mirrors</a></li>
+<li><a href="#transformations">Transformations</a></li>
+</ul></li>
+</ul> 
+            </div>
+          </div>
+        </div>
+
+        <div class="uk-width-medium-3-4">
+          <!-- <h1 id="ultisnips">UltiSnips</h1>
+<p>My Shortcut/Mapping to open :UltiSnipsEdit in split: <code>&lt;leader&gt;</code>us</p>
+<h2 id="ultisnipsaddfiletypes-command">:UltiSnipsAddFiletypes Command</h2>
+<p>If I want to use html snippets on a .md file, I can use this command and specify something like this:</p>
+<pre class="vim"><code>:UltiSnipsAddFiletypes md.html</code></pre>
+<h2 id="triggers">Triggers</h2>
+<p>My mappings for triggers are:</p>
+<p>g:UltiSnipsExlpandTrigger Alt-f g:UltiSnipsJumpForwardTrigger <C-b> g:UltiSnipsJumpBackwardTrigger <C-z> g:UltiSnipsListSnippets <C-tab></p>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<p>A line beginning with the keyword <code>extends</code> provides a way of including snippet files of another filetype.</p>
+<p>For example, the first line in cpp.snippets could include c snippets by writing this:</p>
+<pre class="snippets"><code>extends c</code></pre>
+<p>To define a snippet it must start with the keyword <code>snippet</code> and end with <code>endsnippet</code>.</p>
+<p>For example:</p>
+<pre class="snippets"><code>snippet sysout &quot;sysout&quot; b
+System.out.println(${1:print});
+endsnippet</code></pre>
+<p>It takes the following form</p>
+<pre class="vim"><code>snippet trigger_word [ &quot;description&quot; [ options ] ]</code></pre>
+<p>The <code>trigger_word</code> is required, but the description and options are optional. The trigger_word is the word used to trigger the snippet. If you want to include space you must use quotes.</p>
+<p>The <code>description</code> is the string that describes the trigger. This is helpful when you are looking at the list of available snippets.</p>
+<p>The <code>options</code> control the behaviour of the snippet. They are indicated by single characters.</p>
+<p><code>b</code> - Beginning of line - a snippet with this option is expanded <em>only</em> if the tab trigger is the first word on the line. In other words, if only whitespace precedes the tab trigger, expand. The default is to expand snippets at any position regardless of the preceding non-whitespace characters.</p>
+<p><code>i</code> - In-word expansion - by default a snippet is expanded only if the tab trigger is the first word on the line or is preceded by one or more whitespace characters. A snippet with this option is expanded regardless of the preceeding character. In other words, the snippet can be triggered in the middle of a word.</p>
+<p><code>w</code> - Word boundary - With this option, the snippet is expanded if the tab trigger start matches a word boundary and the tab trigger end matches a word boundary. In other words the tab trigger must be preceded and followed by non-word characters. Word characters are defined by the ‘iskeyword’ setting. Use this option, for example, to permit expansion where the tab trigger follows punctuation without expanding suffixes of larger words.</p>
+<p><code>r</code> - Regular expression - With this option, the tab trigger is expected to be a python regular expression. The snippet is expanded if the recently typed characters match the regular expression. Note: The regular expression MUST be quoted (or surrounded with another character) like a multi-word tab trigger (see above) whether it has spaces or not. A resulting match is passed to any python code blocks in the snippet definition as the local variable “match”.</p>
+<p><code>t</code> - Do not expand tabs - If a snippet definition includes leading tab characters, by default UltiSnips expands the tab characters honoring the Vim ‘shiftwidth’, ‘softtabstop’, ‘expandtab’ and ‘tabstop’ indentation settings. (For example, if ‘expandtab’ is set, the tab is replaced with spaces.) If this option is set, UltiSnips will ignore the Vim settings and insert the tab characters as is. This option is useful for snippets involved with tab delimited formats.</p>
+<p><code>s</code> - Remove whitespace immediately before the cursor at the end of a line before jumping to the next tabstop. This is useful if there is a tabstop with optional text at the end of a line.</p>
+<p><code>m</code> - Trim all whitespaces from right side of snippet lines. Useful when snippet contains empty lines which should remain empty after expanding. Without this option empty lines in snippets definition will have indentation too.</p>
+<p><code>e</code> - Custom context snippet - With this option expansion of snippet can be controlled not only by previous characters in line, but by any given python expression. This option can be specified along with other options, like ‘b’. See |UltiSnips-custom-context-snippets| for more info.</p>
+<p><code>A</code> - Snippet will be triggered automatically, when condition matches.</p>
+<h2 id="escaping-characters">Escaping Characters</h2>
+<p>the characters ‘`’, ‘{’, ‘$’ and ‘' have special meaning. If you want to insert one of these characters literally, escape them with a backslash,’'.</p>
+<h2 id="visual-placeholder">Visual Placeholder</h2>
+<p>Snippets can contain a special placeholder called $<code>{VISUAL}</code>. The $<code>{VISUAL}</code> variable is expanded with the text selected just prior to expanding the snippet.</p>
+<p>With a defined snippet, when selecting text in visual mode and pressing the trigger key, it will replace the $<code>{VISUAL}</code> variable with the selected text.</p>
+<p>The $<code>{VISUAL}</code> placeholder can contain default text when the snippet has been triggered when not in Visual mode. The syntax is:</p>
+<pre class="snippets"><code>${VISUAL:default text}</code></pre>
+<p>A visual transformation is possible. In this example, the snippet will take the selected text, replace every instance of “should” within it with “is”, and wrap the result in tags.</p>
+<pre class="snippets"><code>snippet t
+&lt;tag&gt;${VISUAL:inside text/should/is/g}&lt;/tag&gt;
+endsnippet</code></pre>
+<p>To achieve this, select a text, use the trigger key, type t, then press the trigger key one more time. If in insert mode and trigger key is pressed in front of “t”, the snippet will use the default text.</p>
+<h2 id="interpolation">Interpolation</h2>
+<h3 id="shellcode">Shellcode</h3>
+<p>Snippets can include shellcode. Put a shell command in a snippet and when the snippet is expanded, the shell command is replaced by the output produced when the command is executed. To do this, wrap the shell code in backticks.</p>
+<p>for example:</p>
+<pre class="snippets"><code>snippet today
+
+Today is the `date +%d.%m.%y`.
+endsnippet</code></pre>
+<p>This example shows you can use other programming languages by using the shebang:</p>
+<pre class="snippets"><code>snippet today
+Today is `#!/usr/bin/perl
+@a = localtime(); print $a[3] . &#39;.&#39; . $a[4] . &#39;.&#39; . ($a[5]+1900);`.
+endsnippet</code></pre>
+<h3 id="vimscript">Vimscript</h3>
+<p>You can also use vimscript. To distinguish it as vimscript wrap it in backticks and start the code with <code>!v</code>.</p>
+<p>This is an example of a snippet that counts the indent of the current line:</p>
+<pre class="snippets"><code>snippet indent
+Indent is: `!v indent(&quot;.&quot;)`.
+endsnippet</code></pre>
+<h3 id="python">Python</h3>
+<p>To distinguish, it is similar to vimscript except you start the code with <code>!p</code>.</p>
+<p>The variables automatically defined in python code are:</p>
+<p><code>fn</code> - The current filename <code>path</code> - The complete path to the current file <code>t</code> - The values of the placeholders, t[1] is the text of ${1}, etc. <code>snip</code> - UltiSnips.TextObjects.SnippetUtil object instance. Has methods that simplify indentation handling and owns the string that should be inserted for the snippet. <code>context</code> - Result of context condition. See |UltiSnips custom-context-snippets|. <code>match</code> - Only in regular expression triggered snippets. This is the return value of the match of the regular expression. See http://docs.python.org/library/re.html#match-objects</p>
+<p>This snippet example mirrors the entered text after snippet expansion and makes all uppercase and right aligned.</p>
+<pre class="snippets"><code>snippet wow
+${1:Text}`!p snip.rv = (75-2*len(t[1]))*&#39; &#39;+t[1].upper()`
+endsnippet</code></pre>
+<p>The following snippet uses the regular expression option and illustrates regular expression grouping using python’s match object.</p>
+<pre class="snippets"><code>snippet &quot;be(gin)?( (\S+))?&quot; &quot;begin{} / end{}&quot; br
+\begin{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else &quot;something&quot;`}}
+    ${2:${VISUAL}}
+\end{$1}$0
+endsnippet</code></pre>
+<h2 id="tabstops-and-placeholders">Tabstops and Placeholders</h2>
+<p>Often there are variable components to a text, you can enter more than one input text which are called tabstops. With tabstops you can quickly insert text to the desired locations of the snippet.</p>
+<p>tabstops are defined using the <code>$</code> sign. Tabstops start at <code>$1</code> and keep going in sequential order. The <code>$0</code> tabstop is always the last tabstop entered.</p>
+<pre class="snippets"><code>snippet letter
+Dear $1,
+$0
+Yours sincerely,
+$2
+endsnippet</code></pre>
+<p>Example of use: %% letter<tab>Ben<c-j>Paul<c-j>Thanks for suggesting UltiSnips!-&gt; %% Dear Ben, %% Thanks for suggesting UltiSnips! %% Yours sincerely, %% Paul</p>
+<h3 id="default-text">Default Text</h3>
+<p>For the tabstops, it is useful to define a default text. To do this, the syntax is: ‘$<code>{1:value}</code>’</p>
+<h2 id="mirrors">Mirrors</h2>
+<p>Mirrors repeat the content of a tabstop. During snippet expansion when you enter the value for a tabstop, all mirrors of that tabstop are replaced with the same value.</p>
+<p>For example:</p>
+<pre class="snippets"><code>snippet env
+\begin{${1:enumerate}}
+    $0
+\end{$1}
+endsnippet</code></pre>
+<pre class="snippets"><code>snippet ifndef
+#ifndef ${1:SOME_DEFINE}
+#define $1
+$0
+#endif /* $1 */
+endsnippet</code></pre>
+<h2 id="transformations">Transformations</h2>
+<p>( TODO )</p> -->
+
+          <h1 id="ultisnips">UltiSnips</h1>
+<p>My Shortcut/Mapping to open :UltiSnipsEdit in split: <code>&lt;leader&gt;</code>us</p>
+<h2 id="ultisnipsaddfiletypes-command">:UltiSnipsAddFiletypes Command</h2>
+<p>If I want to use html snippets on a .md file, I can use this command and specify something like this:</p>
+<pre class="vim"><code>:UltiSnipsAddFiletypes md.html</code></pre>
+<h2 id="triggers">Triggers</h2>
+<p>My mappings for triggers are:</p>
+<p>g:UltiSnipsExlpandTrigger Alt-f g:UltiSnipsJumpForwardTrigger <C-b> g:UltiSnipsJumpBackwardTrigger <C-z> g:UltiSnipsListSnippets <C-tab></p>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<p>A line beginning with the keyword <code>extends</code> provides a way of including snippet files of another filetype.</p>
+<p>For example, the first line in cpp.snippets could include c snippets by writing this:</p>
+<pre class="snippets"><code>extends c</code></pre>
+<p>To define a snippet it must start with the keyword <code>snippet</code> and end with <code>endsnippet</code>.</p>
+<p>For example:</p>
+<pre class="snippets"><code>snippet sysout &quot;sysout&quot; b
+System.out.println(${1:print});
+endsnippet</code></pre>
+<p>It takes the following form</p>
+<pre class="vim"><code>snippet trigger_word [ &quot;description&quot; [ options ] ]</code></pre>
+<p>The <code>trigger_word</code> is required, but the description and options are optional. The trigger_word is the word used to trigger the snippet. If you want to include space you must use quotes.</p>
+<p>The <code>description</code> is the string that describes the trigger. This is helpful when you are looking at the list of available snippets.</p>
+<p>The <code>options</code> control the behaviour of the snippet. They are indicated by single characters.</p>
+<p><code>b</code> - Beginning of line - a snippet with this option is expanded <em>only</em> if the tab trigger is the first word on the line. In other words, if only whitespace precedes the tab trigger, expand. The default is to expand snippets at any position regardless of the preceding non-whitespace characters.</p>
+<p><code>i</code> - In-word expansion - by default a snippet is expanded only if the tab trigger is the first word on the line or is preceded by one or more whitespace characters. A snippet with this option is expanded regardless of the preceeding character. In other words, the snippet can be triggered in the middle of a word.</p>
+<p><code>w</code> - Word boundary - With this option, the snippet is expanded if the tab trigger start matches a word boundary and the tab trigger end matches a word boundary. In other words the tab trigger must be preceded and followed by non-word characters. Word characters are defined by the ‘iskeyword’ setting. Use this option, for example, to permit expansion where the tab trigger follows punctuation without expanding suffixes of larger words.</p>
+<p><code>r</code> - Regular expression - With this option, the tab trigger is expected to be a python regular expression. The snippet is expanded if the recently typed characters match the regular expression. Note: The regular expression MUST be quoted (or surrounded with another character) like a multi-word tab trigger (see above) whether it has spaces or not. A resulting match is passed to any python code blocks in the snippet definition as the local variable “match”.</p>
+<p><code>t</code> - Do not expand tabs - If a snippet definition includes leading tab characters, by default UltiSnips expands the tab characters honoring the Vim ‘shiftwidth’, ‘softtabstop’, ‘expandtab’ and ‘tabstop’ indentation settings. (For example, if ‘expandtab’ is set, the tab is replaced with spaces.) If this option is set, UltiSnips will ignore the Vim settings and insert the tab characters as is. This option is useful for snippets involved with tab delimited formats.</p>
+<p><code>s</code> - Remove whitespace immediately before the cursor at the end of a line before jumping to the next tabstop. This is useful if there is a tabstop with optional text at the end of a line.</p>
+<p><code>m</code> - Trim all whitespaces from right side of snippet lines. Useful when snippet contains empty lines which should remain empty after expanding. Without this option empty lines in snippets definition will have indentation too.</p>
+<p><code>e</code> - Custom context snippet - With this option expansion of snippet can be controlled not only by previous characters in line, but by any given python expression. This option can be specified along with other options, like ‘b’. See |UltiSnips-custom-context-snippets| for more info.</p>
+<p><code>A</code> - Snippet will be triggered automatically, when condition matches.</p>
+<h2 id="escaping-characters">Escaping Characters</h2>
+<p>the characters ‘`’, ‘{’, ‘$’ and ‘' have special meaning. If you want to insert one of these characters literally, escape them with a backslash,’'.</p>
+<h2 id="visual-placeholder">Visual Placeholder</h2>
+<p>Snippets can contain a special placeholder called $<code>{VISUAL}</code>. The $<code>{VISUAL}</code> variable is expanded with the text selected just prior to expanding the snippet.</p>
+<p>With a defined snippet, when selecting text in visual mode and pressing the trigger key, it will replace the $<code>{VISUAL}</code> variable with the selected text.</p>
+<p>The $<code>{VISUAL}</code> placeholder can contain default text when the snippet has been triggered when not in Visual mode. The syntax is:</p>
+<pre class="snippets"><code>${VISUAL:default text}</code></pre>
+<p>A visual transformation is possible. In this example, the snippet will take the selected text, replace every instance of “should” within it with “is”, and wrap the result in tags.</p>
+<pre class="snippets"><code>snippet t
+&lt;tag&gt;${VISUAL:inside text/should/is/g}&lt;/tag&gt;
+endsnippet</code></pre>
+<p>To achieve this, select a text, use the trigger key, type t, then press the trigger key one more time. If in insert mode and trigger key is pressed in front of “t”, the snippet will use the default text.</p>
+<h2 id="interpolation">Interpolation</h2>
+<h3 id="shellcode">Shellcode</h3>
+<p>Snippets can include shellcode. Put a shell command in a snippet and when the snippet is expanded, the shell command is replaced by the output produced when the command is executed. To do this, wrap the shell code in backticks.</p>
+<p>for example:</p>
+<pre class="snippets"><code>snippet today
+
+Today is the `date +%d.%m.%y`.
+endsnippet</code></pre>
+<p>This example shows you can use other programming languages by using the shebang:</p>
+<pre class="snippets"><code>snippet today
+Today is `#!/usr/bin/perl
+@a = localtime(); print $a[3] . &#39;.&#39; . $a[4] . &#39;.&#39; . ($a[5]+1900);`.
+endsnippet</code></pre>
+<h3 id="vimscript">Vimscript</h3>
+<p>You can also use vimscript. To distinguish it as vimscript wrap it in backticks and start the code with <code>!v</code>.</p>
+<p>This is an example of a snippet that counts the indent of the current line:</p>
+<pre class="snippets"><code>snippet indent
+Indent is: `!v indent(&quot;.&quot;)`.
+endsnippet</code></pre>
+<h3 id="python">Python</h3>
+<p>To distinguish, it is similar to vimscript except you start the code with <code>!p</code>.</p>
+<p>The variables automatically defined in python code are:</p>
+<p><code>fn</code> - The current filename <code>path</code> - The complete path to the current file <code>t</code> - The values of the placeholders, t[1] is the text of ${1}, etc. <code>snip</code> - UltiSnips.TextObjects.SnippetUtil object instance. Has methods that simplify indentation handling and owns the string that should be inserted for the snippet. <code>context</code> - Result of context condition. See |UltiSnips custom-context-snippets|. <code>match</code> - Only in regular expression triggered snippets. This is the return value of the match of the regular expression. See http://docs.python.org/library/re.html#match-objects</p>
+<p>This snippet example mirrors the entered text after snippet expansion and makes all uppercase and right aligned.</p>
+<pre class="snippets"><code>snippet wow
+${1:Text}`!p snip.rv = (75-2*len(t[1]))*&#39; &#39;+t[1].upper()`
+endsnippet</code></pre>
+<p>The following snippet uses the regular expression option and illustrates regular expression grouping using python’s match object.</p>
+<pre class="snippets"><code>snippet &quot;be(gin)?( (\S+))?&quot; &quot;begin{} / end{}&quot; br
+\begin{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else &quot;something&quot;`}}
+    ${2:${VISUAL}}
+\end{$1}$0
+endsnippet</code></pre>
+<h2 id="tabstops-and-placeholders">Tabstops and Placeholders</h2>
+<p>Often there are variable components to a text, you can enter more than one input text which are called tabstops. With tabstops you can quickly insert text to the desired locations of the snippet.</p>
+<p>tabstops are defined using the <code>$</code> sign. Tabstops start at <code>$1</code> and keep going in sequential order. The <code>$0</code> tabstop is always the last tabstop entered.</p>
+<pre class="snippets"><code>snippet letter
+Dear $1,
+$0
+Yours sincerely,
+$2
+endsnippet</code></pre>
+<p>Example of use: %% letter<tab>Ben<c-j>Paul<c-j>Thanks for suggesting UltiSnips!-&gt; %% Dear Ben, %% Thanks for suggesting UltiSnips! %% Yours sincerely, %% Paul</p>
+<h3 id="default-text">Default Text</h3>
+<p>For the tabstops, it is useful to define a default text. To do this, the syntax is: ‘$<code>{1:value}</code>’</p>
+<h2 id="mirrors">Mirrors</h2>
+<p>Mirrors repeat the content of a tabstop. During snippet expansion when you enter the value for a tabstop, all mirrors of that tabstop are replaced with the same value.</p>
+<p>For example:</p>
+<pre class="snippets"><code>snippet env
+\begin{${1:enumerate}}
+    $0
+\end{$1}
+endsnippet</code></pre>
+<pre class="snippets"><code>snippet ifndef
+#ifndef ${1:SOME_DEFINE}
+#define $1
+$0
+#endif /* $1 */
+endsnippet</code></pre>
+<h2 id="transformations">Transformations</h2>
+<p>( TODO )</p> 
+        </div>
+      </div>
+      <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+    </div>
+  </body>
+</html>
