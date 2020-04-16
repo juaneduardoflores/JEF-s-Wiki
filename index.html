@@ -49,24 +49,26 @@
     </script>
   </head>
   <body>
+    <div align="center">
+      <button id="navbtn" type="button" class="block" onclick="toggleMenu()">
+        ☰
+      </button>
+      <nav id="navbtnoptions">
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="default.asp">Work</a></li>
+          <li><a href="blogindex.html">Blog</a></li>
+          <li><a href="about.asp">CV</a></li>
+          <li><a href="contact.asp">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
     <header>
       <h1 id="home" align="center">
-        <a href="index.html">Juan Eduardo Flores</a>
+        <a href="index.html" style="text-decoration:none;"
+          >Juan Eduardo Flores</a
+        >
       </h1>
-      <div align="center">
-        <button id="navbtn" type="button" class="block" onclick="toggleMenu()">
-          ☰
-        </button>
-        <nav id="navbtnoptions">
-          <ul id="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="default.asp">Work</a></li>
-            <li><a href="blogindex.html">Blog</a></li>
-            <li><a href="about.asp">CV</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
       <nav id="navoptions" role="navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -81,7 +83,6 @@
         </ul>
       </nav>
     </header>
-    <br />
     <div id="slideshow">
       <div class="image-container">
         <img src="./images/test.png" />
