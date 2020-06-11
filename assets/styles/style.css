@@ -5,6 +5,7 @@
 html {
   font-size: 100%;
   overflow-y: scroll;
+  /* overflow-x: hidden; */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -12,27 +13,23 @@ html {
 body {
   color: #444;
   line-height: 1.7;
-  padding: 1em;
+  /* padding: 1em; */
   margin: 0;
   background: #fefefe;
 }
 
 button {
-  /* padding: 1px auto; */
-  padding: auto;
-  margin: 0 0;
-  font-size: 1em;
+  font-size: 2em;
   background: #c7c7c7;
   color: black;
-  display: block;
-
-  /* width: auto; */ 
-  /* display: none; */
-
   width: 100%;
-  position:absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid white;
+  /* position:absolute; */
+  /* top: 0; */
+  /* left: 0; */
   /* margin-top:100%; */
 }
 
@@ -59,9 +56,14 @@ nav.is-active {
 }
 
 #navoptions ul {
+  overflow-x: hidden;
   margin: 0;
   padding: 0 1em 0 0;
   text-align: center;
+}
+
+#menu ul {
+  padding: 0;
 }
 
 #navoptions li {
@@ -72,27 +74,30 @@ nav.is-active {
 }
 
 #navbtnoptions ul {
+  overflow-x: hidden;
   margin: 0;
-  padding: 0 1em 0 0;
+  padding: 0;
+  width: 100%;
   text-align: center;
-  position: relative;
+  list-style-type: none;
+  /* position: relative; */
   display: none;
 }
 
 #navbtnoptions li {
-  list-style-type: none;
+  /* list-style-type: none; */
+  padding: 1px 0 0 0;
   display: block;
   background-color: #c7c7c7;
-
-  margin: 0 0 0 -20px;
+  border-bottom: 1px solid white;
+  /* margin: 0 0 0 -20px; */
+  width: 100%;
   font-size: 3hv;
-  /* position: sticky; */
-  /* position: relative; */
-  /* position: absolute; */
 }
 
 nav a {
   color: #0645ad;
+  display: block;
   text-decoration: none;
 }
 
@@ -146,6 +151,7 @@ a::selection {
 }
 
 img {
+  display: inline-block;
   max-width: 50%;
   min-width: 25%;
   text-align: center;

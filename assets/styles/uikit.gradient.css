@@ -164,10 +164,10 @@ img,
 svg,
 video {
   /* 1 */
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%; */
+  /* height: auto; */
   /* 2 */
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 /*
  * Preserve original dimensions
@@ -199,7 +199,7 @@ svg:not(:root) {
  */
 blockquote,
 figure {
-  margin: 0;
+  /* margin: 0; */
 }
 /*
  * Margins
@@ -213,7 +213,7 @@ pre,
 address,
 fieldset,
 figure {
-  margin: 0 0 15px 0;
+  /* margin: 0 0 15px 0; */
 }
 * + p,
 * + ul,
@@ -224,7 +224,7 @@ figure {
 * + address,
 * + fieldset,
 * + figure {
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 /* Headings
  ========================================================================== */
@@ -383,7 +383,7 @@ main,
 nav,
 section,
 summary {
-  display: block;
+  /* display: block; */
 }
 /*
  * Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.

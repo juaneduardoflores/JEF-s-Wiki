@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/apple-touch-icon.png"
+    />
+
+        <link rel="stylesheet" href="uikit.gradient.css" />
+    
+    <link rel="stylesheet" href="../../assets/styles/uikit.gradient.css" />
+    <link rel="stylesheet" href="../../assets/styles/blogstyle.css" />
+
+    <meta name="generator" content="pandoc-uikit" />
+         <title>Processing.html</title>
+         <style type="text/css">
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          color: #aaaaaa;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+      div.sourceCode
+        {  background-color: #f8f8f8; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span.al { color: #ef2929; } /* Alert */
+      code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+      code span.at { color: #c4a000; } /* Attribute */
+      code span.bn { color: #0000cf; } /* BaseN */
+      code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #4e9a06; } /* Char */
+      code span.cn { color: #000000; } /* Constant */
+      code span.co { color: #8f5902; font-style: italic; } /* Comment */
+      code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+      code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+      code span.dt { color: #204a87; } /* DataType */
+      code span.dv { color: #0000cf; } /* DecVal */
+      code span.er { color: #a40000; font-weight: bold; } /* Error */
+      code span.ex { } /* Extension */
+      code span.fl { color: #0000cf; } /* Float */
+      code span.fu { color: #000000; } /* Function */
+      code span.im { } /* Import */
+      code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+      code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+      code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+      code span.ot { color: #8f5902; } /* Other */
+      code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+      code span.sc { color: #000000; } /* SpecialChar */
+      code span.ss { color: #4e9a06; } /* SpecialString */
+      code span.st { color: #4e9a06; } /* String */
+      code span.va { color: #000000; } /* Variable */
+      code span.vs { color: #4e9a06; } /* VerbatimString */
+      code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+         </head>
+
+  <body>
+    <div
+      class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom"
+    >
+      <div class="uk-grid" data-uk-grid-margin>
+        <div class="uk-width-medium-1-4">
+          <div
+            class="uk-overflow-container"
+            data-uk-sticky="{top:25,media: 768}"
+          >
+            <div class="uk-panel uk-panel-box menu-begin">
+               <ul>
+<li><a href="#p3d">P3D</a></li>
+</ul> 
+            </div>
+          </div>
+        </div>
+
+        <div class="uk-width-medium-3-4">
+          <!-- <h3 id="p3d">P3D</h3>
+<p>To use the P3D renderer in your sketch:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">// The size() function has an optional parameter to</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">// specify which renderer you want to use.</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">// There are two options besides the default -&gt; P2D, P3D </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb1-7"><a href="#cb1-7"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>}</span></code></pre></div>
+<p>In Daniel Shiffman’s Tutorial on the <a href="https://processing.org/tutorials/p3d/" target="_blank">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.</p>
+<p>Let’s look at what happens if we try to draw a simple square at the center of the canvas like how we do in the default renderer and compare it with P3D:</p>
+<p style="text-align:center">
+<img src="/Blog/Processing/gifs/P2D.png" alt="Default Renderer" /> <img src="/Blog/Processing/gifs/P3D.png" alt="Default Renderer" />
+</p>
+<p style="text-align:center">
+Default Renderer (left) vs. P3D (right)
+</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="co">//size(200, 200);</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb2-4"><a href="#cb2-4"></a>}</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">rectMode</span>(CENTER);</span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, width/<span class="dv">2</span>, height/<span class="dv">2</span>);</span>
+<span id="cb2-9"><a href="#cb2-9"></a>}</span></code></pre></div>
+<p>That’s right! They look almost the same! But don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the rectangle around this three dimensional space, we depend on the <code>translate()</code> function.</p>
+<p>For example, we can make the square move towards us by incrementing the Z axis:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">// example borrowed from https://processing.org/tutorials/p3d/</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="dt">float</span> x, y, z;</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  x = width/<span class="dv">2</span>;</span>
+<span id="cb3-8"><a href="#cb3-8"></a>  y = height/<span class="dv">2</span>;</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  z = <span class="dv">0</span>;</span>
+<span id="cb3-10"><a href="#cb3-10"></a>}</span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  <span class="fu">translate</span>(x,y,z);  </span>
+<span id="cb3-14"><a href="#cb3-14"></a>  <span class="fu">rectMode</span>(CENTER);</span>
+<span id="cb3-15"><a href="#cb3-15"></a>  <span class="fu">rect</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">100</span>);</span>
+<span id="cb3-16"><a href="#cb3-16"></a>  </span>
+<span id="cb3-17"><a href="#cb3-17"></a>  z++; <span class="co">// the rect moves forward.</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>}</span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/01_P3D.gif" alt="" /><figcaption>01_example</figcaption>
+</figure>
+<p>If you attempt to run this code in any other renderer besides P3D, it will throw back an error at you.</p>
+<p>We have to think about drawing shapes differently here because if we wanted to draw a rectangle we don’t give it the X, Y, and Z coordiantes, we draw it like we do in 2D and use a combination of <code>translate()</code> and the 3D rotate functions (<code>rotateX()</code>, <code>rotateY()</code>, and <code>rotateZ()</code>).</p>
+<p>Using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="dt">float</span> angle;</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb4-5"><a href="#cb4-5"></a>}</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">background</span>(<span class="dv">100</span>);</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">rectMode</span>(CENTER);</span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">rotateX</span>(angle);</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">rect</span>(width/<span class="dv">2</span>, height/<span class="dv">2</span>, <span class="dv">100</span>, <span class="dv">100</span>);</span>
+<span id="cb4-12"><a href="#cb4-12"></a>  angle+=<span class="fl">0.</span><span class="bn">03</span>;</span>
+<span id="cb4-13"><a href="#cb4-13"></a>}</span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/02_P3D.gif" alt="" /><figcaption>02_example</figcaption>
+</figure> -->
+
+          <h3 id="p3d">P3D</h3>
+<p>To use the P3D renderer in your sketch:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">// The size() function has an optional parameter to</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">// specify which renderer you want to use.</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">// There are two options besides the default -&gt; P2D, P3D </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb1-7"><a href="#cb1-7"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>}</span></code></pre></div>
+<p>In Daniel Shiffman’s Tutorial on the <a href="https://processing.org/tutorials/p3d/" target="_blank">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.</p>
+<p>Let’s look at what happens if we try to draw a simple square at the center of the canvas like how we do in the default renderer and compare it with P3D:</p>
+<p style="text-align:center">
+<img src="/Blog/Processing/gifs/P2D.png" alt="Default Renderer" /> <img src="/Blog/Processing/gifs/P3D.png" alt="Default Renderer" />
+</p>
+<p style="text-align:center">
+Default Renderer (left) vs. P3D (right)
+</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="co">//size(200, 200);</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb2-4"><a href="#cb2-4"></a>}</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">rectMode</span>(CENTER);</span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, width/<span class="dv">2</span>, height/<span class="dv">2</span>);</span>
+<span id="cb2-9"><a href="#cb2-9"></a>}</span></code></pre></div>
+<p>That’s right! They look almost the same! But don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the rectangle around this three dimensional space, we depend on the <code>translate()</code> function.</p>
+<p>For example, we can make the square move towards us by incrementing the Z axis:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">// example borrowed from https://processing.org/tutorials/p3d/</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="dt">float</span> x, y, z;</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  x = width/<span class="dv">2</span>;</span>
+<span id="cb3-8"><a href="#cb3-8"></a>  y = height/<span class="dv">2</span>;</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  z = <span class="dv">0</span>;</span>
+<span id="cb3-10"><a href="#cb3-10"></a>}</span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  <span class="fu">translate</span>(x,y,z);  </span>
+<span id="cb3-14"><a href="#cb3-14"></a>  <span class="fu">rectMode</span>(CENTER);</span>
+<span id="cb3-15"><a href="#cb3-15"></a>  <span class="fu">rect</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">100</span>);</span>
+<span id="cb3-16"><a href="#cb3-16"></a>  </span>
+<span id="cb3-17"><a href="#cb3-17"></a>  z++; <span class="co">// the rect moves forward.</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>}</span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/01_P3D.gif" alt="" /><figcaption>01_example</figcaption>
+</figure>
+<p>If you attempt to run this code in any other renderer besides P3D, it will throw back an error at you.</p>
+<p>We have to think about drawing shapes differently here because if we wanted to draw a rectangle we don’t give it the X, Y, and Z coordiantes, we draw it like we do in 2D and use a combination of <code>translate()</code> and the 3D rotate functions (<code>rotateX()</code>, <code>rotateY()</code>, and <code>rotateZ()</code>).</p>
+<p>Using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="dt">float</span> angle;</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
+<span id="cb4-5"><a href="#cb4-5"></a>}</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">background</span>(<span class="dv">100</span>);</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">rectMode</span>(CENTER);</span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">rotateX</span>(angle);</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">rect</span>(width/<span class="dv">2</span>, height/<span class="dv">2</span>, <span class="dv">100</span>, <span class="dv">100</span>);</span>
+<span id="cb4-12"><a href="#cb4-12"></a>  angle+=<span class="fl">0.</span><span class="bn">03</span>;</span>
+<span id="cb4-13"><a href="#cb4-13"></a>}</span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/02_P3D.gif" alt="" /><figcaption>02_example</figcaption>
+</figure> 
+        </div>
+      </div>
+      <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+    </div>
+  </body>
+</html>

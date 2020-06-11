@@ -224,21 +224,21 @@ dd:last-child {
 }
 
 img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
+  /* border: 0; */
+  /* -ms-interpolation-mode: bicubic; */
   /* vertical-align: middle; */
 }
 
-/* figure { */
-/*   display: block; */
-/*   text-align: center; */
-/*   margin: 1em 0; */
-/* } */
+figure {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
 
-/* figure img { */
-/*   border: none; */
-/*   margin: 0 auto; */
-/* } */
+figure img {
+  border: none;
+  margin: 0 auto;
+}
 
 /* figcaption { */
 /*   font-size: 0.8em; */
