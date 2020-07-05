@@ -92,7 +92,8 @@ strong {
  * Emphasize
  */
 em {
-  color: #d05;
+  /* color: #d05; */
+  color: #000000;
 }
 /*
  * Insert
