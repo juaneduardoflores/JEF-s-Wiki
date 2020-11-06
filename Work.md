@@ -58,3 +58,13 @@ These-Eyes is a live coding performance with an interactive component from the v
 ![](./portfolio/debris/debris_001.gif)
 
 Debris is a project.
+
+#### Statement
+My beginnings in the art world, besides being a wannabee inventor since a child, was in late 2010 when I joined the MOSAIC student artist program provided by the Blue Star Contemporary Art Museum in San Antonio, TX. Being just a short 10 minute walk from my highschool, it was there where I began to get the help and confidence I needed to exhibit my first oil paintings, relief prints, and where I got my first paycheck for working on a large scale collaborative mural project that is still installed in the east side of San Antonio representing historical local buildings. These experiences were to influence my perspective on how art in public spaces can affect and contribute to communities.
+
+It was not until my second year enrolled in Connecticut College, when I became enamored by artwork that involved technology. Up until then, work that involved coding, electronics, robotics, and other types of high-tech tools felt inaccessible for being expensive and requiring professional level training. While I took advantage of the tools available to me as a student fellow of the Ammerman Center for Arts and Technology, I quickly started to build a list of free and open source software and learning how to code. Of these new worlds that were new to me in creative art making, sound became one of the focuses I brought with me to Mexico City, funded by the Mortimer Hays-Brandeis Fellowship in 2016 after graduation. In Mexico I solidified my interests in work that was made by found electronics and accessible creative coding environments.
+
+
+
+#### Contact 
+email me at: juanedflores@gmail.com
