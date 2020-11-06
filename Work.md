@@ -11,6 +11,11 @@ Crossing thresholds is part of being human, but it does not always guarantee saf
 
 ---
 
+# Stations (2016)  
+<img src="./portfolio/stations/stations_001.jpg" alt="portrait" style="width:400px;"> 
+
+Stations is a 
+
 
 # Spectrum (2017)  
 <iframe src="https://player.vimeo.com/video/228955732" width="839" height="560" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -34,6 +39,14 @@ In their back and forth dialogue, they produce an environment that envelops the 
 **Documentation**:
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322481683&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/juanflores-15" title="JuanFlores" target="_blank" style="color: #cccccc; text-decoration: none;">JuanFlores</a> · <a href="https://soundcloud.com/juanflores-15/mod18perform" title="MOD18 Performance ft. Isaac Medina" target="_blank" style="color: #cccccc; text-decoration: none;">MOD18 Performance ft. Isaac Medina</a></div>
 
+# Post-Data (2019)  
+<iframe src="https://player.vimeo.com/video/372649404" width="839" height="560" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+Presented as part of Luminaria Contemporary Arts Festival, Post-Tw.In.Yo.Go.Fa. (Post-Data), is the name of the dystopian digital realm that imagines life after the fall of five internet beasts (Twitter, Instagram, Youtube, Google, and Facebook). By using the hashtag #luminariasa people engaged with the artwork and were able to see their posts altered and disrupted on the screen in real time.
+
+# Toy Instrument Compositions (2020)  
+<iframe width="839" height="560" src="https://www.youtube.com/embed/fc7ng6B_f5s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # These Eyes (2020)  
 ![](./portfolio/these-eyes/these-eyes_001.png)  
 
@@ -41,3 +54,7 @@ These-Eyes is a live coding performance with an interactive component from the v
 
 **Location**: To be presented virtually as part of the Piksel20 Festival held in Bergen, Norway. November 19-22.
 
+# Debris (2020)  
+![](./portfolio/debris/debris_001.gif)
+
+Debris is a project.
