@@ -14,7 +14,7 @@ Crossing thresholds is part of being human, but it does not always guarantee saf
 # Stations (2016)  
 <img src="./portfolio/stations/stations_001.jpg" alt="portrait" style="width:400px;"> 
 
-Stations is a 
+Stations.
 
 
 # Spectrum (2017)  
@@ -57,7 +57,7 @@ These-Eyes is a live coding performance with an interactive component from the v
 # Debris (2020)  
 ![](./portfolio/debris/debris_001.gif)
 
-Debris is a project.
+Debris is a video installation that shows two different kinds of objects. One type is of stereotypical building tools one would expect, and the other is children's toys.
 
 #### Statement
 My beginnings in the art world, besides being a wannabee inventor since a child, was in late 2010 when I joined the MOSAIC student artist program provided by the Blue Star Contemporary Art Museum in San Antonio, TX. Being just a short 10 minute walk from my highschool, it was there where I began to get the help and confidence I needed to exhibit my first oil paintings, relief prints, and where I got my first paycheck for working on a large scale collaborative mural project that is still installed in the east side of San Antonio representing historical local buildings. These experiences were to influence my perspective on how art in public spaces can affect and contribute to communities.
