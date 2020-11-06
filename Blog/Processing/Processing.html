@@ -98,6 +98,7 @@
 <ul>
 <li><a href="#intro">Intro</a></li>
 <li><a href="#d-shapes">3D Shapes</a></li>
+<li><a href="#textures">Textures</a></li>
 </ul></li>
 </ul> 
             </div>
@@ -136,7 +137,7 @@ Default Renderer (left) vs. P3D (right)
 <span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">rectMode</span>(CENTER);</span>
 <span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, width/<span class="dv">2</span>, height/<span class="dv">2</span>);</span>
 <span id="cb2-9"><a href="#cb2-9"></a>}</span></code></pre></div>
-<p>That’s right! They look almost the same! But don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the rectangle around this three dimensional space, we depend on the <code>translate()</code> function.</p>
+<p>That’s right! They look almost the same! But don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the <code>translate()</code> function.</p>
 <p>For example, we can make the square move towards us by incrementing the Z axis:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">// example borrowed from https://processing.org/tutorials/p3d/</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
@@ -159,11 +160,10 @@ Default Renderer (left) vs. P3D (right)
 <figure>
 <img src="/Blog/Processing/gifs/01_P3D.gif" alt="" /><figcaption>Incrementing Z Value</figcaption>
 </figure>
-<p>If you attempt to run this code in any other renderer besides P3D, it will throw back an error at you.</p>
-<p>We have to think about drawing shapes differently here because if we wanted to draw a rectangle we don’t give it the X, Y, and Z coordiantes, we draw it like we do in 2D and use a combination of <code>translate()</code> and the 3D rotate functions (<code>rotateX()</code>, <code>rotateY()</code>, and <code>rotateZ()</code>).</p>
-<p>Using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
+<p>If you attempt to run this code in the default renderer or P2D, it will throw back an error at you.</p>
+<p>By using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">// Example with rotateX() uncommented.</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="dt">float</span> angle;</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
 <span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
@@ -184,9 +184,9 @@ Default Renderer (left) vs. P3D (right)
 <p style="text-align:center">
 rotateX(angle) vs. rotateY(angle) vs. rotateZ(angle)
 </p>
-<p>You might have expected the square to rotate according to its center axis, but in P3D, it rotates according to the coordinate (<code>X</code>: 0, <code>Y</code>:0, <code>Z</code>:0). To change this, we must use the <code>translate()</code> function to change the center origin, and draw the square using that point as its center. Make sure to call the rotation after the translation has been made, otherwise you will not see a change.</p>
+<p>You might have expected the square to rotate according to its center axis, but in P3D, it rotates according to the coordinate (<code>X</code>:0, <code>Y</code>:0, <code>Z</code>:0). To change this, we must use the <code>translate()</code> function to change the origin to the center. Make sure to call the rotation after the translation has been made, otherwise you will not see a change.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">// Example with rotateX() uncommented.</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="dt">float</span> angle;</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
 <span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
@@ -212,12 +212,12 @@ X axis vs. Y axis vs. Z axis with translation to its center
 <img src="/Blog/Processing/gifs/08_P3D.gif" alt="" /><figcaption>XYZ rotation with same angle value</figcaption>
 </figure>
 <h4 id="d-shapes">3D Shapes</h4>
-<p>There are 3D primitives that can be easily drawn:</p>
+<p>There are 3D primitives that can be easily drawn using some built in functions:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">// Example with box() uncommented.</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="co">// box(size), box(width, height, dimension of the box in the z-dimension)</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="co">// sphere(radius)</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="dt">float</span> angle;</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
 <span id="cb6-6"><a href="#cb6-6"></a></span>
 <span id="cb6-7"><a href="#cb6-7"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
 <span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
@@ -239,7 +239,79 @@ X axis vs. Y axis vs. Z axis with translation to its center
 </p>
 <p style="text-align:center">
 <code>box()</code> and <code>sphere()</code>
-</p> -->
+</p>
+<p>You can also draw custom shapes using <code>beginShape()</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">// example borrowed from https://processing.org/tutorials/p3d/</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">size</span>(<span class="dv">640</span>, <span class="dv">360</span>, P3D); </span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">stroke</span>(<span class="dv">255</span>);</span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">noFill</span>();</span>
+<span id="cb7-9"><a href="#cb7-9"></a>}</span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">background</span>(<span class="dv">0</span>);</span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">translate</span>(width/<span class="dv">2</span>, height/<span class="dv">2</span>, <span class="dv">0</span>);</span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">rotateX</span>(angle);</span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">rotateY</span>(angle);</span>
+<span id="cb7-17"><a href="#cb7-17"></a></span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">beginShape</span>();</span>
+<span id="cb7-19"><a href="#cb7-19"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-20"><a href="#cb7-20"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-21"><a href="#cb7-21"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,    <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-22"><a href="#cb7-22"></a></span>
+<span id="cb7-23"><a href="#cb7-23"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-24"><a href="#cb7-24"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>,  <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-25"><a href="#cb7-25"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,    <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-26"><a href="#cb7-26"></a></span>
+<span id="cb7-27"><a href="#cb7-27"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-28"><a href="#cb7-28"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-29"><a href="#cb7-29"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,   <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-30"><a href="#cb7-30"></a></span>
+<span id="cb7-31"><a href="#cb7-31"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>,  <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-32"><a href="#cb7-32"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-33"><a href="#cb7-33"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,    <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-34"><a href="#cb7-34"></a>  <span class="fu">endShape</span>();</span>
+<span id="cb7-35"><a href="#cb7-35"></a></span>
+<span id="cb7-36"><a href="#cb7-36"></a>  angle+=<span class="fl">0.</span><span class="bn">03</span>;</span>
+<span id="cb7-37"><a href="#cb7-37"></a>}</span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/11_P3D.gif" alt="" /><figcaption>Custom Shape (Pyramid)</figcaption>
+</figure>
+<h4 id="textures">Textures</h4>
+<p>To add an image as a texture to a 3D custom shape:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1"></a>PImage img;</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">size</span>(<span class="dv">640</span>, <span class="dv">360</span>, P3D);</span>
+<span id="cb8-6"><a href="#cb8-6"></a>  img = <span class="fu">loadImage</span>(<span class="st">&quot;woof.bmp&quot;</span>); <span class="co">// 240 * 320 pixels</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>}</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">background</span>(<span class="dv">0</span>);</span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="fu">translate</span>(width/<span class="dv">2</span>, height/<span class="dv">2</span>);</span>
+<span id="cb8-12"><a href="#cb8-12"></a>  </span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">rotateX</span>(angle);</span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">stroke</span>(<span class="dv">255</span>);</span>
+<span id="cb8-15"><a href="#cb8-15"></a>  <span class="fu">fill</span>(<span class="dv">127</span>);</span>
+<span id="cb8-16"><a href="#cb8-16"></a>  <span class="fu">beginShape</span>();</span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="fu">texture</span>(img);  <span class="co">// add texture after beginShape() and before vertex functions.</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, -<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb8-19"><a href="#cb8-19"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, -<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">240</span>, <span class="dv">0</span>);</span>
+<span id="cb8-20"><a href="#cb8-20"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>,  <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">240</span>, <span class="dv">320</span>);</span>
+<span id="cb8-21"><a href="#cb8-21"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>,  <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">320</span>);</span>
+<span id="cb8-22"><a href="#cb8-22"></a>  <span class="fu">endShape</span>();</span>
+<span id="cb8-23"><a href="#cb8-23"></a>  </span>
+<span id="cb8-24"><a href="#cb8-24"></a>  angle+=<span class="fl">0.</span><span class="bn">03</span>;</span>
+<span id="cb8-25"><a href="#cb8-25"></a>} </span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/12_P3D.gif" alt="" /><figcaption>Using Image as a Texture</figcaption>
+</figure>
+<p>Notice how there were two more parameters in the vertex function. When providing a texture, we can also specify a <code>u</code> and <code>v</code> value, as used in something called <code>UV mapping</code>.</p> -->
 
           <h3 id="p3d">P3D</h3>
 <p>To use the P3D renderer in your sketch:</p>
@@ -272,7 +344,7 @@ Default Renderer (left) vs. P3D (right)
 <span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">rectMode</span>(CENTER);</span>
 <span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">rect</span>(<span class="dv">0</span>, <span class="dv">0</span>, width/<span class="dv">2</span>, height/<span class="dv">2</span>);</span>
 <span id="cb2-9"><a href="#cb2-9"></a>}</span></code></pre></div>
-<p>That’s right! They look almost the same! But don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the rectangle around this three dimensional space, we depend on the <code>translate()</code> function.</p>
+<p>That’s right! They look almost the same! But don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the <code>translate()</code> function.</p>
 <p>For example, we can make the square move towards us by incrementing the Z axis:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">// example borrowed from https://processing.org/tutorials/p3d/</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
@@ -295,11 +367,10 @@ Default Renderer (left) vs. P3D (right)
 <figure>
 <img src="/Blog/Processing/gifs/01_P3D.gif" alt="" /><figcaption>Incrementing Z Value</figcaption>
 </figure>
-<p>If you attempt to run this code in any other renderer besides P3D, it will throw back an error at you.</p>
-<p>We have to think about drawing shapes differently here because if we wanted to draw a rectangle we don’t give it the X, Y, and Z coordiantes, we draw it like we do in 2D and use a combination of <code>translate()</code> and the 3D rotate functions (<code>rotateX()</code>, <code>rotateY()</code>, and <code>rotateZ()</code>).</p>
-<p>Using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
+<p>If you attempt to run this code in the default renderer or P2D, it will throw back an error at you.</p>
+<p>By using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">// Example with rotateX() uncommented.</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="dt">float</span> angle;</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
 <span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
@@ -320,9 +391,9 @@ Default Renderer (left) vs. P3D (right)
 <p style="text-align:center">
 rotateX(angle) vs. rotateY(angle) vs. rotateZ(angle)
 </p>
-<p>You might have expected the square to rotate according to its center axis, but in P3D, it rotates according to the coordinate (<code>X</code>: 0, <code>Y</code>:0, <code>Z</code>:0). To change this, we must use the <code>translate()</code> function to change the center origin, and draw the square using that point as its center. Make sure to call the rotation after the translation has been made, otherwise you will not see a change.</p>
+<p>You might have expected the square to rotate according to its center axis, but in P3D, it rotates according to the coordinate (<code>X</code>:0, <code>Y</code>:0, <code>Z</code>:0). To change this, we must use the <code>translate()</code> function to change the origin to the center. Make sure to call the rotation after the translation has been made, otherwise you will not see a change.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">// Example with rotateX() uncommented.</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="dt">float</span> angle;</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
 <span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
@@ -348,12 +419,12 @@ X axis vs. Y axis vs. Z axis with translation to its center
 <img src="/Blog/Processing/gifs/08_P3D.gif" alt="" /><figcaption>XYZ rotation with same angle value</figcaption>
 </figure>
 <h4 id="d-shapes">3D Shapes</h4>
-<p>There are 3D primitives that can be easily drawn:</p>
+<p>There are 3D primitives that can be easily drawn using some built in functions:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">// Example with box() uncommented.</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="co">// box(size), box(width, height, dimension of the box in the z-dimension)</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="co">// sphere(radius)</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="dt">float</span> angle;</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
 <span id="cb6-6"><a href="#cb6-6"></a></span>
 <span id="cb6-7"><a href="#cb6-7"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
 <span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">size</span>(<span class="dv">200</span>, <span class="dv">200</span>, P3D);</span>
@@ -375,7 +446,79 @@ X axis vs. Y axis vs. Z axis with translation to its center
 </p>
 <p style="text-align:center">
 <code>box()</code> and <code>sphere()</code>
-</p> 
+</p>
+<p>You can also draw custom shapes using <code>beginShape()</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">// example borrowed from https://processing.org/tutorials/p3d/</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">size</span>(<span class="dv">640</span>, <span class="dv">360</span>, P3D); </span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">stroke</span>(<span class="dv">255</span>);</span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">noFill</span>();</span>
+<span id="cb7-9"><a href="#cb7-9"></a>}</span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">background</span>(<span class="dv">0</span>);</span>
+<span id="cb7-13"><a href="#cb7-13"></a>  <span class="fu">translate</span>(width/<span class="dv">2</span>, height/<span class="dv">2</span>, <span class="dv">0</span>);</span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">rotateX</span>(angle);</span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">rotateY</span>(angle);</span>
+<span id="cb7-17"><a href="#cb7-17"></a></span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="fu">beginShape</span>();</span>
+<span id="cb7-19"><a href="#cb7-19"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-20"><a href="#cb7-20"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-21"><a href="#cb7-21"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,    <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-22"><a href="#cb7-22"></a></span>
+<span id="cb7-23"><a href="#cb7-23"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-24"><a href="#cb7-24"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>,  <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-25"><a href="#cb7-25"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,    <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-26"><a href="#cb7-26"></a></span>
+<span id="cb7-27"><a href="#cb7-27"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-28"><a href="#cb7-28"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-29"><a href="#cb7-29"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,   <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-30"><a href="#cb7-30"></a></span>
+<span id="cb7-31"><a href="#cb7-31"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>,  <span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-32"><a href="#cb7-32"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, -<span class="dv">100</span>, -<span class="dv">100</span>);</span>
+<span id="cb7-33"><a href="#cb7-33"></a>  <span class="fu">vertex</span>(   <span class="dv">0</span>,    <span class="dv">0</span>,  <span class="dv">100</span>);</span>
+<span id="cb7-34"><a href="#cb7-34"></a>  <span class="fu">endShape</span>();</span>
+<span id="cb7-35"><a href="#cb7-35"></a></span>
+<span id="cb7-36"><a href="#cb7-36"></a>  angle+=<span class="fl">0.</span><span class="bn">03</span>;</span>
+<span id="cb7-37"><a href="#cb7-37"></a>}</span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/11_P3D.gif" alt="" /><figcaption>Custom Shape (Pyramid)</figcaption>
+</figure>
+<h4 id="textures">Textures</h4>
+<p>To add an image as a texture to a 3D custom shape:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1"></a>PImage img;</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="dt">float</span> angle = <span class="dv">0</span>;</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="dt">void</span> <span class="fu">setup</span>() {</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">size</span>(<span class="dv">640</span>, <span class="dv">360</span>, P3D);</span>
+<span id="cb8-6"><a href="#cb8-6"></a>  img = <span class="fu">loadImage</span>(<span class="st">&quot;woof.bmp&quot;</span>); <span class="co">// 240 * 320 pixels</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>}</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="dt">void</span> <span class="fu">draw</span>() {</span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="fu">background</span>(<span class="dv">0</span>);</span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="fu">translate</span>(width/<span class="dv">2</span>, height/<span class="dv">2</span>);</span>
+<span id="cb8-12"><a href="#cb8-12"></a>  </span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">rotateX</span>(angle);</span>
+<span id="cb8-14"><a href="#cb8-14"></a>  <span class="fu">stroke</span>(<span class="dv">255</span>);</span>
+<span id="cb8-15"><a href="#cb8-15"></a>  <span class="fu">fill</span>(<span class="dv">127</span>);</span>
+<span id="cb8-16"><a href="#cb8-16"></a>  <span class="fu">beginShape</span>();</span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="fu">texture</span>(img);  <span class="co">// add texture after beginShape() and before vertex functions.</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>, -<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb8-19"><a href="#cb8-19"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>, -<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">240</span>, <span class="dv">0</span>);</span>
+<span id="cb8-20"><a href="#cb8-20"></a>  <span class="fu">vertex</span>( <span class="dv">100</span>,  <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">240</span>, <span class="dv">320</span>);</span>
+<span id="cb8-21"><a href="#cb8-21"></a>  <span class="fu">vertex</span>(-<span class="dv">100</span>,  <span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">320</span>);</span>
+<span id="cb8-22"><a href="#cb8-22"></a>  <span class="fu">endShape</span>();</span>
+<span id="cb8-23"><a href="#cb8-23"></a>  </span>
+<span id="cb8-24"><a href="#cb8-24"></a>  angle+=<span class="fl">0.</span><span class="bn">03</span>;</span>
+<span id="cb8-25"><a href="#cb8-25"></a>} </span></code></pre></div>
+<figure>
+<img src="/Blog/Processing/gifs/12_P3D.gif" alt="" /><figcaption>Using Image as a Texture</figcaption>
+</figure>
+<p>Notice how there were two more parameters in the vertex function. When providing a texture, we can also specify a <code>u</code> and <code>v</code> value, as used in something called <code>UV mapping</code>.</p> 
         </div>
       </div>
       <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>

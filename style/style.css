@@ -1,0 +1,31 @@
+body {
+  /* font-family: 'Cormorant Garamond', serif; */
+  font-family: 'Rajdhani', sans-serif;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.0em;
+}
+
+h1 .uk-heading-large {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+a {
+  font-size: 1.1em;
+}
+
+p {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 1.3em;
+}
+
+.uk-heading-large {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.uk-text-large {
+  font-family: 'Rajdhani', sans-serif;
+}
