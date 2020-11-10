@@ -12,7 +12,7 @@ Crossing thresholds is part of being human, but it does not always guarantee saf
 ---
 
 # Stations (2016)  
-<img src="./portfolio/stations/stations_001.JPG" alt="portrait" style="width:400px;"> 
+<img src="./portfolio/stations/stations_001.JPG" alt="portrait" style="width:400px;" /> 
 
 Stations.
 
