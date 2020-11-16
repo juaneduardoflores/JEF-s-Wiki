@@ -1,5 +1,5 @@
 # Residue (2016)
-<iframe src="https://player.vimeo.com/video/166680557" style="background:black;" width=100% height=560; frameborder="0" allow="autoplay; fullscreen" allowfullscreen ></iframe>  
+<iframe src="https://player.vimeo.com/video/166680557" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
 
 Residue is an installation that integrates paintings with composited video projections to present a liminal space with an intersectional experience of the physical residues that are left behind by fleeting bodies who are crossing the border. The fence represents the in between space one transitions from one place to another.
 The inspiration came after being struck by the images of refugees leaving torn and bloody clothes behind on the sharp edges of border fences, while also seeing the moments in other cases where some leave their clothes to dry while camping around them. I attempted to create an ambiguous combination of the two where it becomes a mixture of panic and frantic climbing that resembles those who move with a sense of urgency and danger, and those doing calm and attentive laundry. Like shedding off outer skin, there is a sense of vulnerability in these places where nothing is certain.

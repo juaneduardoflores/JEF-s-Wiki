@@ -34,22 +34,24 @@
                 </div>
             </div>
 
-            <nav id="navoptions" role="navigation">
-                <ul id="nav">
-                    <li><a href="#statement">Statement</a></li>
-                    <li>|</li>
-                    <li><a href="#">CV</a></li>
-                    <li>|</li>
-                    <li><a href="#">Blog</a></li>
-                    <li>|</li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="uk-navbar-containe" uk-navbar>
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li><a href="#statement">Statement</a></li>
+                        <!-- <li>|</li> -->
+                        <li><a href="#">CV</a></li>
+                        <!-- <li>|</li> -->
+                        <li><a href="#">Blog</a></li>
+                        <!-- <li>|</li> -->
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
 
             <div uk-grid>
                 <div class="uk-width-1-4">
                     <div
-                        class="uk-card uk-overflow-auto"
+                        class="uk-panel"
                         data-uk-sticky="{top:25,media: 768}"
                         uk-sticky
                     >
@@ -97,12 +99,12 @@
                     <h2 id="residue-2016">Residue (2016)</h2>
                     <iframe
                         src="https://player.vimeo.com/video/166680557"
-                        style="background: black"
-                        width="100%"
-                        height="560;"
+                        width="1920"
+                        height="1080"
                         frameborder="0"
-                        allow="autoplay; fullscreen"
                         allowfullscreen
+                        uk-responsive
+                        uk-video="automute: true"
                     >
                     </iframe>
                     <p>
