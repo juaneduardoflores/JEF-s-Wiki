@@ -2,83 +2,79 @@
 <html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="generator" content="pandoc" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
 
-	$for(author-meta)$
-	<meta name="author" content="$author-meta$" />
-	$endfor$ $if(date-meta)$
-	<meta name="date" content="$date-meta$" />
-	$endif$ $if(quotes)$
-	<style type="text/css">
-		q {
-			quotes: "“""”""‘""’";
-		}
-	</style>
-	$endif$
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$
 
-	<title>$if(heading)$$heading$$endif$</title>
+    $if(date-meta)$
+    <meta name="date" content="$date-meta$" />
+    $endif$
 
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" />
-	<link rel="stylesheet" href="./style/uikit.gradient.css">
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/style/style.css">
+    <title>$if(heading)$$heading$$endif$</title>
 
-	<script src="./js/uikit.js"></script>
-	<script src="./js/scripts.js"></script>
-	<script src="./js/jquery.sticky-kit.js "></script>
+    <link rel="stylesheet" href="./css/uikit.min.css" />
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/uikit-icons.min.js"></script>
 
-	$for(header-includes)$ $header-includes$ $endfor$
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
+    <!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
+    <!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="/style/style.css"> -->
+
+    <!-- <script src="./js/uikit.js"></script> -->
+    <!-- <script src="./js/scripts.js"></script> -->
+    <!-- <script src="./js/jquery.sticky-kit.js "></script> -->
+
+    $for(header-includes)$ $header-includes$ $endfor$
 </head>
 
 <body>
-	<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
-		$if(heading)$
-		<div class="uk-grid" data-uk-grid-margin>
-			<div class="uk-width-1-1">
-				<h1 class="uk-heading-large">$heading$</h1>
-				$for(subheading)$
-				<p class="uk-text-large" style="margin: 0;">$subheading$</p>
-				$endfor$
-			</div>
-		</div>
-		$endif$
-
-		<nav id="navoptions" role="navigation">
-			<ul id="nav">
-				<li><a href="#statement">Statement</a></li>
-				<li>|</li>
-				<li><a href="#">CV</a></li>
-				<li>|</li>
-				<li><a href="#">Blog</a></li>
-				<li>|</li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-
-		<div class="uk-grid" data-uk-grid-margin>
-			<div class="uk-width-medium-1-4">
-				<div class="uk-overflow-container" data-uk-sticky="{top:25,media: 768}">
-					<div class="uk-panel uk-panel-box menu-begin">
-						<h3 style="text-align:left;">Work</h3>
-						$if(toc)$ $toc$ $endif$
-					</div>
-				</div>
-			</div>
-
-			<div class="uk-width-medium-3-4">
-				<!-- $for(poem)$ -->
-				<!-- <div class="$poem$" style="display: none;">$poem$$sep$,</div> -->
-				<!-- $endfor$ -->
-				$body$
-			</div>
-		</div>
+    <div class="uk-container uk-margin-top uk-margin-large-bottom">
+	$if(heading)$
+	<div uk-grid>
+	    <div class="uk-width-1-1">
+		<h1 class="uk-heading-large">$heading$</h1>
+		$for(subheading)$
+		<p class="uk-text-large" style="margin: 0;">$subheading$</p>
+		$endfor$
+	    </div>
 	</div>
-</body>
+	$endif$
 
-</html>
+	<nav id="navoptions" role="navigation">
+	    <ul id="nav">
+		<li><a href="#statement">Statement</a></li>
+		<li>|</li>
+		<li><a href="#">CV</a></li>
+		<li>|</li>
+		<li><a href="#">Blog</a></li>
+		<li>|</li>
+		<li><a href="#contact">Contact</a></li>
+	    </ul>
+	</nav>
+
+	<div uk-grid>
+	    <div class="uk-width-1-4">
+		<div class="uk-card uk-overflow-auto" data-uk-sticky="{top:25,media: 768}" uk-sticky>
+		    <div class="uk-panel">
+			<h3 style="text-align:left;">Work</h3>
+			$if(toc)$ $toc$ $endif$
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="uk-width-3-4">
+		$body$
+	    </div>
+	</div>
+
+    </div>
+</body>
 
 </html>

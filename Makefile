@@ -34,6 +34,7 @@ all: $(HTML)
 
 %.html: %.md
 	pandoc $< -o index.html $(PANDOCFLAGSHTML)
+	yarn prettier --write index.html
 	
 output:
 	mkdir ./$(OUTPUTFLDR)

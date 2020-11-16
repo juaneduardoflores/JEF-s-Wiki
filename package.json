@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "uikit": "^3.5.9"
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
+  }
+}

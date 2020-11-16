@@ -1,0 +1,74 @@
+body {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.0em;
+  padding-top: 0.4em;
+}
+
+h1 .uk-heading-large {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+#nav {
+  text-align: right;
+  padding: 0;
+}
+
+a {
+  font-size: 1.1em;
+}
+
+p {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 1.3em;
+}
+
+.uk-heading-large {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.uk-overflow-container > :last-child {
+    margin-bottom: 1.3em;
+}
+
+.uk-text-large {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+#navoptions li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 0 0 1em;
+  padding: 0;
+  font-size: 1em;
+}
+
+nav a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+iframe {
+  height: 560;
+  width: 100;
+}
+
+@media screen and (max-width: 376px) {
+
+  #nav {
+    padding-top: 5px;
+    text-align: left;
+  }
+
+  #navoptions li {
+    margin: 0 1em 0 0;
+  }
+
+  iframe {
+    height: auto;
+    width: 100%;
+  }
