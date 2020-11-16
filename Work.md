@@ -55,6 +55,7 @@ These-Eyes is a live coding performance with an interactive component from the v
 
 # Debris (2020)  
 ![](./portfolio/debris/debris_001.gif)
+
 Debris is a video installation that shows two different kinds of objects. One type is of stereotypical building tools one would expect, and the other is children's toys.
 
 #### Statement

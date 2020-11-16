@@ -38,25 +38,28 @@
     <div class="uk-container uk-margin-top uk-margin-large-bottom">
 	$if(heading)$
 	<div uk-grid>
-	    <div class="uk-width-1-1">
-		<h1 class="uk-heading-medium">$heading$</h1>
+	    <div class="uk-width-1-2@m">
+		<h1 class="uk-heading-small">$heading$</h1>
 		$for(subheading)$
 		<p class="uk-text-large" style="margin: 0;">$subheading$</p>
 		$endfor$
 	    </div>
+
+	    <div class="uk-width-1-2@m">
+		<div class="uk-navbar-containe" uk-navbar>
+		    <div class="uk-navbar-right">
+		      <ul class="uk-navbar-nav">
+			  <li><a href="#statement">Statement</a></li>
+			  <li><a href="#">CV</a></li>
+			  <li><a href="#">Blog</a></li>
+			  <li><a href="#contact">Contact</a></li>
+		      </ul>
+		    </div>
+		</div>
+	    </div>
 	</div>
 	$endif$
 
-	<div class="uk-navbar-containe" uk-navbar>
-	    <div class="uk-navbar-right">
-	      <ul class="uk-navbar-nav">
-		  <li><a href="#statement">Statement</a></li>
-		  <li><a href="#">CV</a></li>
-		  <li><a href="#">Blog</a></li>
-		  <li><a href="#contact">Contact</a></li>
-	      </ul>
-	    </div>
-	</div>
 
 	<div uk-grid>
 	    <div class="uk-width-1-4@m">
