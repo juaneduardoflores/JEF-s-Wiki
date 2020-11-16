@@ -39,7 +39,7 @@
 	$if(heading)$
 	<div uk-grid>
 	    <div class="uk-width-1-1">
-		<h1 class="uk-heading-large">$heading$</h1>
+		<h1 class="uk-heading-medium">$heading$</h1>
 		$for(subheading)$
 		<p class="uk-text-large" style="margin: 0;">$subheading$</p>
 		$endfor$
@@ -51,27 +51,22 @@
 	    <div class="uk-navbar-right">
 	      <ul class="uk-navbar-nav">
 		  <li><a href="#statement">Statement</a></li>
-		  <!-- <li>|</li> -->
 		  <li><a href="#">CV</a></li>
-		  <!-- <li>|</li> -->
 		  <li><a href="#">Blog</a></li>
-		  <!-- <li>|</li> -->
 		  <li><a href="#contact">Contact</a></li>
 	      </ul>
 	    </div>
 	</div>
 
 	<div uk-grid>
-	    <div class="uk-width-1-4">
-		<div class="uk-panel" data-uk-sticky="{top:25,media: 768}" uk-sticky>
-		    <div class="uk-panel">
-			<h3 style="text-align:left;">Work</h3>
-			$if(toc)$ $toc$ $endif$
-		    </div>
+	    <div class="uk-width-1-4@m">
+		<div uk-sticky="media: @m;">
+		    <h3 style="text-align:left;">Work</h3>
+		    $if(toc)$ $toc$ $endif$
 		</div>
 	    </div>
 
-	    <div class="uk-width-3-4">
+	    <div class="uk-width-3-4@m">
 		$body$
 	    </div>
 	</div>

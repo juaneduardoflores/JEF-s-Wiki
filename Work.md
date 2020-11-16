@@ -18,7 +18,7 @@ Stations.
 
 
 # Spectrum (2017)  
-<iframe src="https://player.vimeo.com/video/228955732" style="background:black;" width="100%" height="560" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/228955732" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
 The sound installation/performance is an attempt to use the space to represent the union of chaos and order. The installation changes from being an interactive instrument for the public, to an instrument used for a performance by the artist. It is an improvisation using a mix of sounds from local radio stations, generated sine tones, and white noise that play with the idea of using a receptive sound object that helps us find ways to get lost, disappear, meditate, and find harmony.
 
@@ -40,23 +40,21 @@ In their back and forth dialogue, they produce an environment that envelops the 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322481683&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/juanflores-15" title="JuanFlores" target="_blank" style="color: #cccccc; text-decoration: none;">JuanFlores</a> · <a href="https://soundcloud.com/juanflores-15/mod18perform" title="MOD18 Performance ft. Isaac Medina" target="_blank" style="color: #cccccc; text-decoration: none;">MOD18 Performance ft. Isaac Medina</a></div>
 
 # Post-Data (2019)  
-<iframe src="https://player.vimeo.com/video/372649404" style="background:black;" width="100%" height="560" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/372649404" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
 Presented as part of Luminaria Contemporary Arts Festival, Post-Tw.In.Yo.Go.Fa. (Post-Data), is the name of the dystopian digital realm that imagines life after the fall of five internet beasts (Twitter, Instagram, Youtube, Google, and Facebook). By using the hashtag #luminariasa people engaged with the artwork and were able to see their posts altered and disrupted on the screen in real time.
 
 # Toy Instrument Compositions (2020)  
-<iframe src="https://www.youtube.com/embed/fc7ng6B_f5s" width=100% height=560 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/fc7ng6B_f5s" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
 # These Eyes (2020)  
 ![](./portfolio/these-eyes/these-eyes_001.png)  
-
 These-Eyes is a live coding performance with an interactive component from the viewers. A website is setup on Heroku to grab an image from https://thispersondoesnotexist.com periodically and scan it for eyes using OpenCV. These eyes are then constructed in a collage and presented on the top of the site and dynamically updated. Optionally, the public can submit their own detected eyes by turning on their webcam. This grid of eyes will be our visual material to be manipulated by us in real time using the live coding environment Hydra (https://github.com/ojack/hydra), while at the same time generating related bodily and electronic sounds using Tidalcycles (https://tidalcycles.org/index.php/Welcome).
 
 **Location**: To be presented virtually as part of the Piksel20 Festival held in Bergen, Norway. November 19-22.
 
 # Debris (2020)  
 ![](./portfolio/debris/debris_001.gif)
-
 Debris is a video installation that shows two different kinds of objects. One type is of stereotypical building tools one would expect, and the other is children's toys.
 
 #### Statement

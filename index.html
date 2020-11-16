@@ -27,7 +27,7 @@
         <div class="uk-container uk-margin-top uk-margin-large-bottom">
             <div uk-grid>
                 <div class="uk-width-1-1">
-                    <h1 class="uk-heading-large">Juan Flores</h1>
+                    <h1 class="uk-heading-medium">Juan Flores</h1>
                     <p class="uk-text-large" style="margin: 0">
                         Interdisciplinary Artist
                     </p>
@@ -38,64 +38,47 @@
                 <div class="uk-navbar-right">
                     <ul class="uk-navbar-nav">
                         <li><a href="#statement">Statement</a></li>
-                        <!-- <li>|</li> -->
                         <li><a href="#">CV</a></li>
-                        <!-- <li>|</li> -->
                         <li><a href="#">Blog</a></li>
-                        <!-- <li>|</li> -->
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
 
             <div uk-grid>
-                <div class="uk-width-1-4">
-                    <div
-                        class="uk-panel"
-                        data-uk-sticky="{top:25,media: 768}"
-                        uk-sticky
-                    >
-                        <div class="uk-panel">
-                            <h3 style="text-align: left">Work</h3>
-                            <ul>
-                                <li>
-                                    <a href="#residue-2016">Residue (2016)</a>
-                                </li>
-                                <li>
-                                    <a href="#stations-2016">Stations (2016)</a>
-                                </li>
-                                <li>
-                                    <a href="#spectrum-2017">Spectrum (2017)</a>
-                                </li>
-                                <li>
-                                    <a href="#transmitter-2018"
-                                        >Transmitter (2018)</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#post-data-2019"
-                                        >Post-Data (2019)</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#toy-instrument-compositions-2020"
-                                        >Toy Instrument Compositions (2020)</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#these-eyes-2020"
-                                        >These Eyes (2020)</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#debris-2020">Debris (2020)</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="uk-width-1-4@m">
+                    <div uk-sticky="media: @m;">
+                        <h3 style="text-align: left">Work</h3>
+                        <ul>
+                            <li><a href="#residue-2016">Residue (2016)</a></li>
+                            <li>
+                                <a href="#stations-2016">Stations (2016)</a>
+                            </li>
+                            <li>
+                                <a href="#spectrum-2017">Spectrum (2017)</a>
+                            </li>
+                            <li>
+                                <a href="#transmitter-2018"
+                                    >Transmitter (2018)</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#post-data-2019">Post-Data (2019)</a>
+                            </li>
+                            <li>
+                                <a href="#toy-instrument-compositions-2020"
+                                    >Toy Instrument Compositions (2020)</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#these-eyes-2020">These Eyes (2020)</a>
+                            </li>
+                            <li><a href="#debris-2020">Debris (2020)</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="uk-width-3-4">
+                <div class="uk-width-3-4@m">
                     <h2 id="residue-2016">Residue (2016)</h2>
                     <iframe
                         src="https://player.vimeo.com/video/166680557"
@@ -151,12 +134,12 @@
                     <h2 id="spectrum-2017">Spectrum (2017)</h2>
                     <iframe
                         src="https://player.vimeo.com/video/228955732"
-                        style="background: black"
-                        width="100%"
-                        height="560"
+                        width="1920"
+                        height="1080"
                         frameborder="0"
-                        allow="autoplay; fullscreen"
                         allowfullscreen
+                        uk-responsive
+                        uk-video="automute: true; autoplay: false;"
                     >
                     </iframe>
                     <p>
@@ -258,12 +241,12 @@
                     <h2 id="post-data-2019">Post-Data (2019)</h2>
                     <iframe
                         src="https://player.vimeo.com/video/372649404"
-                        style="background: black"
-                        width="100%"
-                        height="560"
+                        width="1920"
+                        height="1080"
                         frameborder="0"
-                        allow="autoplay; fullscreen"
                         allowfullscreen
+                        uk-responsive
+                        uk-video="automute: true; autoplay: false;"
                     >
                     </iframe>
                     <p>
@@ -281,18 +264,19 @@
                     </h2>
                     <iframe
                         src="https://www.youtube.com/embed/fc7ng6B_f5s"
-                        width="100%"
-                        height="560"
+                        width="1920"
+                        height="1080"
                         frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen
+                        uk-responsive
+                        uk-video="automute: true; autoplay: false;"
                     >
                     </iframe>
                     <h2 id="these-eyes-2020">These Eyes (2020)</h2>
                     <p>
-                        <img src="./portfolio/these-eyes/these-eyes_001.png" />
-                    </p>
-                    <p>
+                        <img
+                            src="./portfolio/these-eyes/these-eyes_001.png"
+                        /><br />
                         These-Eyes is a live coding performance with an
                         interactive component from the viewers. A website is
                         setup on Heroku to grab an image from
@@ -314,12 +298,11 @@
                         November 19-22.
                     </p>
                     <h2 id="debris-2020">Debris (2020)</h2>
-                    <p><img src="./portfolio/debris/debris_001.gif" /></p>
                     <p>
-                        Debris is a video installation that shows two different
-                        kinds of objects. One type is of stereotypical building
-                        tools one would expect, and the other is children’s
-                        toys.
+                        <img src="./portfolio/debris/debris_001.gif" /> Debris
+                        is a video installation that shows two different kinds
+                        of objects. One type is of stereotypical building tools
+                        one would expect, and the other is children’s toys.
                     </p>
                     <h5 id="statement">Statement</h5>
                     <p>
