@@ -234,16 +234,16 @@ The **Toy Instrument Compositions** are a series of experiments using found elec
         <ul class="uk-thumbnav">
             <li uk-slideshow-item="0"><a href="#"><img src="portfolio/toy-instruments/toy-instruments_001.jpg" width="100" alt=""></a></li>
             <li uk-slideshow-item="1"><a href="#"><img src="portfolio/toy-instruments/toy-instruments_002.jpg" width="100" alt=""></a></li>
-            <li uk-slideshow-item="2"><a href="#"><img src="portfolio/toy-instruments/toy-instruments_003.jpg" width="100" alt=""></a></li>
-            <li uk-slideshow-item="3"><a href="#"><img src="portfolio/toy-instruments/toy-instruments_004.jpg" width="100" alt=""></a></li>
+            <li uk-slideshow-item="2"><a href="#"><img src="portfolio/toy-instruments/toy-instruments_003.JPG" width="100" alt=""></a></li>
+            <li uk-slideshow-item="3"><a href="#"><img src="portfolio/toy-instruments/toy-instruments_004.JPG" width="100" alt=""></a></li>
         </ul>
     </div>
     
     <ul class="uk-thumbnav uk-margin uk-hidden@l">
 	<li uk-slideshow-item="0" class="uk-margin"> <a href="#"><img src="portfolio/toy-instruments/toy-instruments_001.jpg" width="100" alt=""></a></li>
 	<li uk-slideshow-item="1" class="uk-margin"> <a href="#"><img src="portfolio/toy-instruments/toy-instruments_002.jpg" width="100" alt=""></a></li>
-	<li uk-slideshow-item="2" class="uk-margin"> <a href="#"><img src="portfolio/toy-instruments/toy-instruments_003.jpg" width="100" alt=""></a></li>
-	<li uk-slideshow-item="3" class="uk-margin"> <a href="#"><img src="portfolio/toy-instruments/toy-instruments_004.jpg" width="100" alt=""></a></li>
+	<li uk-slideshow-item="2" class="uk-margin"> <a href="#"><img src="portfolio/toy-instruments/toy-instruments_003.JPG" width="100" alt=""></a></li>
+	<li uk-slideshow-item="3" class="uk-margin"> <a href="#"><img src="portfolio/toy-instruments/toy-instruments_004.JPG" width="100" alt=""></a></li>
     </ul>
     
 </div>
