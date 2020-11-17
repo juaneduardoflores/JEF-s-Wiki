@@ -15,7 +15,8 @@ PANDOCFLAGSPDF =                                       \
 
 PANDOCFLAGSHTML =                                      \
   --table-of-contents                                  \
-  --from=markdown                                      \
+  -V toc-title="Work"                                  \
+  --from=markdown+markdown_in_html_blocks                          \
   --metadata-file=./pandoc/metadata.yaml               \
   --template=./pandoc/template.html                    \
   --highlight-style=./pandoc/pygments.theme            \

@@ -26,15 +26,15 @@
     <body>
         <div class="uk-container uk-margin-top uk-margin-large-bottom">
             <div uk-grid>
-                <div class="uk-width-1-2@m">
+                <div class="uk-width-1-2@s">
                     <h1 class="uk-heading-small">Juan Flores</h1>
                     <p class="uk-text-large" style="margin: 0">
                         Interdisciplinary Artist
                     </p>
                 </div>
 
-                <div class="uk-width-1-2@m">
-                    <div class="uk-navbar-containe" uk-navbar>
+                <div class="uk-width-1-2@s">
+                    <div class="uk-container" uk-navbar>
                         <div class="uk-navbar-right">
                             <ul class="uk-navbar-nav">
                                 <li><a href="#statement">Statement</a></li>
@@ -50,7 +50,7 @@
             <div uk-grid>
                 <div class="uk-width-1-4@m">
                     <div uk-sticky="media: @m;">
-                        <h3 style="text-align: left">Work</h3>
+                        <div class="uk-text-medium">Work</div>
                         <ul>
                             <li><a href="#residue-2016">Residue (2016)</a></li>
                             <li>
@@ -89,7 +89,7 @@
                         frameborder="0"
                         allowfullscreen
                         uk-responsive
-                        uk-video="automute: true"
+                        uk-video="automute: true; autoplay: false;"
                     >
                     </iframe>
                     <p>
@@ -118,21 +118,287 @@
                         fill the space with the sound of the metal being pushed
                         and pulled as they try to find a way out.
                     </p>
+                    <hr />
                     <p><strong>Location</strong>: Connecticut College</p>
                     <p>
                         <strong>Materials</strong>: Acrylic Paint w/super
                         imposed video. chain link fence, scrim fabric.
                     </p>
-                    <hr />
+                    <div
+                        class="uk-position-relative"
+                        uk-slideshow="animation: fade"
+                    >
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <img
+                                    src="portfolio/residue/residue_001.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/residue/residue_002.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/residue/residue_003.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/residue/residue_004.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/residue/residue_005.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/residue/residue_006.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/residue/residue_007.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                        </ul>
+
+                        <div
+                            class="uk-position-bottom-center uk-position-small uk-visible@l"
+                        >
+                            <ul class="uk-thumbnav">
+                                <li uk-slideshow-item="0">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/residue/residue_001.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="1">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/residue/residue_002.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="2">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/residue/residue_003.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="3">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/residue/residue_004.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="4">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/residue/residue_005.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="5">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/residue/residue_006.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="6">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/residue/residue_007.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="uk-thumbnav uk-margin uk-hidden@l">
+                            <li uk-slideshow-item="0" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/residue/residue_001.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="1" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/residue/residue_002.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="2" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/residue/residue_003.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="3" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/residue/residue_004.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="4" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/residue/residue_005.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="5" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/residue/residue_006.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="6" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/residue/residue_007.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
                     <h2 id="stations-2016">Stations (2016)</h2>
                     <p>
                         <img
                             src="./portfolio/stations/stations_001.JPG"
                             alt="portrait"
                             style="width: 400px"
+                            class="uk-align-center"
+                            uk-image
                         />
                     </p>
-                    <p>Stations.</p>
+                    <div
+                        class="uk-position-relative"
+                        uk-slideshow="animation: fade"
+                    >
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <img
+                                    src="portfolio/stations/stations_002.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/stations/stations_003.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/stations/stations_004.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                        </ul>
+
+                        <div
+                            class="uk-position-bottom-center uk-position-small uk-visible@l"
+                        >
+                            <ul class="uk-thumbnav">
+                                <li uk-slideshow-item="0">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/stations/stations_002.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="1">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/stations/stations_003.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="2">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/stations/stations_003.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="uk-thumbnav uk-margin uk-hidden@l">
+                            <li uk-slideshow-item="0" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/stations/stations_002.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="1" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/stations/stations_003.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="2" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/stations/stations_004.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>Description for stations.</p>
                     <h2 id="spectrum-2017">Spectrum (2017)</h2>
                     <iframe
                         src="https://player.vimeo.com/video/228955732"
@@ -200,15 +466,15 @@
                         TRS), A power extension with at least 5 standard
                         sockets.
                     </p>
-                    <strong>Documentation</strong>:
                     <iframe
                         width="100%"
                         height="300"
                         scrolling="no"
                         frameborder="no"
                         allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322481683&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-                    ></iframe>
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322481683&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                    >
+                    </iframe>
                     <div
                         style="
                             font-size: 10px;
@@ -240,6 +506,92 @@
                             >MOD18 Performance ft. Isaac Medina</a
                         >
                     </div>
+                    <div
+                        class="uk-position-relative"
+                        uk-slideshow="animation: fade"
+                    >
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <img
+                                    src="portfolio/transmitter/transmitter_002.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/transmitter/transmitter_003.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/transmitter/transmitter_004.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                        </ul>
+
+                        <div
+                            class="uk-position-bottom-center uk-position-small uk-visible@l"
+                        >
+                            <ul class="uk-thumbnav">
+                                <li uk-slideshow-item="0">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/transmitter/transmitter_002.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="1">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/transmitter/transmitter_003.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="2">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/transmitter/transmitter_004.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="uk-thumbnav uk-margin uk-hidden@l">
+                            <li uk-slideshow-item="0" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/transmitter/transmitter_002.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="1" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/transmitter/transmitter_003.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="2" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/transmitter/transmitter_004.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
                     <h2 id="post-data-2019">Post-Data (2019)</h2>
                     <iframe
                         src="https://player.vimeo.com/video/372649404"
@@ -261,6 +613,92 @@
                         able to see their posts altered and disrupted on the
                         screen in real time.
                     </p>
+                    <div
+                        class="uk-position-relative"
+                        uk-slideshow="animation: fade"
+                    >
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <img
+                                    src="portfolio/post-data/post-data-001.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/post-data/post-data-002.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/post-data/post-data-003.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                        </ul>
+
+                        <div
+                            class="uk-position-bottom-center uk-position-small uk-visible@l"
+                        >
+                            <ul class="uk-thumbnav">
+                                <li uk-slideshow-item="0">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/post-data/post-data-001.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="1">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/post-data/post-data-002.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="2">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/post-data/post-data-003.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="uk-thumbnav uk-margin uk-hidden@l">
+                            <li uk-slideshow-item="0" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/post-data/post-data-001.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="1" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/post-data/post-data-002.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="2" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/post-data/post-data-003.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
                     <h2 id="toy-instrument-compositions-2020">
                         Toy Instrument Compositions (2020)
                     </h2>
@@ -274,11 +712,121 @@
                         uk-video="automute: true; autoplay: false;"
                     >
                     </iframe>
+                    <p>Toy instrument description.</p>
+                    <div
+                        class="uk-position-relative"
+                        uk-slideshow="animation: fade"
+                    >
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <img
+                                    src="portfolio/toy-instruments/toy-instruments_001.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/toy-instruments/toy-instruments_002.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/toy-instruments/toy-instruments_003.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="portfolio/toy-instruments/toy-instruments_004.jpg"
+                                    alt=""
+                                    uk-cover
+                                />
+                            </li>
+                        </ul>
+
+                        <div
+                            class="uk-position-bottom-center uk-position-small uk-visible@l"
+                        >
+                            <ul class="uk-thumbnav">
+                                <li uk-slideshow-item="0">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/toy-instruments/toy-instruments_001.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="1">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/toy-instruments/toy-instruments_002.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="2">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/toy-instruments/toy-instruments_003.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                                <li uk-slideshow-item="3">
+                                    <a href="#"
+                                        ><img
+                                            src="portfolio/toy-instruments/toy-instruments_004.jpg"
+                                            width="100"
+                                            alt=""
+                                    /></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="uk-thumbnav uk-margin uk-hidden@l">
+                            <li uk-slideshow-item="0" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/toy-instruments/toy-instruments_001.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="1" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/toy-instruments/toy-instruments_002.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="2" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/toy-instruments/toy-instruments_003.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li uk-slideshow-item="3" class="uk-margin">
+                                <a href="#"
+                                    ><img
+                                        src="portfolio/toy-instruments/toy-instruments_004.jpg"
+                                        width="100"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
                     <h2 id="these-eyes-2020">These Eyes (2020)</h2>
                     <p>
-                        <img
-                            src="./portfolio/these-eyes/these-eyes_001.png"
-                        /><br />
+                        <img src="./portfolio/these-eyes/these-eyes_001.png" />
+                    </p>
+                    <p>
                         These-Eyes is a live coding performance with an
                         interactive component from the viewers. A website is
                         setup on Heroku to grab an image from
