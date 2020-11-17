@@ -66,20 +66,20 @@ Crossing thresholds is part of being human, but it does not always guarantee saf
 
 
 # Stations (2016)  
-<img src="/portfolio/stations/stations_001.jpg" alt="portrait" style="width:400px;" class="uk-align-center" uk-image> 
+<img src="./portfolio/stations/stations_001.jpg" alt="portrait" style="width:400px;" class="uk-align-center" uk-image>   
 
 ```{=html}
 <div class="uk-position-relative" uk-slideshow="animation: fade">
 
     <ul class="uk-slideshow-items">
         <li>
-            <img src="portfolio/stations/stations_002.jpg" alt="" uk-cover>
+            <img src="portfolio/stations/stations_002.jpg" alt="stations1" uk-cover>
         </li>
         <li>
-            <img src="portfolio/stations/stations_003.jpg" alt="" uk-cover>
+            <img src="portfolio/stations/stations_003.jpg" alt="stations2" uk-cover>
         </li>
         <li>
-            <img src="portfolio/stations/stations_004.jpg" alt="" uk-cover>
+            <img src="portfolio/stations/stations_004.jpg" alt="stations3" uk-cover>
         </li>
     </ul>
     
