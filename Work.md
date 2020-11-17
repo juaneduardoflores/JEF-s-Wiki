@@ -66,35 +66,36 @@ Crossing thresholds is part of being human, but it does not always guarantee saf
 
 
 # Stations (2016)  
-<img src="./portfolio/stations/stations_001.jpg" alt="portrait" style="width:400px;" class="uk-align-center" uk-image>   
+
+<img src="./portfolio/stations/stations_001.JPG" alt="portrait" style="width:400px;" class="uk-align-center" uk-image>   
 
 ```{=html}
 <div class="uk-position-relative" uk-slideshow="animation: fade">
 
     <ul class="uk-slideshow-items">
         <li>
-            <img src="portfolio/stations/stations_002.jpg" alt="stations1" uk-cover>
+            <img src="portfolio/stations/stations_002.JPG" alt="stations1" uk-cover>
         </li>
         <li>
-            <img src="portfolio/stations/stations_003.jpg" alt="stations2" uk-cover>
+            <img src="portfolio/stations/stations_003.JPG" alt="stations2" uk-cover>
         </li>
         <li>
-            <img src="portfolio/stations/stations_004.jpg" alt="stations3" uk-cover>
+            <img src="portfolio/stations/stations_004.JPG" alt="stations3" uk-cover>
         </li>
     </ul>
     
     <div class="uk-position-bottom-center uk-position-small uk-visible@l">
         <ul class="uk-thumbnav">
-            <li uk-slideshow-item="0"><a href="#"><img src="portfolio/stations/stations_002.jpg" width="100" alt=""></a></li>
-            <li uk-slideshow-item="1"><a href="#"><img src="portfolio/stations/stations_003.jpg" width="100" alt=""></a></li>
-            <li uk-slideshow-item="2"><a href="#"><img src="portfolio/stations/stations_003.jpg" width="100" alt=""></a></li>
+            <li uk-slideshow-item="0"><a href="#"><img src="portfolio/stations/stations_002.JPG" width="100" alt=""></a></li>
+            <li uk-slideshow-item="1"><a href="#"><img src="portfolio/stations/stations_003.JPG" width="100" alt=""></a></li>
+            <li uk-slideshow-item="2"><a href="#"><img src="portfolio/stations/stations_003.JPG" width="100" alt=""></a></li>
         </ul>
     </div>
     
     <ul class="uk-thumbnav uk-margin uk-hidden@l">
-	<li uk-slideshow-item="0" class="uk-margin"> <a href="#"><img src="portfolio/stations/stations_002.jpg" width="100" alt=""></a></li>
-	<li uk-slideshow-item="1" class="uk-margin"> <a href="#"><img src="portfolio/stations/stations_003.jpg" width="100" alt=""></a></li>
-	<li uk-slideshow-item="2" class="uk-margin"> <a href="#"><img src="portfolio/stations/stations_004.jpg" width="100" alt=""></a></li>
+	<li uk-slideshow-item="0" class="uk-margin"> <a href="#"><img src="portfolio/stations/stations_002.JPG" width="100" alt=""></a></li>
+	<li uk-slideshow-item="1" class="uk-margin"> <a href="#"><img src="portfolio/stations/stations_003.JPG" width="100" alt=""></a></li>
+	<li uk-slideshow-item="2" class="uk-margin"> <a href="#"><img src="portfolio/stations/stations_004.JPG" width="100" alt=""></a></li>
     </ul>
     
 </div>
