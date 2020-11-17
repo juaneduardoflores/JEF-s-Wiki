@@ -7,7 +7,7 @@ At the opposite end, the viewer is greeted by two life sized projected figures t
 
 ---
 
-*Site*: Connecticut College
+*Site*: Connecticut College, White Box Gallery. New London, CT.
 
 *Materials*: Acrylic Paint with superimposed video, chain link fence, scrim fabric.
 
@@ -223,10 +223,10 @@ The **Toy Instrument Compositions** are a series of experiments using found elec
             <img src="portfolio/toy-instruments/toy-instruments_002.jpg" alt="" uk-cover>
         </li>
         <li>
-            <img src="portfolio/toy-instruments/toy-instruments_003.jpg" alt="" uk-cover>
+            <img src="portfolio/toy-instruments/toy-instruments_003.JPG" alt="" uk-cover>
         </li>
         <li>
-            <img src="portfolio/toy-instruments/toy-instruments_004.jpg" alt="" uk-cover>
+            <img src="portfolio/toy-instruments/toy-instruments_004.JPG" alt="" uk-cover>
         </li>
     </ul>
     
