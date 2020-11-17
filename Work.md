@@ -1,15 +1,15 @@
 # Residue (2016)
 <iframe src="https://player.vimeo.com/video/166680557" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
-Residue is an installation that integrates paintings with composited video projections to present a liminal space with an intersectional experience of the physical residues that are left behind by fleeting bodies who are crossing the border. The fence represents the in between space one transitions from one place to another.
-The inspiration came after being struck by the images of refugees leaving torn and bloody clothes behind on the sharp edges of border fences, while also seeing the moments in other cases where some leave their clothes to dry while camping around them. I attempted to create an ambiguous combination of the two where it becomes a mixture of panic and frantic climbing that resembles those who move with a sense of urgency and danger, and those doing calm and attentive laundry. Like shedding off outer skin, there is a sense of vulnerability in these places where nothing is certain.
-Crossing thresholds is part of being human, but it does not always guarantee safe passage. There are the cases of those who get lost in limbo. To present this, two trapped figures in a chain link fence frame are placed in the corners near the entrance to the gallery, and fill the space with the sound of the metal being pushed and pulled as they try to find a way out.
+**Residue** is a video installation that deals with the topic of borders, separation barriers, and the in-between spaces.
+The main component is a video of people climbing and descending a chain link fence wall. As the number of people passing accumulates, so does the clothing that occasionally gets left behind in the struggle. These pieces of colorful fabric get synced up with a painted mural underneath the projection to create a hybrid image of paint and light. At the end, a spotlight is cued to reveal the painting underneath.
+At the opposite end, the viewer is greeted by two life sized projected figures trapped in a frame of the same metallic material. The clinking sounds of their struggle to find an escape fill the gallery space.
 
 ---
 
 **Location**: Connecticut College
 
-**Materials**: Acrylic Paint w/super imposed video. chain link fence, scrim fabric.
+**Materials**: Acrylic Paint with superimposed video, chain link fence, scrim fabric.
 
 ```{=html}
 <div class="uk-position-relative" uk-slideshow="animation: fade">
@@ -101,12 +101,15 @@ Crossing thresholds is part of being human, but it does not always guarantee saf
 </div>
 ```
 
-Description for stations.
+**Stations** is a series of work that walks through several significant moments of the catholic faith story of the Way of the Cross, particularly each of the falls, the wiping of the face, and the nailing to the cross.
+Instead of Jesus, the figure depicted alludes to an electrician climbing a telephone pole.
+
+---
 
 # Spectrum (2017)  
 <iframe src="https://player.vimeo.com/video/228955732" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
-The sound installation/performance is an attempt to use the space to represent the union of chaos and order. The installation changes from being an interactive instrument for the public, to an instrument used for a performance by the artist. It is an improvisation using a mix of sounds from local radio stations, generated sine tones, and white noise that play with the idea of using a receptive sound object that helps us find ways to get lost, disappear, meditate, and find harmony.
+**Spectrum** is a sound installation that mixes a range of sounds from several local radio stations, generated sine tones, and white noise.
 
 **Location**: Espectro Electrónico Sound Artist Residency
 
@@ -116,8 +119,8 @@ The sound installation/performance is an attempt to use the space to represent t
 # Transmitter (2018)  
 ![](./portfolio/transmitter/transmitter_001.jpg)  
 
-Transmitter is an experimental sound piece that involves two performers in constant communication. One who utilizes multiple LCD monitors and screens to produce sounds and visuals, and the other behind a computer creating soundscapes and imagescapes using Max/MSP, Pure Data and Processing. Through an accelerometer, a gyroscope, and a piezo disc, the piece takes advantage of the use of the performers physical movement to send messages with data on instrument angle, direction, velocity, and vibration.
-In their back and forth dialogue, they produce an environment that envelops the space with an anxiety familiar to a screen heavy contemporary culture that pumps out information superfluously.
+**Transmitter** is an experimental sound performance that involves constant communication between two people. One who utilizes multiple LCD monitors and screens to produce sounds and visuals, and the other behind a computer creating soundscapes and imagescapes using Max/MSP, Pure Data and Processing. Through an accelerometer, a gyroscope, and a piezo disc, the piece takes advantage of the use of the performers physical movement to send messages with data on instrument angle, direction, velocity, and vibration.
+In their back and forth dialogue, they produce an environment that envelops the space with an anxiety familiar to a screen saturated contemporary culture.
 
 **Location**: Centro Cultural de España, Mexico City.
 
@@ -160,7 +163,7 @@ In their back and forth dialogue, they produce an environment that envelops the 
 # Post-Data (2019)  
 <iframe src="https://player.vimeo.com/video/372649404" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
-Presented as part of Luminaria Contemporary Arts Festival, Post-Tw.In.Yo.Go.Fa. (Post-Data), is the name of the dystopian digital realm that imagines life after the fall of five internet beasts (Twitter, Instagram, Youtube, Google, and Facebook). By using the hashtag #luminariasa people engaged with the artwork and were able to see their posts altered and disrupted on the screen in real time.
+Presented as part of Luminaria Contemporary Arts Festival, Post-Tw.In.Yo.Go.Fa. (**Post-Data**), is the name of the dystopian digital realm that imagines life after the fall of five internet beasts (Twitter, Instagram, Youtube, Google, and Facebook). By using the hashtag #luminariasa people engaged with the artwork and were able to see their posts altered and disrupted on the screen in real time.
 
 ```{=html}
 <div class="uk-position-relative" uk-slideshow="animation: fade">
@@ -197,7 +200,7 @@ Presented as part of Luminaria Contemporary Arts Festival, Post-Tw.In.Yo.Go.Fa. 
 # Toy Instrument Compositions (2020)  
 <iframe src="https://www.youtube.com/embed/fc7ng6B_f5s" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
-Toy instrument description.
+The **Toy Instrument Compositions** are a series of experiments using found electronics, specifically children's toys that resemble musical instruments. Each of the compositions utilize some sort of circuit bending to create loops that are turned on and off periodically and somewhat randomly.
 
 ```{=html}
 <div class="uk-position-relative" uk-slideshow="animation: fade">
@@ -239,14 +242,14 @@ Toy instrument description.
 # These Eyes (2020)  
 ![](./portfolio/these-eyes/these-eyes_001.png)  
 
-These-Eyes is a live coding performance with an interactive component from the viewers. A website is setup on Heroku to grab an image from https://thispersondoesnotexist.com periodically and scan it for eyes using OpenCV. These eyes are then constructed in a collage and presented on the top of the site and dynamically updated. Optionally, the public can submit their own detected eyes by turning on their webcam. This grid of eyes will be our visual material to be manipulated by us in real time using the live coding environment Hydra (https://github.com/ojack/hydra), while at the same time generating related bodily and electronic sounds using Tidalcycles (https://tidalcycles.org/index.php/Welcome).
+**These-Eyes** is a live coding performance with an interactive component from the viewers. A website is setup on Heroku to grab an image from https://thispersondoesnotexist.com periodically and scan it for eyes using OpenCV. These eyes are then constructed in a collage and presented on the top of the site and dynamically updated. Optionally, the public can submit their own detected eyes by turning on their webcam. This grid of eyes will be our visual material to be manipulated by us in real time using the live coding environment Hydra (https://github.com/ojack/hydra), while at the same time generating related bodily and electronic sounds using Tidalcycles (https://tidalcycles.org/index.php/Welcome).
 
 **Location**: To be presented virtually as part of the Piksel20 Festival held in Bergen, Norway. November 19-22.
 
 # Debris (2020)  
 ![](./portfolio/debris/debris_001.gif)
 
-Debris is a video installation that shows two different kinds of objects. One type is of stereotypical building tools one would expect, and the other is children's toys.
+**Debris** is a video installation that shows two different kinds of objects. One type is of stereotypical building tools one would expect, and the other is children's toys.
 
 #### Statement
 My beginnings in the art world, besides being a wannabee inventor since a child, was in late 2010 when I joined the MOSAIC student artist program provided by the Blue Star Contemporary Art Museum in San Antonio, TX. Being just a short 10 minute walk from my highschool, it was there where I began to get the help and confidence I needed to exhibit my first oil paintings, relief prints, and where I got my first paycheck for working on a large scale collaborative mural project that is still installed in the east side of San Antonio representing historical local buildings. These experiences were to influence my perspective on how art in public spaces can affect and contribute to communities.
