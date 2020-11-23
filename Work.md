@@ -1,4 +1,4 @@
-# Residue (2016)
+# Residue (2016)   
 <iframe src="https://player.vimeo.com/video/166680557" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
 
 **Residue** is a video installation that deals with the topic of borders, separation barriers, and the in-between spaces.
@@ -7,9 +7,9 @@ At the opposite end, the viewer is greeted by two life sized projected figures t
 
 ---
 
-*Site*: Connecticut College, White Box Gallery. New London, CT.
+Site: Connecticut College, White Box Gallery. New London, CT.
 
-*Materials*: Acrylic Paint with superimposed video, chain link fence, scrim fabric.
+Materials: Acrylic Paint with superimposed video, chain link fence, scrim fabric.
 
 ```{=html}
 <div class="uk-position-relative" uk-slideshow="animation: fade">
@@ -65,8 +65,7 @@ At the opposite end, the viewer is greeted by two life sized projected figures t
 
 
 
-# Stations (2016)  
-
+# Stations (2016)   
 <img src="./portfolio/stations/stations_001.JPG" alt="portrait" style="width:400px;" class="uk-align-center" uk-image>   
 
 ```{=html}
@@ -113,9 +112,9 @@ Instead of Jesus, the figure depicted alludes to an electrician climbing a telep
 
 ---
 
-*Site*: Espectro Electrónico Sound Artist Residency
+Site: Espectro Electrónico Sound Artist Residency
 
-*Materials*: 23 Speakers, found bicycle wheel, audio interface with 8 stereo outputs, 4 FM transmitters and receivers, Mac Computer running Max7/MSP.
+Materials: 23 Speakers, found bicycle wheel, audio interface with 8 stereo outputs, 4 FM transmitters and receivers, Mac Computer running Max7/MSP.
 
 
 # Transmitter (2018)  
@@ -126,9 +125,9 @@ In their back and forth dialogue, they produce an environment that envelops the 
 
 ---
 
-*Site*: Centro Cultural de España, Mexico City.
+Site: Centro Cultural de España, Mexico City.
 
-*Materials*: Two Mac Computers, Audio Interface w/ 2 Stereo Inputs & 2 Outputs, Wearable Technology called "Screen Goggles" with a pair of 2" Screens. Needs: Projector with HDMI Cable, Speakers with 2 TRS to XLR or 2 TRS to TRS cables. (Our output is TRS), A power extension with at least 5 standard sockets.
+Materials: Two Mac Computers, Audio Interface w/ 2 Stereo Inputs & 2 Outputs, Wearable Technology called "Screen Goggles" with a pair of 2" Screens. Needs: Projector with HDMI Cable, Speakers with 2 TRS to XLR or 2 TRS to TRS cables. (Our output is TRS), A power extension with at least 5 standard sockets.
 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322481683&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/juanflores-15" title="JuanFlores" target="_blank" style="color: #cccccc; text-decoration: none;">JuanFlores</a> · <a href="https://soundcloud.com/juanflores-15/mod18perform" title="MOD18 Performance ft. Isaac Medina" target="_blank" style="color: #cccccc; text-decoration: none;">MOD18 Performance ft. Isaac Medina</a></div>
 
@@ -203,7 +202,7 @@ Presented as part of Luminaria Contemporary Arts Festival, Post-Tw.In.Yo.Go.Fa. 
 </div>
 ```
 
-*Site*: Luminaria Arts Festival 2019. Hemisfair Park. San Antonio, TX.
+Site: Luminaria Arts Festival 2019. Hemisfair Park. San Antonio, TX.
 
 # Toy Instrument Compositions (2020)  
 <iframe src="https://www.youtube.com/embed/fc7ng6B_f5s" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true; autoplay: false;"></iframe>
@@ -256,7 +255,7 @@ The **Toy Instrument Compositions** are a series of experiments using found elec
 
 ---
 
-*Site*: To be presented virtually as part of the Piksel20 Festival held in Bergen, Norway. November 19-22.
+Site: To be presented virtually as part of the Piksel20 Festival held in Bergen, Norway. November 19-22.
 
 # Debris (2020)  
 ![](./portfolio/debris/debris_001.gif)
