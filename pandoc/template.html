@@ -35,49 +35,78 @@
 </head>
 
 <body>
-    <div class="uk-container uk-margin-top uk-margin-large-bottom">
-	$if(heading)$
-	<div uk-grid>
-	    <div class="uk-width-1-2@s">
-		<h1 class="uk-heading-small">$heading$</h1>
-		$for(subheading)$
-		<p class="uk-text-large" style="margin: 0;">$subheading$</p>
-		$endfor$
-	    </div>
+  <div class="uk-container uk-margin-top uk-margin-large-bottom">
+    $if(heading)$
+      <div uk-grid>
+	<div class="uk-align-center" uk-sticky>
+	  <h2 class="uk-text-large uk-text-uppercase uk-text-bold uk-text-center uk-background-secondary">
+	    $heading$ 
+	  </h2> 
 
-	    <div class="uk-width-1-2@s">
-		<div class="uk-container" uk-navbar>
-		    <div class="uk-navbar-right">
-			<ul class="uk-navbar-nav">
-			    <li><a href="#statement">Statement</a></li>
-			    <li><a href="#">CV</a></li>
-			    <li><a href="#">Blog</a></li>
-			    <li><a href="#contact">Contact</a></li>
-			</ul>
-		    </div>
-		</div>
+	  <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-usage">Work</button>
+
+	  <div id="offcanvas-usage" uk-offcanvas>
+	    <div class="uk-offcanvas-bar">
+	      <!-- <div class="uk-flex-inline"> -->
+		<h3>Title</h3>
+		<button type="button" class="uk-offcanvas-close" uk-close></button>
+
+	      <!-- </div> -->
+	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	      </div>
 	    </div>
+	  </div>
 	</div>
-	$endif$
-
-
-	<div uk-grid>
-	    <div class="uk-width-1-4@m">
-		<div uk-sticky="media: @m;">
-		    $if(toc-title)$
-		    <div class="uk-text-medium">
-			$toc-title$
-		    </div>
-		    $endif$
-		    $if(toc)$ $toc$ $endif$
-		</div>
-	    </div>
-
-	    <div class="uk-width-3-4@m">
-		$body$
-	    </div>
-	</div>
+      $endif$
     </div>
+
+
+    <div class="uk-container">
+      $body$ 
+    </div>
+    <!-- <div class="uk-container uk-margin-top uk-margin-large-bottom"> -->
+	<!-- $if(heading)$ -->
+	<!-- <div uk-grid> -->
+	    <!-- <div class="uk-width-1-2@s"> -->
+		<!-- <h1 class="uk-heading-small">$heading$</h1> -->
+		<!-- $for(subheading)$ -->
+		<!-- <p class="uk-text-large" style="margin: 0;">$subheading$</p> -->
+		<!-- $endfor$ -->
+	    <!-- </div> -->
+
+	    <!-- <div class="uk-width-1-2@s"> -->
+		<!-- <div class="uk-container" uk-navbar> -->
+		    <!-- <div class="uk-navbar-right"> -->
+			<!-- <ul class="uk-navbar-nav"> -->
+			    <!-- <li><a href="#statement">Statement</a></li> -->
+			    <!-- <li><a href="#">CV</a></li> -->
+			    <!-- <li><a href="#">Blog</a></li> -->
+			    <!-- <li><a href="#contact">Contact</a></li> -->
+			<!-- </ul> -->
+		    <!-- </div> -->
+		<!-- </div> -->
+	    <!-- </div> -->
+	<!-- </div> -->
+	<!-- $endif$ -->
+
+
+	<!-- <div uk-grid> -->
+	    <!-- <div class="uk-width-1-4@m"> -->
+		<!-- <div uk-sticky="media: @m;"> -->
+		    <!-- $if(toc-title)$ -->
+		    <!-- <div class="uk-text-medium"> -->
+			<!-- $toc-title$ -->
+		    <!-- </div> -->
+		    <!-- $endif$ -->
+		    <!-- $if(toc)$ $toc$ $endif$ -->
+		<!-- </div> -->
+	    <!-- </div> -->
+
+	    <!-- <div class="uk-width-3-4@m"> -->
+		<!-- $body$ -->
+	    <!-- </div> -->
+	<!-- </div> -->
+    <!-- </div> -->
 </body>
 
 </html>
