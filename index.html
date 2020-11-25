@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="./css/uikit.min.css" />
         <script src="./js/uikit.min.js"></script>
         <script src="./js/uikit-icons.min.js"></script>
+        <script src="./js/inline.js"></script>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -56,11 +57,18 @@
                             <span uk-icon="icon: menu"></span>
                         </button>
                         <div
+                            id="dropdown"
                             class="uk-text-center"
-                            uk-dropdown="pos: bottom-justify;"
+                            uk-dropdown="pos: bottom-justify; delay-hide: 50"
                         >
                             <ul class="uk-nav uk-dropdown-nav">
-                                <li class="uk-active"><a href="#">Work</a></li>
+                                <li>
+                                    <a
+                                        href="#Work"
+                                        onclick="getPage('./work/work.html')"
+                                        >Work</a
+                                    >
+                                </li>
                                 <li><a href="#statement">Statement</a></li>
                                 <li><a href="#">CV</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -76,13 +84,16 @@
             </div>
 
             <!-- PROJECTS -->
-            <div class="uk-width-1-2@s uk-align-center uk-overflow-auto">
+            <div class="uk-width-2-3@s uk-align-center" id="contentArea">
                 <div
                     class="uk-child-width-1-2@s uk-text-center"
                     uk-grid="masonry: true"
                 >
                     <div>
-                        <a href="#">
+                        <a
+                            href="#residue"
+                            onclick="getPage('./work/residue.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-link"
                             >
@@ -98,7 +109,10 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a
+                            href="#stations"
+                            onclick="getPage('./work/stations.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body"
                             >
@@ -115,7 +129,10 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a
+                            href="#spectrum"
+                            onclick="getPage('./work/spectrum.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body"
                             >
@@ -132,7 +149,10 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a
+                            href="#post-data"
+                            onclick="getPage('./work/post-data.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body"
                             >
@@ -150,7 +170,10 @@
                     </div>
 
                     <div>
-                        <a href="#">
+                        <a
+                            href="#toy-instruments"
+                            onclick="getPage('./work/toy-instruments.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body"
                             >
@@ -167,7 +190,10 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a
+                            href="#these-eyes"
+                            onclick="getPage('./work/these-eyes.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body"
                             >
@@ -184,7 +210,10 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a
+                            href="#transmitter"
+                            onclick="getPage('./work/transmitter.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body"
                             >
@@ -201,7 +230,10 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a
+                            href="#debris"
+                            onclick="getPage('./work/debris.html')"
+                        >
                             <div
                                 class="uk-card-small uk-card-default uk-card-body"
                             >

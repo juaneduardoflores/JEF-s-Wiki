@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/uikit.min.css" />
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
+    <script src="./js/inline.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
@@ -53,9 +54,9 @@
 
 	  <!-- MOBILE MENU BUTTON -->
 	  <button class="uk-button uk-button-default uk-width-expand" type="button" ><span uk-icon="icon: menu"></span></button>
-	  <div class="uk-text-center" uk-dropdown="pos: bottom-justify;">
+	  <div id="dropdown" class="uk-text-center" uk-dropdown="pos: bottom-justify; delay-hide: 50">
 	    <ul class="uk-nav uk-dropdown-nav">
-	      <li class="uk-active"><a href="#">Work</a></li>
+	      <li><a href="#Work" onclick="getPage('./work/work.html')">Work</a></li>
 	      <li><a href="#statement">Statement</a></li>
 	      <li><a href="#">CV</a></li>
 	      <li><a href="#">Blog</a></li>
@@ -76,11 +77,11 @@
 
 
     <!-- PROJECTS -->
-    <div class="uk-width-1-2@s uk-align-center uk-overflow-auto">
+    <div class="uk-width-2-3@s uk-align-center" id="contentArea">
       <div class="uk-child-width-1-2@s uk-text-center" uk-grid="masonry: true">
 
 	<div>
-	  <a href="#" >
+	  <a href="#residue" onclick="getPage('./work/residue.html')" >
 	    <div class="uk-card-small uk-card-default uk-card-body uk-link">
 	      <h5><span class="uk-link-heading"></span>Residue</h5>
 	      <img src="portfolio/residue/residue_004.jpg" alt="residue" uk-image>
@@ -88,7 +89,7 @@
 	  </a>
 	</div>
 	<div>
-	  <a href="#" >
+	  <a href="#stations" onclick="getPage('./work/stations.html')">
 	    <div class="uk-card-small uk-card-default uk-card-body">
 	      <h5><span class="uk-link-heading"></span>Stations</h5>
 	      <img src="./portfolio/stations/stations_001.JPG" alt="stations" uk-image>
@@ -96,7 +97,7 @@
 	  </a>
 	</div>
 	<div>
-	  <a href="#" >
+	  <a href="#spectrum" onclick="getPage('./work/spectrum.html')">
 	    <div class="uk-card-small uk-card-default uk-card-body">
 	      <h5><span class="uk-link-heading"></span>Spectrum</h5>
 	      <img src="./portfolio/spectrum/spectrum_002.jpg" alt="spectrum" uk-image>
@@ -104,7 +105,7 @@
 	  </a>
 	</div>
 	<div>
-	  <a href="#" >
+	  <a href="#post-data" onclick="getPage('./work/post-data.html')">
 	    <div class="uk-card-small uk-card-default uk-card-body">
 	      <h5><span class="uk-link-heading"></span>Post-Data</h5>
 	      <img src="./portfolio/post-data/post-data_004.jpg" alt="post-data" uk-image>
@@ -113,7 +114,7 @@
 	</div>
 
 	<div>
-	  <a href="#" >
+	  <a href="#toy-instruments" onclick="getPage('./work/toy-instruments.html')">
 	    <div class="uk-card-small uk-card-default uk-card-body">
 	      <h5><span class="uk-link-heading"></span>Toy Instrument Compositions</h5>
 	      <img src="./portfolio/toy-instruments/toy-instruments_005.jpg" alt="toy-instruments" uk-image>
@@ -121,7 +122,7 @@
 	  </a>
 	</div>
 	<div>
-	  <a href="#" >
+	  <a href="#these-eyes" onclick="getPage('./work/these-eyes.html')">
 	    <div class="uk-card-small uk-card-default uk-card-body">
 	      <h5><span class="uk-link-heading"></span>These Eyes</h5>
 	      <img src="./portfolio/these-eyes/these-eyes_002.jpg" alt="these-eyes" uk-image>
@@ -129,7 +130,7 @@
 	  </a>
 	</div>
 	<div>
-	  <a href="#" >
+	  <a href="#transmitter" onclick="getPage('./work/transmitter.html')">
 	    <div class="uk-card-small uk-card-default uk-card-body">
 	      <h5><span class="uk-link-heading"></span>Transmitter</h5>
 	      <img src="./portfolio/transmitter/transmitter_007.jpg" alt="transmitter" uk-image>
@@ -137,7 +138,7 @@
 	  </a>
 	</div>
 	<div>
-	  <a href="#" >
+	  <a href="#debris" onclick="getPage('./work/debris.html')">
 	    <div class="uk-card-small uk-card-default uk-card-body">
 	      <h5><span class="uk-link-heading"></span>Debris</h5>
 	      <img src="./portfolio/debris/debris_002.png" alt="debris" uk-image>
