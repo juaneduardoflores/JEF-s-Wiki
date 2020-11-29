@@ -30,23 +30,12 @@
                 font-size: 18px;
             }
         </style>
-
-        <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
-        <!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
-        <!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
-        <!-- <link rel="stylesheet" href="/style/style.css"> -->
-
-        <!-- <script src="./js/uikit.js"></script> -->
-        <!-- <script src="./js/scripts.js"></script> -->
-        <!-- <script src="./js/jquery.sticky-kit.js "></script> -->
     </head>
 
     <body>
         <div class="uk-container uk-margin-large-bottom">
             <div
-                class="uk-container uk-background-default"
+                class="uk-container uk-background-default uk-transition-toggle"
                 uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
             >
                 <div uk-grid>
@@ -92,18 +81,75 @@
                     </div>
                 </div>
 
+                <div class="uk-container uk-width-1-2@s uk-position-absolute">
+                    <button
+                        class="uk-transition-fade uk-text-muted uk-button uk-button-link uk-align-left uk-background-muted"
+                        uk-toggle="target: #work-filter"
+                    >
+                        [ filter ]
+                    </button>
+                </div>
+
                 <div class="uk-container uk-width-1-2@s">
                     <hr />
                 </div>
             </div>
 
             <!-- PROJECTS -->
-            <div class="uk-width-2-3@s uk-align-center" id="contentArea">
-                <div
-                    class="uk-child-width-1-2@s uk-text-center"
+            <div
+                class="uk-width-2-3@s uk-align-center"
+                id="contentArea"
+                uk-filter="target: .js-filter"
+            >
+                <!-- OFFCANVAS FILTER -->
+                <div id="work-filter" uk-offcanvas>
+                    <div class="uk-offcanvas-bar">
+                        <button
+                            class="uk-offcanvas-close"
+                            type="button"
+                            uk-close
+                        ></button>
+                        <div uk-filter="target: .js-filter">
+                            <ul class="uk-subnav uk-subnav-pill">
+                                <li
+                                    class="uk-background-primary"
+                                    uk-filter-control=".all"
+                                >
+                                    <a href="#">All Projects</a>
+                                </li>
+                                <li uk-filter-control=".printmaking">
+                                    <a href="#">Printmaking</a>
+                                </li>
+                                <li uk-filter-control=".sculpture">
+                                    <a href="#">Sculpture</a>
+                                </li>
+                                <li uk-filter-control=".video">
+                                    <a href="#">Video</a>
+                                </li>
+                                <li uk-filter-control=".painting">
+                                    <a href="#">Painting</a>
+                                </li>
+                                <li uk-filter-control=".sound">
+                                    <a href="#">Sound</a>
+                                </li>
+                                <li uk-filter-control=".live-coding">
+                                    <a href="#">Live Coding</a>
+                                </li>
+                                <li uk-filter-control=".installation">
+                                    <a href="#">Installation</a>
+                                </li>
+                                <li uk-filter-control=".performance">
+                                    <a href="#">Performance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul
+                    class="js-filter uk-child-width-1-2@s uk-text-center"
                     uk-grid="masonry: true"
                 >
-                    <div>
+                    <li class="video painting installation all">
                         <a href="./work/residue.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-link uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -118,8 +164,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-                    <div>
+                    </li>
+                    <li class="printmaking sculpture installation all">
                         <a href="./work/stations.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -135,8 +181,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-                    <div>
+                    </li>
+                    <li class="sound installation all">
                         <a href="./work/spectrum.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -152,8 +198,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-                    <div>
+                    </li>
+                    <li class="installation creative-coding interactive all">
                         <a href="./work/post-data.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -169,9 +215,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-
-                    <div>
+                    </li>
+                    <li class="sound all">
                         <a href="./work/toy-instruments.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -187,8 +232,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-                    <div>
+                    </li>
+                    <li class="live-coding performance creative-coding all">
                         <a href="./work/these-eyes.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -204,8 +249,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-                    <div>
+                    </li>
+                    <li class="performance sound all">
                         <a href="./work/transmitter.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -221,8 +266,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-                    <div>
+                    </li>
+                    <li class="creative-coding all">
                         <a href="./work/debris.html">
                             <div
                                 class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small"
@@ -237,8 +282,8 @@
                                 />
                             </div>
                         </a>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </body>
