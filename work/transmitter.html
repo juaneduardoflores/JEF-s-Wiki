@@ -1,139 +1,109 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="pandoc" />
 
-        <title>Juan Eduardo Flores</title>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="generator" content="pandoc" />
 
-        <link rel="stylesheet" href="../css/uikit.min.css" />
-        <script src="../js/uikit.min.js"></script>
-        <script src="../js/uikit-icons.min.js"></script>
-        <script src="../js/inline.js"></script>
+	<title>Juan Eduardo Flores</title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap"
-            rel="stylesheet"
-        />
+	<link rel="stylesheet" href="../css/uikit.min.css" />
+	<script src="../js/uikit.min.js"></script>
+	<script src="../js/uikit-icons.min.js"></script>
+	<script src="../js/inline.js"></script>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Sree+Krushnadevaraya&display=swap"
-            rel="stylesheet"
-        />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap"
+		rel="stylesheet" />
 
-        <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
-        <!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
-        <!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
-        <!-- <link rel="stylesheet" href="/style/style.css"> -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Sree+Krushnadevaraya&display=swap" rel="stylesheet" />
 
-        <!-- <script src="./js/uikit.js"></script> -->
-        <!-- <script src="./js/scripts.js"></script> -->
-        <!-- <script src="./js/jquery.sticky-kit.js "></script> -->
-    </head>
+	<!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
+	<!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
+	<!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
+	<!-- <link rel="stylesheet" href="/style/style.css"> -->
 
-    <body>
-        <div class="uk-container uk-margin-large-bottom">
-            <div
-                class="uk-container uk-background-default"
-                uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
-            >
-                <div uk-grid>
-                    <div class="uk-align-center">
-                        <!-- HEADING -->
-                        <h2
-                            class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom"
-                        >
-                            <a class="uk-link-heading" href="../index.html">
-                                <span
-                                    class="uk-text-background-primary"
-                                    style="
+	<!-- <script src="./js/uikit.js"></script> -->
+	<!-- <script src="./js/scripts.js"></script> -->
+	<!-- <script src="./js/jquery.sticky-kit.js "></script> -->
+</head>
+
+<body>
+	<div class="uk-container uk-margin-large-bottom">
+		<div class="uk-container uk-background-default" uk-sticky="show-on-up: true; animation: uk-animation-slide-top">
+			<div uk-grid>
+				<div class="uk-align-center">
+					<!-- HEADING -->
+					<h2 class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom">
+						<a class="uk-link-heading" href="../index.html">
+							<span class="uk-text-background-primary uk-text-bold" style="
                                         font-family: 'Frank Ruhl Libre', serif;
-                                    "
-                                    >Juan Eduardo Flores</span
-                                >
-                            </a>
-                        </h2>
+                                    ">Juan Ed<del class="uk-text-light">uardo</del>
+								Flores</span>
+						</a>
+					</h2>
 
-                        <!-- MOBILE MENU BUTTON -->
-                        <button
-                            class="uk-button uk-button-default uk-width-expand"
-                            type="button"
-                        >
-                            <span uk-icon="icon: menu"></span>
-                        </button>
-                        <div
-                            id="dropdown"
-                            class="uk-text-center"
-                            uk-dropdown="pos: bottom-justify; delay-hide: 50"
-                        >
-                            <ul class="uk-nav uk-dropdown-nav">
-                                <li><a href="../about.html">About</a></li>
-                                <li>
-                                    <a href="../statement.html">Statement</a>
-                                </li>
-                                <li><a href="../cv.html">CV</a></li>
-                                <li><a href="../blog.html">Blog</a></li>
-                                <li><a href="../contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+					<!-- MOBILE MENU BUTTON -->
+					<button class="uk-button uk-button-default uk-width-expand" type="button">
+						<span uk-icon="icon: menu"></span>
+					</button>
+					<div id="dropdown" class="uk-text-center" uk-dropdown="pos: bottom-justify; delay-hide: 50">
+						<ul class="uk-nav uk-dropdown-nav">
+							<li><a href="../about.html">About</a></li>
+							<li>
+								<a href="../statement.html">Statement</a>
+							</li>
+							<li><a href="../cv.html">CV</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li><a href="../contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-                <div class="uk-container uk-width-1-2@s">
-                    <hr />
-                </div>
-            </div>
+			<div class="uk-container uk-width-1-2@s">
+				<hr />
+			</div>
+		</div>
 
-            <!-- PROJECTS -->
-            <div class="uk-width-2-3@s uk-align-center" id="contentArea">
-                <h2
-                    id="transmitter-2018"
-                    style="font-family: 'Sree Krushnadevaraya', serif"
-                    class="uk-text-center"
-                >
-                    Transmitter (2018)
-                </h2>
-                <p><img src="./portfolio/transmitter/transmitter_001.jpg" /></p>
-                <p>
-                    <strong>Transmitter</strong> is an experimental sound
-                    performance that involves constant communication between two
-                    people. One who utilizes multiple LCD monitors and screens
-                    to produce sounds and visuals, and the other behind a
-                    computer creating soundscapes and imagescapes using Max/MSP,
-                    Pure Data and Processing. Through an accelerometer, a
-                    gyroscope, and a piezo disc, the piece takes advantage of
-                    the use of the performers physical movement to send messages
-                    with data on instrument angle, direction, velocity, and
-                    vibration. In their back and forth dialogue, they produce an
-                    environment that envelops the space with an anxiety familiar
-                    to a screen saturated contemporary culture.
-                </p>
-                <hr />
-                <p>Site: Centro Cultural de España, Mexico City.</p>
-                <p>
-                    Materials: Two Mac Computers, Audio Interface w/ 2 Stereo
-                    Inputs &amp; 2 Outputs, Wearable Technology called “Screen
-                    Goggles” with a pair of 2" Screens. Needs: Projector with
-                    HDMI Cable, Speakers with 2 TRS to XLR or 2 TRS to TRS
-                    cables. (Our output is TRS), A power extension with at least
-                    5 standard sockets.
-                </p>
-                <iframe
-                    width="100%"
-                    height="300"
-                    scrolling="no"
-                    frameborder="no"
-                    allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322481683&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
-                >
-                </iframe>
-                <div
-                    style="
+		<!-- PROJECTS -->
+		<div class="uk-width-2-3@s uk-align-center" id="contentArea">
+			<h2 id="transmitter-2018" style="font-family: 'Sree Krushnadevaraya', serif" class="uk-text-center">
+				Transmitter (2018)
+			</h2>
+			<p><img src="./portfolio/transmitter/transmitter_001.jpg" /></p>
+			<p>
+				<strong>Transmitter</strong> is an experimental sound
+				performance that involves constant communication between two
+				people. One who utilizes multiple LCD monitors and screens
+				to produce sounds and visuals, and the other behind a
+				computer creating soundscapes and imagescapes using Max/MSP,
+				Pure Data and Processing. Through an accelerometer, a
+				gyroscope, and a piezo disc, the piece takes advantage of
+				the use of the performers physical movement to send messages
+				with data on instrument angle, direction, velocity, and
+				vibration. In their back and forth dialogue, they produce an
+				environment that envelops the space with an anxiety familiar
+				to a screen saturated contemporary culture.
+			</p>
+			<hr />
+			<p>Site: Centro Cultural de España, Mexico City.</p>
+			<p>
+				Materials: Two Mac Computers, Audio Interface w/ 2 Stereo
+				Inputs &amp; 2 Outputs, Wearable Technology called “Screen
+				Goggles” with a pair of 2" Screens. Needs: Projector with
+				HDMI Cable, Speakers with 2 TRS to XLR or 2 TRS to TRS
+				cables. (Our output is TRS), A power extension with at least
+				5 standard sockets.
+			</p>
+			<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+				src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/322481683&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true">
+			</iframe>
+			<div style="
                         font-size: 10px;
                         color: #cccccc;
                         line-break: anywhere;
@@ -145,115 +115,56 @@
                             Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,
                             Tahoma, sans-serif;
                         font-weight: 100;
-                    "
-                >
-                    <a
-                        href="https://soundcloud.com/juanflores-15"
-                        title="JuanFlores"
-                        target="_blank"
-                        style="color: #cccccc; text-decoration: none"
-                        >JuanFlores</a
-                    >
-                    ·
-                    <a
-                        href="https://soundcloud.com/juanflores-15/mod18perform"
-                        title="MOD18 Performance ft. Isaac Medina"
-                        target="_blank"
-                        style="color: #cccccc; text-decoration: none"
-                        >MOD18 Performance ft. Isaac Medina</a
-                    >
-                </div>
-                <div
-                    class="uk-position-relative"
-                    uk-slideshow="animation: fade"
-                >
-                    <ul class="uk-slideshow-items">
-                        <li>
-                            <img
-                                src="portfolio/transmitter/transmitter_002.jpg"
-                                alt=""
-                                uk-cover
-                            />
-                        </li>
-                        <li>
-                            <img
-                                src="portfolio/transmitter/transmitter_003.jpg"
-                                alt=""
-                                uk-cover
-                            />
-                        </li>
-                        <li>
-                            <img
-                                src="portfolio/transmitter/transmitter_004.jpg"
-                                alt=""
-                                uk-cover
-                            />
-                        </li>
-                    </ul>
+                    ">
+				<a href="https://soundcloud.com/juanflores-15" title="JuanFlores" target="_blank"
+					style="color: #cccccc; text-decoration: none">JuanFlores</a>
+				·
+				<a href="https://soundcloud.com/juanflores-15/mod18perform" title="MOD18 Performance ft. Isaac Medina"
+					target="_blank" style="color: #cccccc; text-decoration: none">MOD18 Performance ft. Isaac Medina</a>
+			</div>
+			<div class="uk-position-relative" uk-slideshow="animation: fade">
+				<ul class="uk-slideshow-items">
+					<li>
+						<img src="portfolio/transmitter/transmitter_002.jpg" alt="" uk-cover />
+					</li>
+					<li>
+						<img src="portfolio/transmitter/transmitter_003.jpg" alt="" uk-cover />
+					</li>
+					<li>
+						<img src="portfolio/transmitter/transmitter_004.jpg" alt="" uk-cover />
+					</li>
+				</ul>
 
-                    <div
-                        class="uk-position-bottom-center uk-position-small uk-visible@l"
-                    >
-                        <ul class="uk-thumbnav">
-                            <li uk-slideshow-item="0">
-                                <a href="#"
-                                    ><img
-                                        src="portfolio/transmitter/transmitter_002.jpg"
-                                        width="100"
-                                        alt=""
-                                /></a>
-                            </li>
-                            <li uk-slideshow-item="1">
-                                <a href="#"
-                                    ><img
-                                        src="portfolio/transmitter/transmitter_003.jpg"
-                                        width="100"
-                                        alt=""
-                                /></a>
-                            </li>
-                            <li uk-slideshow-item="2">
-                                <a href="#"
-                                    ><img
-                                        src="portfolio/transmitter/transmitter_004.jpg"
-                                        width="100"
-                                        alt=""
-                                /></a>
-                            </li>
-                        </ul>
-                    </div>
+				<div class="uk-position-bottom-center uk-position-small uk-visible@l">
+					<ul class="uk-thumbnav">
+						<li uk-slideshow-item="0">
+							<a href="#"><img src="portfolio/transmitter/transmitter_002.jpg" width="100" alt="" /></a>
+						</li>
+						<li uk-slideshow-item="1">
+							<a href="#"><img src="portfolio/transmitter/transmitter_003.jpg" width="100" alt="" /></a>
+						</li>
+						<li uk-slideshow-item="2">
+							<a href="#"><img src="portfolio/transmitter/transmitter_004.jpg" width="100" alt="" /></a>
+						</li>
+					</ul>
+				</div>
 
-                    <div class="uk-container uk-align-center">
-                        <ul
-                            class="uk-thumbnav uk-flex uk-flex-center uk-hidden@l"
-                        >
-                            <li uk-slideshow-item="0">
-                                <a href="#"
-                                    ><img
-                                        src="portfolio/transmitter/transmitter_002.jpg"
-                                        width="100"
-                                        alt=""
-                                /></a>
-                            </li>
-                            <li uk-slideshow-item="1">
-                                <a href="#"
-                                    ><img
-                                        src="portfolio/transmitter/transmitter_003.jpg"
-                                        width="100"
-                                        alt=""
-                                /></a>
-                            </li>
-                            <li uk-slideshow-item="2">
-                                <a href="#"
-                                    ><img
-                                        src="portfolio/transmitter/transmitter_004.jpg"
-                                        width="100"
-                                        alt=""
-                                /></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+				<div class="uk-container uk-align-center">
+					<ul class="uk-thumbnav uk-flex uk-flex-center uk-hidden@l">
+						<li uk-slideshow-item="0">
+							<a href="#"><img src="portfolio/transmitter/transmitter_002.jpg" width="100" alt="" /></a>
+						</li>
+						<li uk-slideshow-item="1">
+							<a href="#"><img src="portfolio/transmitter/transmitter_003.jpg" width="100" alt="" /></a>
+						</li>
+						<li uk-slideshow-item="2">
+							<a href="#"><img src="portfolio/transmitter/transmitter_004.jpg" width="100" alt="" /></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
