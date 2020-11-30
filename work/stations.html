@@ -103,14 +103,19 @@
                 >
                     Stations (2016)
                 </h2>
-                <div class="uk-text-center uk-margin">
+                <div
+                    class="uk-text-center uk-margin"
+                    uk-lightbox="animation: slide"
+                >
                     <div class="uk-inline uk-transition-toggle" tabindex="0">
-                        <img
-                            src="./portfolio/stations/stations_001.jpg"
-                            alt="portrait"
-                            style="width: 400px"
-                            uk-image
-                        />
+                        <a href="./portfolio/stations/stations_001.jpg">
+                            <img
+                                src="./portfolio/stations/stations_001.jpg"
+                                alt="portrait"
+                                style="width: 400px"
+                                uk-image
+                            />
+                        </a>
                         <div
                             class="uk-transition-slide-bottom uk-position-bottom uk-overlay"
                             tabindex="1"
@@ -155,29 +160,37 @@
                     class="uk-position-relative uk-width-2-3@l uk-align-center"
                     uk-slideshow="animation: fade; ratio: 3:4; draggable: false;"
                 >
-                    <ul class="uk-slideshow-items">
-                        <li>
-                            <img
-                                src="./portfolio/stations/stations_003.jpg"
-                                alt="stations"
-                                uk-cover
-                            />
-                        </li>
-                        <li>
-                            <img
-                                src="./portfolio/stations/stations_002.jpg"
-                                alt="stations1"
-                                uk-cover
-                            />
-                        </li>
-                        <li>
-                            <img
-                                src="./portfolio/stations/stations_004.jpg"
-                                alt="stations3"
-                                uk-cover
-                            />
-                        </li>
-                    </ul>
+                    <div uk-lightbox>
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <a href="./portfolio/stations/stations_003.jpg">
+                                    <img
+                                        src="./portfolio/stations/stations_003.jpg"
+                                        alt="stations"
+                                        uk-cover
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./portfolio/stations/stations_002.jpg">
+                                    <img
+                                        src="./portfolio/stations/stations_002.jpg"
+                                        alt="stations1"
+                                        uk-cover
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./portfolio/stations/stations_004.jpg">
+                                    <img
+                                        src="./portfolio/stations/stations_004.jpg"
+                                        alt="stations3"
+                                        uk-cover
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="uk-container uk-align-center">
                         <ul
                             class="uk-thumbnav uk-flex uk-flex-center"
