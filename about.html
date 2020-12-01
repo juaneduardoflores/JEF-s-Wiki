@@ -1,191 +1,183 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="pandoc" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
 
-        <title>Juan Eduardo Flores</title>
+    <title>Juan Eduardo Flores</title>
 
-        <link rel="stylesheet" href="../css/uikit.min.css" />
-        <script src="../js/uikit.min.js"></script>
-        <script src="../js/uikit-icons.min.js"></script>
-        <script src="../js/inline.js"></script>
+    <link rel="stylesheet" href="../css/uikit.min.css" />
+    <script src="../js/uikit.min.js"></script>
+    <script src="../js/uikit-icons.min.js"></script>
+    <script src="../js/inline.js"></script>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Sree+Krushnadevaraya&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sree+Krushnadevaraya&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
-        <!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
-        <!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
-        <!-- <link rel="stylesheet" href="/style/style.css"> -->
+    <link
+      rel="shortcut icon"
+      href="./resources/favicon.ico"
+      type="image/x-icon"
+    />
 
-        <!-- <script src="./js/uikit.js"></script> -->
-        <!-- <script src="./js/scripts.js"></script> -->
-        <!-- <script src="./js/jquery.sticky-kit.js "></script> -->
-    </head>
+    <!-- <link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon.png" /> -->
+    <!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="/style/style.css"> -->
 
-    <body>
-        <div class="uk-container uk-margin-large-bottom">
-            <div
-                class="uk-container uk-background-default"
-                uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
+    <!-- <script src="./js/uikit.js"></script> -->
+    <!-- <script src="./js/scripts.js"></script> -->
+    <!-- <script src="./js/jquery.sticky-kit.js "></script> -->
+  </head>
+
+  <body>
+    <div class="uk-container uk-margin-large-bottom">
+      <div
+        class="uk-container uk-background-default"
+        uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
+      >
+        <div uk-grid>
+          <div class="uk-align-center">
+            <!-- HEADING -->
+            <h2
+              class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom"
             >
-                <div uk-grid>
-                    <div class="uk-align-center">
-                        <!-- HEADING -->
-                        <h2
-                            class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom"
-                        >
-                            <a class="uk-link-heading" href="../index.html">
-                                <span
-                                    class="uk-text-background-primary uk-text-bold"
-                                    style="
-                                        font-family: 'Frank Ruhl Libre', serif;
-                                    "
-                                    >Juan Ed<del class="uk-text-light"
-                                        >uardo</del
-                                    >
-                                    Flores</span
-                                >
-                            </a>
-                        </h2>
-
-                        <!-- MOBILE MENU BUTTON -->
-                        <button
-                            class="uk-button uk-button-default uk-width-expand"
-                            type="button"
-                        >
-                            <span uk-icon="icon: menu"></span>
-                        </button>
-                        <div
-                            id="dropdown"
-                            class="uk-text-center"
-                            uk-dropdown="pos: bottom-justify; delay-hide: 50"
-                        >
-                            <ul class="uk-nav uk-dropdown-nav">
-                                <li>
-                                    <a href="../projects.html">Work</a>
-                                </li>
-                                <li>
-                                    <a href="../about.html">About</a>
-                                </li>
-                                <li><a href="../cv.html">CV</a></li>
-                                <li><a href="../blog.html">Blog</a></li>
-                                <li><a href="../contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-container uk-width-1-2@s">
-                    <hr />
-                </div>
-            </div>
-
-            <!-- PROJECTS -->
-            <div class="uk-width-2-3@s uk-align-center" id="contentArea">
-                <div
-                    class="uk-column-1-2@s uk-column-divider"
-                    uk-scrollspy="cls: uk-animation-fade; target: .uk-img; delay: 500;"
+              <a class="uk-link-heading" href="../index.html">
+                <span
+                  class="uk-text-background-primary uk-text-bold"
+                  style="font-family: 'Frank Ruhl Libre', serif"
+                  >Juan Ed<del class="uk-text-light">uardo</del> Flores</span
                 >
-                    <img
-                        src="./resources/bio.jpg"
-                        alt="juan"
-                        width="360"
-                        class="uk-img uk-margin uk-align-center"
-                    />
-                    <div
-                        uk-scrollspy="cls: uk-animation-fade; target: .bio; delay: 1000;"
-                    >
-                        <h4 class="uk-margin-remove bio">Bio</h4>
-                        <p class="bio">
-                            Juan is a multidisciplinary artist born in Del Rio,
-                            TX and living in the southeast side of San Antonio,
-                            TX. He received his BA in Art from Connecticut
-                            College in New London, CT. His start was in the Blue
-                            Star Contemporary Art Museum's MOSAIC program.
-                        </p>
-                    </div>
+              </a>
+            </h2>
 
-                    <div
-                        uk-scrollspy="cls: uk-animation-fade; target: .statement; delay: 1500;"
-                    >
-                        <h4 class="uk-margin-remove statement">
-                            Artist Statement
-                        </h4>
-                        <p class="statement">
-                            I work in a variety of traditional medias but
-                            currently I am fascinated by algorithmic,
-                            generative, and interactive art using free,
-                            accessible, and emerging technologies. This includes
-                            exploring digital spaces, artificial intelligence,
-                            robotics, machine learning, virtual and augmented
-                            reality, and creative coding.
-                            <!-- After discovering open-source and DIY communities in -->
-                            <!-- electronics and software during my undergraduate -->
-                            <!-- studies, I felt liberated by the creative power of a -->
-                            <!-- common laptop computer and smart phone. It is -->
-                            <!-- important to me to lead by example for creatives in -->
-                            <!-- low-income communities similar to those I grew up -->
-                            <!-- in, that new media art is not as exclusive as it -->
-                            <!-- seems for appearing expensive and requiring various -->
-                            <!-- degrees. -->
-                        </p>
-                    </div>
-                </div>
-                <div
-                    class="uk-margin"
-                    uk-scrollspy="cls: uk-animation-fade; target: .socials; delay: 3500;"
-                >
-                    <div class="socials">
-                        <h5 class="">Follow me on other sites:</h5>
-                        <ul class="uk-grid uk-margin">
-                            <li>
-                                <a
-                                    href="https://www.instagram.com/juanedflores"
-                                    target="_blank"
-                                    ><img
-                                        alt="instagram"
-                                        src="./resources/instagram_glyph.png"
-                                        width="30px"
-                                /></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://github.com/juanedflores"
-                                    target="_blank"
-                                    ><img
-                                        alt="github"
-                                        src="./resources/GitHub-Mark-32px.png"
-                                        width="30px"
-                                /></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/in/juan-flores-56647576/"
-                                    target="_blank"
-                                    ><img
-                                        alt="linkedin"
-                                        src="./resources/LI-In-Bug.png"
-                                        width="30px"
-                                /></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <!-- MOBILE MENU BUTTON -->
+            <button
+              class="uk-button uk-button-default uk-width-expand"
+              type="button"
+            >
+              <span uk-icon="icon: menu"></span>
+            </button>
+            <div
+              id="dropdown"
+              class="uk-text-center"
+              uk-dropdown="pos: bottom-justify; delay-hide: 50"
+            >
+              <ul class="uk-nav uk-dropdown-nav">
+                <li>
+                  <a href="../projects.html">Work</a>
+                </li>
+                <li>
+                  <a href="../about.html">About</a>
+                </li>
+                <li><a href="../cv.html">CV</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+              </ul>
             </div>
+          </div>
         </div>
-    </body>
+
+        <div class="uk-container uk-width-1-2@s">
+          <hr />
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="uk-width-2-3@s uk-align-center" id="contentArea">
+        <div
+          class="uk-column-1-2@s uk-column-divider"
+          uk-scrollspy="cls: uk-animation-fade; target: .uk-img; delay: 500;"
+        >
+          <img
+            src="./resources/bio.jpg"
+            alt="juan"
+            width="360"
+            class="uk-img uk-margin uk-align-center"
+          />
+          <div
+            uk-scrollspy="cls: uk-animation-fade; target: .bio; delay: 1000;"
+          >
+            <h4 class="uk-margin-remove bio">Bio</h4>
+            <p class="bio">
+              Juan is a multidisciplinary artist born in Del Rio, TX and living
+              in the southeast side of San Antonio, TX. He received his BA in
+              Art from Connecticut College in New London, CT. His start was in
+              the Blue Star Contemporary Art Museum's MOSAIC program.
+            </p>
+          </div>
+
+          <div
+            uk-scrollspy="cls: uk-animation-fade; target: .statement; delay: 1500;"
+          >
+            <h4 class="uk-margin-remove statement">Artist Statement</h4>
+            <p class="statement">
+              I work in a variety of traditional medias but currently I am
+              fascinated by algorithmic, generative, and interactive art using
+              free, accessible, and emerging technologies. This includes
+              exploring digital spaces, artificial intelligence, robotics,
+              machine learning, virtual and augmented reality, and creative
+              coding.
+              <!-- After discovering open-source and DIY communities in -->
+              <!-- electronics and software during my undergraduate -->
+              <!-- studies, I felt liberated by the creative power of a -->
+              <!-- common laptop computer and smart phone. It is -->
+              <!-- important to me to lead by example for creatives in -->
+              <!-- low-income communities similar to those I grew up -->
+              <!-- in, that new media art is not as exclusive as it -->
+              <!-- seems for appearing expensive and requiring various -->
+              <!-- degrees. -->
+            </p>
+          </div>
+        </div>
+        <div
+          class="uk-margin"
+          uk-scrollspy="cls: uk-animation-fade; target: .socials; delay: 3500;"
+        >
+          <div class="socials">
+            <h5 class="">Follow me on other sites:</h5>
+            <ul class="uk-grid uk-margin">
+              <li>
+                <a href="https://www.instagram.com/juanedflores" target="_blank"
+                  ><img
+                    alt="instagram"
+                    src="./resources/instagram_glyph.png"
+                    width="30px"
+                /></a>
+              </li>
+              <li>
+                <a href="https://github.com/juanedflores" target="_blank"
+                  ><img
+                    alt="github"
+                    src="./resources/GitHub-Mark-32px.png"
+                    width="30px"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/juan-flores-56647576/"
+                  target="_blank"
+                  ><img
+                    alt="linkedin"
+                    src="./resources/LI-In-Bug.png"
+                    width="30px"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

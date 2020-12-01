@@ -1,217 +1,213 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="pandoc" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
 
-        <title>Juan Eduardo Flores</title>
+    <title>Juan Eduardo Flores</title>
 
-        <link rel="stylesheet" href="./css/uikit.min.css" />
-        <script src="./js/uikit.min.js"></script>
-        <script src="./js/uikit-icons.min.js"></script>
-        <script src="./js/inline.js"></script>
+    <link rel="stylesheet" href="./css/uikit.min.css" />
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/uikit-icons.min.js"></script>
+    <script src="./js/inline.js"></script>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
-        <style type="text/css" media="screen">
-            .cardtitle {
-                font-family: "Prompt", sans-serif;
-                font-size: 18px;
-            }
-        </style>
+    <style type="text/css" media="screen">
+      .cardtitle {
+        font-family: "Prompt", sans-serif;
+        font-size: 18px;
+      }
+    </style>
 
-        <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
-        <!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
-        <!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
-        <!-- <link rel="stylesheet" href="/style/style.css"> -->
+    <link
+      rel="shortcut icon"
+      href="./resources/favicon.ico"
+      type="image/x-icon"
+    />
 
-        <!-- <script src="./js/uikit.js"></script> -->
-        <!-- <script src="./js/scripts.js"></script> -->
-        <!-- <script src="./js/jquery.sticky-kit.js "></script> -->
-    </head>
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
+    <!-- <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" /> -->
+    <!-- <link rel="stylesheet" href="./style/uikit.gradient.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="/style/style.css"> -->
 
-    <body>
-        <div class="uk-container uk-margin-large-bottom">
-            <div
-                class="uk-container uk-background-default"
-                uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
+    <!-- <script src="./js/uikit.js"></script> -->
+    <!-- <script src="./js/scripts.js"></script> -->
+    <!-- <script src="./js/jquery.sticky-kit.js "></script> -->
+  </head>
+
+  <body>
+    <div class="uk-container uk-margin-large-bottom">
+      <div
+        class="uk-container uk-background-default"
+        uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
+      >
+        <div uk-grid>
+          <div class="uk-align-center">
+            <!-- HEADING -->
+            <h2
+              class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom"
             >
-                <div uk-grid>
-                    <div class="uk-align-center">
-                        <!-- HEADING -->
-                        <h2
-                            class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom"
-                        >
-                            <a class="uk-link-heading" href="../index.html">
-                                <span
-                                    class="uk-text-background-primary uk-text-bold"
-                                    style="
-                                        font-family: 'Frank Ruhl Libre', serif;
-                                    "
-                                    >Juan Ed<del class="uk-text-light"
-                                        >uardo</del
-                                    >
-                                    Flores</span
-                                >
-                            </a>
-                        </h2>
+              <a class="uk-link-heading" href="../index.html">
+                <span
+                  class="uk-text-background-primary uk-text-bold"
+                  style="font-family: 'Frank Ruhl Libre', serif"
+                  >Juan Ed<del class="uk-text-light">uardo</del> Flores</span
+                >
+              </a>
+            </h2>
 
-                        <!-- MOBILE MENU BUTTON -->
-                        <button
-                            class="uk-button uk-button-default uk-width-expand"
-                            type="button"
-                        >
-                            <span uk-icon="icon: menu"></span>
-                        </button>
-                        <div
-                            id="dropdown"
-                            class="uk-text-center"
-                            uk-dropdown="pos: bottom-justify; delay-hide: 50"
-                        >
-                            <ul class="uk-nav uk-dropdown-nav">
-                                <li><a href="./projects.html">Work</a></li>
-                                <li><a href="./about.html">About</a></li>
-                                <li><a href="./cv.html">CV</a></li>
-                                <li><a href="./blog.html">Blog</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-container uk-width-1-2@s">
-                    <hr />
-                </div>
+            <!-- MOBILE MENU BUTTON -->
+            <button
+              class="uk-button uk-button-default uk-width-expand"
+              type="button"
+            >
+              <span uk-icon="icon: menu"></span>
+            </button>
+            <div
+              id="dropdown"
+              class="uk-text-center"
+              uk-dropdown="pos: bottom-justify; delay-hide: 50"
+            >
+              <ul class="uk-nav uk-dropdown-nav">
+                <li><a href="./projects.html">Work</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./cv.html">CV</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+              </ul>
             </div>
-
-            <!-- PROJECTS -->
-            <div class="uk-width-2-3@s uk-align-center" id="contentArea">
-                <p>CV</p>
-                <p>
-                    <b>Juan Flores</b><br />
-                    b. 1994
-                </p>
-                <p>
-                    <b>Education</b><br />
-                    May 2016<br />
-                    BA in Art, Connecticut College. New London, CT<br />
-                    Certificate from the
-                    <a
-                        class="uk-link-muted"
-                        target="_blank"
-                        href="https://www.conncoll.edu/academics/majors-departments-programs/majors-and-minors/ammerman-center-for-arts-and-technology/certificate/"
-                        >Ammerman Center for Arts and Technology</a
-                    ><br />
-                </p>
-                <p>
-                    <b>Awards / Fellowships</b><br /><br />
-                    2019<br /><br />
-                    NYFA Immigrant Artist Mentoring Program: San Antonio<br /><br />
-                    2016<br /><br />
-                    <a
-                        class="uk-link-muted"
-                        target="_blank"
-                        href="https://www.brandeis.edu/mortimer-hays/"
-                        >Mortimer Hays-Brandeis Travelling Fellowship</a
-                    >
-                </p>
-                <p>
-                    <b>Residencies</b><br /><br />
-                    2017<br /><br />
-                    Espectro Electromagnético Sound Artist Residency. Mexico
-                    City, Mexico.
-                </p>
-                <p>
-                    <b>Solo Exhibitions</b><br /><br />
-                    2016<br /><br />
-                    <i>Residue</i> <span style="padding: 0 6px">—</span> R Space
-                    Gallery. San Antonio, TX.
-                </p>
-                <p>
-                    <b>Selected Group Exhibitions</b><br /><br />
-                    2020<br /><br />
-                    <i>din-din</i>
-                    <span style="padding: 0 6px">—</span> Brick at Blue Star.
-                    San Antonio, TX.<br /><br />
-                    <i
-                        >Piksel Festival for Electronic Art and Free
-                        Technologies</i
-                    >
-                    <span style="padding: 0 6px">—</span> Bergen, Norway.
-                    <br /><br />
-                    2019<br /><br />
-                    <i>Luminaria Contemporary Arts Festival</i>
-                    <span style="padding: 0 6px">—</span> Hemisfair Park. San
-                    Antonio, TX.<br /><br />
-                    2018
-                    <br /><br />
-                    <i
-                        >The Ammerman Center for Arts and Technology 16th
-                        Biennial Symposium</i
-                    ><span style="padding: 0 6px">—</span> Connecticut College.
-                    New London, CT. <br /><br />
-                    2017
-                    <br /><br />
-                    <i>Espectro del Espectro</i>
-                    <span style="padding: 0 6px">—</span>
-                    Espectro Electromagnético Sound Artist Residency. García
-                    Icazbalceta 31. Mexico City, Mexico.<br /><br />
-                    <i
-                        >Intersections: A Benefit Exhibition for Immigration
-                        Advocacy and Support Center</i
-                    >
-                    <span style="padding: 0 6px">—</span> Connecticut College.
-                    New London, CT.<br /><br />
-                    <i>MOD 18: Encuentros de Música Electrónica Viva</i
-                    ><span style="padding: 0 6px">—</span> Centro Cultural de
-                    España. Mexico City, Mexico.<br /><br />
-                    <i
-                        >5º Encuentro Internacional de Arte Sonoro y Exploración
-                        Audiovisual</i
-                    ><span style="padding: 0 6px">—</span> UNAM Facultad de
-                    Música. Mexico City, Mexico.<br /><br />
-                    <i>58º Sesión Live Cinema y Arte Sonoro</i
-                    ><span style="padding: 0 6px">—</span> UNAM Facultad de
-                    Música. Mexico City. Mexico.
-
-                    <br /><br />
-                    <span style="color: gray">2016</span><br /><br />
-                    <i>Visiting Artists & Artists's Favorites</i>
-                    <span style="padding: 0 6px">—</span> The Artist Cooperative
-                    Gallery of Westerly. Westerly, RI. <br /><br />
-                    2015<br /><br />
-                    <i>Fill in the Blank</i>
-                    <span style="padding: 0 6px">—</span> Marquee Gallery. New
-                    London, CT.<br /><br />
-                    2014<br /><br />
-                    <i>Red Dot 2014</i>
-                    <span style="padding: 0 6px">—</span> Blue Star Contemporary
-                    Art Museum. San Antonio, TX. <br /><br />
-                    2013<br /><br />
-                    <i>Nueva Generación VI</i>
-                    <span style="padding: 0 6px">—</span> R Gallery. San
-                    Antonio, TX. <br /><br />
-                    2011<br /><br />
-                    <i>Prime Cuts</i><span style="padding: 0 6px">—</span> Stone
-                    Metal Press. San Antonio, TX. <br /><br />
-                    2010<br /><br />
-                    <i>Diversity</i><span style="padding: 0 6px">—</span> Blue
-                    Star Contemporary Art Museum. San Antonio, TX.
-                </p>
-            </div>
+          </div>
         </div>
-    </body>
+
+        <div class="uk-container uk-width-1-2@s">
+          <hr />
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="uk-width-2-3@s uk-align-center" id="contentArea">
+        <p>CV</p>
+        <p>
+          <b>Juan Flores</b><br />
+          b. 1994
+        </p>
+        <p>
+          <b>Education</b><br />
+          May 2016<br />
+          BA in Art, Connecticut College. New London, CT<br />
+          Certificate from the
+          <a
+            class="uk-link-muted"
+            target="_blank"
+            href="https://www.conncoll.edu/academics/majors-departments-programs/majors-and-minors/ammerman-center-for-arts-and-technology/certificate/"
+            >Ammerman Center for Arts and Technology</a
+          ><br />
+        </p>
+        <p>
+          <b>Awards / Fellowships</b><br /><br />
+          2019<br /><br />
+          NYFA Immigrant Artist Mentoring Program: San Antonio<br /><br />
+          2016<br /><br />
+          <a
+            class="uk-link-muted"
+            target="_blank"
+            href="https://www.brandeis.edu/mortimer-hays/"
+            >Mortimer Hays-Brandeis Travelling Fellowship</a
+          >
+        </p>
+        <p>
+          <b>Residencies</b><br /><br />
+          2017<br /><br />
+          Espectro Electromagnético Sound Artist Residency. Mexico City, Mexico.
+        </p>
+        <p>
+          <b>Solo Exhibitions</b><br /><br />
+          2016<br /><br />
+          <i>Residue</i> <span style="padding: 0 6px">—</span> R Space Gallery.
+          San Antonio, TX.
+        </p>
+        <p>
+          <b>Selected Group Exhibitions</b><br /><br />
+          2020<br /><br />
+          <i>din-din</i>
+          <span style="padding: 0 6px">—</span> Brick at Blue Star. San Antonio,
+          TX.<br /><br />
+          <i>Piksel Festival for Electronic Art and Free Technologies</i>
+          <span style="padding: 0 6px">—</span> Bergen, Norway. <br /><br />
+          2019<br /><br />
+          <i>Luminaria Contemporary Arts Festival</i>
+          <span style="padding: 0 6px">—</span> Hemisfair Park. San Antonio,
+          TX.<br /><br />
+          2018
+          <br /><br />
+          <i
+            >The Ammerman Center for Arts and Technology 16th Biennial
+            Symposium</i
+          ><span style="padding: 0 6px">—</span> Connecticut College. New
+          London, CT. <br /><br />
+          2017
+          <br /><br />
+          <i>Espectro del Espectro</i>
+          <span style="padding: 0 6px">—</span>
+          Espectro Electromagnético Sound Artist Residency. García Icazbalceta
+          31. Mexico City, Mexico.<br /><br />
+          <i
+            >Intersections: A Benefit Exhibition for Immigration Advocacy and
+            Support Center</i
+          >
+          <span style="padding: 0 6px">—</span> Connecticut College. New London,
+          CT.<br /><br />
+          <i>MOD 18: Encuentros de Música Electrónica Viva</i
+          ><span style="padding: 0 6px">—</span> Centro Cultural de España.
+          Mexico City, Mexico.<br /><br />
+          <i
+            >5º Encuentro Internacional de Arte Sonoro y Exploración
+            Audiovisual</i
+          ><span style="padding: 0 6px">—</span> UNAM Facultad de Música. Mexico
+          City, Mexico.<br /><br />
+          <i>58º Sesión Live Cinema y Arte Sonoro</i
+          ><span style="padding: 0 6px">—</span> UNAM Facultad de Música. Mexico
+          City. Mexico.
+
+          <br /><br />
+          <span style="color: gray">2016</span><br /><br />
+          <i>Visiting Artists & Artists's Favorites</i>
+          <span style="padding: 0 6px">—</span> The Artist Cooperative Gallery
+          of Westerly. Westerly, RI. <br /><br />
+          2015<br /><br />
+          <i>Fill in the Blank</i>
+          <span style="padding: 0 6px">—</span> Marquee Gallery. New London,
+          CT.<br /><br />
+          2014<br /><br />
+          <i>Red Dot 2014</i>
+          <span style="padding: 0 6px">—</span> Blue Star Contemporary Art
+          Museum. San Antonio, TX. <br /><br />
+          2013<br /><br />
+          <i>Nueva Generación VI</i>
+          <span style="padding: 0 6px">—</span> R Gallery. San Antonio, TX.
+          <br /><br />
+          2011<br /><br />
+          <i>Prime Cuts</i><span style="padding: 0 6px">—</span> Stone Metal
+          Press. San Antonio, TX. <br /><br />
+          2010<br /><br />
+          <i>Diversity</i><span style="padding: 0 6px">—</span> Blue Star
+          Contemporary Art Museum. San Antonio, TX.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
