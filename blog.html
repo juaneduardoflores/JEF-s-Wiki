@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>juanedflores' blog</title>
+    <title>juanedflores blog</title>
 
     <link rel="stylesheet" href="./css/uikit.min.css" />
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
     <script src="./js/inline.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="shortcut icon"
@@ -18,6 +24,22 @@
   </head>
   <body>
     <div class="uk-width-2-3@s uk-align-center" id="contentArea">
+      <!-- NAV AND HEADING -->
+      <div class="uk-background-muted uk-flex uk-flex-left">
+        <button class="uk-button uk-button-default" type="button">
+          <span uk-icon="icon: menu"></span>
+        </button>
+        <h2
+          class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
+          style="font-family: 'Prompt', sans-serif"
+        >
+          <a class="uk-text-secondary" href="./index.html">juanedflores</a
+          >&nbsp;blog
+        </h2>
+      </div>
+
+      <div class="uk-flex uk-flex-center"></div>
+
       <div
         class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
         uk-grid
@@ -57,8 +79,33 @@
           <div class="uk-card-body">
             <h3 class="uk-card-title">Daily Task Manager</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
+              I wrote a program to visualize the tasks I did on the previous
+              day. By analyzing how much time I spend doing certain tasks during
+              the day, I can get a sense of how to be more efficient.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+        uk-grid
+      >
+        <div class="uk-card-media-left uk-cover-container">
+          <img
+            src="./Blog/Robotic_Flower_Pets/resources/gyras.jpg"
+            alt=""
+            uk-cover
+          />
+          <canvas width="600" height="400"></canvas>
+        </div>
+        <div>
+          <div class="uk-card-body">
+            <h3 class="uk-card-title">Robotic Flower Pets!</h3>
+            <p>
+              I like creating little flowers that can squeak, peep, and
+              ultimately react to its environment. A simple, fun, and continous
+              project.
             </p>
           </div>
         </div>
