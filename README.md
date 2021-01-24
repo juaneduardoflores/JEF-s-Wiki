@@ -8,3 +8,4 @@ If an argument is provided that matches a title of a post, it will update the mo
 
 ## The Makefile
 By running `make` inside the Blog directory, it will look for any markdown files in the subdirectories that have changes and will convert them to html using the blog template.
+Any updated markdown files will be passed to the python script to update the modified_time value.
