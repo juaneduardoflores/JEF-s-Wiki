@@ -1,2 +1,2 @@
 # pico-8
-Testing 1 2
+PICO-8 is a fantasy console. It could also be used for creative coding.

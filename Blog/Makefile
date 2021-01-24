@@ -20,13 +20,12 @@ HTML=$(ALL_MARKDOWN:.md=.html)
 
 DIRECTORY = $(sort $(dir $(wildcard ./*/)))
 
-	# @echo converting $(@D)/$(@F)
-	# for f in $(ALL_MARKDOWN); do pandoc $$f -o $@ $(PANDOCFLAGSHTML); done
-
 all: $(HTML) 
 
+# convert to html and update modified_time
 $(HTML): $(ALL_MARKDOWN)
 	pandoc $(@D)/$(@D).md -o $@ $(PANDOCFLAGSHTML)
+	python newBlogEntry.py $(@D)
 
 clean:
 	rm $(HTML)
