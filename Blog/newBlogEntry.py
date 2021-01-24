@@ -8,29 +8,34 @@ import os
 import re
 import json
 import sys
+import random
 from datetime import date
 
 today = date.today()
 blogEntryTitle = "temp"
 blogEntryDescription = "temp description"
+blogEntryTags = ""
 last_modified = str(today)
-tags = ""
+tags = []
 inputTitle = ""
 
 
 def main():
-    global blogEntryTitle, blogEntryDescription, last_modified, tags, inputTitle
+    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags, inputTitle
 
     # If an argument was passed, we are updating, else we are creating
     if (len(sys.argv) > 1):
         inputTitle = str(sys.argv[1])
         updateEntry()
         sys.exit(0)
-    else:
 
+    else:
         blogEntryTitle = input("Enter new blog entry title: ")
         blogEntryDescription = input(
             "Enter a short description for {}: ".format(blogEntryTitle))
+        blogEntryTags = input("Enter any tags followed by comma: ")
+        tags = blogEntryTags.split(",")
+        print("tags: " + str(tags))
         os.mkdir(blogEntryTitle)
         os.mkdir(blogEntryTitle + "/cover_img")
         print("created directory called " + blogEntryTitle)
@@ -38,17 +43,17 @@ def main():
 
         addEntrytoHTML()
 
-        with open('entries.json', 'r') as json_file:
-            data = json_file.read()
+        # with open('entries.json', 'r') as json_file:
+        #     data = json_file.read()
 
-        objs = json.loads(data)
-        obj_keys = objs.keys()
-        for key in objs:
-            print("key: " + key + " " + str(objs[key]))
+        # objs = json.loads(data)
+        # obj_keys = objs.keys()
+        # for key in objs:
+        #     print("key: " + key + " " + str(objs[key]))
 
 
 def updateEntry():
-    global blogEntryTitle, blogEntryDescription, last_modified, tags
+    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags
 
     htmlFile = open("../blog.html", "r").read()
     entries_raw = re.findall(
@@ -87,6 +92,16 @@ def updateEntry():
             cur_entry += str(l)
             found_entry = True
 
+        # if (re.search('.*</p>', l)):
+        #     print("FOUND PARAGRAPH")
+        #     if (len(tags) > 0):
+        #         tagHTML = ""
+        #         for tag in tags:
+        #             newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format("green",
+        #                                                                                               tag)
+        #             tagHTML += newtag
+        #         cur_entry += tagHTML
+
     sep = '<!-- BLOG ENTRIES -->'
     stripped = htmlFile.split(sep, 1)[
         0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
@@ -107,7 +122,7 @@ def updateEntry():
 
 
 def addEntrytoHTML():
-    global blogEntryTitle, blogEntryDescription, last_modified, tags
+    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags
 
     htmlFile = open("../blog.html", "r").read()
     entries_raw = re.findall(
@@ -118,11 +133,6 @@ def addEntrytoHTML():
     found_entry = False
     for l in lineiterator:
         if (found_entry):
-            # if (re.match('.*\d{4}-\d{2}-\d{2}.*', l)):
-            #     print("CHANGING ENTRY MODIFIED DATE")
-            #     today = date.today()
-            #     l = re.sub("\d{4}-\d{2}-\d{2}", str(today), l)
-
             if (re.match('\w*', l)):
                 print("appending!")
                 print(l)
@@ -146,11 +156,17 @@ def addEntrytoHTML():
             blogEntryTitle, blogEntryTitle)
         template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
         template += "<div class='uk-card-media-left uk-cover-container'>"
-        template += "<img src='./Blog/Processing_P3D/resources/11_P3D.gif' alt='' uk-cover />"
+        template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
+            blogEntryTitle)
         template += "<canvas width='600' height='400'></canvas>"
         template += "</div>"
-        template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> </div> </div>".format(
+        template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> ".format(
             blogEntryTitle, last_modified, blogEntryDescription)
+
+        # add tags
+        template = addTags(template)
+
+        template += "</div> </div>"
         template += "</div> </a>\n\n"
         template += "<!-- BLOG ENTRIES END -->"
         template += "</div></div></body></html>"
@@ -159,10 +175,16 @@ def addEntrytoHTML():
         template += "<a href='./Blog/{}/{}.html'>\n".format(
             blogEntryTitle, blogEntryTitle)
         template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
-        template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> </div> </div>".format(
+        template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
             blogEntryTitle, last_modified, blogEntryDescription)
+
+        # add tags
+        template = addTags(template)
+
+        template += "</div> </div>"
         template += "<div class='uk-card-media-left uk-cover-container'>"
-        template += "<img src='./Blog/Processing_P3D/resources/11_P3D.gif' alt='' uk-cover />"
+        template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
+            blogEntryTitle)
         template += "<canvas width='600' height='400'></canvas>"
         template += "</div>"
         template += "</div> </a>\n\n"
@@ -186,6 +208,48 @@ def addEntrytoHTML():
 
     # run prettier on file.
     os.system("npx prettier --write ../blog.html")
+    os.system("npx prettier --write ./tags.json")
+
+
+def addTags(template):
+    if (len(tags) > 0):
+        for tag in tags:
+            tag = tag.strip()
+
+            tag_color = "#FFFFFF"
+            with open('tags.json', 'r+') as json_file:
+                data = json_file.read()
+
+                objs = json.loads(data)
+                keyfound = False
+                for key in objs:
+                    print("key: " + key + " value: " + str(objs[key]))
+                    print("keyUpper: " + key.upper())
+                    print("tagUpper: " + tag.upper())
+                    if (key.upper() == tag.upper()):
+                        keyfound = True
+                        tag_color = objs[key]
+                        newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
+                            tag_color, tag)
+
+                if (not keyfound):
+                    # random hex color
+                    random_number = random.randint(0, 16777215)
+                    hex_number = format(random_number, 'x')
+                    hex_number = '#'+hex_number
+
+                    objs[tag] = hex_number
+                    tag_color = objs[tag]
+                    print(objs)
+                    json_file.seek(False)
+                    json_obj = json.dumps(objs, indent=2)
+                    json_file.write(str(json_obj))
+                    newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
+                        tag_color, tag)
+
+            template += newtag
+
+    return template
 
 
 main()
