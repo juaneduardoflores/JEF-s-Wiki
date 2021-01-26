@@ -45,7 +45,7 @@ def main():
 
 
 def updateEntry():
-    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags
+    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags, today
 
     htmlFile = open("../blog.html", "r").read()
     entries_raw = re.findall(
@@ -63,7 +63,6 @@ def updateEntry():
             if (modifying_date):
                 if (re.match('.*\d{4}-\d{2}-\d{2}.*', l)):
                     print("CHANGING ENTRY MODIFIED DATE")
-                    today = date.today()
                     l = re.sub("\d{4}-\d{2}-\d{2}", str(today), l)
 
             if (re.match('\w*', l)):
@@ -93,7 +92,9 @@ def updateEntry():
 
     sep = '<!-- BLOG ENTRIES -->'
     header = htmlFile.split(sep, 1)[
-        0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
+            0] + sep + "<ul class='js-filter uk-list'>"
+    # header = htmlFile.split(sep, 1)[
+    #     0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
 
     stripped = ""
     updated_entry = ""
@@ -107,7 +108,7 @@ def updateEntry():
         # print(entry)
         stripped += entry + "\n"
 
-    stripped += "\n\n<!-- BLOG ENTRIES END -->"
+    stripped += "\n\n</ul><!-- BLOG ENTRIES END -->"
     htmlcode = header + updated_entry + stripped
 
 
@@ -130,62 +131,62 @@ def addEntrytoHTML():
     entries = []
 
     template = "\n\n<!-- {} -->\n".format(blogEntryTitle)
-    if (len(entries) % 2 == 0):
-        tagfilter = ""
-        for tag in tags:
-            tag = tag.strip()
-            tag = tag.replace(" ", "_")
-            tagfilter += "tag-" + tag + " "
+    # if (len(entries) % 2 == 0):
+    tagfilter = ""
+    for tag in tags:
+        tag = tag.strip()
+        tag = tag.replace(" ", "_")
+        tagfilter += "tag-" + tag + " "
 
-        print("adding tags: "  + tagfilter)
-        template += "<li class='{}'>".format(tagfilter)
+    print("adding tags: "  + tagfilter)
+    template += "<li class='{}'>".format(tagfilter)
 
-        template += "<a href='./Blog/{}/{}.html'>\n".format(
-            blogEntryTitle, blogEntryTitle)
+    template += "<a href='./Blog/{}/{}.html'>\n".format(
+        blogEntryTitle, blogEntryTitle)
 
 
-        template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
-        template += "<div class='uk-card-media-left uk-cover-container'>"
-        template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
-            blogEntryTitle)
-        template += "<canvas width='600' height='400'></canvas>"
-        template += "</div>"
-        template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> ".format(
-            blogEntryTitle, last_modified, blogEntryDescription)
+    template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
+    template += "<div class='uk-card-media-left uk-cover-container'>"
+    template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
+        blogEntryTitle)
+    template += "<canvas width='600' height='400'></canvas>"
+    template += "</div>"
+    template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> ".format(
+        blogEntryTitle, last_modified, blogEntryDescription)
 
-        # add tags
-        template = addTags(template)
+    # add tags
+    template = addTags(template)
 
-        template += "</div> </div>"
-        template += "</div> </a></li>\n\n"
+    template += "</div> </div>"
+    template += "</div> </a></li>\n\n"
 
-    else:
-        tagfilter = ""
-        for tag in tags:
-            tag = tag.strip()
-            tag = tag.replace(" ", "_")
-            # tagstr = tag.replace(" ", "_")
-            tagfilter += "tag-" + tag + " "
+    # else:
+        #tagfilter = ""
+        #for tag in tags:
+        #    tag = tag.strip()
+        #    tag = tag.replace(" ", "_")
+        #    # tagstr = tag.replace(" ", "_")
+        #    tagfilter += "tag-" + tag + " "
 
-        print("adding tags: "  + tagfilter)
-        template += "<li class='{}'>".format(tagfilter)
+        #print("adding tags: "  + tagfilter)
+        #template += "<li class='{}'>".format(tagfilter)
 
-        template += "<a href='./Blog/{}/{}.html'>\n".format(
-            blogEntryTitle, blogEntryTitle)
-        template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
-        template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
-            blogEntryTitle, last_modified, blogEntryDescription)
+        #template += "<a href='./Blog/{}/{}.html'>\n".format(
+        #    blogEntryTitle, blogEntryTitle)
+        #template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
+        #template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
+        #    blogEntryTitle, last_modified, blogEntryDescription)
 
-        # add tags
-        template = addTags(template)
+        ## add tags
+        #template = addTags(template)
 
-        template += "</div> </div>"
-        template += "<div class='uk-card-media-left uk-cover-container'>"
-        template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
-            blogEntryTitle)
-        template += "<canvas width='600' height='400'></canvas>"
-        template += "</div>"
-        template += "</div> </a></li>\n\n"
+        #template += "</div> </div>"
+        #template += "<div class='uk-card-media-left uk-cover-container'>"
+        #template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
+        #    blogEntryTitle)
+        #template += "<canvas width='600' height='400'></canvas>"
+        #template += "</div>"
+        # template += "</div> </a></li>\n\n"
 
     entries.append(template)
 
