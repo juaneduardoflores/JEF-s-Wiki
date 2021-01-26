@@ -23,7 +23,7 @@
     />
   </head>
   <body>
-    <div class="uk-width-2-3@s uk-align-center" id="contentArea">
+    <div class="uk-width-1-2@s uk-align-center" id="contentArea">
       <!-- NAV AND HEADING -->
       <div class="uk-background-muted uk-flex uk-flex-left uk-margin-top">
         <button
@@ -35,11 +35,14 @@
         </button>
 
         <!-- OFFCANVAS NAV -->
-        <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+        <div
+          id="offcanvas-nav-primary"
+          uk-offcanvas="mode: slide; overlay: true"
+        >
           <div class="uk-offcanvas-bar uk-flex uk-flex-column">
-            <ul class="uk-nav uk-nav-primary uk-nav-center">
+            <ul class="uk-nav uk-nav-primary uk-nav-center tag-container">
               <li class="uk-active">
-                <a href="./index.html"><span uk-icon="icon: home"></span></a>
+                <a href="./blog.html"><span uk-icon="icon: home"></span></a>
               </li>
               <hr />
             </ul>
@@ -51,13 +54,44 @@
           class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
           style="font-family: 'Prompt', sans-serif"
         >
-          <a class="uk-text-secondary" href="./index.html">juanedflores</a
+          <a class="uk-text-secondary" href="./blog.html">juanedflores</a
           >&nbsp;blog
         </h2>
       </div>
 
       <!-- BLOG ENTRIES -->
       <div class="uk-container uk-margin-remove uk-padding-remove">
+        <!-- pico-8 -->
+        <a href="./Blog/pico-8/pico-8.html">
+          <div
+            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+            uk-grid
+          >
+            <div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title">
+                  PICO-8 <em>(Under Construction)</em>
+                </h3>
+                <span>last modified: (2021-01-26)</span>
+                <p>
+                  "PICO-8 is a fantasy console for making, sharing and playing
+                  tiny games and other computer programs."
+                </p>
+                <span class="uk-label" style="background-color: #1e87f0"
+                  >Creative Coding</span
+                >
+                <span class="uk-label" style="background-color: #ffa500"
+                  >Game Design</span
+                >
+              </div>
+            </div>
+            <div class="uk-card-media-left uk-cover-container">
+              <img src="./Blog/pico-8/cover/pico-8.png" alt="" uk-cover />
+              <canvas width="600" height="400"></canvas>
+            </div>
+          </div>
+        </a>
+
         <!-- Processing_P3D -->
         <a href="./Blog/Processing_P3D/Processing_P3D.html">
           <div
@@ -77,7 +111,7 @@
                 <h3 class="uk-card-title">
                   Processing P3D <span class="uk-text-warning">(WIP)</span>
                 </h3>
-                <span>last modified: (2021-01-23)</span>
+                <span>last modified: (2021-01-26)</span>
                 <p>
                   I walk through the basics of using 3D in Processing 3 and
                   provide a few examples useful for learning some core concepts.
@@ -87,6 +121,9 @@
                 >
                 <span class="uk-label" style="background-color: #527a3d"
                   >3D</span
+                >
+                <span class="uk-label" style="background-color: #212add"
+                  >processing</span
                 >
               </div>
             </div>
@@ -112,7 +149,7 @@
                 <h3 class="uk-card-title">
                   Daily Task Manager <em>(Under Construction)</em>
                 </h3>
-                <span>last modified: (2021-03-23)</span>
+                <span>last modified: (2021-01-23)</span>
                 <p>
                   I wrote a program to visualize the tasks I did on the previous
                   day. By analyzing how much time I spend doing certain tasks
@@ -151,7 +188,7 @@
                 <h3 class="uk-card-title">
                   Robotic Flower Pets! <em>(Under Construction)</em>
                 </h3>
-                <span>last modified: (2021-09-23)</span>
+                <span>last modified: (2021-01-23)</span>
                 <p>
                   I like creating little flowers that can squeak, peep, and
                   ultimately react to its environment. A simple, fun, and
@@ -164,37 +201,6 @@
                   >sensors</span
                 >
               </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- pico-8 -->
-        <a href="./Blog/pico-8/pico-8.html">
-          <div
-            class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-            uk-grid
-          >
-            <div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title">
-                  PICO-8 <em>(Under Construction)</em>
-                </h3>
-                <span>last modified: (2021-01-23)</span>
-                <p>
-                  "PICO-8 is a fantasy console for making, sharing and playing
-                  tiny games and other computer programs."
-                </p>
-                <span class="uk-label" style="background-color: #1e87f0"
-                  >Creative Coding</span
-                >
-                <span class="uk-label" style="background-color: #ffa500"
-                  >Game Design</span
-                >
-              </div>
-            </div>
-            <div class="uk-card-media-left uk-cover-container">
-              <img src="./Blog/pico-8/cover/pico-8.png" alt="" uk-cover />
-              <canvas width="600" height="400"></canvas>
             </div>
           </div>
         </a>

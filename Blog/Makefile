@@ -16,15 +16,22 @@ rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
 # find all markdown files
 ALL_MARKDOWN := $(call rwildcard,./,*.md)
-HTML=$(ALL_MARKDOWN:.md=.html)
+MARKDOWN := $(call rwildcard,./,*.md)
+HTML=$(MARKDOWN:.md=.html)
 
 DIRECTORY = $(sort $(dir $(wildcard ./*/)))
 
 all: $(HTML) 
 
 # convert to html and update modified_time
-$(HTML): $(ALL_MARKDOWN)
-	pandoc $(@D)/$(@D).md -o $@ $(PANDOCFLAGSHTML)
+# $(HTML): $(ALL_MARKDOWN)
+# 	@echo $@
+# 	pandoc $(@D)/$(@D).md -o $@ $(PANDOCFLAGSHTML)
+# 	python newBlogEntry.py $(@D)
+
+%.html: %.md 
+	@echo $@
+	pandoc $< -o $@ $(PANDOCFLAGSHTML)
 	python newBlogEntry.py $(@D)
 
 clean:

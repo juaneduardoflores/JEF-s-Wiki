@@ -35,21 +35,13 @@ def main():
             "Enter a short description for {}: ".format(blogEntryTitle))
         blogEntryTags = input("Enter any tags followed by comma: ")
         tags = blogEntryTags.split(",")
-        print("tags: " + str(tags))
+        # print("tags: " + str(tags))
         os.mkdir(blogEntryTitle)
         os.mkdir(blogEntryTitle + "/cover_img")
-        print("created directory called " + blogEntryTitle)
+        # print("created directory called " + blogEntryTitle)
         f = open("{}/{}.md".format(blogEntryTitle, blogEntryTitle), "w+")
 
         addEntrytoHTML()
-
-        # with open('entries.json', 'r') as json_file:
-        #     data = json_file.read()
-
-        # objs = json.loads(data)
-        # obj_keys = objs.keys()
-        # for key in objs:
-        #     print("key: " + key + " " + str(objs[key]))
 
 
 def updateEntry():
@@ -63,6 +55,8 @@ def updateEntry():
     cur_entry = ""
     found_entry = False
     modifying_date = False
+    index = 0
+    target_index = 0
     for l in lineiterator:
         if (found_entry):
 
@@ -73,14 +67,18 @@ def updateEntry():
                     l = re.sub("\d{4}-\d{2}-\d{2}", str(today), l)
 
             if (re.match('\w*', l)):
-                print("appending!")
-                print(l)
+                # print("appending!")
+                # print(l)
                 cur_entry += str(l)
 
             if (l == ""):
-                print("ADDING TO LIST..")
+                # print("ADDING TO LIST..")
+                index += 1
                 cur_entry += "\n"
                 entries.append(cur_entry)
+                if (modifying_date):
+                    target_index = index
+                    print("target_index: " + str(target_index))
                 cur_entry = ""
                 found_entry = False
                 modifying_date = False
@@ -92,29 +90,30 @@ def updateEntry():
             cur_entry += str(l)
             found_entry = True
 
-        # if (re.search('.*</p>', l)):
-        #     print("FOUND PARAGRAPH")
-        #     if (len(tags) > 0):
-        #         tagHTML = ""
-        #         for tag in tags:
-        #             newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format("green",
-        #                                                                                               tag)
-        #             tagHTML += newtag
-        #         cur_entry += tagHTML
 
     sep = '<!-- BLOG ENTRIES -->'
-    stripped = htmlFile.split(sep, 1)[
+    header = htmlFile.split(sep, 1)[
         0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
 
+    stripped = ""
+    updated_entry = ""
+    entry_index = 0
     for entry in entries:
-        print(entry)
+        entry_index += 1
+        if (entry_index == target_index):
+            updated_entry = entry + "\n"
+            print("found entry...")
+            continue
+        # print(entry)
         stripped += entry + "\n"
 
     stripped += "\n\n<!-- BLOG ENTRIES END -->"
+    htmlcode = header + updated_entry + stripped
 
-    print(stripped)
+
+    # print(stripped)
     f = open("../blog.html", "w")
-    f.write(stripped)
+    f.write(htmlcode)
     f.close()
 
     # run prettier on file.
@@ -129,26 +128,6 @@ def addEntrytoHTML():
         '<!-- BLOG ENTRIES -->(.*?)<!-- BLOG ENTRIES END -->', htmlFile, re.DOTALL)
     lineiterator = iter(entries_raw[0].splitlines())
     entries = []
-    cur_entry = ""
-    found_entry = False
-    for l in lineiterator:
-        if (found_entry):
-            if (re.match('\w*', l)):
-                print("appending!")
-                print(l)
-                cur_entry += str(l)
-
-            if (l == ""):
-                print("ADDING TO LIST..")
-                cur_entry += "\n"
-                entries.append(cur_entry)
-                cur_entry = ""
-                found_entry = False
-
-        if (re.search('<!--', l)):
-            print(l)
-            cur_entry += str(l)
-            found_entry = True
 
     template = "\n\n<!-- {} -->\n".format(blogEntryTitle)
     if (len(entries) % 2 == 0):
@@ -168,8 +147,6 @@ def addEntrytoHTML():
 
         template += "</div> </div>"
         template += "</div> </a>\n\n"
-        template += "<!-- BLOG ENTRIES END -->"
-        template += "</div></div></body></html>"
 
     else:
         template += "<a href='./Blog/{}/{}.html'>\n".format(
@@ -188,20 +165,43 @@ def addEntrytoHTML():
         template += "<canvas width='600' height='400'></canvas>"
         template += "</div>"
         template += "</div> </a>\n\n"
-        template += "<!-- BLOG ENTRIES END -->"
-        template += "</div></div></body></html>"
 
     entries.append(template)
+
+    cur_entry = ""
+    found_entry = False
+    for l in lineiterator:
+        if (found_entry):
+            if (re.match('\w*', l)):
+                # print("appending!")
+                # print(l)
+                cur_entry += str(l)
+
+            if (l == ""):
+                # print("ADDING TO LIST..")
+                cur_entry += "\n"
+                entries.append(cur_entry)
+                cur_entry = ""
+                found_entry = False
+
+        if (re.search('<!--', l)):
+            # print(l)
+            cur_entry += str(l)
+            found_entry = True
+
 
     sep = '<!-- BLOG ENTRIES -->'
     stripped = htmlFile.split(sep, 1)[
         0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
 
     for entry in entries:
-        print(entry)
+        # print(entry)
         stripped += entry + "\n"
 
-    print(stripped)
+    stripped += "<!-- BLOG ENTRIES END -->"
+    stripped += "</div></div></body></html>"
+
+    # print(stripped)
     f = open("../blog.html", "w")
     f.write(stripped)
     f.close()
@@ -223,9 +223,9 @@ def addTags(template):
                 objs = json.loads(data)
                 keyfound = False
                 for key in objs:
-                    print("key: " + key + " value: " + str(objs[key]))
-                    print("keyUpper: " + key.upper())
-                    print("tagUpper: " + tag.upper())
+                    # print("key: " + key + " value: " + str(objs[key]))
+                    # print("keyUpper: " + key.upper())
+                    # print("tagUpper: " + tag.upper())
                     if (key.upper() == tag.upper()):
                         keyfound = True
                         tag_color = objs[key]
