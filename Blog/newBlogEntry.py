@@ -131,8 +131,19 @@ def addEntrytoHTML():
 
     template = "\n\n<!-- {} -->\n".format(blogEntryTitle)
     if (len(entries) % 2 == 0):
+        tagfilter = ""
+        for tag in tags:
+            tag = tag.strip()
+            tag = tag.replace(" ", "_")
+            tagfilter += "tag-" + tag + " "
+
+        print("adding tags: "  + tagfilter)
+        template += "<li class='{}'>".format(tagfilter)
+
         template += "<a href='./Blog/{}/{}.html'>\n".format(
             blogEntryTitle, blogEntryTitle)
+
+
         template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
         template += "<div class='uk-card-media-left uk-cover-container'>"
         template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
@@ -146,9 +157,19 @@ def addEntrytoHTML():
         template = addTags(template)
 
         template += "</div> </div>"
-        template += "</div> </a>\n\n"
+        template += "</div> </a></li>\n\n"
 
     else:
+        tagfilter = ""
+        for tag in tags:
+            tag = tag.strip()
+            tag = tag.replace(" ", "_")
+            # tagstr = tag.replace(" ", "_")
+            tagfilter += "tag-" + tag + " "
+
+        print("adding tags: "  + tagfilter)
+        template += "<li class='{}'>".format(tagfilter)
+
         template += "<a href='./Blog/{}/{}.html'>\n".format(
             blogEntryTitle, blogEntryTitle)
         template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
@@ -164,7 +185,7 @@ def addEntrytoHTML():
             blogEntryTitle)
         template += "<canvas width='600' height='400'></canvas>"
         template += "</div>"
-        template += "</div> </a>\n\n"
+        template += "</div> </a></li>\n\n"
 
     entries.append(template)
 
@@ -191,15 +212,17 @@ def addEntrytoHTML():
 
 
     sep = '<!-- BLOG ENTRIES -->'
+    # stripped = htmlFile.split(sep, 1)[
+    #         0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove' uk-filter=target: .js-filter>"
     stripped = htmlFile.split(sep, 1)[
-        0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
+            0] + sep + "<ul class='js-filter uk-list'>"
 
     for entry in entries:
         # print(entry)
         stripped += entry + "\n"
 
     stripped += "<!-- BLOG ENTRIES END -->"
-    stripped += "</div></div></body></html>"
+    stripped += "</ul></div></div></body></html>"
 
     # print(stripped)
     f = open("../blog.html", "w")
