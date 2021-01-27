@@ -6,5 +6,10 @@
   "processing": "#212add",
   "data visualization": "#d8b1d6",
   "electronics": "#2fb793",
-  "sensors": "#aa75c6"
+  "sensors": "#aa75c6",
+  "Java": "#a45598",
+  "Python": "#404cd2",
+  "Javascript": "#e3c310",
+  "Haskell": "#b8fce8",
+  "Run": "#e16e03"
 }

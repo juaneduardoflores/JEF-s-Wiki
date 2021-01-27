@@ -10,6 +10,7 @@ import json
 import sys
 import random
 from datetime import date
+from pathlib import Path
 
 today = date.today()
 blogEntryTitle = "temp"
@@ -234,43 +235,52 @@ def addEntrytoHTML():
 
 def addTags(template):
     if (len(tags) > 0):
+        # with open('tags.json', 'r') as json_file:
+        json_file = open("tags.json", "r")
+        data = json_file.read()
+        objs = json.loads(data)
+        json_file.close()
+
         for tag in tags:
             tag = tag.strip()
 
             tag_color = "#FFFFFF"
-            with open('tags.json', 'r+') as json_file:
-                data = json_file.read()
 
-                objs = json.loads(data)
-                keyfound = False
-                for key in objs:
-                    # print("key: " + key + " value: " + str(objs[key]))
-                    # print("keyUpper: " + key.upper())
-                    # print("tagUpper: " + tag.upper())
-                    if (key.upper() == tag.upper()):
-                        keyfound = True
-                        tag_color = objs[key]
-                        newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
-                            tag_color, tag)
-
-                if (not keyfound):
-                    # random hex color
-                    random_number = random.randint(0, 16777215)
-                    hex_number = format(random_number, 'x')
-                    hex_number = '#'+hex_number
-
-                    objs[tag] = hex_number
-                    tag_color = objs[tag]
-                    print(objs)
-                    json_file.seek(False)
-                    json_obj = json.dumps(objs, indent=2)
-                    json_file.write(str(json_obj))
+            keyfound = False
+            for key in objs:
+                # print("key: " + key + " value: " + str(objs[key]))
+                # print("keyUpper: " + key.upper())
+                # print("tagUpper: " + tag.upper())
+                if (key.upper() == tag.upper()):
+                    keyfound = True
+                    tag_color = objs[key]
                     newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
                         tag_color, tag)
 
+        if (not keyfound):
+            # random hex color
+            random_number = random.randint(0, 16777215)
+            hex_number = format(random_number, 'x')
+            hex_number = '#'+hex_number
+
+            objs[tag] = hex_number
+            tag_color = objs[tag]
+            print(objs)
+            json_file = open("tags.json", "w+")
+            # json_file.seek(False)
+            json_obj = json.dumps(objs, indent=2)
+            json_file.write(str(json_obj))
+            newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
+                tag_color, tag)
+
             template += newtag
 
-        json_file.close()
+            # json_file.seek(0, os.SEEK_SET)
+            json_file.close()
+            Path('./tags.json').touch()
+
+            # os.system("touch tags.json")
+
 
     return template
 
