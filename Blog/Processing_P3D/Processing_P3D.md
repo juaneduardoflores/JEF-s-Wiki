@@ -1,4 +1,4 @@
-### P3D
+## P3D
 
 To use the P3D renderer in your sketch:
 ```processing
@@ -15,8 +15,8 @@ void draw() {
 }
 ```
 
-#### Intro
-In Daniel Shiffman's Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.
+### Intro
+in Daniel Shiffman's Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.
 
 Let's look at what happens if we try to draw a simple square at the center of the canvas like how we do in the default renderer and compare it with P3D:
 
@@ -124,7 +124,7 @@ void draw() {
 ![XYZ rotation with same angle value](/Blog/Processing/gifs/08_P3D.gif) 
 </p>
 
-#### 3D Shapes
+### 3D Shapes
 There are 3D primitives that can be easily drawn using some built in functions:
 
 ```processing
@@ -204,7 +204,7 @@ void draw() {
 ![Custom Shape (Pyramid)](./resources/11_P3D.gif) 
 </p>
 
-#### Textures 
+### Textures 
 
 To add an image as a texture to a 3D custom shape:
 ```processing

@@ -20,23 +20,33 @@
 
 	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
+	<link rel="stylesheet"
+		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
 	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script> -->
 	<script src="../../js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 
 	<style type="text/css" media="screen">
-h2, h3, h4, h5 {
-  font-family: 'Cormorant Garamond', serif;
-}
+		h2,
+		h3,
+		h4,
+		h5 {
+			font-family: 'Cormorant Garamond', serif;
+		}
 
-p {
-  font-family: 'Abhaya Libre', serif;
-  font-size: 1.2em;
-}
+		p {
+			font-family: 'Abhaya Libre', serif;
+			font-size: 1.2em;
+		}
 
-pre {
-  padding: 0;
+		pre {
+			padding: 0;
+		}
+		:target:before {
+content:"";
+display:block;
+height:90px; /* fixed header height*/
+margin:-90px 0 0; /* negative fixed header height */
 }
 	</style>
 
@@ -45,30 +55,28 @@ pre {
 
 <body>
 
+	<!-- NAV AND HEADING -->
+	<div class="uk-flex uk-flex-left" style="background-color: black" uk-sticky>
+
+		<button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
+			<span uk-icon="icon: menu" style="color: white"></span>
+		</button>
+
+		<!-- HEADING -->
+		<h2 class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
+			style="font-family: 'Prompt', sans-serif; color: white">
+			<a class="uk-text" style="color: white" href="../../blog.html">juanedflores</a>&nbsp;blog
+		</h2>
+	</div>
 
 	<div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
 
-
-		<!-- NAV AND HEADING -->
-		<div class="uk-flex uk-flex-left" style="background-color: black" uk-sticky>
-
-			<button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
-			  <span uk-icon="icon: menu" style="color: white"></span>
-			</button>
-
-			<!-- HEADING -->
-			<h2 class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
-				style="font-family: 'Prompt', sans-serif; color: white">
-				<a class="uk-text" style="color: white" href="../../blog.html">juanedflores</a>&nbsp;blog
-			</h2>
-		</div>
-
 		<!-- BODY -->
-		<div id="blog-toc" uk-offcanvas="mode: push; container: #contentArea">
-		    <div class="uk-offcanvas-bar">
-		      <button class="uk-offcanvas-close" type="button" uk-close></button>
-		      <h3>Table of Contents</h3>
-		      <div><ul>
+		<div id="blog-toc" uk-offcanvas="mode: slide; container: #contentArea">
+			<div class="uk-offcanvas-bar">
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+				<h3>Table of Contents</h3>
+				<div><ul>
 <li><a href="#p3d">P3D</a>
 <ul>
 <li><a href="#intro">Intro</a></li>
@@ -76,11 +84,10 @@ pre {
 <li><a href="#textures">Textures</a></li>
 </ul></li>
 </ul></div>
-		    </div>
+			</div>
 		</div>
-
-		<div class="uk-container uk-margin uk-width-1-2@m" >
-<h3 id="p3d">P3D</h3>
+		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
+<h2 id="p3d">P3D</h2>
 <p>To use the P3D renderer in your sketch:</p>
 <pre class="processing"><code>// The size() function has an optional parameter to
 // specify which renderer you want to use.
@@ -93,8 +100,8 @@ void setup() {
 void draw() {
 
 }</code></pre>
-<h4 id="intro">Intro</h4>
-<p>In Daniel Shiffman’s Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.</p>
+<h3 id="intro">Intro</h3>
+<p>in Daniel Shiffman’s Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.</p>
 <p>Let’s look at what happens if we try to draw a simple square at the center of the canvas like how we do in the default renderer and compare it with P3D:</p>
 <p style="text-align:center">
 <img src="./resources/P2D.png" alt="Default Renderer" /> <img src="./resources/P3D.png" alt="Default Renderer" />
@@ -185,7 +192,7 @@ X axis vs. Y axis vs. Z axis with translation to its center
 <p style="text-align:center">
 <img src="/Blog/Processing/gifs/08_P3D.gif" title="fig:" alt="XYZ rotation with same angle value" />
 </p>
-<h4 id="d-shapes">3D Shapes</h4>
+<h3 id="d-shapes">3D Shapes</h3>
 <p>There are 3D primitives that can be easily drawn using some built in functions:</p>
 <pre class="processing"><code>// Example with box() uncommented.
 // box(size), box(width, height, dimension of the box in the z-dimension)
@@ -255,7 +262,7 @@ void draw() {
 <p style="text-align:center">
 <img src="./resources/11_P3D.gif" title="fig:" alt="Custom Shape (Pyramid)" />
 </p>
-<h4 id="textures">Textures</h4>
+<h3 id="textures">Textures</h3>
 <p>To add an image as a texture to a 3D custom shape:</p>
 <pre class="processing"><code>PImage img;
 float angle = 0;
