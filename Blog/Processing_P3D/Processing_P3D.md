@@ -16,7 +16,7 @@ void draw() {
 ```
 
 ### Intro
-in Daniel Shiffman's Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.
+In Daniel Shiffman's Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.
 
 Let's look at what happens if we try to draw a simple square at the center of the canvas like how we do in the default renderer and compare it with P3D:
 
