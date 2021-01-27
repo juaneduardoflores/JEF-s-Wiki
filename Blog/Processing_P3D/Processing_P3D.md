@@ -35,7 +35,7 @@ void draw() {
 }
 ```
 
-Don't be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the `translate()` function.
+don't be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the `translate()` function.
 
 For example, we can make the square move towards us by incrementing the Z axis:
 ```processing

@@ -24,6 +24,12 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
 
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
 	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
 
 	<link rel="stylesheet"
@@ -48,11 +54,14 @@
 		pre {
 			padding: 0;
 		}
+
 		:target:before {
-		  content:"";
-		  display:block;
-		  height:50px; /* fixed header height*/
-		  margin:-50px 0 0; /* negative fixed header height */
+			content: "";
+			display: block;
+			height: 50px;
+			/* fixed header height*/
+			margin: -50px 0 0;
+			/* negative fixed header height */
 		}
 	</style>
 
@@ -70,12 +79,13 @@
 
 		<!-- HEADING -->
 		<h2 class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
-			style="font-family: 'Prompt', sans-serif; color: white">
-			<a class="uk-text" style="color: white" href="../../blog.html">juanedflores</a>&nbsp;blog
+			style="font-family: 'Cormorant', serif; color: white">
+			<a class="uk-text" style="color: white" href="../../blog.html">juanedflores</a>&nbsp;&nbsp;
+			<span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
 		</h2>
 	</div>
 
-	<div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
+	<div class="uk-align-center uk-margin-remove-top" id="contentArea">
 
 		<!-- BODY -->
 		<div id="blog-toc" uk-offcanvas="mode: slide; container: #contentArea">
@@ -86,7 +96,7 @@
 			</div>
 		</div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-$body$
+			$body$
 		</div>
 
 	</div>
