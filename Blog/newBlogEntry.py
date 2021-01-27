@@ -115,6 +115,7 @@ def updateEntry():
     f.write(htmlcode)
     f.close()
 
+
     # run prettier on file.
     os.system("npx prettier --write ../blog.html")
 
@@ -268,6 +269,8 @@ def addTags(template):
                         tag_color, tag)
 
             template += newtag
+
+        json_file.close()
 
     return template
 

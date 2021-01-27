@@ -21,7 +21,7 @@ HTML=$(MARKDOWN:.md=.html)
 
 DIRECTORY = $(sort $(dir $(wildcard ./*/)))
 
-all: $(HTML) 
+all: $(HTML) ../blog.html
 
 # convert to html and update modified_time
 # $(HTML): $(ALL_MARKDOWN)
@@ -33,6 +33,10 @@ all: $(HTML)
 	@echo $@
 	pandoc $< -o $@ $(PANDOCFLAGSHTML)
 	python newBlogEntry.py $(@D)
+
+../blog.html: tags.json
+	@echo adding new tags to html..
+	python newTags.py
 
 clean:
 	rm $(HTML)

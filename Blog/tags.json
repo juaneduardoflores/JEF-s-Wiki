@@ -1,10 +1,10 @@
 {
-  "creative coding": "#1E87F0",
-  "game design": "#FFA500",
-  "productivity": "#dbd276",
-  "3d": "#527a3d",
-  "processing": "#212add",
-  "data visualization": "#d8b1d6",
-  "electronics": "#2fb793",
-  "sensors": "#aa75c6"
+	"creative coding": "#1E87F0",
+	"game design": "#FFA500",
+	"productivity": "#dbd276",
+	"3d": "#527a3d",
+	"processing": "#212add",
+	"data visualization": "#d8b1d6",
+	"electronics": "#2fb793",
+	"sensors": "#aa75c6"
 }
