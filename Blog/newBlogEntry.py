@@ -277,7 +277,7 @@ def addTags(template):
 
             # json_file.seek(0, os.SEEK_SET)
             json_file.close()
-            Path('./tags.json').touch()
+            # Path('./tags.json').touch()
 
             # os.system("touch tags.json")
 
