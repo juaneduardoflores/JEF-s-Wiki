@@ -69,12 +69,25 @@ pre {
 		      <button class="uk-offcanvas-close" type="button" uk-close></button>
 		      <h3>Table of Contents</h3>
 		      <div><ul>
-<li><a href="#p3d">P3D</a></li>
+<li><a href="#p3d">P3D</a>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#d-shapes">3D Shapes</a></li>
+<li><a href="#textures">Textures</a></li>
+</ul></li>
 </ul></div>
 		    </div>
 		</div>
 
-		<div class="uk-container uk-margin uk-width-1-2@s" >
+		<div class="uk-container uk-margin uk-width-1-2@m" >
+<ul>
+<li><a href="#p3d">P3D</a>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#d-shapes">3D Shapes</a></li>
+<li><a href="#textures">Textures</a></li>
+</ul></li>
+</ul>
 <h3 id="p3d">P3D</h3>
 <p>To use the P3D renderer in your sketch:</p>
 <pre class="processing"><code>// The size() function has an optional parameter to
@@ -97,9 +110,6 @@ void draw() {
 <p style="text-align:center">
 Default Renderer (left) vs. P3D (right)
 </p>
-<pre class="processing"><code>void setup() {
-
-}</code></pre>
 <pre class="processing"><code>void setup() {
   //size(200, 200);
   size(200, 200, P3D);
@@ -150,7 +160,7 @@ void draw() {
   rect(width/2, height/2, 100, 100);
   angle+=0.03;
 }</code></pre>
-<p style="text-align:center">
+<p class="uk-text-center">
 <img src="./resources/02_P3D.gif" alt="X_axis" /> <img src="./resources/03_P3D.gif" alt="Y_axis" /> <img src="./resources/04_P3D.gif" alt="Z_axis" />
 </p>
 <p style="text-align:center">

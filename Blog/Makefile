@@ -4,6 +4,7 @@
 
 PANDOCFLAGSHTML =                                      \
   --table-of-contents                                  \
+  --toc-depth=5                                        \
   --from=markdown+markdown_in_html_blocks              \
   --metadata-file=../pandoc/metadata.yaml              \
   --template=../pandoc/blog_template.html              \
@@ -29,7 +30,7 @@ all: $(HTML) ../blog.html
 # 	pandoc $(@D)/$(@D).md -o $@ $(PANDOCFLAGSHTML)
 # 	python newBlogEntry.py $(@D)
 
-%.html: %.md 
+%.html: %.md
 	@echo $@
 	pandoc $< -o $@ $(PANDOCFLAGSHTML)
 	python newBlogEntry.py $(@D)

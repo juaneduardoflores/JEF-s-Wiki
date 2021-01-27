@@ -25,12 +25,6 @@ Let's look at what happens if we try to draw a simple square at the center of th
 
 ```processing
 void setup() {
-
-}
-```
-
-```processing
-void setup() {
   //size(200, 200);
   size(200, 200, P3D);
 }
@@ -91,7 +85,7 @@ void draw() {
 }
 ```
 
-<p style="text-align:center">![X_axis](./resources/02_P3D.gif) 
+<p class="uk-text-center">![X_axis](./resources/02_P3D.gif) 
 ![Y_axis](./resources/03_P3D.gif) 
 ![Z_axis](./resources/04_P3D.gif)</p>
 
