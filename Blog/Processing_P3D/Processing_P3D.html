@@ -80,14 +80,6 @@ pre {
 		</div>
 
 		<div class="uk-container uk-margin uk-width-1-2@m" >
-<ul>
-<li><a href="#p3d">P3D</a>
-<ul>
-<li><a href="#intro">Intro</a></li>
-<li><a href="#d-shapes">3D Shapes</a></li>
-<li><a href="#textures">Textures</a></li>
-</ul></li>
-</ul>
 <h3 id="p3d">P3D</h3>
 <p>To use the P3D renderer in your sketch:</p>
 <pre class="processing"><code>// The size() function has an optional parameter to
@@ -119,7 +111,7 @@ void draw() {
   rectMode(CENTER);
   rect(0, 0, width/2, height/2);
 }</code></pre>
-<p>That’s right! They look almost the same! But don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the <code>translate()</code> function.</p>
+<p>Don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the <code>translate()</code> function.</p>
 <p>For example, we can make the square move towards us by incrementing the Z axis:</p>
 <pre class="processing"><code>// example borrowed from https://processing.org/tutorials/p3d/
 

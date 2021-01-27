@@ -2,21 +2,21 @@ import os
 import json
 import re
 
+
 def main():
 
     with open('tags.json', 'r') as tags_file:
         json_data = json.load(tags_file)
 
-
     tags_html = ""
 
     for tag in json_data:
-        tagClassifier = tag.strip().replace(" ", "_") 
+        tagClassifier = tag.strip().replace(" ", "_")
         tagName = tag
         tagColor = str(json_data[tag])
-        list_element = "<li uk-filter-control='.tag-{}'><a href='#'>\n<span class='uk-label' style='background-color: {}; color: white'>{}</span>\n</a>\n</li>\n".format(tagClassifier, tagColor, tagName)
+        list_element = "<li uk-filter-control='.tag-{}'><a href='#'>\n<span class='uk-label' style='background-color: {}; color: white'>{}</span>\n</a>\n</li>\n".format(
+            tagClassifier, tagColor, tagName)
         tags_html += list_element + "\n"
-
 
     htmlFile = open("../blog.html", "r+")
     htmlFilestr = htmlFile.read()
@@ -32,5 +32,6 @@ def main():
     htmlFile.write(newhtml)
     htmlFile.truncate()
     htmlFile.close()
+
 
 main()
