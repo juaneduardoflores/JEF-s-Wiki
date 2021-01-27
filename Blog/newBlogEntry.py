@@ -38,10 +38,11 @@ def main():
         blogEntryTags = input("Enter any tags followed by comma: ")
         tags = blogEntryTags.split(",")
         # print("tags: " + str(tags))
-        os.mkdir(blogEntryTitle)
-        os.mkdir(blogEntryTitle + "/cover_img")
+        os.mkdir(blogEntryTitle.replace(" ", "_"))
+        os.mkdir(blogEntryTitle.replace(" ", "_") + "/cover")
         # print("created directory called " + blogEntryTitle)
-        f = open("{}/{}.md".format(blogEntryTitle, blogEntryTitle), "w+")
+        f = open("{}/{}.md".format(blogEntryTitle.replace(" ", "_"),
+                                   blogEntryTitle.replace(" ", "_")), "w+")
 
         addEntrytoHTML()
 
@@ -49,16 +50,15 @@ def main():
             with open('tags.json', 'r') as tags_file:
                 json_data = json.load(tags_file)
 
-
             tags_html = ""
 
             for tag in json_data:
-                tagClassifier = tag.strip().replace(" ", "_") 
+                tagClassifier = tag.strip().replace(" ", "_")
                 tagName = tag
                 tagColor = str(json_data[tag])
-                list_element = "<li uk-filter-control='.tag-{}'><a href='#'>\n<span class='uk-label' style='background-color: {}; color: white'>{}</span>\n</a>\n</li>\n".format(tagClassifier, tagColor, tagName)
+                list_element = "<li uk-filter-control='.tag-{}'><a href='#'>\n<span class='uk-label' style='background-color: {}; color: white'>{}</span>\n</a>\n</li>\n".format(
+                    tagClassifier, tagColor, tagName)
                 tags_html += list_element + "\n"
-
 
             htmlFile = open("../blog.html", "r+")
             htmlFilestr = htmlFile.read()
@@ -147,7 +147,6 @@ def updateEntry():
     f.write(htmlcode)
     f.close()
 
-
     # run prettier on file.
     os.system("npx prettier --write ../blog.html")
 
@@ -163,60 +162,60 @@ def addEntrytoHTML():
 
     template = "\n\n<!-- {} -->\n".format(blogEntryTitle)
     # if (len(entries) % 2 == 0):
+    # tagfilter = ""
+    # for tag in tags:
+    #     tag = tag.strip()
+    #     tag = tag.replace(" ", "_")
+    #     tagfilter += "tag-" + tag + " "
+
+    # print("adding tags: " + tagfilter)
+    # template += "<li class='{}'>".format(tagfilter)
+
+    # template += "<a href='./Blog/{}/{}.html'>\n".format(
+    #     blogEntryTitle, blogEntryTitle)
+
+    # template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid lightgray; border-radius: 5px' uk-grid >"
+    # template += "<div class='uk-card-media-left uk-cover-container'>"
+    # template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
+    #     blogEntryTitle)
+    # template += "<canvas width='600' height='400'></canvas>"
+    # template += "</div>"
+    # template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> ".format(
+    #     blogEntryTitle, last_modified, blogEntryDescription)
+
+    # # add tags
+    # template = addTags(template)
+
+    # template += "</div> </div>"
+    # template += "</div> </a></li>\n\n"
+
+    # else:
     tagfilter = ""
     for tag in tags:
         tag = tag.strip()
         tag = tag.replace(" ", "_")
+        # tagstr = tag.replace(" ", "_")
         tagfilter += "tag-" + tag + " "
 
     print("adding tags: " + tagfilter)
     template += "<li class='{}'>".format(tagfilter)
 
     template += "<a href='./Blog/{}/{}.html'>\n".format(
-        blogEntryTitle, blogEntryTitle)
-
+        blogEntryTitle.replace(" ", "_"), blogEntryTitle.replace(" ", "_"))
     template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid lightgray; border-radius: 5px' uk-grid >"
-    template += "<div class='uk-card-media-left uk-cover-container'>"
-    template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
-        blogEntryTitle)
-    template += "<canvas width='600' height='400'></canvas>"
-    template += "</div>"
-    template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> ".format(
+    template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
         blogEntryTitle, last_modified, blogEntryDescription)
 
-    # add tags
+    #  add tags
     template = addTags(template)
 
     template += "</div> </div>"
+    template += "<div class='uk-card-media-left uk-cover-container'>"
+    template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
+        blogEntryTitle.replace(" ", "_"))
+    template += "<canvas width='600' height='400'></canvas>"
+    template += "</div>"
     template += "</div> </a></li>\n\n"
-
-    # else:
-    #tagfilter = ""
-    # for tag in tags:
-    #    tag = tag.strip()
-    #    tag = tag.replace(" ", "_")
-    #    # tagstr = tag.replace(" ", "_")
-    #    tagfilter += "tag-" + tag + " "
-
-    #print("adding tags: "  + tagfilter)
-    #template += "<li class='{}'>".format(tagfilter)
-
-    # template += "<a href='./Blog/{}/{}.html'>\n".format(
-    #    blogEntryTitle, blogEntryTitle)
-    #template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
-    # template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
-    #    blogEntryTitle, last_modified, blogEntryDescription)
-
-    #  add tags
-    #template = addTags(template)
-
-    #template += "</div> </div>"
-    #template += "<div class='uk-card-media-left uk-cover-container'>"
-    # template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
-    #    blogEntryTitle)
-    #template += "<canvas width='600' height='400'></canvas>"
-    #template += "</div>"
-    # template += "</div> </a></li>\n\n"
 
     entries.append(template)
 
@@ -268,7 +267,6 @@ def addTags(template):
     global added_new_tag
 
     if (len(tags) > 0):
-        # with open('tags.json', 'r') as json_file:
         json_file = open("tags.json", "r")
         data = json_file.read()
         objs = json.loads(data)
@@ -290,31 +288,24 @@ def addTags(template):
                     newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
                         tag_color, tag)
 
-        if (not keyfound):
-            # random hex color
-            random_number = random.randint(0, 16777215)
-            hex_number = format(random_number, 'x')
-            hex_number = '#'+hex_number
+            if (not keyfound):
+                # random hex color
+                random_number = random.randint(0, 16777215)
+                hex_number = format(random_number, 'x')
+                hex_number = '#'+hex_number
 
-            objs[tag] = hex_number
-            tag_color = objs[tag]
-            print(objs)
-            json_file = open("tags.json", "w+")
-            # json_file.seek(False)
-            json_obj = json.dumps(objs, indent=2)
-            json_file.write(str(json_obj))
-            newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
-                tag_color, tag)
+                objs[tag] = hex_number
+                tag_color = objs[tag]
+                print(objs)
+                json_file = open("tags.json", "w+")
+                json_obj = json.dumps(objs, indent=2)
+                json_file.write(str(json_obj))
+                newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
+                    tag_color, tag)
 
             template += newtag
-
-            # json_file.seek(0, os.SEEK_SET)
             json_file.close()
             added_new_tag = True
-            # Path('./tags.json').touch()
-
-            # os.system("touch tags.json")
-
 
     return template
 

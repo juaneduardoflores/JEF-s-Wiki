@@ -1,7 +1,7 @@
 ### P3D
 
 To use the P3D renderer in your sketch:
-```java
+```processing
 // The size() function has an optional parameter to
 // specify which renderer you want to use.
 // There are two options besides the default -> P2D, P3D 
@@ -23,13 +23,13 @@ Let's look at what happens if we try to draw a simple square at the center of th
 <p style="text-align:center">![Default Renderer](./resources/P2D.png) ![Default Renderer](./resources/P3D.png)</p>
 <p style="text-align:center">Default Renderer (left) vs. P3D (right)</p>
 
-```java
+```processing
 void setup() {
 
 }
 ```
 
-```java
+```processing
 void setup() {
   //size(200, 200);
   size(200, 200, P3D);
@@ -44,7 +44,7 @@ void draw() {
 That's right! They look almost the same! But don't be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the `translate()` function.
 
 For example, we can make the square move towards us by incrementing the Z axis:
-```java
+```processing
 // example borrowed from https://processing.org/tutorials/p3d/
 
 float x, y, z;
@@ -72,7 +72,7 @@ void draw() {
 If you attempt to run this code in the default renderer or P2D, it will throw back an error at you.
 
 By using `rotate()` you can _really_ see the 3D:
-```java
+```processing
 // Example with rotateX() uncommented.
 float angle = 0;
 
@@ -99,7 +99,7 @@ void draw() {
 
 You might have expected the square to rotate according to its center axis, but in P3D, it rotates according to the coordinate (`X`:0, `Y`:0, `Z`:0). To change this, we must use the `translate()` function to change the origin to the center. Make sure to call the rotation after the translation has been made, otherwise you will not see a change.
 
-```java
+```processing
 // Example with rotateX() uncommented.
 float angle = 0;
 
@@ -133,7 +133,7 @@ void draw() {
 #### 3D Shapes
 There are 3D primitives that can be easily drawn using some built in functions:
 
-```java
+```processing
 // Example with box() uncommented.
 // box(size), box(width, height, dimension of the box in the z-dimension)
 // sphere(radius)
@@ -166,7 +166,7 @@ void draw() {
 
 You can also draw custom shapes using `beginShape()`.
 
-```java
+```processing
 // example borrowed from https://processing.org/tutorials/p3d/
 
 float angle = 0;
@@ -213,7 +213,7 @@ void draw() {
 #### Textures 
 
 To add an image as a texture to a 3D custom shape:
-```java
+```processing
 PImage img;
 float angle = 0;
 
@@ -230,7 +230,7 @@ void draw() {
   stroke(255);
   fill(127);
   beginShape();
-  texture(img);  // add texture after beginShape() and before vertex functions.
+  texture(img);  // add texture after beginShape() and before vertex functions
   vertex(-100, -100, 0, 0, 0);
   vertex( 100, -100, 0, 240, 0);
   vertex( 100,  100, 0, 240, 320);

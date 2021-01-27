@@ -5,11 +5,11 @@
 PANDOCFLAGSHTML =                                      \
   --table-of-contents                                  \
   --from=markdown+markdown_in_html_blocks              \
-  --metadata-file=../pandoc/metadata.yaml           \
-  --template=../pandoc/blog_template.html           \
-  --highlight-style=../pandoc/pygments.theme        \
+  --metadata-file=../pandoc/metadata.yaml              \
+  --template=../pandoc/blog_template.html              \
   -V mainfont="DejaVu Serif"                           \
   -V monofont="DejaVu Sans Mono"
+  # --highlight-style=../pandoc/pygments.theme           \
 
 # a wildcard that searches recursively
 rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
