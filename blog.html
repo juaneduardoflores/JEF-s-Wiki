@@ -23,31 +23,34 @@
     />
   </head>
   <body>
-    <div class="uk-width-1-2@m uk-align-center" id="contentArea">
+    <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
       <!-- NAV AND HEADING -->
-      <div class="uk-background-muted uk-flex uk-flex-left uk-margin-top">
+      <div
+        class="uk-flex uk-flex-left"
+        style="background-color: black"
+        uk-sticky
+      >
         <button
           class="uk-button uk-button-default"
           type="button"
+          style="border: none"
           uk-toggle="target: #blog-filter"
         >
-          <span uk-icon="icon: menu"></span>
+          <span uk-icon="icon: menu" style="color: white"></span>
         </button>
 
         <!-- HEADING -->
         <h2
           class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
-          style="font-family: 'Prompt', sans-serif"
+          style="font-family: 'Prompt', sans-serif; color: white"
         >
-          <a class="uk-text-secondary" href="./blog.html">juanedflores</a
+          <a class="uk-text" style="color: white" href="./blog.html"
+            >juanedflores</a
           >&nbsp;blog
         </h2>
       </div>
 
-      <div
-        class="uk-container uk-margin-remove uk-padding-remove"
-        uk-filter="target: .js-filter"
-      >
+      <div class="uk-container" uk-filter="target: .js-filter">
         <div id="blog-filter" uk-offcanvas>
           <div class="uk-offcanvas-bar">
             <button
@@ -57,6 +60,9 @@
             ></button>
             <div uk-filter="target: .js-filter">
               <ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
+                <span style="padding: 1vw; margin-left: 1em"
+                  >Filter by Category:</span
+                >
                 <li class="uk-active" uk-filter-control>
                   <a href="#">
                     <span class="uk-label" style="background-color: #ffffff"
@@ -142,12 +148,75 @@
           </div>
         </div>
         <!-- BLOG ENTRIES -->
-        <ul class="js-filter uk-list">
+        <ul class="js-filter uk-list uk-width-2-3 uk-align-center">
+          <!-- test12 -->
+          <li class="tag-processing">
+            <a href="./Blog/test12/test12.html">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid lightgray; border-radius: 5px"
+                uk-grid
+              >
+                <div class="uk-card-media-left uk-cover-container">
+                  <img
+                    src="./Blog/test12/cover/cover.png"
+                    alt=""
+                    uk-cover
+                  /><canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">
+                      test12 <span class="uk-text-warning">(WIP)</span>
+                    </h3>
+                    <span>last modified: 2021-01-26 </span>
+                    <p>test1 desc</p>
+                    <span class="uk-label" style="background-color: #212add"
+                      >processing</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <!-- test2 -->
+          <li class="tag-game_design">
+            <a href="./Blog/test2/test2.html">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid lightgray; border-radius: 5px"
+                uk-grid
+              >
+                <div class="uk-card-media-left uk-cover-container">
+                  <img
+                    src="./Blog/test2/cover/cover.png"
+                    alt=""
+                    uk-cover
+                  /><canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">
+                      test2 <span class="uk-text-warning">(WIP)</span>
+                    </h3>
+                    <span>last modified: 2021-01-26 </span>
+                    <p>test2 desc</p>
+                    <span class="uk-label" style="background-color: #ffa500"
+                      >game design</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+
           <!-- pico-8 -->
           <li class="tag-game_design tag-creative_coding">
             <a href="./Blog/pico-8/pico-8.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid lightgray; border-radius: 5px"
                 uk-grid
               >
                 <div>
@@ -181,6 +250,7 @@
             <a href="./Blog/Processing_P3D/Processing_P3D.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid lightgray; border-radius: 5px"
                 uk-grid
               >
                 <div>
@@ -222,6 +292,7 @@
             <a href="./Blog/Daily_Task_Manager/Daily_Task_Manager.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid lightgray; border-radius: 5px"
                 uk-grid
               >
                 <div>
@@ -266,6 +337,7 @@
             <a href="./Blog/Robotic_Flower_Pets/Robotic_Flower_Pets.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid lightgray; border-radius: 5px"
                 uk-grid
               >
                 <div>

@@ -89,10 +89,9 @@ def updateEntry():
             cur_entry += str(l)
             found_entry = True
 
-
     sep = '<!-- BLOG ENTRIES -->'
     header = htmlFile.split(sep, 1)[
-            0] + sep + "<ul class='js-filter uk-list'>"
+        0] + sep + "<ul class='js-filter uk-list uk-width-2-3 uk-align-center'>"
     # header = htmlFile.split(sep, 1)[
     #     0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
 
@@ -108,9 +107,8 @@ def updateEntry():
         # print(entry)
         stripped += entry + "\n"
 
-    stripped += "\n\n</ul><!-- BLOG ENTRIES END -->"
+    stripped += "\n\n<!-- BLOG ENTRIES END --></ul>"
     htmlcode = header + updated_entry + stripped
-
 
     # print(stripped)
     f = open("../blog.html", "w")
@@ -138,14 +136,13 @@ def addEntrytoHTML():
         tag = tag.replace(" ", "_")
         tagfilter += "tag-" + tag + " "
 
-    print("adding tags: "  + tagfilter)
+    print("adding tags: " + tagfilter)
     template += "<li class='{}'>".format(tagfilter)
 
     template += "<a href='./Blog/{}/{}.html'>\n".format(
         blogEntryTitle, blogEntryTitle)
 
-
-    template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
+    template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid lightgray; border-radius: 5px' uk-grid >"
     template += "<div class='uk-card-media-left uk-cover-container'>"
     template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
         blogEntryTitle)
@@ -161,32 +158,32 @@ def addEntrytoHTML():
     template += "</div> </a></li>\n\n"
 
     # else:
-        #tagfilter = ""
-        #for tag in tags:
-        #    tag = tag.strip()
-        #    tag = tag.replace(" ", "_")
-        #    # tagstr = tag.replace(" ", "_")
-        #    tagfilter += "tag-" + tag + " "
+    #tagfilter = ""
+    # for tag in tags:
+    #    tag = tag.strip()
+    #    tag = tag.replace(" ", "_")
+    #    # tagstr = tag.replace(" ", "_")
+    #    tagfilter += "tag-" + tag + " "
 
-        #print("adding tags: "  + tagfilter)
-        #template += "<li class='{}'>".format(tagfilter)
+    #print("adding tags: "  + tagfilter)
+    #template += "<li class='{}'>".format(tagfilter)
 
-        #template += "<a href='./Blog/{}/{}.html'>\n".format(
-        #    blogEntryTitle, blogEntryTitle)
-        #template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
-        #template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
-        #    blogEntryTitle, last_modified, blogEntryDescription)
+    # template += "<a href='./Blog/{}/{}.html'>\n".format(
+    #    blogEntryTitle, blogEntryTitle)
+    #template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid >"
+    # template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
+    #    blogEntryTitle, last_modified, blogEntryDescription)
 
-        ## add tags
-        #template = addTags(template)
+    #  add tags
+    #template = addTags(template)
 
-        #template += "</div> </div>"
-        #template += "<div class='uk-card-media-left uk-cover-container'>"
-        #template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
-        #    blogEntryTitle)
-        #template += "<canvas width='600' height='400'></canvas>"
-        #template += "</div>"
-        # template += "</div> </a></li>\n\n"
+    #template += "</div> </div>"
+    #template += "<div class='uk-card-media-left uk-cover-container'>"
+    # template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
+    #    blogEntryTitle)
+    #template += "<canvas width='600' height='400'></canvas>"
+    #template += "</div>"
+    # template += "</div> </a></li>\n\n"
 
     entries.append(template)
 
@@ -211,12 +208,11 @@ def addEntrytoHTML():
             cur_entry += str(l)
             found_entry = True
 
-
     sep = '<!-- BLOG ENTRIES -->'
     # stripped = htmlFile.split(sep, 1)[
     #         0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove' uk-filter=target: .js-filter>"
     stripped = htmlFile.split(sep, 1)[
-            0] + sep + "<ul class='js-filter uk-list'>"
+        0] + sep + "<ul class='js-filter uk-list uk-width-2-3 uk-align-center'>"
 
     for entry in entries:
         # print(entry)
