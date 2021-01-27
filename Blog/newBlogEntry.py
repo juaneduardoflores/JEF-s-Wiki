@@ -19,10 +19,11 @@ blogEntryTags = ""
 last_modified = str(today)
 tags = []
 inputTitle = ""
+added_new_tag = False
 
 
 def main():
-    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags, inputTitle
+    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags, inputTitle, added_new_tag
 
     # If an argument was passed, we are updating, else we are creating
     if (len(sys.argv) > 1):
@@ -43,6 +44,36 @@ def main():
         f = open("{}/{}.md".format(blogEntryTitle, blogEntryTitle), "w+")
 
         addEntrytoHTML()
+
+        if (added_new_tag):
+            with open('tags.json', 'r') as tags_file:
+                json_data = json.load(tags_file)
+
+
+            tags_html = ""
+
+            for tag in json_data:
+                tagClassifier = tag.strip().replace(" ", "_") 
+                tagName = tag
+                tagColor = str(json_data[tag])
+                list_element = "<li uk-filter-control='.tag-{}'><a href='#'>\n<span class='uk-label' style='background-color: {}; color: white'>{}</span>\n</a>\n</li>\n".format(tagClassifier, tagColor, tagName)
+                tags_html += list_element + "\n"
+
+
+            htmlFile = open("../blog.html", "r+")
+            htmlFilestr = htmlFile.read()
+
+            septop = '<!-- START TAGS -->'
+            sepbottom = '<!-- END TAGS -->'
+            top = htmlFilestr.split(septop, 1)[0]
+            bottom = htmlFilestr.split(sepbottom, 1)[1]
+
+            newhtml = top + septop + tags_html + sepbottom + bottom
+
+            htmlFile.seek(0)
+            htmlFile.write(newhtml)
+            htmlFile.truncate()
+            htmlFile.close()
 
 
 def updateEntry():
@@ -234,6 +265,8 @@ def addEntrytoHTML():
 
 
 def addTags(template):
+    global added_new_tag
+
     if (len(tags) > 0):
         # with open('tags.json', 'r') as json_file:
         json_file = open("tags.json", "r")
@@ -277,6 +310,7 @@ def addTags(template):
 
             # json_file.seek(0, os.SEEK_SET)
             json_file.close()
+            added_new_tag = True
             # Path('./tags.json').touch()
 
             # os.system("touch tags.json")
