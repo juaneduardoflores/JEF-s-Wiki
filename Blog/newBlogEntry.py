@@ -91,7 +91,7 @@ def updateEntry():
 
     sep = '<!-- BLOG ENTRIES -->'
     header = htmlFile.split(sep, 1)[
-        0] + sep + "<ul class='js-filter uk-list uk-width-2-3 uk-align-center'>"
+        0] + sep + "<ul class='js-filter uk-list uk-width-2-3@s uk-align-center'>"
     # header = htmlFile.split(sep, 1)[
     #     0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
 
@@ -212,7 +212,7 @@ def addEntrytoHTML():
     # stripped = htmlFile.split(sep, 1)[
     #         0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove' uk-filter=target: .js-filter>"
     stripped = htmlFile.split(sep, 1)[
-        0] + sep + "<ul class='js-filter uk-list uk-width-2-3 uk-align-center'>"
+        0] + sep + "<ul class='js-filter uk-list uk-width-2-3@s uk-align-center'>"
 
     for entry in entries:
         # print(entry)
