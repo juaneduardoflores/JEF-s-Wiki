@@ -17,6 +17,7 @@
 	<title>$if(heading)$$heading$$endif$</title>
 
 	<link rel="stylesheet" href="../../css/uikit.min.css" />
+	<!-- <link rel="stylesheet" href="../../css/style.css" /> -->
 	<script src="../../js/uikit.min.js"></script>
 	<script src="../../js/uikit-icons.min.js"></script>
 
@@ -24,6 +25,26 @@
 	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
 
 	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script> -->
+	<script src="../../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<style type="text/css" media="screen">
+h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+p {
+  font-family: 'Abhaya Libre', serif;
+  font-size: 1.2em;
+}
+
+pre {
+  padding: 0;
+}
+	</style>
 
 	$for(header-includes)$ $header-includes$ $endfor$
 </head>
@@ -37,6 +58,10 @@
 		<!-- NAV AND HEADING -->
 		<div class="uk-flex uk-flex-left" style="background-color: black" uk-sticky>
 
+			<button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
+			  <span uk-icon="icon: menu" style="color: white"></span>
+			</button>
+
 			<!-- HEADING -->
 			<h2 class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
 				style="font-family: 'Prompt', sans-serif; color: white">
@@ -45,8 +70,16 @@
 		</div>
 
 		<!-- BODY -->
-		<div class="uk-container uk-margin">
-			$body$
+		<div id="blog-toc" uk-offcanvas="mode: push; container: #contentArea">
+		    <div class="uk-offcanvas-bar">
+		      <button class="uk-offcanvas-close" type="button" uk-close></button>
+		      <h3>Table of Contents</h3>
+		      <div>$toc$</div>
+		    </div>
+		</div>
+
+		<div class="uk-container uk-margin uk-width-1-2@s" >
+$body$
 		</div>
 
 	</div>
