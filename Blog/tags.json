@@ -7,5 +7,6 @@
   "data visualization": "#d8b1d6",
   "electronics": "#2fb793",
   "sensors": "#aa75c6",
-  "GLSL": "#a7f203"
+  "GLSL": "#a7f203",
+  "C++": "#44971f"
 }

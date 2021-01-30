@@ -116,7 +116,12 @@ def updateEntry():
 
         if (re.search('<!--', l)):
             print("LOOK AT ME: " + l)
-            if (re.match('.*<!-- {} -->'.format(inputTitle), l)):
+            # take into account regex special characters
+            inputTitlestr = inputTitle 
+            inputTitlestr = inputTitlestr.replace('+', '\+')
+            print(inputTitlestr)
+            if (re.match('.*<!-- {} -->'.format(inputTitlestr.replace('_', ' ')), l)):
+                print("MODIFYING TIME...")
                 modifying_date = True
             cur_entry += str(l)
             found_entry = True

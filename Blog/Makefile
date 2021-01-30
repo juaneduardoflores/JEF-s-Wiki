@@ -5,7 +5,7 @@
 PANDOCFLAGSHTML =                                      \
   --table-of-contents                                  \
   --toc-depth=5                                        \
-  --from=markdown+markdown_in_html_blocks              \
+  --from=markdown+markdown_in_html_blocks+bracketed_spans              \
   --metadata-file=../pandoc/metadata.yaml              \
   --template=../pandoc/blog_template.html              \
   -V mainfont="DejaVu Serif"                           \
