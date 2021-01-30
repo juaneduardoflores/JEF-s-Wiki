@@ -58,7 +58,7 @@ So in the end it is running something like this:
 $ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono"
 ```
 
-`--table-of-contents`: Outputs the html file with a table of contents.
+`--table-of-contents`: Outputs the html file with a table of contents. 
 
 ### Features
   Done:  

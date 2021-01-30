@@ -40,10 +40,6 @@
 			font-family: 'Cormorant Garamond', serif;
 		}
 
-		h2 {
-			font-weight: bold;
-		}
-
 		p {
 			font-family: 'Abhaya Libre', serif;
 			font-size: 1.2em;
@@ -103,61 +99,61 @@
 			</div>
 		</div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-<h2 id="how-this-blog-works">How This Blog Works</h2>
-<h3 id="the-goal">The Goal</h3>
-<p>The goal is to easily be able to create and modify blog entries without worrying about writing any HTML code, just plain text in the markdown format. I achieve this by using a Makefile and python.</p>
-<h4 id="the-makefile">The Makefile</h4>
-<pre class="make"><code>PANDOCFLAGSHTML =                                           \
-  --table-of-contents                                       \
-  --toc-depth=4                                             \
-  --from=markdown+markdown_in_html_blocks+bracketed_spans   \
-  --metadata-file=../pandoc/metadata.yaml                   \
-  --template=../pandoc/blog_template.html                   \
-  -V mainfont=&quot;DejaVu Serif&quot;                                \
-  -V monofont=&quot;DejaVu Sans Mono&quot;
+			<h2 id="how-this-blog-works">How This Blog Works</h2>
+   <h3 id="the-goal">The Goal</h3>
+   <p>The goal is to easily be able to create and modify blog entries without worrying about writing any HTML code, just plain text in the markdown format. I achieve this by using a Makefile and python.</p>
+   <h4 id="the-makefile">The Makefile</h4>
+   <pre class="make"><code>PANDOCFLAGSHTML =                                           \
+     --table-of-contents                                       \
+     --toc-depth=4                                             \
+     --from=markdown+markdown_in_html_blocks+bracketed_spans   \
+     --metadata-file=../pandoc/metadata.yaml                   \
+     --template=../pandoc/blog_template.html                   \
+     -V mainfont=&quot;DejaVu Serif&quot;                                \
+     -V monofont=&quot;DejaVu Sans Mono&quot;
 
-# a wildcard that searches recursively
-rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
+   # a wildcard that searches recursively
+   rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-# find all markdown files
-MARKDOWN := $(call rwildcard,./,*.md)
-HTML = $(MARKDOWN:.md=.html)
+   # find all markdown files
+   MARKDOWN := $(call rwildcard,./,*.md)
+   HTML = $(MARKDOWN:.md=.html)
 
-all: $(HTML)
+   all: $(HTML)
 
-%.html: %.md
-    @echo $@
-    pandoc $&lt; -o $@ $(PANDOCFLAGSHTML)
-    python newBlogEntry.py $(@D)
+   %.html: %.md
+       @echo $@
+       pandoc $&lt; -o $@ $(PANDOCFLAGSHTML)
+       python newBlogEntry.py $(@D)
 
-clean:
-    rm $(HTML)</code></pre>
-<p><strong>Explanation:</strong><br />
-I am using <a href="https://pandoc.org/" target="_blank">pandoc</a> to convert markdown to html.</p>
-<p>A simple command to do this would be:</p>
-<pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
-<p><code>-f/--from</code> is a <span style="font-weight:bold; cursor: pointer;" data-uk-tooltip="title: A Command-line flag is a common way to specify options for command-line programs.">flag</span> that specifies what file type we are starting from, and <code>-t/--to</code> is the file type we are converting to.</p>
-<p>Another way to do it is with the <code>-o</code> flag:</p>
-<pre class="shell"><code>$ pandoc inputfile.md -o outputfile.html</code></pre>
-<p><code>-o/--output</code> specifies the output file. In this example, we are specifying that we want to output to a file called <code>outputfile.html</code>. Pandoc is smart enough to look at the extensions of the input and output files to know what we are converting from and to.</p>
-<hr />
-<p>Now that we understand what pandoc does, I can explain that all this Makefile does is look for every markdown file in the subdirectories and turns them into html. The <code>PANDOCFLAGSHTML</code> variable contains all the flags I am using with the pandoc command.</p>
-<p>So in the end it is running something like this:</p>
-<pre class="shell"><code>$ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html -V mainfont=&quot;DejaVu Serif&quot; -V monofont=&quot;DejaVu Sans Mono&quot;</code></pre>
-<p><code>--table-of-contents</code>: Outputs the html file with a table of contents.</p>
-<h3 id="features">Features</h3>
-<p>Done:</p>
-<ul>
-<li>Modified date of a blog entry is displayed in the blog home page.</li>
-<li>Filter posts by category.</li>
-</ul>
-<p>TODO:</p>
-<ul>
-<li>More specific modified time (Time of day).</li>
-<li>Add total amount of time worked on post with TimeWarrior info. (e.g. Total time worked on: ‘5 days, 10 hours, 40 minutes’)</li>
-<li>Filter posts by year it was created.</li>
-<li>Filter posts from last modified to oldest modified. (and vice versa)</li>
-</ul>
+   clean:
+       rm $(HTML)</code></pre>
+   <p><strong>Explanation:</strong><br />
+   I am using <a href="https://pandoc.org/" target="_blank">pandoc</a> to convert markdown to html.</p>
+   <p>A simple command to do this would be:</p>
+   <pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
+   <p><code>-f/--from</code> is a <span style="font-weight:bold; cursor: pointer;" data-uk-tooltip="title: A Command-line flag is a common way to specify options for command-line programs.">flag</span> that specifies what file type we are starting from, and <code>-t/--to</code> is the file type we are converting to.</p>
+   <p>Another way to do it is with the <code>-o</code> flag:</p>
+   <pre class="shell"><code>$ pandoc inputfile.md -o outputfile.html</code></pre>
+   <p><code>-o/--output</code> specifies the output file. In this example, we are specifying that we want to output to a file called <code>outputfile.html</code>. Pandoc is smart enough to look at the extensions of the input and output files to know what we are converting from and to.</p>
+   <hr />
+   <p>Now that we understand what pandoc does, I can explain that all this Makefile does is look for every markdown file in the subdirectories and turns them into html. The <code>PANDOCFLAGSHTML</code> variable contains all the flags I am using with the pandoc command.</p>
+   <p>So in the end it is running something like this:</p>
+   <pre class="shell"><code>$ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html -V mainfont=&quot;DejaVu Serif&quot; -V monofont=&quot;DejaVu Sans Mono&quot;</code></pre>
+   <p><code>--table-of-contents</code>: Outputs the html file with a table of contents.</p>
+   <h3 id="features">Features</h3>
+   <p>Done:</p>
+   <ul>
+   <li>Modified date of a blog entry is displayed in the blog home page.</li>
+   <li>Filter posts by category.</li>
+   </ul>
+   <p>TODO:</p>
+   <ul>
+   <li>More specific modified time (Time of day).</li>
+   <li>Add total amount of time worked on post with TimeWarrior info. (e.g. Total time worked on: ‘5 days, 10 hours, 40 minutes’)</li>
+   <li>Filter posts by year it was created.</li>
+   <li>Filter posts from last modified to oldest modified. (and vice versa)</li>
+   </ul>
 		</div>
 
 	</div>
