@@ -1,12 +1,16 @@
 ## Learning C++
 
 ### Resources
+Beginner:
   * Dan Buzzo's youtube series [Programming for
   Artists](https://www.youtube.com/watch?v=HGbkTHCO8P8&list=PL6QF0yo3Zj7DlRpQlfBULd3ngzi-qbLCY).
+  * Open Frameworks Book. [C++ Language Basics](https://openframeworks.cc/ofBook/chapters/cplusplus_basics.html)
+Intermediate:
+  * [OneLoneCoder](https://www.youtube.com/c/javidx9/videos)
 
 ### First Things to Know
-  * C++ is a compiled language, which means you need a compiler in order to turn it into machine 
-code and run it.
+  * C++ is a compiled language, which means you need a compiler in order to turn it into machine code and run it.
+  * C++ is based on C with some added features (represented by `++`). Because of this, it is important to have a thorough knowledge of C.
 
 ### Examples to Get Started 
 #### Hello Moon 

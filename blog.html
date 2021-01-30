@@ -73,123 +73,154 @@
               type="button"
               uk-close
             ></button>
-            <div uk-filter="target: .js-filter">
-              <ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
-                <span style="padding: 1vw; margin-left: 1em"
-                  >Filter by Category:</span
+            <ul uk-accordion>
+              <li class="uk-open">
+                <a class="uk-accordion-title" href="#">Filter</a>
+                <div
+                  class="uk-accordion-content"
+                  uk-filter="target: .js-filter"
                 >
-                <li class="uk-active" uk-filter-control>
-                  <a href="#">
-                    <span class="uk-label" style="background-color: #ffffff"
-                      >All</span
-                    >
-                  </a>
-                </li>
-                <hr />
-                <!-- START TAGS -->
-                <li uk-filter-control=".tag-creative_coding">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #1e87f0; color: white"
-                      >creative coding</span
-                    >
-                  </a>
-                </li>
+                  <ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
+                    <li uk-filter-control>
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #ffffff"
+                          >All</span
+                        >
+                      </a>
+                    </li>
+                    <li class="uk-active" uk-filter-control=".tag-featured">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #fff202"
+                          ><span uk-icon="icon: star"></span>
+                        </span>
+                      </a>
+                    </li>
+                    <hr />
+                    <!-- START TAGS -->
+                    <li uk-filter-control=".tag-creative_coding">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #1e87f0; color: white"
+                          >creative coding</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-game_design">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #ffa500; color: white"
-                      >game design</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-game_design">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #ffa500; color: white"
+                          >game design</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-productivity">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #dbd276; color: white"
-                      >productivity</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-productivity">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #dbd276; color: white"
+                          >productivity</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-3d">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #527a3d; color: white"
-                      >3d</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-3d">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #527a3d; color: white"
+                          >3d</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-processing">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #212add; color: white"
-                      >processing</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-processing">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #212add; color: white"
+                          >processing</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-data_visualization">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #d8b1d6; color: white"
-                      >data visualization</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-data_visualization">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #d8b1d6; color: white"
+                          >data visualization</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-electronics">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #2fb793; color: white"
-                      >electronics</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-electronics">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #2fb793; color: white"
+                          >electronics</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-sensors">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #aa75c6; color: white"
-                      >sensors</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-sensors">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #aa75c6; color: white"
+                          >sensors</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-GLSL">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #a7f203; color: white"
-                      >GLSL</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-GLSL">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #a7f203; color: white"
+                          >GLSL</span
+                        >
+                      </a>
+                    </li>
 
-                <li uk-filter-control=".tag-Cplusplus">
-                  <a href="#">
-                    <span
-                      class="uk-label"
-                      style="background-color: #44971f; color: white"
-                      >C++</span
-                    >
-                  </a>
-                </li>
+                    <li uk-filter-control=".tag-Cplusplus">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #44971f; color: white"
+                          >C++</span
+                        >
+                      </a>
+                    </li>
 
-                <!-- END TAGS -->
-              </ul>
-            </div>
+                    <!-- END TAGS -->
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="uk-accordion-title" href="#">About This Blog</a>
+                <div class="uk-accordion-content">
+                  <p>
+                    I created this blog in 2021 to keep track of the step by
+                    step processes of things I learned and projects I made. It
+                    has a focus in Art & Technology. While it started as a
+                    reference for my future self, I try to write in a way that
+                    may be accessible for someone who is interested in the same
+                    topics or wants to know more about certain projects I made.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a class="uk-accordion-title" href="#">Navigation</a>
+                <div class="uk-accordion-content">
+                  <a href="./index.html">Artist Home Page</a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- BLOG ENTRIES -->
@@ -229,7 +260,7 @@
           </li>
 
           <!-- Processing_P3D -->
-          <li class="tag-processing tag-creative_coding tag-3d">
+          <li class="tag-processing tag-creative_coding tag-3d tag-featured">
             <a href="./Blog/Processing_P3D/Processing_P3D.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
@@ -271,7 +302,7 @@
           </li>
 
           <!-- pico-8 -->
-          <li class="tag-game_design tag-creative_coding">
+          <li class="tag-game_design tag-creative_coding tag-featured">
             <a href="./Blog/pico-8/pico-8.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
@@ -339,7 +370,9 @@
           </li>
 
           <!-- Daily_Task_Manager -->
-          <li class="tag-productivity tag-processing tag-data_visualization">
+          <li
+            class="tag-productivity tag-processing tag-data_visualization tag-featured"
+          >
             <a href="./Blog/Daily_Task_Manager/Daily_Task_Manager.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
@@ -384,7 +417,7 @@
           </li>
 
           <!-- Robotic_Flower_Pets -->
-          <li class="tag-electronics tag-sensors">
+          <li class="tag-electronics tag-sensors tag-featured">
             <a href="./Blog/Robotic_Flower_Pets/Robotic_Flower_Pets.html">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
