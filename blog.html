@@ -66,7 +66,7 @@
       </div>
 
       <div class="uk-container" uk-filter="target: .js-filter">
-        <div id="blog-filter" uk-offcanvas>
+        <div id="blog-filter" uk-offcanvas="bg-close: false">
           <div class="uk-offcanvas-bar">
             <button
               class="uk-offcanvas-close uk-padding-small uk-position-top-right"
@@ -187,7 +187,7 @@
                       </a>
                     </li>
 
-                    <li uk-filter-control=".tag-Cplusplus">
+                    <li uk-filter-control=".tag-C++">
                       <a href="#">
                         <span
                           class="uk-label"
@@ -212,6 +212,15 @@
                     may be accessible for someone who is interested in the same
                     topics or wants to know more about certain projects I made.
                   </p>
+                  <p>
+                    A more detailed explanation of this blog is documented in
+                    the
+                    <a
+                      href="./Blog/How_This_Blog_Works/How_This_Blog_Works.html"
+                      >'How This Blog Works'</a
+                    >
+                    post.
+                  </p>
                 </div>
               </li>
               <li>
@@ -225,6 +234,41 @@
         </div>
         <!-- BLOG ENTRIES -->
         <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
+          <!-- How This Blog Works -->
+          <li class="tag-Productivity">
+            <a href="./Blog/How_This_Blog_Works/How_This_Blog_Works.html">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                style="border: 1px solid lightgray; border-radius: 5px"
+                uk-grid
+              >
+                <div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">
+                      How This Blog Works
+                      <span class="uk-text-warning">(WIP)</span>
+                    </h3>
+                    <span>last modified: 2021-01-30 </span>
+                    <p>
+                      I detail the features of this blog, the intentions, and
+                      the code that makes it work.
+                    </p>
+                    <span class="uk-label" style="background-color: #dbd276"
+                      >Productivity</span
+                    >
+                  </div>
+                </div>
+                <div class="uk-card-media-left uk-cover-container">
+                  <img
+                    src="./Blog/How_This_Blog_Works/cover/cover.png"
+                    alt=""
+                    uk-cover
+                  /><canvas width="600" height="400"></canvas>
+                </div>
+              </div>
+            </a>
+          </li>
+
           <!-- Learning C++ -->
           <li class="tag-Cplusplus">
             <a href="./Blog/Learning_C++/Learning_C++.html">
@@ -238,7 +282,7 @@
                     <h3 class="uk-card-title">
                       Learning C++ <span class="uk-text-warning">(WIP)</span>
                     </h3>
-                    <span>last modified: 2021-01-29 </span>
+                    <span>last modified: 2021-01-30 </span>
                     <p>
                       Learning the C++ language by going through online
                       resources and examples.
