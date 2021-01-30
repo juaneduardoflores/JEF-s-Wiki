@@ -64,8 +64,11 @@ $ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-
   Done:  
   
   - Modified date of a blog entry is displayed in the blog home page.
+  - Filter posts by category.
 
   TODO:  
   
   - More specific modified time (Time of day).
   - Add total amount of time worked on post with TimeWarrior info. (e.g. Total time worked on: '5 days, 10 hours, 40 minutes')
+  - Filter posts by year it was created.
+  - Filter posts from last modified to oldest modified. (and vice versa)
