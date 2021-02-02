@@ -1,74 +1,35 @@
 <!DOCTYPE html>
-<html  lang="en"  dir="ltr">
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="generator" content="pandoc" />
+    <title></title>
 
-	
-	
-	<title>Juan Eduardo Flores</title>
+    <link rel="stylesheet" href="../../css/uikit.min.css" />
+    <script src="../../js/uikit.min.js"></script>
+    <script src="../../js/uikit-icons.min.js"></script>
 
-	<link rel="stylesheet" href="../../css/uikit.min.css" />
-	<!-- <link rel="stylesheet" href="../../css/style.css" /> -->
-	<script src="../../js/uikit.min.js"></script>
-	<script src="../../js/uikit-icons.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
 
-	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
-	<link rel="stylesheet"
-		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script> -->
-	<script src="../../js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="../../css/blog_style.css" />
 
-	<style type="text/css" media="screen">
-
-		h2,
-		h3,
-		h4,
-		h5 {
-			font-family: 'Cormorant Garamond', serif;
-			font-weight: bold;
-		}
-
-		h2 {
-		  font-weight: bold;
-		  padding-bottom: 0;
-		  margin-bottom: 0;
-		}
-
-		p {
-			font-family: 'Abhaya Libre', serif;
-			font-size: 1.2em;
-		}
-
-		pre {
-			padding: 0;
-		}
-
-		:target:before {
-			content: "";
-			display: block;
-			height: 50px;
-			/* fixed header height*/
-			margin: -50px 0 0;
-			/* negative fixed header height */
-		}
-	</style>
-
-	
-</head>
+    
+  </head>
 
 <body>
 
@@ -80,11 +41,11 @@
 		</button>
 
 		<!-- HEADING -->
-		<h2 class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
-			style="font-family: 'Cormorant', serif; color: white">
+		<span class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
+			style="font-family: 'Cormorant', serif; color: white; font-size: 1.5em;">
 			<a class="uk-text" style="color: white; font-weight: normal; font-size: 1em;" href="../../blog.html">juanedflores</a>&nbsp;&nbsp;
 			<span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
-		</h2>
+		</span>
 	</div>
 
 	<div class="uk-align-center uk-margin-remove-top" id="contentArea">
@@ -106,7 +67,7 @@
 			</div>
 		</div>
 		  <div class="uk-container uk-width-1-2@m" style="background-color: black; padding-top: 1.2em; padding-bottom: 1.2em;">
-		    <span style="font-size: 2em; color: white;">More About This Blog</span>	
+		    <span class="title" style="color: white;">More About This Blog</span>	
 		    <br />
 		    <span style="font-size: 1em;">Date created: January 30th, 2021</span>
 		  </div>
@@ -120,10 +81,7 @@
   --table-of-contents                                       \
   --toc-depth=4                                             \
   --from=markdown+markdown_in_html_blocks+bracketed_spans   \
-  --metadata-file=../pandoc/metadata.yaml                   \
-  --template=../pandoc/blog_template.html                   \
-  -V mainfont=&quot;DejaVu Serif&quot;                                \
-  -V monofont=&quot;DejaVu Sans Mono&quot;
+  --template=../pandoc/blog_template.html
 
 # a wildcard that searches recursively
 rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
@@ -141,8 +99,8 @@ all: $(HTML)
 
 clean:
     rm $(HTML)</code></pre>
-<p><strong>Explanation:</strong><br />
-I am using <a href="https://pandoc.org/" target="_blank">pandoc</a> to convert markdown to html.</p>
+<h5 id="explanation">Explanation</h5>
+<p>I am using <a href="https://pandoc.org/" target="_blank">pandoc</a> to convert markdown to html.</p>
 <p>A simple command to do this conversion would be:</p>
 <pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
 <p><code>-f/--from</code> is a <span style="font-weight:bold; cursor: pointer;" data-uk-tooltip="title: A Command-line flag is a common way to specify options for command-line programs.">flag</span> that specifies what file type we are starting from, and <code>-t/--to</code> is the file type we are converting to.</p>

@@ -2,10 +2,7 @@ PANDOCFLAGSHTML =                                           \
   --table-of-contents                                       \
   --toc-depth=4                                             \
   --from=markdown+markdown_in_html_blocks+bracketed_spans   \
-  --metadata-file=/Users/juaneduardoflores/Documents/Websites/ArtistWebsite/pandoc/metadata.yaml                   \
-  --template=/Users/juaneduardoflores/Documents/Websites/ArtistWebsite/pandoc/blog_template.html                   \
-  -V mainfont="DejaVu Serif"                                \
-  -V monofont="DejaVu Sans Mono"
+  --template=../pandoc/blog_template.html
 
 # a wildcard that searches recursively
 rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))

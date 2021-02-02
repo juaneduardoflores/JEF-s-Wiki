@@ -1,7 +1,8 @@
 ---
 title: More About This Blog 
-creation_time: January 30th, 2021 
+date_created: January 30th, 2021 
 ---
+
 
 ### Purpose
 At the moment this website is being hosted on GitHub Pages, so there is 
@@ -15,10 +16,7 @@ PANDOCFLAGSHTML =                                           \
   --table-of-contents                                       \
   --toc-depth=4                                             \
   --from=markdown+markdown_in_html_blocks+bracketed_spans   \
-  --metadata-file=../pandoc/metadata.yaml                   \
-  --template=../pandoc/blog_template.html                   \
-  -V mainfont="DejaVu Serif"                                \
-  -V monofont="DejaVu Sans Mono"
+  --template=../pandoc/blog_template.html
 
 # a wildcard that searches recursively
 rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
@@ -38,7 +36,7 @@ clean:
 	rm $(HTML)
 ```
 
-**Explanation:**  
+##### Explanation  
 I am using [pandoc](https://pandoc.org/){target="&#95;blank"} to convert markdown to html.  
 
 A simple command to do this conversion would be:  

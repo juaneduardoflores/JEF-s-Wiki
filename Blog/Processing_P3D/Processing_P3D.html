@@ -1,82 +1,51 @@
 <!DOCTYPE html>
-<html  lang="en"  dir="ltr">
+<html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="generator" content="pandoc" />
+    <title></title>
 
-	
-	
-	<title>Juan Eduardo Flores</title>
+    <link rel="stylesheet" href="../../css/uikit.min.css" />
+    <script src="../../js/uikit.min.js"></script>
+    <script src="../../js/uikit-icons.min.js"></script>
 
-	<link rel="stylesheet" href="../../css/uikit.min.css" />
-	<!-- <link rel="stylesheet" href="../../css/style.css" /> -->
-	<script src="../../js/uikit.min.js"></script>
-	<script src="../../js/uikit-icons.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
 
-	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
+    <script src="../../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
-	<link rel="stylesheet"
-		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
-	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script> -->
-	<script src="../../js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="../../css/blog_style.css" />
 
-	<style type="text/css" media="screen">
-		h2,
-		h3,
-		h4,
-		h5 {
-			font-family: 'Cormorant Garamond', serif;
-		}
-
-		p {
-			font-family: 'Abhaya Libre', serif;
-			font-size: 1.2em;
-		}
-
-		pre {
-			padding: 0;
-		}
-
-		:target:before {
-			content: "";
-			display: block;
-			height: 50px;
-			/* fixed header height*/
-			margin: -50px 0 0;
-			/* negative fixed header height */
-		}
-	</style>
-
-	
-</head>
+    
+  </head>
 
 <body>
 
 	<!-- NAV AND HEADING -->
-	<div class="uk-flex uk-flex-left" style="background-color: black" uk-sticky>
+	<div class="uk-flex uk-flex-left" style="background-color: black; border-bottom: 1px solid white;" uk-sticky>
 
 		<button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
 			<span uk-icon="icon: menu" style="color: white"></span>
 		</button>
 
 		<!-- HEADING -->
-		<h2 class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
-			style="font-family: 'Cormorant', serif; color: white">
-			<a class="uk-text" style="color: white" href="../../blog.html">juanedflores</a>&nbsp;&nbsp;
+		<span class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
+			style="font-family: 'Cormorant', serif; color: white; font-size: 1.5em;">
+			<a class="uk-text" style="color: white; font-weight: normal; font-size: 1em;" href="../../blog.html">juanedflores</a>&nbsp;&nbsp;
 			<span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
-		</h2>
+		</span>
 	</div>
 
 	<div class="uk-align-center uk-margin-remove-top" id="contentArea">
@@ -85,224 +54,226 @@
 		<div id="blog-toc" uk-offcanvas="mode: slide; container: #contentArea">
 			<div class="uk-offcanvas-bar">
 				<button class="uk-offcanvas-close" type="button" uk-close></button>
+				<a href="../../blog.html" uk-icon="icon: home"></a>
 				<h3>Table of Contents</h3>
 				<div><ul>
-<li><a href="#p3d">P3D</a>
-<ul>
 <li><a href="#intro">Intro</a></li>
 <li><a href="#d-shapes">3D Shapes</a></li>
 <li><a href="#textures">Textures</a></li>
-</ul></li>
 </ul></div>
 			</div>
 		</div>
+		  <div class="uk-container uk-width-1-2@m" style="background-color: black; padding-top: 1.2em; padding-bottom: 1.2em;">
+		    <span class="title" style="color: white;">P3D</span>	
+		    <br />
+		    <span style="font-size: 1em;">Date created: November 2019</span>
+		  </div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			<h2 id="p3d">P3D</h2>
-   <p>To use the P3D renderer in your sketch:</p>
-   <pre class="processing"><code>// The size() function has an optional parameter to
-   // specify which renderer you want to use.
-   // There are two options besides the default -&gt; P2D, P3D 
+<p>To use the P3D renderer in your sketch:</p>
+<pre class="processing"><code>// The size() function has an optional parameter to
+// specify which renderer you want to use.
+// There are two options besides the default -&gt; P2D, P3D 
 
-   void setup() {
-     size(200, 200, P3D);
-   }
+void setup() {
+  size(200, 200, P3D);
+}
 
-   void draw() {
+void draw() {
 
-   }</code></pre>
-   <h3 id="intro">Intro</h3>
-   <p>In Daniel Shiffman’s Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.</p>
-   <p>Let’s look at what happens if we try to draw a simple square at the center of the canvas like how we do in the default renderer and compare it with P3D:</p>
-   <p style="text-align:center">
-   <img src="./resources/P2D.png" alt="Default Renderer" /> <img src="./resources/P3D.png" alt="Default Renderer" />
-   </p>
-   <p style="text-align:center">
-   Default Renderer (left) vs. P3D (right)
-   </p>
-   <pre class="processing"><code>void setup() {
-     //size(200, 200);
-     size(200, 200, P3D);
-   }
+}</code></pre>
+<h3 id="intro">Intro</h3>
+<p>In Daniel Shiffman’s Tutorial on the <a href="https://processing.org/tutorials/p3d/ ">Processing</a> website he provides some simple explanations and examples to get your head around drawing in 3D with Processing. Check those out if you need them.</p>
+<p>Let’s look at what happens if we try to draw a simple square at the center of the canvas like how we do in the default renderer and compare it with P3D:</p>
+<p style="text-align:center">
+<img src="./resources/P2D.png" alt="Default Renderer" /> <img src="./resources/P3D.png" alt="Default Renderer" />
+</p>
+<p style="text-align:center">
+Default Renderer (left) vs. P3D (right)
+</p>
+<pre class="processing"><code>void setup() {
+  //size(200, 200);
+  size(200, 200, P3D);
+}
 
-   void draw() {
-     rectMode(CENTER);
-     rect(0, 0, width/2, height/2);
-   }</code></pre>
-   <p>don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the <code>translate()</code> function.</p>
-   <p>For example, we can make the square move towards us by incrementing the Z axis:</p>
-   <pre class="processing"><code>// example borrowed from https://processing.org/tutorials/p3d/
+void draw() {
+  rectMode(CENTER);
+  rect(0, 0, width/2, height/2);
+}</code></pre>
+<p>don’t be fooled, because a little more code will reveal that we are actually looking at the square in three dimensions. In P3D, we now have a Z axis to work with. To move the shape around this three dimensional space, we depend on the <code>translate()</code> function.</p>
+<p>For example, we can make the square move towards us by incrementing the Z axis:</p>
+<pre class="processing"><code>// example borrowed from https://processing.org/tutorials/p3d/
 
-   float x, y, z;
+float x, y, z;
 
-   void setup() {
-     size(200, 200, P3D);
-     x = width/2;
-     y = height/2;
-     z = 0;
-   }
+void setup() {
+  size(200, 200, P3D);
+  x = width/2;
+  y = height/2;
+  z = 0;
+}
 
-   void draw() {
-     translate(x,y,z);  
-     rectMode(CENTER);
-     rect(0,0,100,100);
-     
-     z++; // the rect moves forward.
-   }</code></pre>
-   <p style="text-align:center">
-   <img src="./resources/01_P3D.gif" title="fig:" alt="Incrementing Z Value" />
-   </p>
-   <p>If you attempt to run this code in the default renderer or P2D, it will throw back an error at you.</p>
-   <p>By using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
-   <pre class="processing"><code>// Example with rotateX() uncommented.
-   float angle = 0;
+void draw() {
+  translate(x,y,z);  
+  rectMode(CENTER);
+  rect(0,0,100,100);
+  
+  z++; // the rect moves forward.
+}</code></pre>
+<p style="text-align:center">
+<img src="./resources/01_P3D.gif" title="fig:" alt="Incrementing Z Value" />
+</p>
+<p>If you attempt to run this code in the default renderer or P2D, it will throw back an error at you.</p>
+<p>By using <code>rotate()</code> you can <em>really</em> see the 3D:</p>
+<pre class="processing"><code>// Example with rotateX() uncommented.
+float angle = 0;
 
-   void setup() {
-     size(200, 200, P3D);
-   }
+void setup() {
+  size(200, 200, P3D);
+}
 
-   void draw() {
-     background(100);
-     rotateX(angle);
-     // rotateY(angle);
-     // rotateZ(angle);
-     rectMode(CENTER);
-     rect(width/2, height/2, 100, 100);
-     angle+=0.03;
-   }</code></pre>
-   <p class="uk-text-center">
-   <img src="./resources/02_P3D.gif" alt="X_axis" /> <img src="./resources/03_P3D.gif" alt="Y_axis" /> <img src="./resources/04_P3D.gif" alt="Z_axis" />
-   </p>
-   <p style="text-align:center">
-   rotateX(angle) vs. rotateY(angle) vs. rotateZ(angle)
-   </p>
-   <p>You might have expected the square to rotate according to its center axis, but in P3D, it rotates according to the coordinate (<code>X</code>:0, <code>Y</code>:0, <code>Z</code>:0). To change this, we must use the <code>translate()</code> function to change the origin to the center. Make sure to call the rotation after the translation has been made, otherwise you will not see a change.</p>
-   <pre class="processing"><code>// Example with rotateX() uncommented.
-   float angle = 0;
+void draw() {
+  background(100);
+  rotateX(angle);
+  // rotateY(angle);
+  // rotateZ(angle);
+  rectMode(CENTER);
+  rect(width/2, height/2, 100, 100);
+  angle+=0.03;
+}</code></pre>
+<p class="uk-text-center">
+<img src="./resources/02_P3D.gif" alt="X_axis" /> <img src="./resources/03_P3D.gif" alt="Y_axis" /> <img src="./resources/04_P3D.gif" alt="Z_axis" />
+</p>
+<p style="text-align:center">
+rotateX(angle) vs. rotateY(angle) vs. rotateZ(angle)
+</p>
+<p>You might have expected the square to rotate according to its center axis, but in P3D, it rotates according to the coordinate (<code>X</code>:0, <code>Y</code>:0, <code>Z</code>:0). To change this, we must use the <code>translate()</code> function to change the origin to the center. Make sure to call the rotation after the translation has been made, otherwise you will not see a change.</p>
+<pre class="processing"><code>// Example with rotateX() uncommented.
+float angle = 0;
 
-   void setup() {
-     size(200, 200, P3D);
-   }
+void setup() {
+  size(200, 200, P3D);
+}
 
-   void draw() {
-     background(100);
-     translate(width/2, height/2);
-     rotateX(angle);
-     // rotateY(angle);
-     // rotateZ(angle);
-     rectMode(CENTER);
-     rect(0, 0, 100, 100);
-     angle+=0.03;
-   } </code></pre>
-   <p style="text-align:center">
-   <img src="./resources/05_P3D.gif" alt="X_AxisTranslate" /> <img src="./resources/06_P3D.gif" alt="Y_AxisTranslate" /> <img src="./resources/07_P3D.gif" alt="X_AxisTranslate" />
-   </p>
-   <p style="text-align:center">
-   X axis vs. Y axis vs. Z axis with translation to its center
-   </p>
-   <p style="text-align:center">
-   <img src="/Blog/Processing/gifs/08_P3D.gif" title="fig:" alt="XYZ rotation with same angle value" />
-   </p>
-   <h3 id="d-shapes">3D Shapes</h3>
-   <p>There are 3D primitives that can be easily drawn using some built in functions:</p>
-   <pre class="processing"><code>// Example with box() uncommented.
-   // box(size), box(width, height, dimension of the box in the z-dimension)
-   // sphere(radius)
+void draw() {
+  background(100);
+  translate(width/2, height/2);
+  rotateX(angle);
+  // rotateY(angle);
+  // rotateZ(angle);
+  rectMode(CENTER);
+  rect(0, 0, 100, 100);
+  angle+=0.03;
+} </code></pre>
+<p style="text-align:center">
+<img src="./resources/05_P3D.gif" alt="X_AxisTranslate" /> <img src="./resources/06_P3D.gif" alt="Y_AxisTranslate" /> <img src="./resources/07_P3D.gif" alt="X_AxisTranslate" />
+</p>
+<p style="text-align:center">
+X axis vs. Y axis vs. Z axis with translation to its center
+</p>
+<p style="text-align:center">
+<img src="/Blog/Processing/gifs/08_P3D.gif" title="fig:" alt="XYZ rotation with same angle value" />
+</p>
+<h3 id="d-shapes">3D Shapes</h3>
+<p>There are 3D primitives that can be easily drawn using some built in functions:</p>
+<pre class="processing"><code>// Example with box() uncommented.
+// box(size), box(width, height, dimension of the box in the z-dimension)
+// sphere(radius)
 
-   float angle = 0;
+float angle = 0;
 
-   void setup() {
-     size(200, 200, P3D);
-   }
+void setup() {
+  size(200, 200, P3D);
+}
 
-   void draw() {
-     background(100);
-     translate(width/2, height/2);
-     rotateX(angle);
-     rotateY(angle);
-     rotateZ(angle);
-     box(80);
-     //sphere(80);
-     
-     angle+=0.03;
-   }</code></pre>
-   <p style="text-align:center">
-   <img src="./resources/09_P3D.gif" alt="Box()" /> <img src="./resources/10_P3D.gif" alt="Sphere()" />
-   </p>
-   <p style="text-align:center">
-   <code>box()</code> and <code>sphere()</code>
-   </p>
-   <p>You can also draw custom shapes using <code>beginShape()</code>.</p>
-   <pre class="processing"><code>// example borrowed from https://processing.org/tutorials/p3d/
+void draw() {
+  background(100);
+  translate(width/2, height/2);
+  rotateX(angle);
+  rotateY(angle);
+  rotateZ(angle);
+  box(80);
+  //sphere(80);
+  
+  angle+=0.03;
+}</code></pre>
+<p style="text-align:center">
+<img src="./resources/09_P3D.gif" alt="Box()" /> <img src="./resources/10_P3D.gif" alt="Sphere()" />
+</p>
+<p style="text-align:center">
+<code>box()</code> and <code>sphere()</code>
+</p>
+<p>You can also draw custom shapes using <code>beginShape()</code>.</p>
+<pre class="processing"><code>// example borrowed from https://processing.org/tutorials/p3d/
 
-   float angle = 0;
+float angle = 0;
 
-   void setup() {
-     size(640, 360, P3D); 
-     stroke(255);
-     noFill();
-   }
+void setup() {
+  size(640, 360, P3D); 
+  stroke(255);
+  noFill();
+}
 
-   void draw() {
-     background(0);
-     translate(width/2, height/2, 0);
+void draw() {
+  background(0);
+  translate(width/2, height/2, 0);
 
-     rotateX(angle);
-     rotateY(angle);
+  rotateX(angle);
+  rotateY(angle);
 
-     beginShape();
-     vertex(-100, -100, -100);
-     vertex( 100, -100, -100);
-     vertex(   0,    0,  100);
+  beginShape();
+  vertex(-100, -100, -100);
+  vertex( 100, -100, -100);
+  vertex(   0,    0,  100);
 
-     vertex( 100, -100, -100);
-     vertex( 100,  100, -100);
-     vertex(   0,    0,  100);
+  vertex( 100, -100, -100);
+  vertex( 100,  100, -100);
+  vertex(   0,    0,  100);
 
-     vertex( 100, 100, -100);
-     vertex(-100, 100, -100);
-     vertex(   0,   0,  100);
+  vertex( 100, 100, -100);
+  vertex(-100, 100, -100);
+  vertex(   0,   0,  100);
 
-     vertex(-100,  100, -100);
-     vertex(-100, -100, -100);
-     vertex(   0,    0,  100);
-     endShape();
+  vertex(-100,  100, -100);
+  vertex(-100, -100, -100);
+  vertex(   0,    0,  100);
+  endShape();
 
-     angle+=0.03;
-   }</code></pre>
-   <p style="text-align:center">
-   <img src="./resources/11_P3D.gif" title="fig:" alt="Custom Shape (Pyramid)" />
-   </p>
-   <h3 id="textures">Textures</h3>
-   <p>To add an image as a texture to a 3D custom shape:</p>
-   <pre class="processing"><code>PImage img;
-   float angle = 0;
+  angle+=0.03;
+}</code></pre>
+<p style="text-align:center">
+<img src="./resources/11_P3D.gif" title="fig:" alt="Custom Shape (Pyramid)" />
+</p>
+<h3 id="textures">Textures</h3>
+<p>To add an image as a texture to a 3D custom shape:</p>
+<pre class="processing"><code>PImage img;
+float angle = 0;
 
-   void setup() {
-     size(640, 360, P3D);
-     img = loadImage(&quot;woof.bmp&quot;); // 240 * 320 pixels
-   }
+void setup() {
+  size(640, 360, P3D);
+  img = loadImage(&quot;woof.bmp&quot;); // 240 * 320 pixels
+}
 
-   void draw() {
-     background(0);
-     translate(width/2, height/2);
-     
-     rotateX(angle);
-     stroke(255);
-     fill(127);
-     beginShape();
-     texture(img);  // add texture after beginShape() and before vertex functions
-     vertex(-100, -100, 0, 0, 0);
-     vertex( 100, -100, 0, 240, 0);
-     vertex( 100,  100, 0, 240, 320);
-     vertex(-100,  100, 0, 0, 320);
-     endShape();
-     
-     angle+=0.03;
-   } </code></pre>
-   <p style="text-align:center">
-   <img src="./resources/12_P3D.gif" title="fig:" alt="Using Image as a Texture" />
-   </p>
-   <p>Notice how there were two more parameters in the vertex function. When providing a texture, we can also specify a <code>u</code> and <code>v</code> value, as used in something called <code>UV mapping</code>.</p>
+void draw() {
+  background(0);
+  translate(width/2, height/2);
+  
+  rotateX(angle);
+  stroke(255);
+  fill(127);
+  beginShape();
+  texture(img);  // add texture after beginShape() and before vertex functions
+  vertex(-100, -100, 0, 0, 0);
+  vertex( 100, -100, 0, 240, 0);
+  vertex( 100,  100, 0, 240, 320);
+  vertex(-100,  100, 0, 0, 320);
+  endShape();
+  
+  angle+=0.03;
+} </code></pre>
+<p style="text-align:center">
+<img src="./resources/12_P3D.gif" title="fig:" alt="Using Image as a Texture" />
+</p>
+<p>Notice how there were two more parameters in the vertex function. When providing a texture, we can also specify a <code>u</code> and <code>v</code> value, as used in something called <code>UV mapping</code>.</p>
 		</div>
 
 	</div>
