@@ -1,7 +1,13 @@
-## How This Blog Works
+---
+title: More About This Blog 
+creation_time: January 30th, 2021 
+---
+
+### Purpose
+At the moment this website is being hosted on GitHub Pages, so there is 
 
 ### The Goal
-The goal is to easily be able to create and modify blog entries without worrying about writing any HTML code, just plain text in the markdown format. I achieve this by using a Makefile and python.
+The goal is to be able to easily create and modify blog entries without worrying about writing any HTML code, just plain text in the markdown format. I achieve this by using a Makefile and python.
 
 #### The Makefile
 ```make
@@ -35,7 +41,7 @@ clean:
 **Explanation:**  
 I am using [pandoc](https://pandoc.org/){target="&#95;blank"} to convert markdown to html.  
 
-A simple command to do this would be:  
+A simple command to do this conversion would be:  
 ```shell
 $ pandoc -f markdown -t html markdownfile.md
 ```
@@ -72,3 +78,4 @@ $ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-
   - Add total amount of time worked on post with TimeWarrior info. (e.g. Total time worked on: '5 days, 10 hours, 40 minutes')
   - Filter posts by year it was created.
   - Filter posts from last modified to oldest modified. (and vice versa)
+
