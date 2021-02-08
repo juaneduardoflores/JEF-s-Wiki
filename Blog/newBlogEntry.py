@@ -258,7 +258,7 @@ def addEntrytoHTML():
         stripped += entry + "\n"
 
     stripped += "<!-- BLOG ENTRIES END -->"
-    stripped += "</ul></div></div></body></html>"
+    stripped += "</ul></div></div><script id='dsq-count-scr' src='//juanedflores-blog.disqus.com/count.js' async></script></body></html>"
 
     # print(stripped)
     f = open("../blog.html", "w")
