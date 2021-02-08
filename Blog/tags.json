@@ -8,5 +8,7 @@
   "electronics": "#2fb793",
   "sensors": "#aa75c6",
   "GLSL": "#a7f203",
-  "C++": "#44971f"
+  "C++": "#44971f",
+  "Pixels": "#6f7449",
+  "Pixel Art": "#df8e5f"
 }
