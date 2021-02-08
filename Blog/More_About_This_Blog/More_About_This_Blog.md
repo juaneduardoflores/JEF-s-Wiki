@@ -3,7 +3,6 @@ title: More About This Blog
 date_created: January 30th, 2021 
 ---
 
-
 ### Purpose
 At the moment this website is being hosted on GitHub Pages, so there is 
 
