@@ -1,3 +1,8 @@
+---
+title: Learning_C++
+creating_date: February 8th, 2021
+---
+
 ## Learning C++
 
 ### Resources
@@ -110,3 +115,5 @@ Vectors in C++ are sequence containers representing arrays that can change in si
 * String (string) - Pieces of text.
 * Boolean - True or False.
 * Vectors
+
+test
