@@ -206,7 +206,7 @@ def addEntrytoHTML():
 
     print("adding tags: " + tagfilter)
     template += "<li class='{}'>".format(tagfilter)
-
+    template += "<a href='https://juanedflores.com/Blog/{}/{}.html#disqus_thread'>Link</a>"
     template += "<a href='./Blog/{}/{}.html'>\n".format(
         blogEntryTitle.replace(" ", "_"), blogEntryTitle.replace(" ", "_"))
     template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid lightgray; border-radius: 5px' uk-grid >"
