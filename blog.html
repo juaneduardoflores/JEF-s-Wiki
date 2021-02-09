@@ -8,7 +8,22 @@
     <link rel="stylesheet" href="./css/uikit.min.css" />
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
-    <script src="./js/inline.js"></script>
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', function (event) {
+        hash = document.location.hash;
+        console.log('Hash: ' + hash);
+
+        if (hash == '') {
+          var filter = document.querySelector('.js-filter');
+          var filterBar = document.querySelector('#filter-bar');
+          var activeFilter = document.querySelector('.featured');
+          UIkit.filter(filterBar, {
+            target: filter,
+            selActive: activeFilter,
+          });
+        }
+      });
+    </script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -65,7 +80,10 @@
         </h2>
       </div>
 
-      <div class="uk-container" uk-filter="target: .js-filter">
+      <div
+        class="uk-container"
+        uk-filter="target: .js-filter; selActive: .featured"
+      >
         <div id="blog-filter" uk-offcanvas="bg-close: false">
           <div class="uk-offcanvas-bar">
             <button
@@ -74,13 +92,13 @@
               uk-close
             ></button>
             <ul uk-accordion>
-              <li class="uk-open">
+              <li>
                 <a class="uk-accordion-title" href="#">Filter</a>
-                <div
-                  class="uk-accordion-content"
-                  uk-filter="target: .js-filter"
-                >
-                  <ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
+                <div class="uk-accordion-content">
+                  <ul
+                    id="filter-bar"
+                    class="uk-subnav uk-subnav-pill uk-flex uk-flex-column"
+                  >
                     <li uk-filter-control>
                       <a href="#">
                         <span class="uk-label" style="background-color: #ffffff"
@@ -88,7 +106,7 @@
                         >
                       </a>
                     </li>
-                    <li class="uk-active" uk-filter-control=".tag-featured">
+                    <li class="featured" uk-filter-control=".tag-featured">
                       <a href="#">
                         <span class="uk-label" style="background-color: #fff202"
                           ><span uk-icon="icon: star"></span>
@@ -355,7 +373,7 @@
                 </div>
                 <div class="uk-card-media-left uk-cover-container">
                   <img
-                    src="./Blog/Working_with_Pixels_in_Processing/cover/cover.png"
+                    src="./Blog/Working_with_Pixels_in_Processing/cover/cover.gif"
                     alt=""
                     uk-cover
                   /><canvas width="600" height="400"></canvas>
