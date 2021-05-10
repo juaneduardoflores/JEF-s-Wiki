@@ -147,7 +147,7 @@ def updateEntry():
         # print(entry)
         stripped += entry + "\n"
 
-    stripped += "\n\n<!-- BLOG ENTRIES END --></ul>"
+    stripped += "\n\n<!-- BLOG ENTRIES END --></ul><script id='dsq-count-scr' src='//juanedflores-blog.disqus.com/count.js' async></script>"
     htmlcode = header + updated_entry + stripped
 
     # print(stripped)

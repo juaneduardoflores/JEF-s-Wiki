@@ -30,46 +30,63 @@
 
 	<link rel="stylesheet" href="../../css/blog_style.css" />
 
+	<style type="text/css" media="screen">
+		html {
+			background-color: #262626
+		}
+
+		p {
+			color: LightGray;
+		}
+
+		h3,
+		h4,
+		h5 {
+			color: #ffffe0
+		}
+	</style>
+
 	
 </head>
 
 <body>
 
 	<!-- NAV AND HEADING -->
-	<div class="uk-flex uk-flex-left" style="background-color: black; border-bottom: 1px solid white;" uk-sticky>
+	<div class="uk-flex uk-flex-left uk-background-cover"
+		style="background-image: url(../../resources/textured_black_sharpened.png); height: 50px" uk-sticky>
 
 		<button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
 			<span uk-icon="icon: menu" style="color: white"></span>
 		</button>
 
 		<!-- HEADING -->
-		<span class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
-			style="font-family: 'Cormorant', serif; color: white; font-size: 1.5em;">
+		<h2
+			class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+			style="font-family: 'Cormorant', serif; color: white; left: 60px;">
 			<a class="uk-text" style="color: white; font-weight: normal; font-size: 1em;"
 				href="../../blog.html">juanedflores</a>&nbsp;&nbsp;
 			<span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
-		</span>
+		</h2>
 	</div>
 
 	<div class="uk-align-center uk-margin-remove-top" id="contentArea">
 
 		<!-- BODY -->
-		<div id="blog-toc" uk-offcanvas="mode: slide; container: #contentArea">
+		<div id="blog-toc" style="top:50px" uk-offcanvas="mode: slide; container: #contentArea">
 			<div class="uk-offcanvas-bar">
-				<button class="uk-offcanvas-close" type="button" uk-close></button>
 				<a href="../../blog.html" uk-icon="icon: home"></a>
 				<h3>Table of Contents</h3>
 				<div></div>
 			</div>
 		</div>
-		<div class="uk-container uk-width-1-2@m"
-			style="background-color: black; padding-top: 1.2em; padding-bottom: 1.2em;">
+		<div class="uk-container uk-width-1-2@m" style="padding-top: 1.2em; padding-bottom: 1.2em;">
 			<span class="title" style="color: white;">Game Boy Camera</span>
 			<br />
 			<span style="font-size: 1em;">Date created: 2021-05-10</span>
+			<hr>
 		</div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			<p>test</p>
+			<p>test!</p>
 		</div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
 			<div id="disqus_thread"></div>
