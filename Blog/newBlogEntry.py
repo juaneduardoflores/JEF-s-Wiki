@@ -44,7 +44,8 @@ def main():
         f = open("{}/{}.md".format(blogEntryTitle.replace(" ", "_"),
                                    blogEntryTitle.replace(" ", "_")), "w+")
 
-        f.write("---\ntitle: {}\ncreation_date: {}\n---".format(blogEntryTitle, last_modified))
+        f.write(
+            "---\ntitle: {}\ndate_created: {}\n---".format(blogEntryTitle, last_modified))
 
         addEntrytoHTML()
 
@@ -119,7 +120,7 @@ def updateEntry():
         if (re.search('<!--', l)):
             print("LOOK AT ME: " + l)
             # take into account regex special characters
-            inputTitlestr = inputTitle 
+            inputTitlestr = inputTitle
             inputTitlestr = inputTitlestr.replace('+', '\+')
             print(inputTitlestr)
             if (re.match('.*<!-- {} -->'.format(inputTitlestr.replace('_', ' ')), l)):
@@ -210,7 +211,7 @@ def addEntrytoHTML():
     template += "<a href='./Blog/{}/{}.html'>\n".format(
         blogEntryTitle.replace(" ", "_"), blogEntryTitle.replace(" ", "_"))
     template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid lightgray; border-radius: 5px' uk-grid >"
-    template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
+    template += "<div> <div class='uk-card-body uk-background-cover' style='background-image: url(../resources/textured_black_sharpened_square.png);'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
         blogEntryTitle, last_modified, blogEntryDescription)
 
     #  add tags

@@ -9,14 +9,14 @@
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
     <script charset="utf-8">
-      document.addEventListener('DOMContentLoaded', function (event) {
+      document.addEventListener("DOMContentLoaded", function (event) {
         hash = document.location.hash;
-        console.log('Hash: ' + hash);
+        console.log("Hash: " + hash);
 
-        if (hash == '') {
-          var filter = document.querySelector('.js-filter');
-          var filterBar = document.querySelector('#filter-bar');
-          var activeFilter = document.querySelector('.featured');
+        if (hash == "") {
+          var filter = document.querySelector(".js-filter");
+          var filterBar = document.querySelector("#filter-bar");
+          var activeFilter = document.querySelector(".featured");
           UIkit.filter(filterBar, {
             target: filter,
             selActive: activeFilter,
@@ -53,8 +53,10 @@
     <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
       <!-- NAV AND HEADING -->
       <div
-        class="uk-flex uk-flex-left"
-        style="background-color: black"
+        class="
+          uk-background-cover uk-background-blend-multiply uk-flex uk-flex-left
+        "
+        style="background-image: url(resources/textured_black_sharpened.png)"
         uk-sticky
       >
         <button
@@ -68,7 +70,13 @@
 
         <!-- HEADING -->
         <h2
-          class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
+          class="
+            uk-flex
+            uk-flex-center
+            uk-margin-remove
+            uk-padding-small
+            uk-padding-remove-vertical
+          "
           style="font-family: 'Cormorant', serif; color: white"
         >
           <a class="uk-text" style="color: white" href="./blog.html"
@@ -245,6 +253,16 @@
                       </a>
                     </li>
 
+                    <li uk-filter-control=".tag-Photography">
+                      <a href="#">
+                        <span
+                          class="uk-label"
+                          style="background-color: #375790; color: white"
+                          >Photography</span
+                        >
+                      </a>
+                    </li>
+
                     <!-- END TAGS -->
                   </ul>
                 </div>
@@ -276,9 +294,9 @@
                     ></script>
                     <script type="text/javascript">
                       kofiwidget2.init(
-                        'Support Me on Ko-fi',
-                        '#29abe0',
-                        'B0B83HU7T'
+                        "Support Me on Ko-fi",
+                        "#29abe0",
+                        "B0B83HU7T"
                       );
                       kofiwidget2.draw();
                     </script>
@@ -304,18 +322,28 @@
             >
             <a href="./Blog/More_About_This_Blog/More_About_This_Blog.html">
               <div
-                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                class="
+                  uk-card
+                  uk-card-default
+                  uk-grid-collapse
+                  uk-child-width-1-2@s
+                  uk-margin
+                "
                 style="border: 1px solid lightgray; border-radius: 5px"
                 uk-grid
               >
                 <div>
-                  <div class="uk-card-body">
-                    <h3 class="uk-card-title">
-                      About This Blog
-                      <span class="uk-text-warning">(WIP)</span>
+                  <div
+                    class="uk-card-body uk-background-cover"
+                    style="
+                      background-image: url(resources/textured_black_sharpened_square.png);
+                    "
+                  >
+                    <h3 class="uk-card-title" style="color: #ffffe0">
+                      About This Blog <span class="uk-text-warning">(WIP)</span>
                     </h3>
-                    <span>last modified: 2021-02-08 </span>
-                    <p>
+                    <span>last modified: 2021-05-10 </span>
+                    <p style="color: white">
                       I detail the features of this blog, the intentions, and
                       the code that makes it work.
                     </p>
@@ -335,291 +363,54 @@
             </a>
           </li>
 
-          <!-- <!-1- Working with Pixels in Processing -1-> -->
-          <!-- <li class="tag-Processing tag-Pixels tag-Pixel_Art"> -->
-          <!--   <a -->
-          <!--     href="https://juanedflores.com/Blog/Working_with_Pixels_in_Processing/Working_with_Pixels_in_Processing.html#disqus_thread" -->
-          <!--     >Link</a -->
-          <!--   > -->
-          <!--   <a -->
-          <!--     href="./Blog/Working_with_Pixels_in_Processing/Working_with_Pixels_in_Processing.html" -->
-          <!--   > -->
-          <!--     <div -->
-          <!--       class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" -->
-          <!--       style="border: 1px solid lightgray; border-radius: 5px" -->
-          <!--       uk-grid -->
-          <!--     > -->
-          <!--       <div> -->
-          <!--         <div class="uk-card-body"> -->
-          <!--           <h3 class="uk-card-title"> -->
-          <!--             Working with Pixels in Processing -->
-          <!--             <span class="uk-text-warning">(WIP)</span> -->
-          <!--           </h3> -->
-          <!--           <span>last modified: 2021-02-08 </span> -->
-          <!--           <p> -->
-          <!--             Studying how pixels work and how to manipulate them in -->
-          <!--             Processing. -->
-          <!--           </p> -->
-          <!--           <span class="uk-label" style="background-color: #212add" -->
-          <!--             >Processing</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #6f7449" -->
-          <!--             >Pixels</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #df8e5f" -->
-          <!--             >Pixel Art</span -->
-          <!--           > -->
-          <!--         </div> -->
-          <!--       </div> -->
-          <!--       <div class="uk-card-media-left uk-cover-container"> -->
-          <!--         <img -->
-          <!--           src="./Blog/Working_with_Pixels_in_Processing/cover/cover.gif" -->
-          <!--           alt="" -->
-          <!--           uk-cover -->
-          <!--         /><canvas width="600" height="400"></canvas> -->
-          <!--       </div> -->
-          <!--     </div> -->
-          <!--   </a> -->
-          <!-- </li> -->
-
-          <!-- <!-1- Learning C++ -1-> -->
-          <!-- <li class="tag-Cplusplus"> -->
-          <!--   <a href="./Blog/Learning_C++/Learning_C++.html"> -->
-          <!--     <div -->
-          <!--       class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" -->
-          <!--       style="border: 1px solid lightgray; border-radius: 5px" -->
-          <!--       uk-grid -->
-          <!--     > -->
-          <!--       <div> -->
-          <!--         <div class="uk-card-body"> -->
-          <!--           <h3 class="uk-card-title"> -->
-          <!--             Learning C++ <span class="uk-text-warning">(WIP)</span> -->
-          <!--           </h3> -->
-          <!--           <span>last modified: 2021-02-08 </span> -->
-          <!--           <p> -->
-          <!--             Learning the C++ language by going through online -->
-          <!--             resources and examples. -->
-          <!--           </p> -->
-          <!--           <span class="uk-label" style="background-color: #44971f" -->
-          <!--             >C++</span -->
-          <!--           > -->
-          <!--         </div> -->
-          <!--       </div> -->
-          <!--       <div class="uk-card-media-left uk-cover-container"> -->
-          <!--         <img -->
-          <!--           src="./Blog/Learning_C++/cover/cover.png" -->
-          <!--           alt="" -->
-          <!--           uk-cover -->
-          <!--         /><canvas width="600" height="400"></canvas> -->
-          <!--       </div> -->
-          <!--     </div> -->
-          <!--   </a> -->
-          <!-- </li> -->
-
-          <!-- <!-1- Processing_P3D -1-> -->
-          <!-- <li class="tag-processing tag-creative_coding tag-3d tag-featured"> -->
-          <!--   <a href="./Blog/Processing_P3D/Processing_P3D.html"> -->
-          <!--     <div -->
-          <!--       class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" -->
-          <!--       style="border: 1px solid lightgray; border-radius: 5px" -->
-          <!--       uk-grid -->
-          <!--     > -->
-          <!--       <div> -->
-          <!--         <div class="uk-card-body"> -->
-          <!--           <h3 class="uk-card-title"> -->
-          <!--             Processing P3D <span class="uk-text-warning">(WIP)</span> -->
-          <!--           </h3> -->
-          <!--           <span>last modified: (2021-01-29)</span> -->
-          <!--           <p> -->
-          <!--             I walk through the basics of using 3D in Processing 3 and -->
-          <!--             provide a few examples useful for learning some core -->
-          <!--             concepts. -->
-          <!--           </p> -->
-          <!--           <span class="uk-label" style="background-color: #1e87f0" -->
-          <!--             >creative coding</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #527a3d" -->
-          <!--             >3D</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #212add" -->
-          <!--             >processing</span -->
-          <!--           > -->
-          <!--         </div> -->
-          <!--       </div> -->
-          <!--       <div class="uk-card-media-left uk-cover-container"> -->
-          <!--         <img -->
-          <!--           src="./Blog/Processing_P3D/resources/11_P3D.gif" -->
-          <!--           alt="" -->
-          <!--           uk-cover -->
-          <!--         /> -->
-          <!--         <canvas width="600" height="400"></canvas> -->
-          <!--       </div> -->
-          <!--     </div> -->
-          <!--   </a> -->
-          <!-- </li> -->
-
-          <!-- <!-1- pico-8 -1-> -->
-          <!-- <li class="tag-game_design tag-creative_coding tag-featured"> -->
-          <!--   <a href="./Blog/pico-8/pico-8.html"> -->
-          <!--     <div -->
-          <!--       class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" -->
-          <!--       style="border: 1px solid lightgray; border-radius: 5px" -->
-          <!--       uk-grid -->
-          <!--     > -->
-          <!--       <div> -->
-          <!--         <div class="uk-card-body"> -->
-          <!--           <h3 class="uk-card-title"> -->
-          <!--             PICO-8 <em>(Under Construction)</em> -->
-          <!--           </h3> -->
-          <!--           <span>last modified: (2021-01-27)</span> -->
-          <!--           <p> -->
-          <!--             "PICO-8 is a fantasy console for making, sharing and -->
-          <!--             playing tiny games and other computer programs." -->
-          <!--           </p> -->
-          <!--           <span class="uk-label" style="background-color: #1e87f0" -->
-          <!--             >Creative Coding</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #ffa500" -->
-          <!--             >Game Design</span -->
-          <!--           > -->
-          <!--         </div> -->
-          <!--       </div> -->
-          <!--       <div class="uk-card-media-left uk-cover-container"> -->
-          <!--         <img src="./Blog/pico-8/cover/pico-8.png" alt="" uk-cover /> -->
-          <!--         <canvas width="600" height="400"></canvas> -->
-          <!--       </div> -->
-          <!--     </div> -->
-          <!--   </a> -->
-          <!-- </li> -->
-
-          <!-- <!-1- Learning GLSL -1-> -->
-          <!-- <li class="tag-GLSL"> -->
-          <!--   <a href="./Blog/Learning_GLSL/Learning_GLSL.html"> -->
-          <!--     <div -->
-          <!--       class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" -->
-          <!--       style="border: 1px solid lightgray; border-radius: 5px" -->
-          <!--       uk-grid -->
-          <!--     > -->
-          <!--       <div> -->
-          <!--         <div class="uk-card-body"> -->
-          <!--           <h3 class="uk-card-title"> -->
-          <!--             Learning GLSL <span class="uk-text-warning">(WIP)</span> -->
-          <!--           </h3> -->
-          <!--           <span>last modified: 2021-01-27 </span> -->
-          <!--           <p> -->
-          <!--             I go through resources in order to learn the OpenGL -->
-          <!--             Shading Language. -->
-          <!--           </p> -->
-          <!--           <span class="uk-label" style="background-color: #a7f203" -->
-          <!--             >GLSL</span -->
-          <!--           > -->
-          <!--         </div> -->
-          <!--       </div> -->
-          <!--       <div class="uk-card-media-left uk-cover-container"> -->
-          <!--         <img -->
-          <!--           src="./Blog/Learning_GLSL/cover/cover.png" -->
-          <!--           alt="" -->
-          <!--           uk-cover -->
-          <!--         /><canvas width="600" height="400"></canvas> -->
-          <!--       </div> -->
-          <!--     </div> -->
-          <!--   </a> -->
-          <!-- </li> -->
-
-          <!-- <!-1- Daily_Task_Manager -1-> -->
-          <!-- <li -->
-          <!--   class="tag-productivity tag-processing tag-data_visualization tag-featured" -->
-          <!-- > -->
-          <!--   <a href="./Blog/Daily_Task_Manager/Daily_Task_Manager.html"> -->
-          <!--     <div -->
-          <!--       class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" -->
-          <!--       style="border: 1px solid lightgray; border-radius: 5px" -->
-          <!--       uk-grid -->
-          <!--     > -->
-          <!--       <div> -->
-          <!--         <div class="uk-card-body"> -->
-          <!--           <h3 class="uk-card-title"> -->
-          <!--             Daily Task Manager <em>(Under Construction)</em> -->
-          <!--           </h3> -->
-          <!--           <span>last modified: (2021-01-23)</span> -->
-          <!--           <p> -->
-          <!--             I wrote a program to visualize the tasks I did on the -->
-          <!--             previous day. By analyzing how much time I spend doing -->
-          <!--             certain tasks during the day, I can get a sense of how to -->
-          <!--             be more efficient. -->
-          <!--           </p> -->
-          <!--           <span class="uk-label" style="background-color: #dbd276" -->
-          <!--             >productivity</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #212add" -->
-          <!--             >processing</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #d8b1d6" -->
-          <!--             >data visualization</span -->
-          <!--           > -->
-          <!--         </div> -->
-          <!--       </div> -->
-          <!--       <div -->
-          <!--         class="uk-flex-last@s uk-card-media-right uk-cover-container" -->
-          <!--       > -->
-          <!--         <img -->
-          <!--           src="./Blog/Daily_Task_Manager/resources/example.png" -->
-          <!--           alt="" -->
-          <!--           uk-cover -->
-          <!--         /> -->
-          <!--         <canvas width="600" height="400"></canvas> -->
-          <!--       </div> -->
-          <!--     </div> -->
-          <!--   </a> -->
-          <!-- </li> -->
-
-          <!-- <!-1- Robotic_Flower_Pets -1-> -->
-          <!-- <li class="tag-electronics tag-sensors tag-featured"> -->
-          <!--   <a href="./Blog/Robotic_Flower_Pets/Robotic_Flower_Pets.html"> -->
-          <!--     <div -->
-          <!--       class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" -->
-          <!--       style="border: 1px solid lightgray; border-radius: 5px" -->
-          <!--       uk-grid -->
-          <!--     > -->
-          <!--       <div> -->
-          <!--         <div class="uk-card-body"> -->
-          <!--           <h3 class="uk-card-title"> -->
-          <!--             Robotic Flower Pets! <em>(Under Construction)</em> -->
-          <!--           </h3> -->
-          <!--           <span>last modified: (2021-01-23)</span> -->
-          <!--           <p> -->
-          <!--             I like creating little flowers that can squeak, peep, and -->
-          <!--             ultimately react to its environment. A simple, fun, and -->
-          <!--             continous project. -->
-          <!--           </p> -->
-          <!--           <span class="uk-label" style="background-color: #2fb793" -->
-          <!--             >electronics</span -->
-          <!--           > -->
-          <!--           <span class="uk-label" style="background-color: #aa75c6" -->
-          <!--             >sensors</span -->
-          <!--           > -->
-          <!--         </div> -->
-          <!--       </div> -->
-          <!--       <div class="uk-card-media-left uk-cover-container"> -->
-          <!--         <img -->
-          <!--           src="./Blog/Robotic_Flower_Pets/resources/gyras.jpg" -->
-          <!--           alt="" -->
-          <!--           uk-cover -->
-          <!--         /> -->
-          <!--         <canvas width="600" height="400"></canvas> -->
-          <!--       </div> -->
-          <!--     </div> -->
-          <!--   </a> -->
-          <!-- </li> -->
+          <!-- Game Boy Camera -->
+          <li class="tag-Photography tag-featured">
+            <a href="https://juanedflores.com/Blog/Game_Boy_Camera/Game_Boy_Camera.html#disqus_thread"
+              >Link</a
+            ><a href="./Blog/Game_Boy_Camera/Game_Boy_Camera.html">
+              <div
+                class="
+                  uk-card
+                  uk-card-default
+                  uk-grid-collapse
+                  uk-child-width-1-2@s
+                  uk-margin
+                "
+                style="border: 1px solid lightgray; border-radius: 5px"
+                uk-grid
+              >
+                <div>
+                  <div
+                    class="uk-card-body uk-background-cover"
+                    style="
+                      background-image: url(resources/textured_black_sharpened_square.png);
+                    "
+                  >
+                    <h3 class="uk-card-title">
+                      Game Boy Camera <span class="uk-text-warning">(WIP)</span>
+                    </h3>
+                    <span>last modified: 2021-05-10 </span>
+                    <p>4-color palette 128x112 pixel photos.</p>
+                    <span class="uk-label" style="background-color: #375790"
+                      >Photography</span
+                    >
+                  </div>
+                </div>
+                <div class="uk-card-media-left uk-cover-container">
+                  <img
+                    src="./Blog/Game_Boy_Camera/cover/cover.png"
+                    alt=""
+                    uk-cover
+                  /><canvas width="600" height="400"></canvas>
+                </div>
+              </div>
+            </a>
+          </li>
 
           <!-- BLOG ENTRIES END -->
         </ul>
       </div>
     </div>
-    <script
-      id="dsq-count-scr"
-      src="//juanedflores-blog.disqus.com/count.js"
-      async
-    ></script>
+    <script id='dsq-count-scr' src='//juanedflores-blog.disqus.com/count.js' async></script>
   </body>
 </html>

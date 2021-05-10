@@ -3,11 +3,8 @@ title: More About This Blog
 date_created: January 30th, 2021 
 ---
 
-### Purpose
-At the moment this website is being hosted on GitHub Pages, so there is 
-
-### The Goal
-The goal is to be able to easily create and modify blog entries without worrying about writing any HTML code, just plain text in the markdown format. I achieve this by using a Makefile and python.
+### Workflow
+The goal was to be able to easily create and modify blog entries without worrying about writing any HTML code. I have created a workflow that allows me to just write in the markdown format. I achieved this by using a Makefile and a python script.
 
 #### The Makefile
 ```make
@@ -62,6 +59,11 @@ $ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-
 ```
 
 `--table-of-contents`: Outputs the html file with a table of contents. 
+
+
+### Inspiration
+Here are a list of blogs that I took inspiration from.
+  * https://learnbyexample.github.io/
 
 ### Features
   Done:  

@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/c77c95a/
+Explanation	More_About_This_Blog.md	/^##### Explanation  $/;"	T	subsubsection:date_created: January 30th, 2021""The Workflow""The Makefile
+Features	More_About_This_Blog.html	/^   <h3 id="features">Features<\/h3>$/;"	j
+Features	More_About_This_Blog.md	/^### Features$/;"	S	section:date_created: January 30th, 2021
+Table of Contents	More_About_This_Blog.html	/^				<h3>Table of Contents<\/h3>$/;"	j
+The Makefile	More_About_This_Blog.md	/^#### The Makefile$/;"	t	subsection:date_created: January 30th, 2021""The Workflow
+The Workflow	More_About_This_Blog.html	/^			<h3 id="the-workflow">The Workflow<\/h3>$/;"	j
+The Workflow	More_About_This_Blog.md	/^### The Workflow$/;"	S	section:date_created: January 30th, 2021
+blog-toc	More_About_This_Blog.html	/^		<div id="blog-toc" uk-offcanvas="mode: slide; container: #contentArea">$/;"	I
+contentArea	More_About_This_Blog.html	/^	<div class="uk-align-center uk-margin-remove-top" id="contentArea">$/;"	I
+date_created: January 30th, 2021	More_About_This_Blog.md	/^date_created: January 30th, 2021 $/;"	s
+disqus_thread	More_About_This_Blog.html	/^			<div id="disqus_thread"><\/div>$/;"	I
+explanation	More_About_This_Blog.html	/^   <h5 id="explanation">Explanation<\/h5>$/;"	I
+features	More_About_This_Blog.html	/^   <h3 id="features">Features<\/h3>$/;"	I
+the-makefile	More_About_This_Blog.html	/^   <h4 id="the-makefile">The Makefile<\/h4>$/;"	I
+the-workflow	More_About_This_Blog.html	/^			<h3 id="the-workflow">The Workflow<\/h3>$/;"	I

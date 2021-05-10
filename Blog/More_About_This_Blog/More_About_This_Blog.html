@@ -60,11 +60,11 @@
 				<a href="../../blog.html" uk-icon="icon: home"></a>
 				<h3>Table of Contents</h3>
 				<div><ul>
-<li><a href="#purpose">Purpose</a></li>
-<li><a href="#the-goal">The Goal</a>
+<li><a href="#workflow">Workflow</a>
 <ul>
 <li><a href="#the-makefile">The Makefile</a></li>
 </ul></li>
+<li><a href="#inspiration">Inspiration</a></li>
 <li><a href="#features">Features</a></li>
 </ul></div>
 			</div>
@@ -76,10 +76,8 @@
 			<span style="font-size: 1em;">Date created: January 30th, 2021</span>
 		</div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			<h3 id="purpose">Purpose</h3>
-   <p>At the moment this website is being hosted on GitHub Pages, so there is</p>
-   <h3 id="the-goal">The Goal</h3>
-   <p>The goal is to be able to easily create and modify blog entries without worrying about writing any HTML code, just plain text in the markdown format. I achieve this by using a Makefile and python.</p>
+			<h3 id="workflow">Workflow</h3>
+   <p>The goal was to be able to easily create and modify blog entries without worrying about writing any HTML code. I have created a workflow that allows me to just write in the markdown format. I achieved this by using a Makefile and a python script.</p>
    <h4 id="the-makefile">The Makefile</h4>
    <pre class="make"><code>PANDOCFLAGSHTML =                                           \
      --table-of-contents                                       \
@@ -116,6 +114,8 @@
    <p>So in the end it is running something like this:</p>
    <pre class="shell"><code>$ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html -V mainfont=&quot;DejaVu Serif&quot; -V monofont=&quot;DejaVu Sans Mono&quot;</code></pre>
    <p><code>--table-of-contents</code>: Outputs the html file with a table of contents.</p>
+   <h3 id="inspiration">Inspiration</h3>
+   <p>Here are a list of blogs that I took inspiration from. * https://learnbyexample.github.io/</p>
    <h3 id="features">Features</h3>
    <p>Done:</p>
    <ul>
