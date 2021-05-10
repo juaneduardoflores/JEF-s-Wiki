@@ -8,6 +8,8 @@
 
 	<title>$if(heading)$$heading$$endif$</title>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 	<link rel="stylesheet" href="../../css/uikit.min.css" />
 	<script src="../../js/uikit.min.js"></script>
 	<script src="../../js/uikit-icons.min.js"></script>
@@ -23,10 +25,23 @@
 
 	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet"
-		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
-	<script src="../../js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/paraiso-light.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/pojoaque.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<!-- <link rel="stylesheet" href="../../styles/pojoaque.css"> -->
+	<!-- <script src="../../js/highlight.pack.js"></script> -->
+	<!-- <script>hljs.initHighlightingOnLoad();</script> -->
+	<script charset="utf-8">
+		document.addEventListener('DOMContentLoaded', (event) => {
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightBlock(block);
+			});
+			document.querySelectorAll('p code').forEach((line) => {
+				hljs.highlightBlock(line);
+			});
+		});
+	</script>
+	<!-- <script>hljs.highlightAll();</script> -->
 
 	<link rel="stylesheet" href="../../css/blog_style.css" />
 
@@ -43,6 +58,10 @@
 		h4,
 		h5 {
 			color: #ffffe0
+		}
+
+		pre {
+			border: solid black;
 		}
 	</style>
 
