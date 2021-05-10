@@ -211,7 +211,7 @@ def addEntrytoHTML():
     template += "<a href='./Blog/{}/{}.html'>\n".format(
         blogEntryTitle.replace(" ", "_"), blogEntryTitle.replace(" ", "_"))
     template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid lightgray; border-radius: 5px' uk-grid >"
-    template += "<div> <div class='uk-card-body uk-background-cover' style='background-image: url(../resources/textured_black_sharpened_square.png);'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
+    template += "<div> <div class='uk-card-body uk-background-cover' style='background-image: url(../resources/textured_black_sharpened_square.png);'> <h3 class='uk-card-title' style='color #ffffe0'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p style='color: white'> {} </p>".format(
         blogEntryTitle, last_modified, blogEntryDescription)
 
     #  add tags

@@ -1,0 +1,24 @@
+juanedflores   [ BLOG ] 
+	•	Filter
+	◦	All 
+	◦	
+	◦	
+	◦	creative coding 
+	◦	game design 
+	◦	productivity 
+	◦	3d 
+	◦	processing 
+	◦	data visualization 
+	◦	electronics 
+	◦	sensors 
+	◦	GLSL 
+	◦	C++ 
+	◦	Pixels 
+	◦	Pixel Art 
+	◦	blogging 
+	◦	Photography 
+	•	 
+	•	About This Blog I created this blog in 2021 to keep track of the step by step processes of things I learned and projects I made. It has a focus in Art & Technology. While it started as a reference for my future self, I try to write in a way that may be accessible for someone to follow along and who is interested in the same topics.  A more detailed explanation of the functionality of this blog is documented in the 'More About This Blog' post.    
+	•	Links My Artist Website  
+	•	Link About This Blog (WIP)  last modified: 2021-05-10 I detail the features of this blog, the intentions, and the code that makes it work.  Productivity      
+	•	Link Game Boy Camera (WIP)  last modified: 2021-05-10 4-color palette 128x112 pixel photos. Photography      
