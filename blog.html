@@ -48,15 +48,22 @@
       href="./resources/favicon.ico"
       type="image/x-icon"
     />
+
+    <style type="text/css" media="screen">
+      html {
+	background-color: #262626
+      }
+    </style>
+
   </head>
-  <body>
+  <body class="uk-margin-large-bottom">
     <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
       <!-- NAV AND HEADING -->
       <div
         class="
-          uk-background-cover uk-background-blend-multiply uk-flex uk-flex-left
+          uk-background-cover uk-background-blend-multiply uk-flex
         "
-        style="background-image: url(resources/textured_black_sharpened.png)"
+        style="background-image: url(resources/textured_black_sharpened.png); height: 50px"
         uk-sticky
       >
         <button
@@ -76,8 +83,9 @@
             uk-margin-remove
             uk-padding-small
             uk-padding-remove-vertical
+	    uk-position-center-left
           "
-          style="font-family: 'Cormorant', serif; color: white"
+          style="font-family: 'Cormorant', serif; color: white; left: 60px"
         >
           <a class="uk-text" style="color: white" href="./blog.html"
             >juanedflores</a
@@ -92,13 +100,8 @@
         class="uk-container"
         uk-filter="target: .js-filter; selActive: .featured"
       >
-        <div id="blog-filter" uk-offcanvas="bg-close: false">
+        <div id="blog-filter" class="uk-position-fixed" style="top:50px" uk-offcanvas="bg-close: false; mode: slide;">
           <div class="uk-offcanvas-bar">
-            <button
-              class="uk-offcanvas-close uk-padding-small uk-position-top-right"
-              type="button"
-              uk-close
-            ></button>
             <ul uk-accordion>
               <li>
                 <a class="uk-accordion-title" href="#">Filter</a>
@@ -313,7 +316,7 @@
           </div>
         </div>
         <!-- BLOG ENTRIES -->
-        <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
+        <ul id="body-container" class="js-filter uk-list uk-width-2-3@s uk-align-center">
           <!-- More About This Blog -->
           <li class="tag-Productivity tag-featured">
             <a
@@ -329,14 +332,12 @@
                   uk-child-width-1-2@s
                   uk-margin
                 "
-                style="border: 1px solid lightgray; border-radius: 5px"
+                style="border: 1px solid #d78700; border-radius: 3px;"
                 uk-grid
               >
-                <div>
+                <div class="uk-background-cover" data-src="./resources/square.png" uk-img>
                   <div
-                    class="uk-card-body uk-background-cover"
-                    style="background-image: url(./resources/square.png);"
-                   
+                    class="uk-card-body"
                   >
                     <h3 class="uk-card-title" style="color: #ffffe0">
                       About This Blog <span class="uk-text-warning">(WIP)</span>
@@ -375,15 +376,12 @@
                   uk-child-width-1-2@s
                   uk-margin
                 "
-                style="border: 1px solid lightgray; border-radius: 5px"
+                style="border: 1px solid #d78700; border-radius: 5px"
                 uk-grid
               >
-                <div>
+                <div class="uk-background-cover" data-src="./resources/square.png" uk-img>
                   <div
-                    class="uk-card-body uk-background-cover"
-                    style="
-                      background-image: url(./resources/square.png);
-                    "
+                    class="uk-card-body"
                   >
                     <h3 class="uk-card-title" style="color: #ffffe0">
                       Game Boy Camera <span class="uk-text-warning">(WIP)</span>
