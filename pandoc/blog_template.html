@@ -31,17 +31,19 @@
 	<!-- <link rel="stylesheet" href="../../styles/pojoaque.css"> -->
 	<!-- <script src="../../js/highlight.pack.js"></script> -->
 	<!-- <script>hljs.initHighlightingOnLoad();</script> -->
+
 	<script charset="utf-8">
 		document.addEventListener('DOMContentLoaded', (event) => {
 			document.querySelectorAll('pre code').forEach((block) => {
 				hljs.highlightBlock(block);
 			});
-			document.querySelectorAll('p code').forEach((line) => {
-				hljs.highlightBlock(line);
+			document.querySelectorAll('p code').forEach((block) => {
+				hljs.highlightBlock(block);
 			});
 		});
 	</script>
-	<!-- <script>hljs.highlightAll();</script> -->
+	<script>hljs.highlightAll();</script>
+
 
 	<link rel="stylesheet" href="../../css/blog_style.css" />
 
@@ -63,6 +65,15 @@
 		pre {
 			border: solid black;
 		}
+
+		pre code.hljs {
+		  display: block;
+		}
+
+		code.hljs {
+		  display: inline;
+		}
+
 	</style>
 
 	$for(header-includes)$ $header-includes$ $endfor$
@@ -131,6 +142,14 @@
 		</div>
 
 	</div>
+
+	<script charset="utf-8">
+	    var divs = document.querySelectorAll("p > code");
+	    console.log(divs.length) 
+	    for (var i = 0; i < divs.length; i++) {
+		divs[i].classList.add("plaintext");
+	    }
+	</script>
 </body>
 
 </html>
