@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html $if(lang)$ lang="$lang$" $endif$ dir="ltr">
+<html  dir="ltr">
 
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="generator" content="pandoc" />
 
-	<title>$if(heading)$$heading$$endif$</title>
+	<title></title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -79,7 +79,7 @@
 		}
 	</style>
 
-	$for(header-includes)$ $header-includes$ $endfor$
+	
 </head>
 
 <body>
@@ -109,17 +109,17 @@
 			<div class="uk-offcanvas-bar">
 				<a href="../../blog.html" uk-icon="icon: home"></a>
 				<h3>Table of Contents</h3>
-				<div>$toc$</div>
+				<div></div>
 			</div>
 		</div>
 		<div class="uk-container uk-width-1-2@m" style="padding-top: 1.2em; padding-bottom: 1.2em;">
-			<span class="title" style="color: white;">$title$</span>
+			<span class="title" style="color: white;">Generative Music with Pico-8</span>
 			<br />
-			<span style="font-size: 1em;">Date created: $date_created$</span>
+			<span style="font-size: 1em;">Date created: 2021-05-12</span>
 			<hr>
 		</div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			$body$
+			<p>To see all of my Pico-8 carts visit my <a href="./gallery/pico8_genmusic_gallery.html" target="_blank">Pico-8 Gallery</a></p>
 		</div>
 		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
 			<div id="disqus_thread"></div>
@@ -128,7 +128,7 @@
 				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 				var disqus_config = function () {
-					let pagetitle = "$title$"
+					let pagetitle = "Generative Music with Pico-8"
 					this.page.url = "https://juanedflores.com/Blog/" + pagetitle.replace(/ /g, "_") + "/" + pagetitle.replace(/ /g, "_") + ".html";
 					this.page.identifier = "/" + pagetitle.replace(/ /g, "_");
 				};
