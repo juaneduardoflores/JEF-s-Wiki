@@ -9,6 +9,7 @@ The goal was to be able to easily create and modify blog entries without worryin
 
 #### The Makefile
 ```make
+
 PANDOCFLAGSHTML =                                           \
   --table-of-contents                                       \
   --toc-depth=4                                             \

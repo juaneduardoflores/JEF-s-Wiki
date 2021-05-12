@@ -53,6 +53,10 @@
 		  font-family: "SegoeUI";
 		  src: url("../../fonts/SegoeUI.ttf") format("truetype");
 		}
+		@font-face {
+		  font-family: "SegoeUILight";
+		  src: url("../../fonts/SegoeUILight.ttf") format("truetype");
+		}
 
 		html {
 			background-color: #262626;
@@ -64,7 +68,11 @@
 
 		p {
 		  	font-size: 1.1em;
-			font-family: "SegoeUI";
+			font-family: "SegoeUILight";
+		}
+
+		ul li {
+			font-family: "SegoeUILight";
 		}
 
 		.title {
@@ -150,7 +158,8 @@
 			<h3 id="workflow">Workflow</h3>
    <p>The goal was to be able to easily create and modify blog entries without worrying about writing any HTML code. I have created a workflow that allows me to just write in the markdown format. I achieved this by using a Makefile and a python script.</p>
    <h4 id="the-makefile">The Makefile</h4>
-   <pre class="make"><code>PANDOCFLAGSHTML =                                           \
+   <pre class="make"><code>
+   PANDOCFLAGSHTML =                                           \
      --table-of-contents                                       \
      --toc-depth=4                                             \
      --from=makrdown+markdown_in_html_blocks+bracketed_spans   \
