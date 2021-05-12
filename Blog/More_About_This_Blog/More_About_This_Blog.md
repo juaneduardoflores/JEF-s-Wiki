@@ -3,6 +3,7 @@ title: More About This Blog
 date_created: January 30th, 2021 
 ---
 
+
 ### Workflow
 The goal was to be able to easily create and modify blog entries without worrying about writing any HTML code. I have created a workflow that allows me to just write in the markdown format. I achieved this by using a Makefile and a python script.
 
@@ -11,7 +12,7 @@ The goal was to be able to easily create and modify blog entries without worryin
 PANDOCFLAGSHTML =                                           \
   --table-of-contents                                       \
   --toc-depth=4                                             \
-  --from=markdown+markdown_in_html_blocks+bracketed_spans   \
+  --from=makrdown+markdown_in_html_blocks+bracketed_spans   \
   --template=../pandoc/blog_template.html
 
 # a wildcard that searches recursively
@@ -32,7 +33,7 @@ clean:
 	rm $(HTML)
 ```
 
-##### Explanation  
+#### Explanation  
 I am using [pandoc](https://pandoc.org/){target="&#95;blank"} to convert markdown to html.  
 
 A simple command to do this conversion would be:  

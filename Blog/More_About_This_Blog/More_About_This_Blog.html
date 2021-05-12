@@ -48,18 +48,42 @@
 	<link rel="stylesheet" href="../../css/blog_style.css" />
 
 	<style type="text/css" media="screen">
+		/* Define the "system" font family */
+		@font-face {
+		  font-family: "SegoeUI";
+		  src: url("../../fonts/SegoeUI.ttf") format("truetype");
+		}
+
 		html {
-			background-color: #262626
+			background-color: #262626;
+		}
+
+		body {
+			color: LightGray;
 		}
 
 		p {
-			color: LightGray;
+		  	font-size: 1.1em;
+			font-family: "SegoeUI";
+		}
+
+		.title {
+			color: #ffffe0
 		}
 
 		h3,
 		h4,
 		h5 {
-			color: #ffffe0
+			color: #ffffe0;
+			font-family: "SegoeUI"
+		}
+
+		h5 {
+		  	font-size: 19px;
+		}
+
+		hr {
+		  border: 1px solid #586e75;;
 		}
 
 		pre {
@@ -67,13 +91,12 @@
 		}
 
 		pre code.hljs {
-		  display: block;
+			display: block;
 		}
 
 		code.hljs {
-		  display: inline;
+			display: inline;
 		}
-
 	</style>
 
 	
@@ -110,6 +133,7 @@
 <li><a href="#workflow">Workflow</a>
 <ul>
 <li><a href="#the-makefile">The Makefile</a></li>
+<li><a href="#explanation">Explanation</a></li>
 </ul></li>
 <li><a href="#inspiration">Inspiration</a></li>
 <li><a href="#features">Features</a></li>
@@ -117,7 +141,7 @@
 			</div>
 		</div>
 		<div class="uk-container uk-width-1-2@m" style="padding-top: 1.2em; padding-bottom: 1.2em;">
-			<span class="title" style="color: white;">More About This Blog</span>
+			<span class="title">More About This Blog</span>
 			<br />
 			<span style="font-size: 1em;">Date created: January 30th, 2021</span>
 			<hr>
@@ -129,7 +153,7 @@
    <pre class="make"><code>PANDOCFLAGSHTML =                                           \
      --table-of-contents                                       \
      --toc-depth=4                                             \
-     --from=markdown+markdown_in_html_blocks+bracketed_spans   \
+     --from=makrdown+markdown_in_html_blocks+bracketed_spans   \
      --template=../pandoc/blog_template.html
 
    # a wildcard that searches recursively
@@ -148,7 +172,7 @@
 
    clean:
        rm $(HTML)</code></pre>
-   <h5 id="explanation">Explanation</h5>
+   <h4 id="explanation">Explanation</h4>
    <p>I am using <a href="https://pandoc.org/" target="_blank">pandoc</a> to convert markdown to html.</p>
    <p>A simple command to do this conversion would be:</p>
    <pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
@@ -203,11 +227,11 @@
 	</div>
 
 	<script charset="utf-8">
-	    var divs = document.querySelectorAll("p > code");
-	    console.log(divs.length) 
-	    for (var i = 0; i < divs.length; i++) {
-		divs[i].classList.add("plaintext");
-	    }
+		var divs = document.querySelectorAll("p > code");
+		console.log(divs.length)
+		for (var i = 0; i < divs.length; i++) {
+			divs[i].classList.add("plaintext");
+		}
 	</script>
 </body>
 
