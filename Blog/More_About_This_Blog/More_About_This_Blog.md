@@ -3,6 +3,7 @@ title: More About This Blog
 date_created: January 30th, 2021 
 ---
 
+
 ### Workflow
 The goal was to be able to easily create and modify blog entries without worrying about writing any HTML code. I have created a workflow that allows me to just write in the markdown format. I achieved this by using a Makefile and a python script.
 
