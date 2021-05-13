@@ -1,3 +1,37 @@
+html, body {
+  overflow-x: hidden;
+}
+  
+body {
+  position: relative
+}
+
+.cardtitle {
+  font-family: 'EdelSansLight', sans-serif;
+  font-size: 18px;
+  color: black;
+}
+
+.uk-card-small {
+  border: 1px solid #e5e5e5;
+}
+
+.uk-container {
+  background: rgba(255,255,255,0)
+}
+
+.uk-text-background-primary {
+  background: rgba(255,255,255,0.8)
+}
+
+.uk-button {
+  background: rgba(255,255,255,0.8)
+}
+
+.hr {
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
 @font-face {
   font-family: "EdelSansLight";
   src: url("../../fonts/EdelSansLight.ttf");
@@ -10,3 +44,7 @@ h2 {
 p {
   font-family: "EdelSansLight"
 }
+
+/* hr { */
+/*   border: 3px solid black; */
+/* } */

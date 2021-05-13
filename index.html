@@ -11,6 +11,7 @@
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
     <script src="./js/inline.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -58,6 +59,10 @@
       body {
 	position: relative
       }
+
+      .uk-container {
+	background: rgba(255,255,255,0)
+      }
     </style>
 
     <link
@@ -73,7 +78,8 @@
         class="uk-container uk-background-default uk-transition-toggle"
         uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
       >
-        <div uk-grid>
+        <div uk-grid
+	  >
           <div class="uk-align-center">
             <!-- HEADING -->
             <h2
@@ -82,7 +88,7 @@
               <a class="uk-link-heading" href="./index.html"
                 ><span
                   class="uk-text-background-primary uk-text-bold"
-                  style="font-family: 'Frank Ruhl Libre', serif"
+                  style="font-family: 'Frank Ruhl Libre', serif; padding: 7px; background: rgba(255, 255, 255, 0.8)"
                   >Juan Eduardo Flores</span
                 ></a
               >
@@ -91,6 +97,7 @@
             <!-- MOBILE MENU BUTTON -->
             <button
               class="uk-button uk-button-default uk-width-expand"
+	      style="background: rgba(255, 255, 255, 0.8)"
               type="button"
             >
               <span uk-icon="icon: menu"></span>
@@ -121,7 +128,7 @@
         </div>
 
         <div class="uk-container uk-width-1-2@s">
-          <hr />
+          <hr style="border: 1px solid rgba(229,229,229, 0.8); "/>
         </div>
       </div>
 
@@ -311,5 +318,7 @@
         </ul>
       </div>
     </div>
+    <div id="sketch"></div>
   </body>
+  <script src="./js/sketch.js"></script>
 </html>
