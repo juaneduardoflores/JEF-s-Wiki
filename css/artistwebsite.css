@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "EdelSansLight";
+  src: url("../../fonts/EdelSansLight.ttf");
+}
+
+h2 {
+  font-family: "Prompt"
+}
+
+p {
+  font-family: "EdelSansLight"
+}
