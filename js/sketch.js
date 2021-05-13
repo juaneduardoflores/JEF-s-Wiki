@@ -16,6 +16,7 @@ function setup() {
   canvas.parent("sketch");
   frameRate(30);
   windowResized();
+  lastheight = windowHeight;
 }
 
 function draw() {
@@ -62,16 +63,18 @@ function draw() {
 }
 
 function windowResized() {
-  var body = document.body,
-  html = document.documentElement;
+  setTimeout(function(){
+    var body = document.body,
+    html = document.documentElement;
 
-  var h = Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
-    html.clientHeight,
-    html.scrollHeight,
-    html.offsetHeight
-  );
+    let  h = Math.max(
+	body.scrollHeight,
+	body.offsetHeight,
+	html.clientHeight,
+	html.scrollHeight,
+	html.offsetHeight
+    );
 
-  resizeCanvas(windowWidth, h);
+    resizeCanvas(windowWidth, h);
+  }, 2000);
 }

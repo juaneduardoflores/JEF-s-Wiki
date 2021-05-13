@@ -78,4 +78,3 @@ Here are a list of blogs that I took inspiration from.
   - Add total amount of time worked on post with TimeWarrior info. (e.g. Total time worked on: '5 days, 10 hours, 40 minutes')
   - Filter posts by year it was created.
   - Filter posts from last modified to oldest modified. (and vice versa)
-

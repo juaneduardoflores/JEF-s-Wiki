@@ -1,148 +1,96 @@
 <!DOCTYPE html>
 <html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="generator" content="pandoc" />
+    <title></title>
 
-	<title></title>
+    <link rel="stylesheet" href="../../css/uikit.min.css" />
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../js/uikit.min.js"></script>
+    <script src="../../js/uikit-icons.min.js"></script>
 
-	<link rel="stylesheet" href="../../css/uikit.min.css" />
-	<script src="../../js/uikit.min.js"></script>
-	<script src="../../js/uikit-icons.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../../resources/favicon.ico"
+      type="image/x-icon"
+    />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
+    <!-- <link -->
+    <!--   rel="stylesheet" -->
+    <!--   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/pojoaque.min.css" -->
+    <!-- /> -->
+    <link rel="stylesheet" href="../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+    <script charset="utf-8">
+      document.addEventListener("DOMContentLoaded", event => {
+        document.querySelectorAll("pre code").forEach(block => {
+          hljs.highlightBlock(block);
+        });
+        document.querySelectorAll("p code").forEach(block => {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
+    <script>
+      hljs.highlightAll();
+    </script>
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/blog_style.css" />
 
-	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    
+  </head>
 
-	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/paraiso-light.css"> -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/pojoaque.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-	<!-- <link rel="stylesheet" href="../../styles/pojoaque.css"> -->
-	<!-- <script src="../../js/highlight.pack.js"></script> -->
-	<!-- <script>hljs.initHighlightingOnLoad();</script> -->
+  <body>
+    <!-- NAV AND HEADING -->
+    <div
+      class="uk-flex uk-flex-left uk-background-cover"
+      style="
+        background-image: url(../../resources/textured_black_sharpened.png);
+        height: 50px;
+      "
+      uk-sticky
+    >
+      <button
+        class="uk-button uk-button-default"
+        type="button"
+        style="border: none;"
+        uk-toggle="target: #blog-toc"
+      >
+        <span uk-icon="icon: menu" style="color: white;"></span>
+      </button>
 
-	<script charset="utf-8">
-		document.addEventListener('DOMContentLoaded', (event) => {
-			document.querySelectorAll('pre code').forEach((block) => {
-				hljs.highlightBlock(block);
-			});
-			document.querySelectorAll('p code').forEach((block) => {
-				hljs.highlightBlock(block);
-			});
-		});
-	</script>
-	<script>hljs.highlightAll();</script>
+      <!-- HEADING -->
+      <h2
+        class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+        style="font-family: 'Cormorant', serif; color: white; left: 60px;"
+      >
+        <a
+          class="uk-text"
+          style="color: white; font-weight: normal; font-size: 1em;"
+          href="../../blog.html"
+          >juanedflores</a
+        >&nbsp;&nbsp;
+        <span style="font-family: Rozha One, serif; font-size: 100%;"
+          >[ BLOG ]</span
+        >
+      </h2>
+    </div>
 
-
-	<link rel="stylesheet" href="../../css/blog_style.css" />
-
-	<style type="text/css" media="screen">
-		/* Define the "system" font family */
-		@font-face {
-		  font-family: "SegoeUI";
-		  src: url("../../fonts/SegoeUI.ttf") format("truetype");
-		}
-		@font-face {
-		  font-family: "SegoeUILight";
-		  src: url("../../fonts/SegoeUILight.ttf") format("truetype");
-		}
-		@font-face {
-		  font-family: "SegoeUIBold";
-		  src: url("../../fonts/SegoeUIBold.ttf") format("truetype");
-		}
-
-		html {
-			background-color: #262626;
-		}
-
-		body {
-			color: LightGray;
-		}
-
-		p {
-		  	font-size: 1.1em;
-			font-family: "SegoeUILight";
-		}
-
-		ul li {
-			font-family: "SegoeUILight";
-		}
-
-		.title {
-			color: #ffffe0;
-			font-family: "SegoeUIBold";
-		}
-
-		h3,
-		h4,
-		h5 {
-			color: #ffffe0;
-			font-family: "SegoeUI"
-		}
-
-		h5 {
-		  	font-size: 19px;
-		}
-
-		hr {
-		  border: 1px solid #586e75;;
-		}
-
-		pre {
-			border: solid black;
-		}
-
-		pre code.hljs {
-			display: block;
-		}
-
-		code.hljs {
-			display: inline;
-		}
-	</style>
-
-	
-</head>
-
-<body>
-
-	<!-- NAV AND HEADING -->
-	<div class="uk-flex uk-flex-left uk-background-cover"
-		style="background-image: url(../../resources/textured_black_sharpened.png); height: 50px" uk-sticky>
-
-		<button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
-			<span uk-icon="icon: menu" style="color: white"></span>
-		</button>
-
-		<!-- HEADING -->
-		<h2
-			class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
-			style="font-family: 'Cormorant', serif; color: white; left: 60px;">
-			<a class="uk-text" style="color: white; font-weight: normal; font-size: 1em;"
-				href="../../blog.html">juanedflores</a>&nbsp;&nbsp;
-			<span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
-		</h2>
-	</div>
-
-	<div class="uk-align-center uk-margin-remove-top" id="contentArea">
-
-		<!-- BODY -->
-		<div id="blog-toc" style="top:50px" uk-offcanvas="mode: slide; container: #contentArea">
-			<div class="uk-offcanvas-bar">
-				<a href="../../blog.html" uk-icon="icon: home"></a>
-				<h3>Table of Contents</h3>
-				<div><ul>
+    <div class="uk-align-center uk-margin-remove-top" id="contentArea">
+      <!-- BODY -->
+      <div
+        id="blog-toc"
+        style="top: 50px;"
+        uk-offcanvas="mode: slide; container: #contentArea"
+      >
+        <div class="uk-offcanvas-bar">
+          <a href="../../blog.html" uk-icon="icon: home"></a>
+          <h3>Table of Contents</h3>
+          <div><ul>
 <li><a href="#workflow">Workflow</a>
 <ul>
 <li><a href="#the-makefile">The Makefile</a></li>
@@ -151,102 +99,122 @@
 <li><a href="#inspiration">Inspiration</a></li>
 <li><a href="#features">Features</a></li>
 </ul></div>
-			</div>
-		</div>
-		<div class="uk-container uk-width-1-2@m" style="padding-top: 1.2em; padding-bottom: 1.2em;">
-			<span class="title">More About This Blog</span>
-			<br />
-			<span style="font-size: 1em; color: #767676;">Date created: January 30th, 2021</span>
-			<hr>
-		</div>
-		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			<h3 id="workflow">Workflow</h3>
-   <p>The goal was to be able to easily create and modify blog entries without worrying about writing any HTML code. I have created a workflow that allows me to just write in the markdown format. I achieved this by using a Makefile and a python script.</p>
-   <h4 id="the-makefile">The Makefile</h4>
-   <pre class="make"><code>
-   PANDOCFLAGSHTML =                                           \
-     --table-of-contents                                       \
-     --toc-depth=4                                             \
-     --from=makrdown+markdown_in_html_blocks+bracketed_spans   \
-     --template=../pandoc/blog_template.html
+        </div>
+      </div>
+      <div
+        class="uk-container uk-width-1-2@m"
+        style="padding-top: 1.2em; padding-bottom: 1.2em;"
+      >
+        <span class="title">More About This Blog</span>
+        <br />
+        <span style="font-size: 1em; color: #767676;"
+          >Date created: January 30th, 2021</span
+        >
+        <hr />
+      </div>
+      <div
+        class="uk-container uk-margin uk-width-1-2@m"
+        style="overflow: scroll;"
+      >
+        <h3 id="workflow">Workflow</h3>
+        <p>The goal was to be able to easily create and modify blog entries without worrying about writing any HTML code. I have created a workflow that allows me to just write in the markdown format. I achieved this by using a Makefile and a python script.</p>
+        <h4 id="the-makefile">The Makefile</h4>
+        <pre class="make"><code>
+        PANDOCFLAGSHTML =                                           \
+          --table-of-contents                                       \
+          --toc-depth=4                                             \
+          --from=makrdown+markdown_in_html_blocks+bracketed_spans   \
+          --template=../pandoc/blog_template.html
 
-   # a wildcard that searches recursively
-   rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
+        # a wildcard that searches recursively
+        rwildcard = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
-   # find all markdown files
-   MARKDOWN := $(call rwildcard,./,*.md)
-   HTML = $(MARKDOWN:.md=.html)
+        # find all markdown files
+        MARKDOWN := $(call rwildcard,./,*.md)
+        HTML = $(MARKDOWN:.md=.html)
 
-   all: $(HTML)
+        all: $(HTML)
 
-   %.html: %.md
-       @echo $@
-       pandoc $&lt; -o $@ $(PANDOCFLAGSHTML)
-       python newBlogEntry.py $(@D)
+        %.html: %.md
+            @echo $@
+            pandoc $&lt; -o $@ $(PANDOCFLAGSHTML)
+            python newBlogEntry.py $(@D)
 
-   clean:
-       rm $(HTML)</code></pre>
-   <h4 id="explanation">Explanation</h4>
-   <p>I am using <a href="https://pandoc.org/" target="_blank">pandoc</a> to convert markdown to html.</p>
-   <p>A simple command to do this conversion would be:</p>
-   <pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
-   <p><code>-f/--from</code> is a <span style="font-weight:bold; cursor: pointer;" data-uk-tooltip="title: A Command-line flag is a common way to specify options for command-line programs.">flag</span> that specifies what file type we are starting from, and <code>-t/--to</code> is the file type we are converting to.</p>
-   <p>Another way to do it is with the <code>-o</code> flag:</p>
-   <pre class="shell"><code>$ pandoc inputfile.md -o outputfile.html</code></pre>
-   <p><code>-o/--output</code> specifies the output file. In this example, we are specifying that we want to output to a file called <code>outputfile.html</code>. Pandoc is smart enough to look at the extensions of the input and output files to know what we are converting from and to.</p>
-   <hr />
-   <p>Now that we understand what pandoc does, I can explain that all this Makefile does is look for every markdown file in the subdirectories and turns them into html. The <code>PANDOCFLAGSHTML</code> variable contains all the flags I am using with the pandoc command.</p>
-   <p>So in the end it is running something like this:</p>
-   <pre class="shell"><code>$ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html -V mainfont=&quot;DejaVu Serif&quot; -V monofont=&quot;DejaVu Sans Mono&quot;</code></pre>
-   <p><code>--table-of-contents</code>: Outputs the html file with a table of contents.</p>
-   <h3 id="inspiration">Inspiration</h3>
-   <p>Here are a list of blogs that I took inspiration from. * https://learnbyexample.github.io/</p>
-   <h3 id="features">Features</h3>
-   <p>Done:</p>
-   <ul>
-   <li>Modified date of a blog entry is displayed in the blog home page.</li>
-   <li>Filter posts by category.</li>
-   </ul>
-   <p>TODO:</p>
-   <ul>
-   <li>More specific modified time (Time of day).</li>
-   <li>Add total amount of time worked on post with TimeWarrior info. (e.g. Total time worked on: ‘5 days, 10 hours, 40 minutes’)</li>
-   <li>Filter posts by year it was created.</li>
-   <li>Filter posts from last modified to oldest modified. (and vice versa)</li>
-   </ul>
-		</div>
-		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			<div id="disqus_thread"></div>
-			<script>
-				/**
-				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-				var disqus_config = function () {
-					let pagetitle = "More About This Blog"
-					this.page.url = "https://juanedflores.com/Blog/" + pagetitle.replace(/ /g, "_") + "/" + pagetitle.replace(/ /g, "_") + ".html";
-					this.page.identifier = "/" + pagetitle.replace(/ /g, "_");
-				};
+        clean:
+            rm $(HTML)</code></pre>
+        <h4 id="explanation">Explanation</h4>
+        <p>I am using <a href="https://pandoc.org/" target="_blank">pandoc</a> to convert markdown to html.</p>
+        <p>A simple command to do this conversion would be:</p>
+        <pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
+        <p><code>-f/--from</code> is a <span style="font-weight:bold; cursor: pointer;" data-uk-tooltip="title: A Command-line flag is a common way to specify options for command-line programs.">flag</span> that specifies what file type we are starting from, and <code>-t/--to</code> is the file type we are converting to.</p>
+        <p>Another way to do it is with the <code>-o</code> flag:</p>
+        <pre class="shell"><code>$ pandoc inputfile.md -o outputfile.html</code></pre>
+        <p><code>-o/--output</code> specifies the output file. In this example, we are specifying that we want to output to a file called <code>outputfile.html</code>. Pandoc is smart enough to look at the extensions of the input and output files to know what we are converting from and to.</p>
+        <hr />
+        <p>Now that we understand what pandoc does, I can explain that all this Makefile does is look for every markdown file in the subdirectories and turns them into html. The <code>PANDOCFLAGSHTML</code> variable contains all the flags I am using with the pandoc command.</p>
+        <p>So in the end it is running something like this:</p>
+        <pre class="shell"><code>$ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html -V mainfont=&quot;DejaVu Serif&quot; -V monofont=&quot;DejaVu Sans Mono&quot;</code></pre>
+        <p><code>--table-of-contents</code>: Outputs the html file with a table of contents.</p>
+        <h3 id="inspiration">Inspiration</h3>
+        <p>Here are a list of blogs that I took inspiration from. * https://learnbyexample.github.io/</p>
+        <h3 id="features">Features</h3>
+        <p>Done:</p>
+        <ul>
+        <li>Modified date of a blog entry is displayed in the blog home page.</li>
+        <li>Filter posts by category.</li>
+        </ul>
+        <p>TODO:</p>
+        <ul>
+        <li>More specific modified time (Time of day).</li>
+        <li>Add total amount of time worked on post with TimeWarrior info. (e.g. Total time worked on: ‘5 days, 10 hours, 40 minutes’)</li>
+        <li>Filter posts by year it was created.</li>
+        <li>Filter posts from last modified to oldest modified. (and vice versa)</li>
+        </ul>
+      </div>
+      <div
+        class="uk-container uk-margin uk-width-1-2@m"
+        style="overflow: scroll;"
+      >
+        <div id="disqus_thread"></div>
+        <script>
+          /**
+           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+          var disqus_config = function () {
+            let pagetitle = "More About This Blog";
+            this.page.url =
+              "https://juanedflores.com/Blog/" +
+              pagetitle.replace(/ /g, "_") +
+              "/" +
+              pagetitle.replace(/ /g, "_") +
+              ".html";
+            this.page.identifier = "/" + pagetitle.replace(/ /g, "_");
+          };
 
-				(function () { // DON'T EDIT BELOW THIS LINE
-					var d = document, s = d.createElement('script');
-					s.src = 'https://juanedflores-blog.disqus.com/embed.js';
-					s.setAttribute('data-timestamp', +new Date());
-					(d.head || d.body).appendChild(s);
-				})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-					Disqus.</a></noscript>
-		</div>
+          (function () {
+            // DON'T EDIT BELOW THIS LINE
+            var d = document,
+              s = d.createElement("script");
+            s.src = "https://juanedflores-blog.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript
+          >Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript"
+            >comments powered by Disqus.</a
+          ></noscript
+        >
+      </div>
+    </div>
 
-	</div>
-
-	<script charset="utf-8">
-		var divs = document.querySelectorAll("p > code");
-		console.log(divs.length)
-		for (var i = 0; i < divs.length; i++) {
-			divs[i].classList.add("plaintext");
-		}
-	</script>
-</body>
-
+    <script charset="utf-8">
+      var divs = document.querySelectorAll("p > code");
+      console.log(divs.length);
+      for (var i = 0; i < divs.length; i++) {
+        divs[i].classList.add("plaintext");
+      }
+    </script>
+  </body>
 </html>

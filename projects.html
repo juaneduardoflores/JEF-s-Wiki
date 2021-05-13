@@ -9,19 +9,13 @@
 
     <link rel="stylesheet" href="./css/uikit.min.css" />
     <link rel="stylesheet" href="./css/artistwebsite.css" />
+
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
-    <script src="./js/inline.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
       rel="stylesheet"
     />
 
@@ -35,7 +29,7 @@
   <body>
     <div class="uk-container uk-margin-large-bottom">
       <div
-        class="uk-container uk-background-default uk-transition-toggle"
+        class="uk-container uk-background-default uk-transition-toggle topbar"
         uk-sticky="show-on-up: true; animation: uk-animation-slide-top"
       >
         <div uk-grid>
@@ -47,7 +41,7 @@
               <a class="uk-link-heading" href="./index.html"
                 ><span
                   class="uk-text-background-primary uk-text-bold"
-                  style="font-family: 'Frank Ruhl Libre', serif"
+                  style="font-family: 'Frank Ruhl Libre', serif;"
                   >Juan Eduardo Flores</span
                 ></a
               >
@@ -61,7 +55,6 @@
               <span uk-icon="icon: menu"></span>
             </button>
             <div
-              id="dropdown"
               class="uk-text-center"
               uk-dropdown="pos: bottom-justify; delay-hide: 50"
             >
@@ -78,7 +71,7 @@
 
         <div class="uk-container uk-width-1-2@s uk-position-absolute">
           <button
-            class="uk-transition-fade uk-text-muted uk-button uk-button-link uk-align-left uk-background-muted"
+            class="uk-text-muted uk-button uk-button-link uk-align-left uk-background-muted"
             uk-toggle="target: #work-filter"
           >
             [ filter ]
@@ -93,7 +86,6 @@
       <!-- PROJECTS -->
       <div
         class="uk-width-2-3@s uk-align-center"
-        id="contentArea"
         uk-filter="target: .js-filter"
       >
         <!-- OFFCANVAS FILTER -->

@@ -1,13 +1,15 @@
-html, body {
-  overflow-x: hidden;
+@font-face {
+  font-family: "EdelSansLight";
+  src: url("../../fonts/EdelSansLight.ttf");
 }
-  
+
+html,
 body {
-  position: relative
+  overflow-x: hidden;
 }
 
 .cardtitle {
-  font-family: 'EdelSansLight', sans-serif;
+  font-family: "EdelSansLight", sans-serif;
   font-size: 18px;
   color: black;
 }
@@ -16,35 +18,36 @@ body {
   border: 1px solid #e5e5e5;
 }
 
-.uk-container {
-  background: rgba(255,255,255,0)
+.topbar {
+  background: rgba(255, 255, 255, 0.8);
 }
 
-.uk-text-background-primary {
-  background: rgba(255,255,255,0.8)
+.title {
+  font-family: "Frank Ruhl Libre", serif;
+  padding: 10px;
 }
 
 .uk-button {
-  background: rgba(255,255,255,0.8)
+  border: 1px solid rgba(90, 90, 90, 0.6);
+  background: rgb(250, 250, 250);
+  padding: 2px;
 }
 
-.hr {
-  border: 1px solid rgba(255,255,255,0.8);
+.uk-button:hover {
+  background: white;
 }
 
-@font-face {
-  font-family: "EdelSansLight";
-  src: url("../../fonts/EdelSansLight.ttf");
+.uk-hr,
+hr {
+  border: 1px solid rgba(140, 140, 140, 0.8);
+  border-bottom: 0;
 }
 
+/*** For Projects Pages ***/
 h2 {
-  font-family: "Prompt"
+  font-family: "Prompt";
 }
 
 p {
-  font-family: "EdelSansLight"
+  font-family: "EdelSansLight";
 }
-
-/* hr { */
-/*   border: 3px solid black; */
-/* } */
