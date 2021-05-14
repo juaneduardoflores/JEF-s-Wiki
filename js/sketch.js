@@ -16,23 +16,22 @@ function setup() {
   canvas.parent("sketch");
   frameRate(30);
   windowResized();
-  lastheight = windowHeight;
 }
 
 function draw() {
   background(255);
 
   // Shift all elements 1 place to the left
-  for ( let i = 1; i < num; i++ ) {
+  for (let i = 1; i < num; i++) {
     x_points[i - 1] = x_points[i];
     y_points[i - 1] = y_points[i];
   }
 
-  x_points[index] = index + (windowWidth/num)*index + random(range, -range);
-  y_points[index] = index + (windowWidth/num)*index * 0.8 + yoffset;
+  x_points[index] = index + (windowWidth / num) * index + random(range, -range);
+  y_points[index] = index + (windowWidth / num) * index * 0.8 + yoffset;
   x_points[index] += random(-range, range);
   y_points[index] += random(-range, range);
-  index+=1;
+  index += 1;
 
   if (index > num) {
     index = 0;
@@ -41,19 +40,19 @@ function draw() {
   // Draw a point
   for (let i = 0; i < num; i++) {
     strokeWeight(10);
-    point(x_points[i], y_points[i])
+    point(x_points[i], y_points[i]);
   }
 
   // Draw a line connecting the points
   invert = false;
-  for ( let i = 1; i < num; i++ ) {
+  for (let i = 1; i < num; i++) {
     // calculate value
-    let val = (1-(i/num)) * 204.0 + 51;
-    if (i%(num/2)==0) {
+    let val = (1 - i / num) * 204.0 + 51;
+    if (i % (num / 2) == 0) {
       invert = true;
     }
     if (invert == true) {
-      val = (i/num) * 204.0 + 51;
+      val = (i / num) * 204.0 + 51;
     }
     strokeWeight(1);
     stroke(val);
@@ -63,16 +62,16 @@ function draw() {
 }
 
 function windowResized() {
-  setTimeout(function(){
+  setTimeout(function () {
     var body = document.body,
-    html = document.documentElement;
+      html = document.documentElement;
 
-    let  h = Math.max(
-	body.scrollHeight,
-	body.offsetHeight,
-	html.clientHeight,
-	html.scrollHeight,
-	html.offsetHeight
+    let h = Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.clientHeight,
+      html.scrollHeight,
+      html.offsetHeight
     );
 
     resizeCanvas(windowWidth, h);
