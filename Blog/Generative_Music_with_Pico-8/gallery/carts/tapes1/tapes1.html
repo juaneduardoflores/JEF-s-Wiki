@@ -2,6 +2,10 @@
   <head>
     <title>PICO-8 Cartridge</title>
     <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="/css/uikit.min.css" />
+    <script src="/js/uikit.min.js"></script>
+    <script src="/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="/css/blog_style.css" />
     <script type="text/javascript">
       // Default shell for PICO-8 0.2.1
 
@@ -348,8 +352,8 @@
 
         if (!is_fullscreen)
           if (!p8_touch_detected)
-            // fullscreen: update every frame for safety. should be cheap!
             if (p8_update_layout_hash == update_hash) {
+              // fullscreen: update every frame for safety. should be cheap!
               // mobile: update every frame because nothing can be trusted
               //console.log("p8_update_layout(): skipping");
               requestAnimationFrame(p8_update_layout);

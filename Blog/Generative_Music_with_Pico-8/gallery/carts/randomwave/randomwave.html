@@ -8,10 +8,11 @@
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
       name="viewport"
     />
-    <link rel="stylesheet" href="/css/blog_style.css" />
     <link rel="stylesheet" href="/css/uikit.min.css" />
     <script src="/js/uikit.min.js"></script>
     <script src="/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="/css/blog_style.css" />
+    <link rel="stylesheet" href="/css/pico-8.css" />
     <style>
       @font-face {
         font-family: "pico8";
@@ -131,7 +132,6 @@
       <span style="text-align: center; font-size: 1.8em;">random wave</span>
     </header>
     <main data-page_kind="">
-      <!-- <a href="./" id="cart-back-link">&lt; Return to index.</a> -->
       <div
         class="plate"
         id="plate"
@@ -205,7 +205,21 @@
         </center>
       </div>
       <div class="blog-content uk-container uk-margin uk-width-1-2@m">
-        <p>Test paragraph.</p>
+        <span style="font-family: pico8; font-size: 1.3em;"
+          >Code Breakdown</span
+        >
+        <pre><code class="language-lua">
+	function _draw()
+	  cls()
+
+	  spr(1, 8, 16)
+
+	  str = "this is a string"
+	  --this is a comment
+
+	end
+</code></pre>
+        <p>Test Paragraph</p>
       </div>
     </main>
     <script>
@@ -378,5 +392,6 @@
         };
       }
     </script>
+    <script src="/js/prism.js"></script>
   </body>
 </html>
