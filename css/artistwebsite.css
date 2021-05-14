@@ -39,8 +39,7 @@ body {
 
 .uk-hr,
 hr {
-  border: 1px solid rgba(140, 140, 140, 0.8);
-  border-bottom: 0;
+  border-top: 1px solid rgba(140, 140, 140, 0.8);
 }
 
 /*** For Projects Pages ***/
