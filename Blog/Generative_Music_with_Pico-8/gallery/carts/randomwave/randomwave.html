@@ -1,24 +1,35 @@
-﻿<html lang="en">
+﻿<html>
   <head>
     <meta charset="utf-8" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <!-- <link rel="stylesheet" href="../../static/css/pico8.css" type="text/css" /> -->
     <title>PICO-8 Cartridge</title>
     <meta content="" name="description" />
-    <!-- <meta -->
-    <!--   content="initial-scale=1,maximum-scale=1,user-scalable=no" -->
-    <!--   name="viewport" -->
-    <!-- /> -->
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+      name="viewport"
+    />
+    <link rel="stylesheet" href="/css/blog_style.css" />
+    <link rel="stylesheet" href="/css/uikit.min.css" />
+    <script src="/js/uikit.min.js"></script>
+    <script src="/js/uikit-icons.min.js"></script>
     <style>
       @font-face {
         font-family: "pico8";
         src: url("/fonts/pico8regular.ttf");
       }
 
+      html,
+      body {
+        background-color: #5f574f;
+      }
+
+      #site-header {
+        font-family: "pico8";
+        text-align: center;
+      }
+
       .pico8_el {
         box-sizing: border-box;
-        float: center;
         width: 19.3%;
         display: inline-block;
         padding: 4px;
@@ -34,11 +45,9 @@
         text-overflow: ellipsis;
         vertical-align: middle;
       }
-
       .pico8_el:hover {
         background-color: #ff77a8;
       }
-
       .center {
         display: -webkit-box;
         -webkit-box-pack: center;
@@ -52,7 +61,6 @@
         margin: 0 0;
         border: 0;
       }
-
       .plate {
         visibility: hidden;
         background-color: #000;
@@ -63,15 +71,12 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        user-drag: none;
         -webkit-user-drag: none;
       }
-
       canvas {
         cursor: none;
         outline: 0;
       }
-
       .menubar {
         box-sizing: border-box;
         background-color: #000;
@@ -86,7 +91,6 @@
         margin: 0;
         padding: 0;
       }
-
       .startbutton {
         position: absolute;
         left: 0;
@@ -95,14 +99,11 @@
         bottom: 0;
         margin-left: auto;
         margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
         width: 96px;
         height: 96px;
         cursor: pointer;
         cursor: hand;
       }
-
       .pixels {
         image-rendering: optimizeSpeed;
         image-rendering: -moz-crisp-edges;
@@ -111,14 +112,12 @@
         image-rendering: pixelated;
         -ms-interpolation-mode: nearest-neighbor;
       }
-
       .blog-content {
-        padding-top: 50px;
+        padding-top: 40px;
         text-align: left;
       }
     </style>
   </head>
-
   <body
     bgcolor="#5F574F"
     leftmargin="0"
@@ -129,7 +128,7 @@
       id="site-header"
       style="font-family: pico8; color: white; padding: 20px;"
     >
-      <h1 style="text-align: center;">random wave</h1>
+      <span style="text-align: center; font-size: 1.8em;">random wave</span>
     </header>
     <main data-page_kind="">
       <!-- <a href="./" id="cart-back-link">&lt; Return to index.</a> -->
@@ -205,7 +204,7 @@
           </div>
         </center>
       </div>
-      <div class="blog-content" style="width: 30%;">
+      <div class="blog-content uk-container uk-margin uk-width-1-2@m">
         <p>Test paragraph.</p>
       </div>
     </main>
@@ -236,6 +235,10 @@
         if (e > 470) {
           e = 470;
         }
+        canvasheight = document.getElementById("canvas").clientHeight;
+        headerheight = document.getElementById("site-header").clientHeight;
+        document.getElementById("start").style.top =
+          canvasheight / 2 + headerheight + 96 / 2;
         (t = window.innerWidth),
           (n = window.innerHeight),
           (a =
