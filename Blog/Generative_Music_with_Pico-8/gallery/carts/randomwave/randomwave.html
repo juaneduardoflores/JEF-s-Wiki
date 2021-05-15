@@ -45,7 +45,7 @@
 
       // p8_autoplay true to boot the cartridge automatically after page load when possible
       // if the browser can not create an audio context outside of a user gesture (e.g. on iOS), p8_autoplay has no effect
-      var p8_autoplay = false;
+      var p8_autoplay = true;
 
       // When pico8_state is defined, PICO-8 will set .is_paused, .sound_volume and .frame_number each frame
       // (used for determining button icons)
@@ -1257,15 +1257,50 @@
           >Code Breakdown</span
         >
         <pre><code class="language-lua">
-    function _draw()
-    cls()
+	p_index = 1
+	num = 7
+	rdm_range = 20
+	x_points = {}
+	y_points = {}
+	notes = {[1]="c1", [2]="d1", [3]="e1", [4]="g1", [5]="a1", [6]="b1"}
 
-    spr(1, 8, 16)
+	function _update()
+	  _set_fps(15)
+	  -- coordinate starting point
+	  x_points[p_index] = (128 / num) * (p_index - 1)
+	  y_points[p_index] = 128/2
+	  -- y_value randomness
+	  y_random = flr((rnd() * rdm_range) - rdm_range/2)
+	  y_points[p_index] += y_random
 
-    str = "this is a string"
-    --this is a comment
+	  -- play a note
+	  note_to_play = (y_random%6)+1
+	  ?"\a" .. notes[note_to_play]
 
-    end
+	  -- increment index
+	  p_index += 1
+
+	  if (p_index > num) then
+	    -- add the last point at x=127
+	    x_points[num+1] = 127
+	    y_points[num+1] = 128/2
+	    y_points[num+1] += (rnd() * rdm_range) - rdm_range/2
+	    -- restart index
+	    p_index = 1
+	  end
+	end
+
+	function _draw()
+	  cls(2)
+	  -- draw a line
+	  for i = 2, #x_points do
+	    line(x_points[i-1], y_points[i-1], x_points[i], y_points[i], 5)
+	  end
+	  -- draw a point
+	  for i = 1, #x_points do
+	    pset(x_points[i], y_points[i], 7)
+	  end
+	end
     </code></pre>
         <h3>test h3</h3>
         <p>Test Paragraph</p>
