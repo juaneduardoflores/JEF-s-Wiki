@@ -47,7 +47,13 @@ ul li {
 
 .title {
   color: #ffffe0;
-  font-family: "SegoeUIBold";
+  font-size: 2.4em;
+  font-family: "Comorant";
+}
+
+.uk-card-title {
+  font-family: "Comorant";
+  font-size: 1.6em;
 }
 
 h3,
