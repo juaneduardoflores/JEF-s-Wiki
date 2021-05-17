@@ -1,6 +1,10 @@
 @font-face {
-  font-family: x14y24HeadUpDisplay;
-  src: url("/static/fnts/x14y24pxHeadUpDaisy.ttf"); }
+  font-family: "x14y24HeadUpDisplay";
+  src: url("/pico8-gallery/static/fnts/x14y24pxHeadUpDaisy.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "04B";
+  src: url("/pico8-gallery/static/fnts/04B_03.TTF") format("truetype"); }
 
   body {
     background-color: #303030;
@@ -20,7 +24,7 @@
 
       #site-header h1, main #showing, #links h2 {
         color: white;
-        font-family: "x14y24HeadUpDisplay", 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+        font-family: "04B", 'Franklin Gothic Medium', 'Arial Narrow', Arial,
                 sans-serif; }
 
         #links li a, .entry .tag {
