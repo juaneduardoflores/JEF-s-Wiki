@@ -27,6 +27,8 @@
         font-family: "04B", 'Franklin Gothic Medium', 'Arial Narrow', Arial,
                 sans-serif; }
 
+	
+
         #links li a, .entry .tag {
           color: lightblue;
           text-decoration: none; }
@@ -47,7 +49,7 @@
               margin-bottom: 24px; }
               #site-header h1 {
                 margin: 0;
-                font-size: 48px; }
+                font-size: 36px; }
 
 #site-footer {
   text-align: center;
@@ -55,8 +57,8 @@
 
   main {
     flex-grow: 1;
-    margin-left: 48px;
-    margin-right: 48px; }
+    margin-left: 12px;
+    margin-right: 12px; }
     main hr {
       display: block;
       height: 1px;
@@ -118,6 +120,7 @@
             margin-top: 0;
             margin-bottom: 8px; }
             .entry .info .description {
+	      font-family: "04B";
               text-align: justify; }
     .entry .tag {
       font-size: 0.8em;
