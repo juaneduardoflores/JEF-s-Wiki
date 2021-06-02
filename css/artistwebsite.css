@@ -18,6 +18,10 @@ body {
   border: 1px solid #e5e5e5;
 }
 
+.work > li {
+  max-width: 300px;
+}
+
 .topbar {
   background: rgba(255, 255, 255, 0.8);
 }
