@@ -5,6 +5,8 @@
 
 html,
 body {
+  color: black;
+  font-weight: 600;
   overflow-x: hidden;
 }
 
