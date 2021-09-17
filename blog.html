@@ -1,475 +1,370 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>juanedflores blog</title>
 
-    <link rel="stylesheet" href="./css/uikit.min.css" />
-    <link rel="stylesheet" href="./css/blog_style.css" />
-    <script src="./js/uikit.min.js"></script>
-    <script src="./js/uikit-icons.min.js"></script>
-    <script charset="utf-8">
-      document.addEventListener("DOMContentLoaded", function (event) {
-        hash = document.location.hash;
-        console.log("Hash: " + hash);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>juanedflores blog</title>
 
-        if (hash == "") {
-          var filter = document.querySelector(".js-filter");
-          var filterBar = document.querySelector("#filter-bar");
-          var activeFilter = document.querySelector(".featured");
-          UIkit.filter(filterBar, {
-            target: filter,
-            selActive: activeFilter,
-          });
-        }
-      });
-    </script>
+  <link rel="stylesheet" href="./css/uikit.min.css" />
+  <link rel="stylesheet" href="./css/blog_style.css" />
+  <script src="./js/uikit.min.js"></script>
+  <script src="./js/uikit-icons.min.js"></script>
+  <script charset="utf-8">
+    document.addEventListener("DOMContentLoaded", function (event) {
+      hash = document.location.hash;
+      console.log("Hash: " + hash);
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="shortcut icon"
-      href="./resources/favicon.ico"
-      type="image/x-icon"
-    />
-
-    <style type="text/css" media="screen">
-      html {
-        background-color: #262626;
+      if (hash == "") {
+        var filter = document.querySelector(".js-filter");
+        var filterBar = document.querySelector("#filter-bar");
+        var activeFilter = document.querySelector(".featured");
+        UIkit.filter(filterBar, {
+          target: filter,
+          selActive: activeFilter,
+        });
       }
-    </style>
-  </head>
-  <body class="uk-margin-large-bottom">
-    <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
-      <!-- NAV AND HEADING -->
-      <div
-        class="uk-background-cover uk-background-blend-multiply uk-flex"
-        style="
+    });
+  </script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon" />
+
+  <style type="text/css" media="screen">
+    html {
+      background-color: #262626;
+    }
+  </style>
+</head>
+
+<body class="uk-margin-large-bottom">
+  <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
+    <!-- NAV AND HEADING -->
+    <div class="uk-background-cover uk-background-blend-multiply uk-flex" style="
           background-image: url(resources/textured_black_sharpened.png);
           height: 50px;
-        "
-        uk-sticky
-      >
-        <button
-          class="uk-button uk-button-default"
-          type="button"
-          style="border: none;"
-          uk-toggle="target: #blog-filter"
-        >
-          <span uk-icon="icon: menu" style="color: white;"></span>
-        </button>
+        " uk-sticky>
+      <button class="uk-button uk-button-default" type="button" style="border: none;" uk-toggle="target: #blog-filter">
+        <span uk-icon="icon: menu" style="color: white;"></span>
+      </button>
 
-        <!-- HEADING -->
-        <h2
-          class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
-          style="font-family: 'Cormorant', serif; color: white; left: 60px;"
-        >
-          <a class="uk-text" style="color: white;" href="./blog.html"
-            >juanedflores</a
-          >&nbsp;&nbsp;
-          <span style="font-family: Rozha One, serif; font-size: 100%;"
-            >[ BLOG ]</span
-          >
-        </h2>
-      </div>
-
-      <div
-        class="uk-container"
-        uk-filter="target: .js-filter; selActive: .featured"
-      >
-        <div
-          id="blog-filter"
-          class="uk-position-fixed"
-          style="top: 50px;"
-          uk-offcanvas="bg-close: false; mode: slide;"
-        >
-          <div class="uk-offcanvas-bar">
-            <ul uk-accordion>
-              <li>
-                <a class="uk-accordion-title" href="#">Filter</a>
-                <div class="uk-accordion-content">
-                  <ul
-                    id="filter-bar"
-                    class="uk-subnav uk-subnav-pill uk-flex uk-flex-column"
-                  >
-                    <li uk-filter-control>
-                      <a href="#">
-                        <span
-                          class="uk-label"
-                          style="background-color: #ffffff;"
-                          >All</span
-                        >
-                      </a>
-                    </li>
-                    <li class="featured" uk-filter-control=".tag-featured">
-                      <a href="#">
-                        <span
-                          class="uk-label"
-                          style="background-color: #fff202;"
-                          ><span uk-icon="icon: star"></span>
-                        </span>
-                      </a>
-                    </li>
-                    <hr />
-                    <!-- <!-1- START TAGS -1-> -->
-                    <!-- <li uk-filter-control=".tag-creative_coding"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #1e87f0; color: white" -->
-                    <!--       >creative coding</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-game_design"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #ffa500; color: white" -->
-                    <!--       >game design</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <li uk-filter-control=".tag-productivity">
-                      <a href="#">
-                        <span
-                          class="uk-label"
-                          style="background-color: #dbd276; color: white;"
-                          >productivity</span
-                        >
-                      </a>
-                    </li>
-
-                    <!-- <li uk-filter-control=".tag-3d"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #527a3d; color: white" -->
-                    <!--       >3d</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-processing"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #212add; color: white" -->
-                    <!--       >processing</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-data_visualization"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #d8b1d6; color: white" -->
-                    <!--       >data visualization</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-electronics"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #2fb793; color: white" -->
-                    <!--       >electronics</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-sensors"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #aa75c6; color: white" -->
-                    <!--       >sensors</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-GLSL"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #a7f203; color: white" -->
-                    <!--       >GLSL</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-C++"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #44971f; color: white" -->
-                    <!--       >C++</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-Pixels"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #6f7449; color: white" -->
-                    <!--       >Pixels</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-Pixel_Art"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #df8e5f; color: white" -->
-                    <!--       >Pixel Art</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <!-- <li uk-filter-control=".tag-blogging"> -->
-                    <!--   <a href="#"> -->
-                    <!--     <span -->
-                    <!--       class="uk-label" -->
-                    <!--       style="background-color: #6a7b1b; color: white" -->
-                    <!--       >blogging</span -->
-                    <!--     > -->
-                    <!--   </a> -->
-                    <!-- </li> -->
-
-                    <li uk-filter-control=".tag-Photography">
-                      <a href="#">
-                        <span
-                          class="uk-label"
-                          style="background-color: #375790; color: white;"
-                          >Photography</span
-                        >
-                      </a>
-                    </li>
-
-                    <!-- END TAGS -->
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <a class="uk-accordion-title" href="#">About This Blog</a>
-                <div class="uk-accordion-content">
-                  <p>
-                    I created this blog in 2021 to keep track of the step by
-                    step processes of things I learned and projects I made. It
-                    has a focus in Art & Technology. While it started as a
-                    reference for my future self, I try to write in a way that
-                    may be accessible for someone to follow along and who is
-                    interested in the same topics.
-                  </p>
-                  <p>
-                    A more detailed explanation of the functionality of this
-                    blog is documented in the
-                    <a
-                      href="./Blog/More_About_This_Blog/More_About_This_Blog.html"
-                      >'More About This Blog'</a
-                    >
-                    post.
-                  </p>
-                  <p>
-                    <script
-                      type="text/javascript"
-                      src="https://ko-fi.com/widgets/widget_2.js"
-                    ></script>
-                    <script type="text/javascript">
-                      kofiwidget2.init(
-                        "Support Me on Ko-fi",
-                        "#29abe0",
-                        "B0B83HU7T"
-                      );
-                      kofiwidget2.draw();
-                    </script>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <a class="uk-accordion-title" href="#">Links</a>
-                <div class="uk-accordion-content">
-                  <ul>
-                    <li>
-                      <a href="./index.html">Artist Website</a>
-                    </li>
-                    <li>
-                      <a href="https://phagesofficial.com">PHAGES</a>
-                    </li>
-                    <li>
-                      <a href="https://www.blackcinderblock.com/"
-                        >Black Cinder Block Store</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://juanedflores.itch.io/">itch.io</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- BLOG ENTRIES -->
-        <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
-          <!-- Generative Music with Pico-8 -->
-          <li class="tag-Generative_Music tag-Game_Design tag-featured">
-            <a
-              href="https://juanedflores.com/Blog/Generative_Music_with_Pico-8/Generative_Music_with_Pico-8.html#disqus_thread"
-              >Link</a
-            ><a
-              href="./Blog/Generative_Music_with_Pico-8/Generative_Music_with_Pico-8.html"
-            >
-              <div
-                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-                style="border: 1px solid #d78700; border-radius: 5px;"
-                uk-grid
-              >
-                <div>
-                    <!-- style="background-image: url(../resources/square.png);" -->
-                  <div
-                    class="uk-card-body uk-background-cover"
-                    style="background: #121212"
-                  >
-                    <h3 class="uk-card-title">
-                      Generative Music with Pico-8
-                      <span class="uk-text-warning">(WIP)</span>
-                    </h3>
-                    <span>last modified: 2021-05-16 </span>
-                    <p style="color: white;">
-                      Using the fantasy console to make a gallery of experiments
-                      of generative music.
-                    </p>
-                    <span class="uk-label" style="background-color: #7bda3a;"
-                      >Generative Music</span
-                    >
-                    <span class="uk-label" style="background-color: #ffa500;"
-                      >Game Design</span
-                    >
-                  </div>
-                </div>
-                <div class="uk-card-media-left uk-cover-container">
-                  <img
-                    src="./Blog/Generative_Music_with_Pico-8/cover/cover.png"
-                    alt=""
-                    uk-cover
-                  /><canvas width="600" height="400"></canvas>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <!-- More About This Blog -->
-          <li class="tag-productivity tag-featured">
-            <a
-              href="https://juanedflores.com/Blog/More_About_This_Blog/More_About_This_Blog.html#disqus_thread"
-              >Link</a
-            >
-            <a href="./Blog/More_About_This_Blog/More_About_This_Blog.html">
-              <div
-                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-                style="border: 1px solid #d78700; border-radius: 3px;"
-                uk-grid
-              >
-                <div
-                  class="uk-background-cover"
-                  style="background: #121212"
-                  uk-img
-                >
-                  <div class="uk-card-body">
-                    <h3 class="uk-card-title">
-                      About This Blog <span class="uk-text-warning">(WIP)</span>
-                    </h3>
-                    <span>last modified: 2021-05-13 </span>
-                    <p style="color: white;">
-                      I detail the features of this blog, the intentions, and
-                      the code that makes it work.
-                    </p>
-                    <span class="uk-label" style="background-color: #dbd276;"
-                      >Productivity</span
-                    >
-                  </div>
-                </div>
-                <div class="uk-card-media-left uk-cover-container">
-                  <img
-                    src="./Blog/More_About_This_Blog/cover/cover.png"
-                    alt=""
-                    uk-cover
-                  /><canvas width="600" height="400"></canvas>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <!-- Game Boy Camera -->
-          <li class="tag-Photography tag-featured">
-            <a
-              href="https://juanedflores.com/Blog/Game_Boy_Camera/Game_Boy_Camera.html#disqus_thread"
-              >Link</a
-            ><a href="./Blog/Game_Boy_Camera/Game_Boy_Camera.html">
-              <div
-                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
-                style="border: 1px solid #d78700; border-radius: 5px;"
-                uk-grid
-              >
-                <div
-                  style="background: #121212"
-                >
-                  <div class="uk-card-body">
-                    <h3 class="uk-card-title">
-                      Game Boy Camera <span class="uk-text-warning">(WIP)</span>
-                    </h3>
-                    <span>last modified: 2021-05-10 </span>
-                    <p style="color: white;">
-                      4-color palette 128x112 pixel photos.
-                    </p>
-                    <span class="uk-label" style="background-color: #375790;"
-                      >Photography</span
-                    >
-                  </div>
-                </div>
-                <div class="uk-card-media-left uk-cover-container">
-                  <img
-                    src="./Blog/Game_Boy_Camera/cover/cover.png"
-                    alt=""
-                    uk-cover
-                  /><canvas width="600" height="400"></canvas>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <!-- BLOG ENTRIES END -->
-        </ul>
-        <script
-          id="dsq-count-scr"
-          src="//juanedflores-blog.disqus.com/count.js"
-          async
-        ></script>
-      </div>
+      <!-- HEADING -->
+      <h2
+        class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+        style="font-family: 'Cormorant', serif; color: white; left: 60px;">
+        <a class="uk-text" style="color: white;" href="./blog.html">juanedflores</a>&nbsp;&nbsp;
+        <span style="font-family: Rozha One, serif; font-size: 100%;">[ BLOG ]</span>
+      </h2>
     </div>
-  </body>
+
+    <div class="uk-container" uk-filter="target: .js-filter; selActive: .featured">
+      <div id="blog-filter" class="uk-position-fixed" style="top: 50px;" uk-offcanvas="bg-close: false; mode: slide;">
+        <div class="uk-offcanvas-bar">
+          <ul uk-accordion>
+            <li>
+              <a class="uk-accordion-title" href="#">Filter</a>
+              <div class="uk-accordion-content">
+                <ul id="filter-bar" class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
+                  <li uk-filter-control>
+                    <a href="#">
+                      <span class="uk-label" style="background-color: #ffffff;">All</span>
+                    </a>
+                  </li>
+                  <li class="featured" uk-filter-control=".tag-featured">
+                    <a href="#">
+                      <span class="uk-label" style="background-color: #fff202;"><span uk-icon="icon: star"></span>
+                      </span>
+                    </a>
+                  </li>
+                  <hr />
+                  <!-- <!-1- START TAGS -1-> -->
+                  <!-- <li uk-filter-control=".tag-creative_coding"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #1e87f0; color: white" -->
+                  <!--       >creative coding</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-game_design"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #ffa500; color: white" -->
+                  <!--       >game design</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <li uk-filter-control=".tag-productivity">
+                    <a href="#">
+                      <span class="uk-label" style="background-color: #dbd276; color: white;">productivity</span>
+                    </a>
+                  </li>
+
+                  <!-- <li uk-filter-control=".tag-3d"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #527a3d; color: white" -->
+                  <!--       >3d</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-processing"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #212add; color: white" -->
+                  <!--       >processing</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-data_visualization"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #d8b1d6; color: white" -->
+                  <!--       >data visualization</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-electronics"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #2fb793; color: white" -->
+                  <!--       >electronics</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-sensors"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #aa75c6; color: white" -->
+                  <!--       >sensors</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-GLSL"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #a7f203; color: white" -->
+                  <!--       >GLSL</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-C++"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #44971f; color: white" -->
+                  <!--       >C++</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-Pixels"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #6f7449; color: white" -->
+                  <!--       >Pixels</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-Pixel_Art"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #df8e5f; color: white" -->
+                  <!--       >Pixel Art</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <!-- <li uk-filter-control=".tag-blogging"> -->
+                  <!--   <a href="#"> -->
+                  <!--     <span -->
+                  <!--       class="uk-label" -->
+                  <!--       style="background-color: #6a7b1b; color: white" -->
+                  <!--       >blogging</span -->
+                  <!--     > -->
+                  <!--   </a> -->
+                  <!-- </li> -->
+
+                  <li uk-filter-control=".tag-Photography">
+                    <a href="#">
+                      <span class="uk-label" style="background-color: #375790; color: white;">Photography</span>
+                    </a>
+                  </li>
+
+                  <!-- END TAGS -->
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="uk-accordion-title" href="#">About This Blog</a>
+              <div class="uk-accordion-content">
+                <p>
+                  I created this blog in 2021 to keep track of the step by
+                  step processes of things I learned and projects I made. It
+                  has a focus in Art & Technology. While it started as a
+                  reference for my future self, I try to write in a way that
+                  may be accessible for someone to follow along and who is
+                  interested in the same topics.
+                </p>
+                <p>
+                  A more detailed explanation of the functionality of this
+                  blog is documented in the
+                  <a href="./Blog/More_About_This_Blog/More_About_This_Blog.html">'More About This Blog'</a>
+                  post.
+                </p>
+                <p>
+                  <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script>
+                  <script type="text/javascript">
+                    kofiwidget2.init(
+                      "Support Me on Ko-fi",
+                      "#29abe0",
+                      "B0B83HU7T"
+                    );
+                    kofiwidget2.draw();
+                  </script>
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="uk-accordion-title" href="#">Links</a>
+              <div class="uk-accordion-content">
+                <ul>
+                  <li>
+                    <a href="./index.html">Artist Website</a>
+                  </li>
+                  <li>
+                    <a href="https://phagesofficial.com">PHAGES</a>
+                  </li>
+                  <li>
+                    <a href="https://www.blackcinderblock.com/">Black Cinder Block Store</a>
+                  </li>
+                  <li>
+                    <a href="https://juanedflores.itch.io/">itch.io</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- BLOG ENTRIES -->
+      <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
+        <!-- Generative Music with Pico-8 -->
+        <li class="tag-Generative_Music tag-Game_Design tag-featured">
+          <a
+            href="https://juanedflores.com/Blog/Generative_Music_with_Pico-8/Generative_Music_with_Pico-8.html#disqus_thread">Link</a><a
+            href="./Blog/Generative_Music_with_Pico-8/Generative_Music_with_Pico-8.html">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+              style="border: 1px solid #d78700; border-radius: 5px;" uk-grid>
+              <div>
+                <!-- style="background-image: url(../resources/square.png);" -->
+                <div class="uk-card-body uk-background-cover" style="background: #121212">
+                  <h3 class="uk-card-title">
+                    Generative Music with Pico-8
+                    <span class="uk-text-warning">(WIP)</span>
+                  </h3>
+                  <span>last modified: 2021-05-16 </span>
+                  <p style="color: white;">
+                    Using the fantasy console to make a gallery of experiments
+                    of generative music.
+                  </p>
+                  <span class="uk-label" style="background-color: #7bda3a;">Generative Music</span>
+                  <span class="uk-label" style="background-color: #ffa500;">Game Design</span>
+                </div>
+              </div>
+              <div class="uk-card-media-left uk-cover-container">
+                <img src="./Blog/Generative_Music_with_Pico-8/cover/cover.png" alt="" uk-cover /><canvas width="600"
+                  height="400"></canvas>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- More About This Blog -->
+        <li class="tag-productivity tag-featured">
+          <a href="https://juanedflores.com/Blog/More_About_This_Blog/More_About_This_Blog.html#disqus_thread">Link</a>
+          <a href="./Blog/More_About_This_Blog/More_About_This_Blog.html">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+              style="border: 1px solid #d78700; border-radius: 3px;" uk-grid>
+              <div class="uk-background-cover" style="background: #121212" uk-img>
+                <div class="uk-card-body">
+                  <h3 class="uk-card-title">
+                    About This Blog <span class="uk-text-warning">(WIP)</span>
+                  </h3>
+                  <span>last modified: 2021-05-13 </span>
+                  <p style="color: white;">
+                    I detail the features of this blog, the intentions, and
+                    the code that makes it work.
+                  </p>
+                  <span class="uk-label" style="background-color: #dbd276;">Productivity</span>
+                </div>
+              </div>
+              <div class="uk-card-media-left uk-cover-container">
+                <img src="./Blog/More_About_This_Blog/cover/cover.png" alt="" uk-cover /><canvas width="600"
+                  height="400"></canvas>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- Game Boy Camera -->
+        <li class="tag-Photography tag-featured">
+          <a href="https://juanedflores.com/Blog/Game_Boy_Camera/Game_Boy_Camera.html#disqus_thread">Link</a><a
+            href="./Blog/Game_Boy_Camera/Game_Boy_Camera.html">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+              style="border: 1px solid #d78700; border-radius: 5px;" uk-grid>
+              <div style="background: #121212">
+                <div class="uk-card-body">
+                  <h3 class="uk-card-title">
+                    Game Boy Camera <span class="uk-text-warning">(WIP)</span>
+                  </h3>
+                  <span>last modified: 2021-05-10 </span>
+                  <p style="color: white;">
+                    4-color palette 128x112 pixel photos.
+                  </p>
+                  <span class="uk-label" style="background-color: #375790;">Photography</span>
+                </div>
+              </div>
+              <div class="uk-card-media-left uk-cover-container">
+                <img src="./Blog/Game_Boy_Camera/cover/cover.png" alt="" uk-cover /><canvas width="600"
+                  height="400"></canvas>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <!-- BLOG ENTRIES END -->
+      </ul>
+      <script id="dsq-count-scr" src="//juanedflores-blog.disqus.com/count.js" async></script>
+    </div>
+  </div>
+</body>
+
 </html>
