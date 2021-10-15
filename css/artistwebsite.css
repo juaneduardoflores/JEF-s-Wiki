@@ -3,6 +3,26 @@
   src: url("../../fonts/EdelSansLight.ttf");
 }
 
+@font-face {
+  font-family: "EdelSansRegular";
+  src: url("../../fonts/edelsans_regular.otf");
+}
+
+@font-face {
+  font-family: "EdelSansUltraLight";
+  src: url("../../fonts/edelsans_ultralight.otf");
+}
+
+@font-face {
+  font-family: "MenloRegular";
+  src: url("../../fonts/Menlo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Altone";
+  src: url("../../fonts/Altone-Regular.ttf");
+}
+
 html,
 body {
   color: black;
@@ -11,7 +31,8 @@ body {
 }
 
 .cardtitle {
-  font-family: "EdelSansLight", sans-serif;
+  font-family: "MenloRegular", sans-serif;
+  text-transform: uppercase;
   font-size: 18px;
   color: black;
 }
@@ -50,9 +71,10 @@ hr {
 
 /*** For Projects Pages ***/
 h2 {
-  font-family: "Prompt";
+  font-family: "MenloRegular";
+  text-transform: uppercase;
 }
 
 p {
-  font-family: "EdelSansLight";
+  font-family: "MenloRegular";
 }
