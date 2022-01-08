@@ -78,6 +78,7 @@ hr {
 
 pre {
   border: solid black;
+  background-color: #181914;
 }
 
 pre code.hljs {
