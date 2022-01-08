@@ -1,17 +1,5 @@
 {
-  "creative coding": "#1E87F0",
-  "game design": "#FFA500",
-  "productivity": "#dbd276",
-  "3d": "#527a3d",
-  "processing": "#212add",
-  "data visualization": "#d8b1d6",
-  "electronics": "#2fb793",
-  "sensors": "#aa75c6",
-  "GLSL": "#a7f203",
-  "C++": "#44971f",
-  "Pixels": "#6f7449",
-  "Pixel Art": "#df8e5f",
-  "blogging": "#6a7b1b",
-  "Photography": "#375790",
-  "Generative Music": "#7bda3a"
+  "shaders": "#9bd716",
+  "graphics": "#d0f24e",
+  "": "#4d2a79"
 }

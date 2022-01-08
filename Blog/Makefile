@@ -16,7 +16,7 @@ all: $(HTML)
 %.html: %.md
 	@echo $@
 	pandoc $< -o $@ $(PANDOCFLAGSHTML)
-	python newBlogEntry.py $(@D)
+	python3 newBlogEntry.py $(@D)
 
 clean:
 	rm $(HTML)

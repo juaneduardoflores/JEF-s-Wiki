@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 # A script that I execute if I ever want to create a new blog entry.
 # Steps:
 #   1.) Asks me for the title of entry:
@@ -37,10 +40,8 @@ def main():
             "Enter a short description for {}: ".format(blogEntryTitle))
         blogEntryTags = input("Enter any tags followed by comma: ")
         tags = blogEntryTags.split(",")
-        # print("tags: " + str(tags))
         os.mkdir(blogEntryTitle.replace(" ", "_"))
         os.mkdir(blogEntryTitle.replace(" ", "_") + "/cover")
-        # print("created directory called " + blogEntryTitle)
         f = open("{}/{}.md".format(blogEntryTitle.replace(" ", "_"),
                                    blogEntryTitle.replace(" ", "_")), "w+")
 
@@ -132,8 +133,6 @@ def updateEntry():
     sep = '<!-- BLOG ENTRIES -->'
     header = htmlFile.split(sep, 1)[
         0] + sep + "<ul class='js-filter uk-list uk-width-2-3@s uk-align-center'>"
-    # header = htmlFile.split(sep, 1)[
-    #     0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove'>"
 
     stripped = ""
     updated_entry = ""
@@ -144,13 +143,11 @@ def updateEntry():
             updated_entry = entry + "\n"
             print("found entry...")
             continue
-        # print(entry)
         stripped += entry + "\n"
 
     stripped += "\n\n<!-- BLOG ENTRIES END --></ul><script id='dsq-count-scr' src='//juanedflores-blog.disqus.com/count.js' async></script>"
     htmlcode = header + updated_entry + stripped
 
-    # print(stripped)
     f = open("../blog.html", "w")
     f.write(htmlcode)
     f.close()
@@ -169,40 +166,10 @@ def addEntrytoHTML():
     entries = []
 
     template = "\n\n<!-- {} -->\n".format(blogEntryTitle)
-    # if (len(entries) % 2 == 0):
-    # tagfilter = ""
-    # for tag in tags:
-    #     tag = tag.strip()
-    #     tag = tag.replace(" ", "_")
-    #     tagfilter += "tag-" + tag + " "
-
-    # print("adding tags: " + tagfilter)
-    # template += "<li class='{}'>".format(tagfilter)
-
-    # template += "<a href='./Blog/{}/{}.html'>\n".format(
-    #     blogEntryTitle, blogEntryTitle)
-
-    # template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid lightgray; border-radius: 5px' uk-grid >"
-    # template += "<div class='uk-card-media-left uk-cover-container'>"
-    # template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
-    #     blogEntryTitle)
-    # template += "<canvas width='600' height='400'></canvas>"
-    # template += "</div>"
-    # template += "<div> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p> ".format(
-    #     blogEntryTitle, last_modified, blogEntryDescription)
-
-    # # add tags
-    # template = addTags(template)
-
-    # template += "</div> </div>"
-    # template += "</div> </a></li>\n\n"
-
-    # else:
     tagfilter = ""
     for tag in tags:
         tag = tag.strip()
         tag = tag.replace(" ", "_")
-        # tagstr = tag.replace(" ", "_")
         tagfilter += "tag-" + tag + " "
 
     print("adding tags: " + tagfilter)
@@ -211,14 +178,14 @@ def addEntrytoHTML():
         blogEntryTitle.replace(" ", "_"), blogEntryTitle.replace(" ", "_"))
     template += "<a href='./Blog/{}/{}.html'>\n".format(
         blogEntryTitle.replace(" ", "_"), blogEntryTitle.replace(" ", "_"))
-    template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' style='border: 1px solid #d78700; border-radius: 5px' uk-grid >"
-    template += "<div> <div class='uk-card-body uk-background-cover' style='background-image: url(../resources/square.png);'> <h3 class='uk-card-title' style='color: #ffffe0'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p style='color: white'> {} </p>".format(
+    template += "<div class='uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin' uk-grid>"
+    template += "<div class='uk-background-cover' uk-img> <div class='uk-card-body'> <h3 class='uk-card-title'> {} <span class='uk-text-warning'>(WIP)</span> </h3> <span>last modified: {} </span> <p> {} </p>".format(
         blogEntryTitle, last_modified, blogEntryDescription)
 
     #  add tags
     template = addTags(template)
 
-    template += "</div> </div>"
+    template += "</div></div>"
     template += "<div class='uk-card-media-left uk-cover-container'>"
     template += "<img src='./Blog/{}/cover/cover.png' alt='' uk-cover />".format(
         blogEntryTitle.replace(" ", "_"))
@@ -233,30 +200,23 @@ def addEntrytoHTML():
     for l in lineiterator:
         if (found_entry):
             if (re.match('\w*', l)):
-                # print("appending!")
-                # print(l)
                 cur_entry += str(l)
 
             if (l == ""):
-                # print("ADDING TO LIST..")
                 cur_entry += "\n"
                 entries.append(cur_entry)
                 cur_entry = ""
                 found_entry = False
 
         if (re.search('<!--', l)):
-            # print(l)
             cur_entry += str(l)
             found_entry = True
 
     sep = '<!-- BLOG ENTRIES -->'
-    # stripped = htmlFile.split(sep, 1)[
-    #         0] + sep + "<div class='uk-container uk-margin-remove uk-padding-remove' uk-filter=target: .js-filter>"
     stripped = htmlFile.split(sep, 1)[
         0] + sep + "<ul class='js-filter uk-list uk-width-2-3@s uk-align-center'>"
 
     for entry in entries:
-        # print(entry)
         stripped += entry + "\n"
 
     stripped += "<!-- BLOG ENTRIES END -->"
@@ -288,9 +248,6 @@ def addTags(template):
 
             keyfound = False
             for key in objs:
-                # print("key: " + key + " value: " + str(objs[key]))
-                # print("keyUpper: " + key.upper())
-                # print("tagUpper: " + tag.upper())
                 if (key.upper() == tag.upper()):
                     keyfound = True
                     tag_color = objs[key]
