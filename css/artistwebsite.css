@@ -1,26 +1,26 @@
 @font-face {
-  font-family: "EdelSansLight";
-  src: url("../../fonts/EdelSansLight.ttf");
+  font-family: 'EdelSansLight';
+  src: url('../../fonts/EdelSansLight.ttf');
 }
 
 @font-face {
-  font-family: "EdelSansRegular";
-  src: url("../../fonts/edelsans_regular.otf");
+  font-family: 'EdelSansRegular';
+  src: url('../../fonts/edelsans_regular.otf');
 }
 
 @font-face {
-  font-family: "EdelSansUltraLight";
-  src: url("../../fonts/edelsans_ultralight.otf");
+  font-family: 'EdelSansUltraLight';
+  src: url('../../fonts/edelsans_ultralight.otf');
 }
 
 @font-face {
-  font-family: "MenloRegular";
-  src: url("../../fonts/Menlo-Regular.ttf");
+  font-family: 'MenloRegular';
+  src: url('../../fonts/Menlo-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Altone";
-  src: url("../../fonts/Altone-Regular.ttf");
+  font-family: 'Altone';
+  src: url('../../fonts/Altone-Regular.ttf');
 }
 
 html,
@@ -31,7 +31,7 @@ body {
 }
 
 .cardtitle {
-  font-family: "MenloRegular", sans-serif;
+  font-family: 'MenloRegular', sans-serif;
   text-transform: uppercase;
   font-size: 18px;
   color: black;
@@ -50,7 +50,7 @@ body {
 }
 
 .title {
-  font-family: "Frank Ruhl Libre", serif;
+  font-family: 'Frank Ruhl Libre', serif;
   padding: 10px;
 }
 
@@ -71,11 +71,11 @@ hr {
 
 /*** For Projects Pages ***/
 h2 {
-  font-family: "MenloRegular";
+  font-family: 'MenloRegular';
   text-transform: uppercase;
 }
 
-p {
-  font-family: "MenloRegular";
-  text-align: center;
-}
+/* p { */
+/*   font-family: "MenloRegular"; */
+/*   text-align: center; */
+/* } */
