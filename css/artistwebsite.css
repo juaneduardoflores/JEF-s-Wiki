@@ -75,7 +75,7 @@ h2 {
   text-transform: uppercase;
 }
 
-/* p { */
-/*   font-family: "MenloRegular"; */
-/*   text-align: center; */
-/* } */
+p {
+  font-family: 'MenloRegular';
+  /*   text-align: center; */
+}
