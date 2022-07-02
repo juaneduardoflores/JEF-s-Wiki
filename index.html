@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content="pandoc" />
 
     <title>Juan Eduardo Flores</title>
 
@@ -24,36 +23,40 @@
 
   <body>
     <div class="uk-container uk-margin-large-bottom">
-      <div
-        class="uk-container uk-background-default uk-transition-toggle topbar"
-        uk-sticky="show-on-up: true; animation: uk-animation-slide-top">
-        <div class="uk-container uk-width-1-2@s uk-position-absolute"></div>
-        <div uk-grid>
-          <div class="uk-align-center">
-            <!-- HEADING -->
-            <h2 class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom">
-              <a class="uk-link-heading" href="./index.html">
-                <span class="title uk-text-background-primary uk-text-bold">Juan Eduardo Flores</span>
-              </a>
-            </h2>
+      <div class="uk-container uk-width-1-2@l uk-width-1-2@m">
+        <!-- style="background-image: linear-gradient(rgba(255, 255, 255, 255), rgba(215, 210, 203, 255), rgba(140, 140, 133, 255))" -->
+        <div
+          class="uk-container uk-background-default uk-transition-toggle topbar"
+          uk-sticky="show-on-up: true; animation: uk-animation-slide-top">
+          <!-- uk-sticky="show-on-up: true; animation: uk-animation-slide-top"> -->
+          <!-- <div class="uk-container uk-width-1-2@s uk-position-absolute" style="background-color: red"></div> -->
+          <div uk-grid>
+            <div class="uk-align-center">
+              <!-- HEADING -->
+              <h2 class="uk-text-large uk-text-uppercase uk-text-center uk-padding-small uk-margin-remove-bottom">
+                <a class="uk-link-heading" href="./index.html">
+                  <span class="title uk-text-background-primary uk-text-bold">Juan Eduardo Flores</span>
+                </a>
+              </h2>
 
-            <!-- MOBILE MENU BUTTON -->
-            <button class="uk-button uk-button-default uk-width-expand" type="button">
-              <span uk-icon="icon: menu"></span>
-            </button>
-            <div class="uk-text-center" uk-dropdown="pos: bottom-justify; delay-hide: 50">
-              <ul class="uk-nav uk-dropdown-nav">
-                <li><a href="./projects.html">Work</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./cv.html">CV</a></li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-              </ul>
+              <!-- MOBILE MENU BUTTON -->
+              <button class="uk-button uk-button-default uk-width-expand" type="button">
+                <span uk-icon="icon: menu"></span>
+              </button>
+              <div class="uk-text-center" uk-dropdown="pos: bottom-justify; delay-hide: 50">
+                <ul class="uk-nav uk-dropdown-nav">
+                  <li><a href="./projects.html">Work</a></li>
+                  <li><a href="./about.html">About</a></li>
+                  <li><a href="./cv.html">CV</a></li>
+                  <li><a href="./blog.html">Blog</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="uk-container uk-width-1-2@s">
-          <hr />
+          <div class="uk-container">
+            <hr />
+          </div>
         </div>
       </div>
 
@@ -97,9 +100,28 @@
           </div>
         </div>
         <ul class="work js-filter uk-child-width-1-2@s uk-text-center uk-flex-center" uk-grid="masonry: true">
+          <!-- <li class="video painting installation all"> -->
+          <!--   <a href="./work/residue.html"> -->
+          <!--     <div -->
+          <!--       class="uk-card-small uk-card-default uk-card-body uk-link uk-box-shadow-xlarge uk-box-shadow-hover-small uk-transition-toggle"> -->
+          <!--       <img src="./work/portfolio/residue/residue_004.jpg" alt="residue" uk-image /> -->
+          <!--       <div class="uk-transition-fade"> -->
+          <!--         <span class="uk-label uk-label-success uk-position-center-left-out">Hello</span> -->
+          <!--         <div -->
+          <!--           class="uk-card-small uk-card-default uk-card-body uk-link uk-box-shadow-xlarge uk-box-shadow-hover-small uk-transition-toggle uk-position-center-left-out"> -->
+          <!--           <h5 class="cardtitle"> -->
+          <!--             <span class="uk-link-heading"></span> -->
+          <!--             Residue -->
+          <!--           </h5> -->
+          <!--           <span class="uk-text-muted">Test</span> -->
+          <!--         </div> -->
+          <!--       </div> -->
+          <!--     </div> -->
+          <!--   </a> -->
+          <!-- </li> -->
           <li class="video painting installation all">
             <a href="./work/residue.html">
-              <div class="uk-card-small uk-card-default uk-card-body uk-link uk-box-shadow-xlarge uk-box-shadow-hover-small">
+              <div class="uk-card-small uk-card-default uk-card-body uk-box-shadow-xlarge uk-box-shadow-hover-small">
                 <h5 class="cardtitle">
                   <span class="uk-link-heading"></span>
                   Residue
@@ -210,6 +232,7 @@
         </ul>
       </div>
       <div id="sketch"></div>
+      <!-- </div> -->
     </div>
   </body>
 </html>

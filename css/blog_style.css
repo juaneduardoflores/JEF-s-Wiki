@@ -5,36 +5,24 @@ pre {
 /* For Future Juan: 
 * I don't remember why I put this here */
 :target:before {
-  content: "";
+  content: '';
   display: block;
   height: 50px;
   margin: -50px 0 0;
 }
 
-/* Define the "system" font family */
-/* @font-face { */
-/*   font-family: "SegoeUI"; */
-/*   src: url("../../fonts/SegoeUI.ttf") format("truetype"); */
-/* } */
-/* @font-face { */
-/*   font-family: "SegoeUILight"; */
-/*   src: url("../../fonts/SegoeUILight.ttf") format("truetype"); */
-/* } */
-/* @font-face { */
-/*   font-family: "SegoeUIBold"; */
-/*   src: url("../../fonts/SegoeUIBold.ttf") format("truetype"); */
-/* } */
 @font-face {
-  font-family: "Inter-ExtraLight";
-  src: url("../../fonts/Inter-ExtraLight.ttf") format("truetype");
+  font-family: 'Inter-ExtraLight';
+  src: url('../../fonts/Inter-ExtraLight.ttf') format('truetype');
 }
 @font-face {
-  font-family: "Inter-Black";
-  src: url("../../fonts/Inter-Black.ttf") format("truetype");
+  font-family: 'Inter-Black';
+  src: url('../../fonts/Inter-Black.ttf') format('truetype');
 }
 
 html {
   background-color: #ffffff;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -44,24 +32,26 @@ body {
 p {
   font-size: 1.1em;
   color: black;
-  font-family: "Inter-ExtraLight", sans-serif;
+  font-family: 'Inter-ExtraLight', sans-serif;
 }
 
 ul li {
-  font-family: "SegoeUILight";
+  font-family: 'Inter-ExtraLight', sans-serif;
 }
 
 .title {
-  color: #000000;
-  font-size: 1.8em;
-  font-family: "Inter-Black";
+  color: #2e4045;
+  font-size: 2.8em;
+  font-family: 'Inter-ExtraLight';
 }
 
+h2,
 h3,
 h4,
 h5 {
-  color: #555555;
-  font-family: "Inter-Black";
+  color: #5e3c58;
+  font-family: 'Inter-ExtraLight';
+  font-weight: bold;
 }
 
 h5 {
@@ -73,7 +63,7 @@ h5 {
 }
 
 hr {
-  border: 1px solid #586e75;
+  border: 1px solid #bfb5b2;
 }
 
 pre {
@@ -88,4 +78,49 @@ pre code.hljs {
 code.hljs {
   display: inline;
   background-color: #181914;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#contentArea {
+  overflow-y: auto;
+}
+
+.uk-accordion-title {
+  background: #ccd3d5;
+  padding: 10px;
+}
+
+.uk-card-title {
+  font-family: 'Inter-ExtraLight';
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.entry {
+  cursor: pointer;
+  padding: 0;
+  margin: 1em;
+}
+
+#heading {
+  font-size: 1.7em;
+}
+
+/**
+ * For mobile devices
+ */
+@media screen and (max-width: 760px) {
+  .title {
+    font-size: 2em;
+  }
+
+  #heading {
+    font-size: 5.8vw;
+  }
 }
