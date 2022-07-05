@@ -172,7 +172,7 @@
       </div>
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-container uk-margin" style="overflow: scroll"><p>This entry is to document my effort in trying to create a blog without any popular content management systems (CMS) like Wordpress to have maximum flexibility in the design and layout of my website. My goal was to edit plain text files on my local computer and from the comfort of my own text editing tools. I will go over the workflow that I have developed to make writing blog entries as smooth and easy as possible, from <a target="_blank" href="https://www.markdownguide.org/">Markdown</a> to HTML to a published website.</p>
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><p>This entry is to document my effort in trying to create a blog without any popular content management systems (CMS) like Wordpress to have maximum flexibility in the design and layout of my website. My goal was to edit plain text files on my local computer and from the comfort of my own text editing tools. I will go over the workflow that I have developed to make writing blog entries as smooth and easy as possible, from <a target="_blank" href="https://www.markdownguide.org/">Markdown</a> to HTML to a published website.</p>
 <h2 id="pandoc">Pandoc</h2>
 <p>I used <a target="_blank" href="https://pandoc.org/">Pandoc</a> to compile Markdown files to HTML using one shell command. A simple command to do this conversion would be:</p>
 <pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
@@ -240,6 +240,15 @@ clean:
 </div>
 </li>
 </ul>
+<p>Here is a directory structure example:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> index.html</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Blog/</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├─── Makefile</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├─── blog_template.html</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├─── Example_topic/</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │       Example_topic.md</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   <span class="co">#       Example_topic.html (generated after running make)</span></span></code></pre></div>
 <p>The rest would be to design the website style. I use <a target="_blank" href="https://getuikit.com/">UIkit</a> as a front-end framework, <a target="_blank" href="https://highlightjs.org/">highlight.js</a> for code syntax highlighting, and <a target="_blank" href="https://disqus.com/">Disqus</a> for adding user comments. The site is hosted on <a target="_blank" href="https://pages.github.com/">Github Pages</a>.</p>
 <hr />
 <h2 id="inspiration">Inspiration</h2>
@@ -247,7 +256,7 @@ clean:
 <ul>
 <li><a href="https://timrodenbroeker.de/category/all/">https://timrodenbroeker.de/category/all/</a></li>
 </ul>
-<p>asodjfsld</p></div>
+<p>ld</p></div>
 
       <!-- <div class="uk-container uk-margin" style="overflow: scroll"> -->
 
@@ -271,14 +280,14 @@ clean:
       </div>
     </div>
 
-    <script>
-      UIkit.util.on('#js-scroll-trigger', 'beforescroll', function (e) {
-        e.preventDefault();
-        window.setTimeout(function () {
-          document.getElementById('disqus_thread').scrollIntoView();
-        }, 1000);
-      });
-    </script>
+    <!-- <script> -->
+    <!--   UIkit.util.on('#js-scroll-trigger', 'beforescroll', function (e) { -->
+    <!--     e.preventDefault(); -->
+    <!--     window.setTimeout(function () { -->
+    <!--       document.getElementById('disqus_thread').scrollIntoView(); -->
+    <!--     }, 1000); -->
+    <!--   }); -->
+    <!-- </script> -->
 
     <script>
       /**

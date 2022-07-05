@@ -96,6 +96,18 @@ Below is a simple html template. The `$body$` variable will be replaced by the c
 </li>
 </ul>
 
+Here is a directory structure example:
+```bash
+.
+├── index.html
+├── Blog/
+│   ├─── Makefile
+│   ├─── blog_template.html
+│   ├─── Example_topic/
+│   │       Example_topic.md
+│   #       Example_topic.html (generated after running make)
+```
+
 The rest would be to design the website style. I use <a target="_blank" href="https://getuikit.com/">UIkit</a> as a front-end framework, <a target="_blank" href="https://highlightjs.org/">highlight.js</a> for code syntax highlighting, and <a target="_blank" href="https://disqus.com/">Disqus</a> for adding user comments. The site is hosted on <a target="_blank" href="https://pages.github.com/">Github Pages</a>.
 
 ---
@@ -105,4 +117,4 @@ Here is a list of blogs that I have looked at and have been inspired by:
 
   - [https://timrodenbroeker.de/category/all/](https://timrodenbroeker.de/category/all/)
 
-asodjfsld
+ld

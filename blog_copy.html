@@ -8,99 +8,97 @@
     <link rel="stylesheet" href="./css/blog_style.css" />
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
-    <script charset="utf-8">
-      document.addEventListener("DOMContentLoaded", function (event) {
-        hash = document.location.hash;
-        console.log("Hash: " + hash);
 
-        if (hash == "") {
-          var filter = document.querySelector(".js-filter");
-          var filterBar = document.querySelector("#filter-bar");
-          var activeFilter = document.querySelector(".featured");
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', function (event) {
+        hash = document.location.hash;
+        console.log('Hash: ' + hash);
+
+        if (hash == '') {
+          var filter = document.querySelector('.js-filter');
+          var filterBar = document.querySelector('#filter-bar');
+          var activeFilter = document.querySelector('.featured');
           UIkit.filter(filterBar, {
             target: filter,
             selActive: activeFilter,
           });
         }
       });
+
+      $('div').click(function () {
+        window.location = $(this).find('a').attr('href');
+        return false;
+      });
     </script>
     <!-- FAVICON -->
-    <link
-      rel="shortcut icon"
-      href="./resources/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon" />
   </head>
 
-  <body class="uk-margin-large-bottom">
+  <body class="uk-margin-large-bottom" style="overflow: hidden">
+    <script src="./Blog/sketch.js"></script>
     <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
       <!-- NAV AND HEADING -->
       <div
         class="uk-background-cover uk-background-blend-multiply uk-flex"
-        style="
-          background-image: url(resources/textured_black_sharpened.png);
-          height: 50px;
-        "
-        uk-sticky
-      >
-        <button
-          class="uk-button uk-button-default"
-          type="button"
-          style="border: none"
-          uk-toggle="target: #blog-filter"
-        >
-          <span uk-icon="icon: menu" style="color: white"></span>
+        style="background-image: url(resources/textured_black_sharpened.png); height: 50px"
+        uk-sticky>
+        <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-filter">
+          <span uk-icon="icon: menu; ratio: 1.5;" style="color: white"></span>
         </button>
 
         <!-- HEADING -->
         <h2
+          id="heading"
           class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
-          style="font-family: 'Cormorant', serif; color: white; left: 60px"
-        >
-          <a class="uk-text" style="color: white" href="./blog.html"
-            >juanedflores</a
-          >&nbsp;&nbsp;
-          <span style="font-family: Rozha One, serif; font-size: 100%"
-            >[ BLOG ]</span
-          >
+          style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px">
+          <a class="uk-text" style="color: white; font-weight: normal; font-size: 1em" href="./blog.html">Art & Technology</a>
+          &nbsp;&nbsp;
+          <span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
         </h2>
       </div>
 
-      <div
-        class="uk-container"
-        uk-filter="target: .js-filter; selActive: .featured"
-      >
-        <div
-          id="blog-filter"
-          class="uk-position-fixed"
-          style="top: 50px"
-          uk-offcanvas="bg-close: false; mode: slide;"
-        >
+      <div class="uk-container" uk-filter="target: .js-filter; selActive: .featured">
+        <div id="blog-filter" class="uk-position-fixed" style="top: 50px" uk-offcanvas="bg-close: false; mode: slide;">
           <div class="uk-offcanvas-bar">
             <ul uk-accordion>
               <li>
                 <a class="uk-accordion-title" href="#">Filter</a>
                 <div class="uk-accordion-content">
-                  <ul
-                    id="filter-bar"
-                    class="uk-subnav uk-subnav-pill uk-flex uk-flex-column"
-                  >
+                  <ul id="filter-bar" class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
                     <li uk-filter-control>
                       <a href="#">
-                        <span class="uk-label" style="background-color: #ffffff"
-                          >All</span
-                        >
+                        <span class="uk-label" style="background-color: #ffffff">All</span>
                       </a>
                     </li>
                     <li class="featured" uk-filter-control=".tag-featured">
                       <a href="#">
-                        <span class="uk-label" style="background-color: #fff202"
-                          ><span uk-icon="icon: star"></span>
-                        </span>
+                        <span class="uk-label" style="background-color: #fff202"><span uk-icon="icon: star"></span></span>
                       </a>
                     </li>
                     <hr />
-                    <!-- <!-1- START TAGS -1-> -->
+                    <!-- START TAGS -->
+                    <li uk-filter-control=".tag-shaders">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #9bd716; color: white">shaders</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-graphics">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #d0f24e; color: white">graphics</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #4d2a79; color: white"></span>
+                      </a>
+                    </li>
+
                     <!-- END TAGS -->
                   </ul>
                 </div>
@@ -109,38 +107,25 @@
                 <a class="uk-accordion-title" href="#">About This Blog</a>
                 <div class="uk-accordion-content">
                   <p style="color: white">
-                    I created this blog in 2021 to keep track of my learning
-                    process in various topics. It has a focus in Art &amp;
-                    Technology. While it started as a reference for my future
-                    self, I try to write in a way that may be accessible for
-                    someone to follow along. I am interested in blogging as a
-                    "<a
+                    I created this blog in 2021 to keep track of my learning process in various topics. It has a focus in Art &amp;
+                    Technology. While it started as a reference for my future self, I try to write in a way that may be accessible for
+                    someone to follow along. I am interested in blogging as a "
+                    <a
                       href="https://www.technologyreview.com/2020/09/03/1007716/digital-gardens-let-you-cultivate-your-own-little-bit-of-the-internet/"
-                      style="color: yellow"
-                      >digital garden</a
-                    >".
+                      style="color: yellow">
+                      digital garden
+                    </a>
+                    ".
                   </p>
                   <p style="color: white">
-                    A more detailed explanation of the functionality of this
-                    blog is documented in the
-                    <a
-                      href="./Blog/More_About_This_Blog/More_About_This_Blog.html"
-                      >'More About This Blog'</a
-                    >
-                    post. Which is, like many entries in this blog, always a
-                    work in progress.
+                    A more detailed explanation of the functionality of this blog is documented in the
+                    <a href="./Blog/More_About_This_Blog/More_About_This_Blog.html">'More About This Blog'</a>
+                    post. Which is, like many entries in this blog, always a work in progress.
                   </p>
                   <p>
-                    <script
-                      type="text/javascript"
-                      src="https://ko-fi.com/widgets/widget_2.js"
-                    ></script>
+                    <script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script>
                     <script type="text/javascript">
-                      kofiwidget2.init(
-                        "Support Me on Ko-fi",
-                        "#29abe0",
-                        "B0B83HU7T"
-                      );
+                      kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'B0B83HU7T');
                       kofiwidget2.draw();
                     </script>
                   </p>
@@ -157,9 +142,7 @@
                       <a href="https://phagesofficial.com">PHAGES</a>
                     </li>
                     <li>
-                      <a href="https://www.blackcinderblock.com/"
-                        >Black Cinder Block Store</a
-                      >
+                      <a href="https://www.blackcinderblock.com/">Black Cinder Block Store</a>
                     </li>
                     <li>
                       <a href="https://juanedflores.itch.io/">itch.io</a>
@@ -173,49 +156,60 @@
         <!-- BLOG ENTRIES -->
         <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
           <!-- More About This Blog -->
-          <li class="tag-productivity tag-featured">
-            <a
-              href="https://juanedflores.com/Blog/More_About_This_Blog/More_About_This_Blog.html#disqus_thread"
-              >Link</a
-            >
-            <a href="./Blog/More_About_This_Blog/More_About_This_Blog.html">
+          <li class="tag-productivity tag-featured" style="padding: 0">
+            <div class="entry">
               <div
-                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-transition-toggle"
                 style="border: 1px solid #000000; border-radius: 3px"
-                uk-grid
-              >
+                onclick="location.href='./Blog/More_About_This_Blog/More_About_This_Blog.html'"
+                uk-grid>
+                <div class="uk-background-cover" uk-img>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Workflow for this Blog</h3>
+                    <span>last modified: 2022-06-20</span>
+                    <p style="color: black">I detail the features of this blog, the intentions, and the code that makes it work.</p>
+                    <span class="uk-label" style="background-color: #dbd276">Productivity</span>
+                    <br />
+                    <br />
+                    <a href="https://juanedflores.com/Blog/More_About_This_Blog/More_About_This_Blog.html#disqus_thread">Link</a>
+                  </div>
+                </div>
+                <div class="uk-card-media-left uk-cover-container uk-transition-scale-up uk-transition-opaque">
+                  <img src="./Blog/More_About_This_Blog/cover/cover.png" alt="" uk-cover />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Learning GLSL -->
+          <li class="tag-shaders tag-graphics">
+            <a href="https://juanedflores.com/Blog/Learning_GLSL/Learning_GLSL.html#disqus_thread">Link</a>
+            <a href="./Blog/Learning_GLSL/Learning_GLSL.html">
+              <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                 <div class="uk-background-cover" uk-img>
                   <div class="uk-card-body">
                     <h3 class="uk-card-title">
-                      About This Blog <span class="uk-text-warning">(WIP)</span>
+                      Learning GLSL
+                      <span class="uk-text-warning">(WIP)</span>
                     </h3>
-                    <span>last modified: 2021-05-13 </span>
-                    <p style="color: black">
-                      I detail the features of this blog, the intentions, and
-                      the code that makes it work.
-                    </p>
-                    <span class="uk-label" style="background-color: #dbd276"
-                      >Productivity</span
-                    >
+                    <span>last modified: 2022-06-18</span>
+                    <p>Learning how to code shaders.</p>
+                    <span class="uk-label" style="background-color: #9bd716">shaders</span>
+                    <span class="uk-label" style="background-color: #d0f24e">graphics</span>
                   </div>
                 </div>
                 <div class="uk-card-media-left uk-cover-container">
-                  <img
-                    src="./Blog/More_About_This_Blog/cover/cover.png"
-                    alt=""
-                    uk-cover
-                  /><canvas width="600" height="400"></canvas>
+                  <img src="./Blog/Learning_GLSL/cover/cover.png" alt="" uk-cover />
+                  <canvas width="600" height="400"></canvas>
                 </div>
               </div>
             </a>
           </li>
+
           <!-- BLOG ENTRIES END -->
         </ul>
-        <script
-          id="dsq-count-scr"
-          src="//juanedflores-blog.disqus.com/count.js"
-          async
-        ></script>
+        <script id="dsq-count-scr" src="//juanedflores-blog.disqus.com/count.js" async></script>
       </div>
     </div>
   </body>
