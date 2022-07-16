@@ -15,21 +15,25 @@ import random
 from datetime import date
 from pathlib import Path
 
+# get todays date
 today = date.today()
-blogEntryTitle = "temp"
-blogEntryDescription = "temp description"
-blogEntryTags = ""
 last_modified = str(today)
+
+# init values
+blogEntryTitle = ""
+blogEntryDescription = ""
+blogEntryTags = ""
 tags = []
 inputTitle = ""
 added_new_tag = False
 
 
 def main():
-    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags, inputTitle, added_new_tag
+    global last_modified, blogEntryTitle, blogEntryDescription, blogEntryTags, tags, inputTitle, added_new_tag
 
     # If an argument was passed, we are updating, else we are creating
     if (len(sys.argv) > 1):
+        # updating an entry means we are
         inputTitle = str(sys.argv[1])
         updateEntry()
         sys.exit(0)
@@ -44,7 +48,6 @@ def main():
         os.mkdir(blogEntryTitle.replace(" ", "_") + "/cover")
         f = open("{}/{}.md".format(blogEntryTitle.replace(" ", "_"),
                                    blogEntryTitle.replace(" ", "_")), "w+")
-
         f.write(
             "---\ntitle: {}\ndate_created: {}\n---".format(blogEntryTitle, last_modified))
 
@@ -95,7 +98,6 @@ def updateEntry():
     target_index = 0
     for l in lineiterator:
         if (found_entry):
-
             if (modifying_date):
                 if (re.match('.*\d{4}-\d{2}-\d{2}.*', l)):
                     print("CHANGING ENTRY MODIFIED DATE")
@@ -123,16 +125,17 @@ def updateEntry():
             # take into account regex special characters
             inputTitlestr = inputTitle
             inputTitlestr = inputTitlestr.replace('+', '\+')
-            print(inputTitlestr)
+            print('inputTitlestr: ' + inputTitlestr)
             if (re.match('.*<!-- {} -->'.format(inputTitlestr.replace('_', ' ')), l)):
                 print("MODIFYING TIME...")
+                sys.exit(0)
                 modifying_date = True
             cur_entry += str(l)
             found_entry = True
 
     sep = '<!-- BLOG ENTRIES -->'
     header = htmlFile.split(sep, 1)[
-        0] + sep + "<ul class='js-filter uk-list uk-width-2-3@s uk-align-center'>"
+        0] + sep + "<ul class='js-filter uk-list uk-width-2-3@l uk-align-center'>"
 
     stripped = ""
     updated_entry = ""
@@ -157,7 +160,7 @@ def updateEntry():
 
 
 def addEntrytoHTML():
-    global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags
+    # global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags
 
     htmlFile = open("../blog.html", "r").read()
     entries_raw = re.findall(

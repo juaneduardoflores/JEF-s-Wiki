@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  dir="ltr">
+<html dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -121,7 +121,6 @@
     <link rel="stylesheet" href="../../css/blog_style.css" />
 
     <!-- Includes other header content if needed -->
-    
   </head>
 
   <body>
@@ -152,11 +151,13 @@
           <a href="../../blog.html" uk-icon="icon: home;"></a>
           <hr />
           <h3>Table of Contents</h3>
-          <div><ul>
-<li><a href="#pandoc">Pandoc</a></li>
-<li><a href="#makefile">Makefile</a></li>
-<li><a href="#inspiration">Inspiration</a></li>
-</ul></div>
+          <div>
+            <ul>
+              <li><a href="#pandoc">Pandoc</a></li>
+              <li><a href="#makefile">Makefile</a></li>
+              <li><a href="#inspiration">Inspiration</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -172,23 +173,77 @@
       </div>
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><p>This entry is to document my effort in trying to create a blog without any popular content management systems (CMS) like Wordpress to have maximum flexibility in the design and layout of my website. My goal was to edit plain text files on my local computer and from the comfort of my own text editing tools. I will go over the workflow that I have developed to make writing blog entries as smooth and easy as possible, from <a target="_blank" href="https://www.markdownguide.org/">Markdown</a> to HTML to a published website.</p>
-<h2 id="pandoc">Pandoc</h2>
-<p>I used <a target="_blank" href="https://pandoc.org/">Pandoc</a> to compile Markdown files to HTML using one shell command. A simple command to do this conversion would be:</p>
-<pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
-<p><code>-f/--from</code> is a <span style="font-weight:bold; cursor: pointer;" data-uk-tooltip="title: A command-line &lt;strong&gt;flag&lt;/strong&gt; is a common way to specify options for command-line programs.">flag</span> that specifies what file type we are starting from, and <code>-t/--to</code> is the file type we are converting to. <code>markdownfile.md</code> is the file we want to convert. This will not overwrite the file, rather it will simply create a new file in the same directory called <code>markdownfile.html</code>.</p>
-<p>A shorter way of doing the same thing is with the <code>-o</code> flag:</p>
-<pre class="shell"><code>$ pandoc inputfile.md -o outputfile.html</code></pre>
-<p><code>-o/--output</code> specifies the output file. In this example, we are specifying that we want to output to a file called <code>outputfile.html</code> using <code>inputfile.md</code> as the input. Pandoc is smart enough to look at the extensions of the input and output files to know what the <code>--from</code> and <code>--to</code> flags would be without manually entering them.</p>
-<p>There are more flags and options, but I will only go over a few more in the following section. Visit the <a target="_blank" href="https://pandoc.org/MANUAL.html">Pandoc User Manual</a> for more information.</p>
-<h2 id="makefile">Makefile</h2>
-<p>Writing a Makefile is very handy to apply the <code>pandoc</code> command to every Markdown file in a directory instead of doing it one at a time. A Makefile contains shell commands that can be executed upon running the Unix utility <a target="_blank" href="https://edoras.sdsu.edu/doc/make.html">make</a>. An advantage of using a Makefile is that it keeps track of changes so that it only applies the commands to the files we need.</p>
-<p>Here is the file that I am currently using for this Blog site:</p>
-<ul uk-accordion>
-<li class=" uk-open">
-<a id="code-file" class="uk-accordion-title" href="#">Makefile</a>
-<div class="uk-accordion-content">
-<pre class="make"><code>PANDOCFLAGSHTML =                                           \
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll">
+        <p>
+          This entry is to document my effort in trying to create a blog without any popular content management systems (CMS) like Wordpress
+          to have maximum flexibility in the design and layout of my website. My goal was to edit plain text files on my local computer and
+          from the comfort of my own text editing tools. I will go over the workflow that I have developed to make writing blog entries as
+          smooth and easy as possible, from
+          <a target="_blank" href="https://www.markdownguide.org/">Markdown</a>
+          to HTML to a published website.
+        </p>
+        <h2 id="pandoc">Pandoc</h2>
+        <p>
+          I used
+          <a target="_blank" href="https://pandoc.org/">Pandoc</a>
+          to compile Markdown files to HTML using one shell command. A simple command to do this conversion would be:
+        </p>
+        <pre class="shell"><code>$ pandoc -f markdown -t html markdownfile.md</code></pre>
+        <p>
+          <code>-f/--from</code>
+          is a
+          <span
+            style="font-weight: bold; cursor: pointer"
+            data-uk-tooltip="title: A command-line &lt;strong&gt;flag&lt;/strong&gt; is a common way to specify options for command-line programs.">
+            flag
+          </span>
+          that specifies what file type we are starting from, and
+          <code>-t/--to</code>
+          is the file type we are converting to.
+          <code>markdownfile.md</code>
+          is the file we want to convert. This will not overwrite the file, rather it will simply create a new file in the same directory
+          called
+          <code>markdownfile.html</code>
+          .
+        </p>
+        <p>
+          A shorter way of doing the same thing is with the
+          <code>-o</code>
+          flag:
+        </p>
+        <pre class="shell"><code>$ pandoc inputfile.md -o outputfile.html</code></pre>
+        <p>
+          <code>-o/--output</code>
+          specifies the output file. In this example, we are specifying that we want to output to a file called
+          <code>outputfile.html</code>
+          using
+          <code>inputfile.md</code>
+          as the input. Pandoc is smart enough to look at the extensions of the input and output files to know what the
+          <code>--from</code>
+          and
+          <code>--to</code>
+          flags would be without manually entering them.
+        </p>
+        <p>
+          There are more flags and options, but I will only go over a few more in the following section. Visit the
+          <a target="_blank" href="https://pandoc.org/MANUAL.html">Pandoc User Manual</a>
+          for more information.
+        </p>
+        <h2 id="makefile">Makefile</h2>
+        <p>
+          Writing a Makefile is very handy to apply the
+          <code>pandoc</code>
+          command to every Markdown file in a directory instead of doing it one at a time. A Makefile contains shell commands that can be
+          executed upon running the Unix utility
+          <a target="_blank" href="https://edoras.sdsu.edu/doc/make.html">make</a>
+          . An advantage of using a Makefile is that it keeps track of changes so that it only applies the commands to the files we need.
+        </p>
+        <p>Here is the file that I am currently using for this Blog site:</p>
+        <ul uk-accordion>
+          <li class="uk-open">
+            <a id="code-file" class="uk-accordion-title" href="#">Makefile</a>
+            <div class="uk-accordion-content">
+              <pre class="make"><code>PANDOCFLAGSHTML =                                           \
   --table-of-contents                                       \
   --toc-depth=4                                             \
   --from=markdown+markdown_in_html_blocks+bracketed_spans   \
@@ -210,24 +265,66 @@ all: $(HTML)
 
 clean:
     rm $(HTML)</code></pre>
-</div>
-</li>
-</ul>
-<p>Now that we understand what Pandoc does, I can say that <code>PANDOCFLAGSHTML</code> is a variable containing all the flags that I am using with the <code>pandoc</code> command.</p>
-<p>The complete command that I am using looks something like this:</p>
-<pre class="shell"><code>$ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html</code></pre>
-<ul>
-<li><p><code>--table-of-contents</code>: Outputs the html file with a table of contents. You can see what it made on this blog entry by clicking on the menu icon (<span data-uk-icon="menu"></span>) on the upper left side.</p></li>
-<li><p><code>--toc-depth=4</code>: This will make headings in the table of contents have a maximum depth of 4, meaning that it will only include headings 1 through 4.</p></li>
-<li><p><code>--from=markdown+markdown_in_html_blocks+bracketed_spans</code>: We are defining the filetype of the input file, but also extending the syntax to also include <code>markdown_in_html_blocks</code> and <code>bracketed_spans</code>. Read more about this <a target="_blank" href="https://boisgera.github.io/pandoc/markdown/">here</a>.</p></li>
-<li><p><code>--template=../pandoc/blog_template.html</code>: Finally we specify the template file. This is crucial to have a consistent Blog layout.</p></li>
-</ul>
-<p>Below is a simple html template. The <code>$body$</code> variable will be replaced by the converted markdown content.</p>
-<ul uk-accordion>
-<li class=" uk-open">
-<a class="uk-accordion-title" href="#">blog_template.html</a>
-<div class="uk-accordion-content">
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+            </div>
+          </li>
+        </ul>
+        <p>
+          Now that we understand what Pandoc does, I can say that
+          <code>PANDOCFLAGSHTML</code>
+          is a variable containing all the flags that I am using with the
+          <code>pandoc</code>
+          command.
+        </p>
+        <p>The complete command that I am using looks something like this:</p>
+        <pre
+          class="shell"><code>$ pandoc markdownFile/markdownFile.md -o markdownFile/markdownFile.html --table-of-contents --toc-depth=4 --from=markdown+markdown_in_html_blocks+bracketed_spans --metadata-file=../pandoc/metadata.yaml --template=../pandoc/blog_template.html</code></pre>
+        <ul>
+          <li>
+            <p>
+              <code>--table-of-contents</code>
+              : Outputs the html file with a table of contents. You can see what it made on this blog entry by clicking on the menu icon (
+              <span data-uk-icon="menu"></span>
+              ) on the upper left side.
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>--toc-depth=4</code>
+              : This will make headings in the table of contents have a maximum depth of 4, meaning that it will only include headings 1
+              through 4.
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>--from=markdown+markdown_in_html_blocks+bracketed_spans</code>
+              : We are defining the filetype of the input file, but also extending the syntax to also include
+              <code>markdown_in_html_blocks</code>
+              and
+              <code>bracketed_spans</code>
+              . Read more about this
+              <a target="_blank" href="https://boisgera.github.io/pandoc/markdown/">here</a>
+              .
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>--template=../pandoc/blog_template.html</code>
+              : Finally we specify the template file. This is crucial to have a consistent Blog layout.
+            </p>
+          </li>
+        </ul>
+        <p>
+          Below is a simple html template. The
+          <code>$body$</code>
+          variable will be replaced by the converted markdown content.
+        </p>
+        <ul uk-accordion>
+          <li class="uk-open">
+            <a class="uk-accordion-title" href="#">blog_template.html</a>
+            <div class="uk-accordion-content">
+              <div class="sourceCode" id="cb5">
+                <pre
+                  class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>$title$<span class="kw">&lt;/title&gt;</span></span>
@@ -236,27 +333,42 @@ clean:
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  $body$</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-</div>
-</li>
-</ul>
-<p>Here is a directory structure example:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p>Here is a directory structure example:</p>
+        <div class="sourceCode" id="cb6">
+          <pre
+            class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> index.html</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Blog/</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├─── Makefile</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├─── blog_template.html</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├─── Example_topic/</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │       Example_topic.md</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   <span class="co">#       Example_topic.html (generated after running make)</span></span></code></pre></div>
-<p>The rest would be to design the website style. I use <a target="_blank" href="https://getuikit.com/">UIkit</a> as a front-end framework, <a target="_blank" href="https://highlightjs.org/">highlight.js</a> for code syntax highlighting, and <a target="_blank" href="https://disqus.com/">Disqus</a> for adding user comments. The site is hosted on <a target="_blank" href="https://pages.github.com/">Github Pages</a>.</p>
-<hr />
-<h2 id="inspiration">Inspiration</h2>
-<p>Here is a list of blogs that I have looked at and have been inspired by:</p>
-<ul>
-<li><a href="https://timrodenbroeker.de/category/all/">https://timrodenbroeker.de/category/all/</a></li>
-</ul>
-<p>ld</p></div>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   <span class="co">#       Example_topic.html (generated after running make)</span></span></code></pre>
+        </div>
+        <p>
+          The rest would be to design the website style. I use
+          <a target="_blank" href="https://getuikit.com/">UIkit</a>
+          as a front-end framework,
+          <a target="_blank" href="https://highlightjs.org/">highlight.js</a>
+          for code syntax highlighting, and
+          <a target="_blank" href="https://disqus.com/">Disqus</a>
+          for adding user comments. The site is hosted on
+          <a target="_blank" href="https://pages.github.com/">Github Pages</a>
+          .
+        </p>
+        <hr />
+        <h2 id="inspiration">Inspiration</h2>
+        <p>Here is a list of blogs that I have looked at and have been inspired by:</p>
+        <ul>
+          <li><a href="https://timrodenbroeker.de/category/all/">https://timrodenbroeker.de/category/all/</a></li>
+        </ul>
+        <p>ld</p>
+      </div>
 
       <!-- <div class="uk-container uk-margin" style="overflow: scroll"> -->
 

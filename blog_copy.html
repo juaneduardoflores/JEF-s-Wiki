@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="./css/blog_style.css" />
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-
     <script charset="utf-8">
       document.addEventListener('DOMContentLoaded', function (event) {
         hash = document.location.hash;
         console.log('Hash: ' + hash);
-
         if (hash == '') {
           var filter = document.querySelector('.js-filter');
           var filterBar = document.querySelector('#filter-bar');
@@ -28,28 +24,29 @@
           });
         }
       });
-
       $('div').click(function () {
         window.location = $(this).find('a').attr('href');
         return false;
       });
     </script>
+
     <!-- FAVICON -->
     <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon" />
   </head>
 
-  <body class="uk-margin-large-bottom" style="overflow: hidden">
+  <body class="uk-margin-large-bottom" style="overflow-y: scroll">
+    <!-- P5JS SKETCH -->
     <script src="./Blog/sketch.js"></script>
-    <div class="uk-align-center uk-margin-remove-vertical" id="contentArea">
-      <!-- NAV AND HEADING -->
+    <div class="uk-align-center uk-margin-remove-vertical overlay" id="contentArea">
+      <!-- MENU BUTTON AND HEADING -->
       <div
         class="uk-background-cover uk-background-blend-multiply uk-flex"
         style="background-image: url(resources/textured_black_sharpened.png); height: 50px"
         uk-sticky>
+        <!-- MENU BUTTON -->
         <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-filter">
           <span uk-icon="icon: menu; ratio: 1.5;" style="color: white"></span>
         </button>
-
         <!-- HEADING -->
         <h2
           id="heading"
@@ -60,13 +57,16 @@
           <span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
         </h2>
       </div>
-
-      <div class="uk-container" uk-filter="target: .js-filter; selActive: .featured">
+      <!-- FULL PAGE CONTENT -->
+      <div class="uk-container uk-width-1-1" style="width: 100%; height: 100%" uk-filter="target: .js-filter; selActive: .featured">
+        <!-- OFFCANVAS -->
         <div id="blog-filter" class="uk-position-fixed" style="top: 50px" uk-offcanvas="bg-close: false; mode: slide;">
+          <!-- OFFCANVAS BAR CONTENT -->
           <div class="uk-offcanvas-bar">
             <ul uk-accordion>
+              <!-- FILTER -->
               <li>
-                <a class="uk-accordion-title" href="#">Filter</a>
+                <a class="uk-accordion-title" href="#" style="background-color: #222222">Filter</a>
                 <div class="uk-accordion-content">
                   <ul id="filter-bar" class="uk-subnav uk-subnav-pill uk-flex uk-flex-column">
                     <li uk-filter-control>
@@ -98,13 +98,13 @@
                         <span class="uk-label" style="background-color: #4d2a79; color: white"></span>
                       </a>
                     </li>
-
                     <!-- END TAGS -->
                   </ul>
                 </div>
               </li>
+              <!-- ABOUT THIS BLOG -->
               <li>
-                <a class="uk-accordion-title" href="#">About This Blog</a>
+                <a class="uk-accordion-title" href="#" style="background-color: #222222">About This Blog</a>
                 <div class="uk-accordion-content">
                   <p style="color: white">
                     I created this blog in 2021 to keep track of my learning process in various topics. It has a focus in Art &amp;
@@ -131,8 +131,9 @@
                   </p>
                 </div>
               </li>
+              <!-- EXTRA LINKS -->
               <li>
-                <a class="uk-accordion-title" href="#">Links</a>
+                <a class="uk-accordion-title" href="#" style="background-color: #222222">Links</a>
                 <div class="uk-accordion-content">
                   <ul>
                     <li>
@@ -154,19 +155,27 @@
           </div>
         </div>
         <!-- BLOG ENTRIES -->
-        <ul class="js-filter uk-list uk-width-2-3@s uk-align-center">
+        <ul class="js-filter uk-list uk-width-2-3@l uk-align-center">
           <!-- More About This Blog -->
-          <li class="tag-productivity tag-featured" style="padding: 0">
+          <li class="tag-productivity tag-featured" style="padding-top: 20px">
             <div class="entry">
               <div
-                class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-transition-toggle"
-                style="border: 1px solid #000000; border-radius: 3px"
+                class="uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
                 onclick="location.href='./Blog/More_About_This_Blog/More_About_This_Blog.html'"
+                style="border: 1px solid #000000; border-radius: 3px"
                 uk-grid>
-                <div class="uk-background-cover" uk-img>
+                <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">
+                  <img
+                    class="uk-cover"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    src="./Blog/More_About_This_Blog/cover/cover.png"
+                    alt="" />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
                   <div class="uk-card-body">
                     <h3 class="uk-card-title">Workflow for this Blog</h3>
-                    <span>last modified: 2022-06-20</span>
+                    <span>last modified: 2022-07-05</span>
                     <p style="color: black">I detail the features of this blog, the intentions, and the code that makes it work.</p>
                     <span class="uk-label" style="background-color: #dbd276">Productivity</span>
                     <br />
@@ -174,37 +183,8 @@
                     <a href="https://juanedflores.com/Blog/More_About_This_Blog/More_About_This_Blog.html#disqus_thread">Link</a>
                   </div>
                 </div>
-                <div class="uk-card-media-left uk-cover-container uk-transition-scale-up uk-transition-opaque">
-                  <img src="./Blog/More_About_This_Blog/cover/cover.png" alt="" uk-cover />
-                  <canvas width="600" height="400"></canvas>
-                </div>
               </div>
             </div>
-          </li>
-
-          <!-- Learning GLSL -->
-          <li class="tag-shaders tag-graphics">
-            <a href="https://juanedflores.com/Blog/Learning_GLSL/Learning_GLSL.html#disqus_thread">Link</a>
-            <a href="./Blog/Learning_GLSL/Learning_GLSL.html">
-              <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                <div class="uk-background-cover" uk-img>
-                  <div class="uk-card-body">
-                    <h3 class="uk-card-title">
-                      Learning GLSL
-                      <span class="uk-text-warning">(WIP)</span>
-                    </h3>
-                    <span>last modified: 2022-06-18</span>
-                    <p>Learning how to code shaders.</p>
-                    <span class="uk-label" style="background-color: #9bd716">shaders</span>
-                    <span class="uk-label" style="background-color: #d0f24e">graphics</span>
-                  </div>
-                </div>
-                <div class="uk-card-media-left uk-cover-container">
-                  <img src="./Blog/Learning_GLSL/cover/cover.png" alt="" uk-cover />
-                  <canvas width="600" height="400"></canvas>
-                </div>
-              </div>
-            </a>
           </li>
 
           <!-- BLOG ENTRIES END -->
