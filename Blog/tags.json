@@ -1,5 +1,12 @@
 {
   "shaders": "#9bd716",
   "graphics": "#d0f24e",
-  "": "#4d2a79"
+  "": "#4d2a79",
+  "hello": "#67ebc7",
+  "video": "#9547e2",
+  "modular": "#f01f56",
+  "real-time": "#180945",
+  "synthesis": "#a17987",
+  "what": "#6bb137",
+  "up": "#234ae6"
 }
