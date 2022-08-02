@@ -12,10 +12,6 @@
     <script src="../../js/uikit.min.js"></script>
     <script src="../../js/uikit-icons.min.js"></script>
 
-    <!-- P5.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="../sketch.js"></script>
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
 
@@ -25,7 +21,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -157,20 +152,18 @@
       </div>
 
       <!-- HEADING -->
-      <div id="p5canvas" class="uk-container uk-padding uk-padding-remove-bottom">
+      <div class="uk-container uk-padding uk-padding-remove-bottom">
         <img src="./cover/cover.png" class="uk-align-center uk-width-1-1" alt="" />
         <div class="uk-container" style="padding-top: 0.2em; padding-bottom: 1.2em">
-          <span class="title">Sandin Image Processor</span>
+          <span class="title">Sandin IP</span>
           <br />
-          <span style="font-size: 1em; color: #767676">Date created: 2022-08-01</span>
+          <span style="font-size: 1em; color: #767676">Date created: August 01, 2022</span>
           <hr />
         </div>
       </div>
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><p>hello?</p></div>
-
-      <!-- <div class="uk-container uk-margin" style="overflow: scroll"> -->
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><p>hi?</p></div>
 
       <div class="uk-container uk-margin">
         <ul uk-accordion>
@@ -192,30 +185,22 @@
       </div>
     </div>
 
-    <!-- <script> -->
-    <!--   UIkit.util.on('#js-scroll-trigger', 'beforescroll', function (e) { -->
-    <!--     e.preventDefault(); -->
-    <!--     window.setTimeout(function () { -->
-    <!--       document.getElementById('disqus_thread').scrollIntoView(); -->
-    <!--     }, 1000); -->
-    <!--   }); -->
-    <!-- </script> -->
-
     <script>
       /**
        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
       var disqus_config = function () {
-        let pagetitle = 'Sandin Image Processor';
+        let pagetitle = 'Sandin IP';
         this.page.url = 'https://juanedflores.com/Blog/' + pagetitle.replace(/ /g, '_') + '/' + pagetitle.replace(/ /g, '_') + '.html';
         this.page.identifier = '/' + pagetitle.replace(/ /g, '_');
+        this.page.title = pagetitle.replace(/ /g, '_');
       };
 
       (function () {
         // DON'T EDIT BELOW THIS LINE
         var d = document,
           s = d.createElement('script');
-        s.src = 'https://juanedflores-blog.disqus.com/embed.js';
+        s.src = '//juanedflores-blog.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
       })();

@@ -58,7 +58,7 @@ def main():
                                    blogEntryTitle.replace(" ", "_")), "w+")
         # write the header
         f.write(
-            "---\ntitle: {}\ndate_created: {}\n---".format(blogEntryTitle, last_modified_formatted))
+            "---\ntitle: {}\ndate_created: {}\n---\n\n".format(blogEntryTitle, last_modified_formatted))
         # 
         addEntrytoHTML()
 
@@ -94,9 +94,13 @@ def main():
 
 def updateEntry():
     global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags, today
+
+    # opens the html file
     htmlFile = open("../blog.html", "r").read()
+    # finds the blog entries section
     entries_raw = re.findall(
         '<!-- BLOG ENTRIES -->(.*?)<!-- BLOG ENTRIES END -->', htmlFile, re.DOTALL)
+    # splits the blog entries section into individual entries
     lineiterator = iter(entries_raw[0].splitlines())
     entries = []
     cur_entry = ""
@@ -106,14 +110,14 @@ def updateEntry():
     target_index = 0
     for l in lineiterator:
         if (found_entry):
+            # change the modified date
             if (modifying_date):
                 if (re.match('.*\d{4}-\d{2}-\d{2}.*', l)):
                     print("CHANGING ENTRY MODIFIED DATE")
                     l = re.sub("\d{4}-\d{2}-\d{2}", str(today), l)
 
+            # appends the entry
             if (re.match('\w*', l)):
-                # print("appending!")
-                # print(l)
                 cur_entry += str(l)
 
             if (l == ""):
@@ -135,9 +139,10 @@ def updateEntry():
             inputTitlestr = inputTitlestr.replace('+', '\+')
             print('inputTitlestr: ' + inputTitlestr)
             if (re.match('.*<!-- {} -->'.format(inputTitlestr.replace('_', ' ')), l)):
+                modifying_date = True
                 print("MODIFYING TIME...")
                 sys.exit(0)
-                modifying_date = True
+
             cur_entry += str(l)
             found_entry = True
 
@@ -156,7 +161,8 @@ def updateEntry():
             continue
         stripped += entry + "\n"
 
-    stripped += "\n\n<!-- BLOG ENTRIES END --></ul><script id='dsq-count-scr' src='//juanedflores-blog.disqus.com/count.js' async></script>"
+    # stripped += "\n\n<!-- BLOG ENTRIES END --></ul><script id='dsq-count-scr' src='//juanedflores-blog.disqus.com/count.js' async></script>"
+    stripped += "\n\n<!-- BLOG ENTRIES END --></ul><script id='dsq-count-scr' src='//juanedflores-blog.disqus.com/count.js' async></script></div></div></body></html>"
     htmlcode = header + updated_entry + stripped
 
     f = open("../blog.html", "w")
