@@ -116,5 +116,3 @@ The rest would be to design the website style. I use <a target="_blank" href="ht
 Here is a list of blogs that I have looked at and have been inspired by:
 
   - [https://timrodenbroeker.de/category/all/](https://timrodenbroeker.de/category/all/)
-
-ld

@@ -9,7 +9,9 @@
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
     <script charset="utf-8">
       document.addEventListener('DOMContentLoaded', function (event) {
         hash = document.location.hash;
@@ -35,12 +37,10 @@
   </head>
 
   <body class="uk-margin-large-bottom" style="overflow-y: scroll">
-    <!-- P5JS SKETCH -->
-    <!-- <script src="./Blog/sketch.js"></script> -->
     <div class="uk-align-center uk-margin-remove-vertical overlay" id="contentArea">
       <!-- MENU BUTTON AND HEADING -->
       <div
-        class="uk-background-cover uk-background-blend-multiply uk-flex"
+        class="uk-flex uk-flex-left uk-background-cover"
         style="background-image: url(resources/textured_black_sharpened.png); height: 50px"
         uk-sticky>
         <!-- MENU BUTTON -->
@@ -58,7 +58,11 @@
         </h2>
       </div>
       <!-- FULL PAGE CONTENT -->
-      <div class="uk-container uk-width-1-1" style="width: 100%; height: 100%" uk-filter="target: .js-filter; selActive: .featured">
+      <div
+        id="content-area"
+        class="uk-container uk-width-1-1"
+        style="width: 100%; height: 100%"
+        uk-filter="target: .js-filter; selActive: .featured">
         <!-- OFFCANVAS -->
         <div id="blog-filter" class="uk-position-fixed" style="top: 50px" uk-offcanvas="bg-close: false; mode: slide;">
           <!-- OFFCANVAS BAR CONTENT -->
@@ -210,9 +214,9 @@
           </div>
         </div>
         <!-- BLOG ENTRIES -->
-        <ul class="js-filter uk-list uk-width-2-3@l uk-align-center">
+        <ul class="js-filter uk-list uk-width-2-3@l uk-align-center" style="margin-top: 0">
           <!-- Sandin IP -->
-          <li class="tag-synth tag-hello" style="padding-top: 20px">
+          <li class="tag-synth tag-hello">
             <div class="entry">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
@@ -244,7 +248,7 @@
           </li>
 
           <!-- More About This Blog -->
-          <li class="tag-productivity tag-featured" style="padding-top: 20px">
+          <li class="tag-productivity tag-featured">
             <div class="entry">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"

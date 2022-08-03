@@ -202,7 +202,7 @@ def addEntrytoHTML():
     print("adding tags: " + tagfilter)
 
     # create the html block
-    template += "<li class='{}' style='padding-top: 20px'>".format(tagfilter)
+    template += "<li class='{}'>".format(tagfilter)
     template += "<div class='entry'>"
     template += "<div class='uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin' "
     template += "onclick=" + "\"location.href='./Blog/{}/{}.html'\"".format(
