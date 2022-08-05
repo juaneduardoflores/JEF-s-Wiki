@@ -10,5 +10,16 @@
   "what": "#6bb137",
   "up": "#234ae6",
   "glsl": "#3663f8",
-  "synth": "#49d9f1"
+  "synth": "#49d9f1",
+  "Analog Electronics": "#bb158a",
+  "Realtime": "#84bb76",
+  "Retro Tech": "#b9702",
+  "Photography": "#b8a1e",
+  "Color Theory": "#4a4ad6",
+  "Arduino": "#a260c1",
+  "Max": "#e6bcb",
+  "Visual Programming Language": "#1392df",
+  "Javascript": "#b5000c",
+  "Robot": "#aa905f",
+  "Python": "#2cbf82"
 }

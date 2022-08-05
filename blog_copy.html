@@ -9,7 +9,9 @@
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
     <script charset="utf-8">
       document.addEventListener('DOMContentLoaded', function (event) {
         hash = document.location.hash;
@@ -35,12 +37,10 @@
   </head>
 
   <body class="uk-margin-large-bottom" style="overflow-y: scroll">
-    <!-- P5JS SKETCH -->
-    <script src="./Blog/sketch.js"></script>
     <div class="uk-align-center uk-margin-remove-vertical overlay" id="contentArea">
       <!-- MENU BUTTON AND HEADING -->
       <div
-        class="uk-background-cover uk-background-blend-multiply uk-flex"
+        class="uk-flex uk-flex-left uk-background-cover"
         style="background-image: url(resources/textured_black_sharpened.png); height: 50px"
         uk-sticky>
         <!-- MENU BUTTON -->
@@ -58,7 +58,11 @@
         </h2>
       </div>
       <!-- FULL PAGE CONTENT -->
-      <div class="uk-container uk-width-1-1" style="width: 100%; height: 100%" uk-filter="target: .js-filter; selActive: .featured">
+      <div
+        id="content-area"
+        class="uk-container uk-width-1-1"
+        style="width: 100%; height: 100%"
+        uk-filter="target: .js-filter; selActive: .featured">
         <!-- OFFCANVAS -->
         <div id="blog-filter" class="uk-position-fixed" style="top: 50px" uk-offcanvas="bg-close: false; mode: slide;">
           <!-- OFFCANVAS BAR CONTENT -->
@@ -98,6 +102,115 @@
                         <span class="uk-label" style="background-color: #4d2a79; color: white"></span>
                       </a>
                     </li>
+
+                    <li uk-filter-control=".tag-hello">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #67ebc7; color: white">hello</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-video">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #9547e2; color: white">video</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-modular">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #f01f56; color: white">modular</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-real-time">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #180945; color: white">real-time</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-synthesis">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #a17987; color: white">synthesis</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-what">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #6bb137; color: white">what</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-up">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #234ae6; color: white">up</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-glsl">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #3663f8; color: white">glsl</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-synth">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #49d9f1; color: white">synth</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Analog_Electronics">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #bb158a; color: white">Analog Electronics</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Realtime">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #84bb76; color: white">Realtime</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Retro_Tech">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #b9702; color: white">Retro Tech</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Photography">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #b8a1e; color: white">Photography</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Color_Theory">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #4a4ad6; color: white">Color Theory</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Arduino">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #a260c1; color: white">Arduino</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Max">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #e6bcb; color: white">Max</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Visual_Programming_Language">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #1392df; color: white">Visual Programming Language</span>
+                      </a>
+                    </li>
+
+                    <li uk-filter-control=".tag-Javascript">
+                      <a href="#">
+                        <span class="uk-label" style="background-color: #b5000c; color: white">Javascript</span>
+                      </a>
+                    </li>
+
                     <!-- END TAGS -->
                   </ul>
                 </div>
@@ -156,8 +269,127 @@
         </div>
         <!-- BLOG ENTRIES -->
         <ul class="js-filter uk-list uk-width-2-3@l uk-align-center">
+          <!-- Traversing Max Graphs to Make Dynamic Patches -->
+          <li class="tag-Max tag-Visual_Programming_Language tag-Javascript">
+            <div class="entry">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
+                onclick="location.href='./Blog/Traversing_Max_Graphs_to_Make_Dynamic_Patches/Traversing_Max_Graphs_to_Make_Dynamic_Patches.html'"
+                style="border: 1px solid #000000; border-radius: 3px"
+                uk-grid>
+                <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">
+                  <img
+                    class="uk-cover"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    src="./Blog/Traversing_Max_Graphs_to_Make_Dynamic_Patches/cover/cover.gif"
+                    alt="" />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Traversing Max Graphs to Make Dynamic Patches</h3>
+                    <span>last modified: 2022-08-05</span>
+                    <p style="color: black">
+                      The Max js object allows scripting within a patcher. With it, you can create, delete, and modify objects for a range
+                      of creative possibilities.
+                    </p>
+                    <span class="uk-label" style="background-color: #e6bcb">Max</span>
+                    <span class="uk-label" style="background-color: #1392df">Visual Programming Language</span>
+                    <span class="uk-label" style="background-color: #b5000c">Javascript</span>
+                    <br />
+                    <br />
+                    <a
+                      href="https://juanedflores.com/Blog/Traversing_Max_Graphs_to_Make_Dynamic_Patches/Traversing_Max_Graphs_to_Make_Dynamic_Patches.html#disqus_thread">
+                      Link
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Experiments with the Game Boy Camera -->
+          <li class="tag-Retro_Tech tag-Photography tag-Color_Theory tag-Arduino">
+            <div class="entry">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
+                onclick="location.href='./Blog/Experiments_with_the_Game_Boy_Camera/Experiments_with_the_Game_Boy_Camera.html'"
+                style="border: 1px solid #000000; border-radius: 3px"
+                uk-grid>
+                <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">
+                  <img
+                    class="uk-cover"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    src="./Blog/Experiments_with_the_Game_Boy_Camera/cover/cover.png"
+                    alt="" />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Experiments with the Game Boy Camera</h3>
+                    <span>last modified: 2022-08-05</span>
+                    <p style="color: black">
+                      Released in 1998, the Game Boy Camera shot a 128x112 pixel grayscale picture with only 4 colors. Being more than 20
+                      years old, these limitations have interested hobbyists to hack it and get the most out of the hardware.
+                    </p>
+                    <span class="uk-label" style="background-color: #b9702">Retro Tech</span>
+                    <span class="uk-label" style="background-color: #b8a1e">Photography</span>
+                    <span class="uk-label" style="background-color: #4a4ad6">Color Theory</span>
+                    <span class="uk-label" style="background-color: #a260c1">Arduino</span>
+                    <br />
+                    <br />
+                    <a
+                      href="https://juanedflores.com/Blog/Experiments_with_the_Game_Boy_Camera/Experiments_with_the_Game_Boy_Camera.html#disqus_thread">
+                      Link
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Linking Old and New Analog Video Synthesis -->
+          <li class="tag-Analog_Electronics tag-Shaders tag-Realtime">
+            <div class="entry">
+              <div
+                class="uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
+                onclick="location.href='./Blog/Linking_Old_and_New_Analog_Video_Synthesis/Linking_Old_and_New_Analog_Video_Synthesis.html'"
+                style="border: 1px solid #000000; border-radius: 3px"
+                uk-grid>
+                <div class="uk-flex-last@s uk-card-media-right uk-transition-opaque uk-transition-scale-up uk-cover-container">
+                  <img
+                    class="uk-cover"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                    src="./Blog/Linking_Old_and_New_Analog_Video_Synthesis/cover/cover.gif"
+                    alt="" />
+                  <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title">Linking Old and New Analog Video Synthesis</h3>
+                    <span>last modified: 2022-08-05</span>
+                    <p style="color: black">
+                      An investigation of analog video synthesis through two pioneering synthesizers, the Paik/Abe Synthesizer (1960s) and
+                      the Sandin Image Processor (1970s), comparing them to newer digital video synthesizers like Lumen, VSynth for Max/MSP
+                      and Hydra.
+                    </p>
+                    <span class="uk-label" style="background-color: #bb158a">Analog Electronics</span>
+                    <span class="uk-label" style="background-color: #9bd716">Shaders</span>
+                    <span class="uk-label" style="background-color: #84bb76">Realtime</span>
+                    <br />
+                    <br />
+                    <a
+                      href="https://juanedflores.com/Blog/Linking_Old_and_New_Analog_Video_Synthesis/Linking_Old_and_New_Analog_Video_Synthesis.html#disqus_thread">
+                      Link
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
           <!-- More About This Blog -->
-          <li class="tag-productivity tag-featured" style="padding-top: 20px">
+          <li class="tag-productivity tag-featured">
             <div class="entry">
               <div
                 class="uk-card uk-card-default uk-grid-collapse uk-transition-toggle uk-child-width-1-2@s uk-margin"
