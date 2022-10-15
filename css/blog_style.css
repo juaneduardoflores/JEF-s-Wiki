@@ -196,4 +196,8 @@ canvas {
   h2 {
     font-size: 1.3em;
   }
+
+  #js-scroll-trigger {
+    font-size: 1em;
+  }
 }
