@@ -184,4 +184,8 @@ canvas {
   #content-area {
     padding: 3px;
   }
+
+  p {
+    font-size: 0.95em;
+  }
 }
