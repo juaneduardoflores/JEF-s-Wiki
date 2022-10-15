@@ -23,23 +23,8 @@ pre {
 html {
   /* overflow: hidden; */
   scroll-behavior: smooth;
-  background: rgb(255, 242, 226);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 242, 226, 1) 0%,
-    rgba(249, 253, 226, 0.39957990031950286) 10%,
-    rgba(218, 223, 220, 1) 50%,
-    rgba(249, 253, 226, 0.3967787798713235) 90%,
-    rgba(255, 242, 226, 1) 100%
-  );
-}
-
-body {
-  /* overflow: auto; */
-  margin: 0;
-  /* max-height: 100vh; */
-  color: #ffffff;
-  background: rgba(255, 242, 226, 0);
+  /* background: rgb(255, 242, 226); */
+  background: #343032;
   /* background: linear-gradient( */
   /*   90deg, */
   /*   rgba(255, 242, 226, 1) 0%, */
@@ -50,14 +35,44 @@ body {
   /* ); */
 }
 
+body {
+  background: #343032;
+  /* overflow: auto; */
+  /* margin: 0; */
+  /* max-height: 100vh; */
+  /* color: #ffffff; */
+  /* background: rgba(255, 242, 226, 255); */
+  /* background: linear-gradient( */
+  /*   90deg, */
+  /*   rgba(255, 242, 226, 1) 0%, */
+  /*   rgba(249, 253, 226, 0.39957990031950286) 10%, */
+  /*   rgba(218, 223, 220, 1) 50%, */
+  /*   rgba(249, 253, 226, 0.3967787798713235) 90%, */
+  /*   rgba(255, 242, 226, 1) 100% */
+  /* ); */
+}
+
+#contentArea {
+  background-color: #413c3f;
+  padding-bottom: 1em;
+}
+
 div uk-container {
   background: rgba(255, 242, 226, 255);
 }
 
+a {
+  color: #87fbe9;
+}
+
 p {
   font-size: 1.1em;
-  color: black;
+  color: #e4fefa;
   font-family: 'Inter-ExtraLight', sans-serif;
+}
+
+img {
+  margin: 0;
 }
 
 p img {
@@ -71,8 +86,23 @@ ul li {
 }
 
 .title {
-  color: #2e4045;
+  color: #ffffff;
   font-size: 2.8em;
+  font-family: 'Inter-Black';
+}
+
+#cover-img {
+  background-color: black;
+  max-height: 500px;
+}
+
+.date-created {
+  color: #b9b9b9;
+  font-family: 'Inter-ExtraLight', sans-serif;
+}
+
+h1 {
+  color: #ffffff;
   font-family: 'Inter-ExtraLight';
 }
 
@@ -80,9 +110,9 @@ h2,
 h3,
 h4,
 h5 {
-  color: #5e3c58;
+  color: #dccf8f;
   font-family: 'Inter-ExtraLight';
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 h5 {
@@ -94,7 +124,7 @@ h5 {
 }
 
 hr {
-  border: 1px solid #bfb5b2;
+  border: 1px solid #f8d1c1;
 }
 
 pre {

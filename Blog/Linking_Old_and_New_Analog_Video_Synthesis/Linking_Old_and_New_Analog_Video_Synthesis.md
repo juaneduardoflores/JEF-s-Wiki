@@ -30,3 +30,4 @@ Hydra uses shaders, which takes advantage of the architecture of the GPU. On the
 
 ### The Hello World of Video Synthesis
 In my opinion, the <span style="font-weight:bold; cursor: pointer;" uk-tooltip="A simple program intended to familiarize programmers with a new programming language.">hello world</span> for analog video synthesis, along with audio, should be the generation of an oscillator. The SIP has an oscillator module
+
