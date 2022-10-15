@@ -174,7 +174,7 @@ canvas {
  */
 @media screen and (max-width: 580px) {
   .title {
-    font-size: 2em;
+    font-size: 1.6em;
   }
 
   #heading {
@@ -187,5 +187,9 @@ canvas {
 
   p {
     font-size: 0.95em;
+  }
+
+  h2 {
+    font-size: 1.3em;
   }
 }
