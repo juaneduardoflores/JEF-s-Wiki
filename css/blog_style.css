@@ -185,6 +185,10 @@ canvas {
     padding: 3px;
   }
 
+  #cover-img {
+    max-height: 260px;
+  }
+
   p {
     font-size: 0.95em;
   }
