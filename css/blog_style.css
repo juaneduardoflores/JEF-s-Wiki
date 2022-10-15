@@ -88,7 +88,7 @@ ul li {
 .title {
   color: #ffffff;
   font-size: 2.8em;
-  font-family: 'Inter-Black';
+  font-family: 'Inter-ExtraLight';
 }
 
 #cover-img {
@@ -106,12 +106,20 @@ h1 {
   font-family: 'Inter-ExtraLight';
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
 h2,
 h3,
 h4,
 h5 {
-  color: #dccf8f;
+  /* color: #ffb03b; */
+  color: #ffffff;
+  /* text-align: center; */
   font-family: 'Inter-ExtraLight';
+  border-bottom: 0.5px solid #ffffff;
+  padding-bottom: 0.5em;
   /* font-weight: bold; */
 }
 
@@ -177,6 +185,18 @@ canvas {
     font-size: 1.5em;
   }
 
+  div.uk-card-body {
+    padding: 0.8em;
+  }
+
+  div.uk-card-body span {
+    font-size: 0.8em;
+  }
+
+  img.uk-cover {
+    height: 200px !important;
+  }
+
   #heading {
     font-size: 4.8vw;
   }
@@ -189,12 +209,23 @@ canvas {
     max-height: 260px;
   }
 
+  span.uk-label {
+    font-size: 0.7em;
+  }
+
   p {
     font-size: 0.95em;
+    margin-top: 0.6em;
   }
 
   h2 {
     font-size: 1.3em;
+  }
+
+  h3.uk-card-title {
+    font-size: 1.1em;
+    padding: 0;
+    margin: 0;
   }
 
   #js-scroll-trigger {

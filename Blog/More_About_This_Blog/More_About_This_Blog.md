@@ -110,8 +110,6 @@ Here is a directory structure example:
 
 The rest would be to design the website style. I use <a target="_blank" href="https://getuikit.com/">UIkit</a> as a front-end framework, <a target="_blank" href="https://highlightjs.org/">highlight.js</a> for code syntax highlighting, and <a target="_blank" href="https://disqus.com/">Disqus</a> for adding user comments. The site is hosted on <a target="_blank" href="https://pages.github.com/">Github Pages</a>.
 
----
-
 ## Inspiration
 Here is a list of blogs that I have looked at and have been inspired by:
 
