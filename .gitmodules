@@ -1,0 +1,3 @@
+[submodule "Oscillator_Workshop"]
+	path = Oscillator_Workshop
+	url = https://github.com/hakimel/reveal.js.git

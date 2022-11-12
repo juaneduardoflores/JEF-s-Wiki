@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "reveal.js": "^4.4.0",
     "uikit": "^3.5.9"
   },
   "devDependencies": {
