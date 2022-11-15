@@ -1,56 +1,99 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>Juan's Artist Talk</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="dist/reset.css" />
-    <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/black.css" />
+  <title>Sculptural Oscillator Circuit Workshop</title>
 
-    <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section>
-          <img src="./slides/slide_01/Workshop_Cover.png" width="50%" />
-        </section>
-        <!-- HISTORY OF PCBs -->
-        <!-- https://how2electronics.com/history-printed-circuit-board-pcb-nextpcb/ -->
-        <section>
-          <img src="./slides/slide_02/ptp_00.jpg" width="60%" />
-          <p>Point-to-point Construction</p>
-        </section>
+  <link rel="stylesheet" href="dist/reset.css" />
+  <link rel="stylesheet" href="dist/reveal.css" />
+  <link rel="stylesheet" href="dist/theme/black.css" />
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <!-- INTRODUCTION AND DEMO -->
+        <img src="./slides/slide_01/Workshop_Cover.png" width="50%" />
+      </section>
+      <!-- HISTORY OF PCBs -->
+      <!-- https://how2electronics.com/history-printed-circuit-board-pcb-nextpcb/ -->
+      <section>
+        <!-- POINT TO POINT -->
+        <img src="./slides/slide_02/ptp_00.jpg" width="60%" />
+        <p>Point-to-point Construction</p>
+      </section>
+      <section>
+        <!-- MANHATTAN STYLE -->
+        <img src="./slides/manhattan/manhattan_00.jpg" alt="" />
+        <p>Manhattan Style Construction</p>
+      </section>
+      <section>
         <section>
           <!-- The “dead bug” is the integrated circuit flipped upside down with its “legs” sticking up. -->
-          <img src="./slides/slide_02/ptp_01.jpg" width="60%" />
+          <img src="./slides/slide_03/deadbug_00.png" width="60%" />
           <p>"Dead Bug" Style</p>
         </section>
         <section>
-          <img src="./slides/slide_02/ptp_01.jpg" width="60%" />
-          <p>"Dead Bug" Style</p>
+          <img src="./slides/slide_03/alivebug_00.jpg" width="60%" />
         </section>
-      </div>
+        <section>
+          <img src="./slides/slide_03/deadbug_01.webp" width="60%" />
+        </section>
+      </section>
+      <section>
+        <section>
+          <p style="margin: 0">Peter Vogel</p>
+          <img src="./slides/peter_vogel/peter_vogel.png" alt="" />
+          <p style="margin: 0">Senza Titolo, 1972</p>
+        </section>
+        <section>
+          <iframe width="1080" height="720" src="https://www.youtube.com/embed/NIixUuoDrHw" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </section>
+      </section>
+      <section>
+        <section>
+          <p style="margin: 0">Mohit Bhoite</p>
+          <img src="./slides/mohit_bhoite/bhoite_00.png" alt="" />
+        </section>
+        <section>
+          <img src="./slides/mohit_bhoite/bhoite_01.jpg" alt="" />
+        </section>
+        <section>
+          <a href="https://www.bhoite.com/sculptures/">https://www.bhoite.com/sculptures/</a>
+          <img src="./slides/mohit_bhoite/bhoite_02.png" alt="" />
+        </section>
+      </section>
     </div>
+  </div>
 
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script>
-      // More info about initialization & config:
-      // - https://revealjs.com/initialization/
-      // - https://revealjs.com/config/
-      Reveal.initialize({
-        hash: true,
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      controls: false,
+      progress: false,
+      transition: 'fade',
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-      });
-    </script>
-  </body>
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    });
+  </script>
+</body>
+
 </html>
