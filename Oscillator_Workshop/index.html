@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="dist/reveal.css" />
   <link rel="stylesheet" href="dist/theme/black.css" />
 
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 </head>
@@ -161,14 +163,14 @@
                   border-radius: 3px;
                   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
                   margin: 1px;
-                  max-width: 400px;
+                  max-width: 540px;
                   min-width: 326px;
                   padding: 0;
-                  width: 70.375%;
+                  width: 99.375%;
                   width: -webkit-calc(100% - 2px);
                   width: calc(100% - 2px);
                 ">
-              <div style="padding: 16px" width="50%">
+              <div style="padding: 16px">
                 <a href="https://www.instagram.com/p/ByQdTu3nhW0/?utm_source=ig_embed&amp;utm_campaign=loading"
                   style="background: #ffffff; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%"
                   target="_blank">
@@ -313,6 +315,7 @@
                 </p>
               </div>
             </blockquote>
+            <script async src="//www.instagram.com/embed.js"></script>
           </div>
           <script async src="//www.instagram.com/embed.js"></script>
         </section>
@@ -327,6 +330,82 @@
         </section>
       </section>
       <section>
+        <section>
+          <p>Schematic</p>
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_00.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_01.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_02.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_03.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_04.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_05.png
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_06.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_07.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_08.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_09.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_10.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_11.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_12.jpg
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_13.jpeg
+          " width="60%" />
+        </section>
+        <section>
+          <a href="https://ledcalculator.net/">LED Resistor Calculator</a>
+          <img src="./slides/40106/symbols_14.png
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_15.png
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_16.png
+          " width="60%" />
+        </section>
+        <section>
+          <img src="./slides/40106/symbols_17.png
+          " width="60%" />
+        </section>
         <section>
           <a href="https://www.ti.com/lit/ds/symlink/cd40106b.pdf">Datasheet is your friend</a>
           <img src="./slides/40106/40106_00.jpg" alt="" />
@@ -343,9 +422,21 @@
           <img src="./slides/40106/osc_schematic_02.png
           " width="60%" />
         </section>
+        <section>
+          <img src="./slides/40106/osc_schematic_03.png
+          " width="60%" />
+        </section>
       </section>
     </div>
   </div>
+
+  <a-scene background="color: #000000" wasd-controls-enabled="false">
+    <a-assets>
+      <a-asset-item id="cityModel" src="/slides/3d_files/example1.obj"></a-asset-item>
+    </a-assets>
+    <a-entity obj-model="obj: #cityModel" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+    </a-entity>
+  </a-scene>
 
   <script src="dist/reveal.js"></script>
   <script src="plugin/notes/notes.js"></script>
@@ -359,7 +450,7 @@
       hash: true,
       controls: false,
       progress: false,
-      transition: 'fade',
+      transition: 'none',
 
       // Learn about plugins: https://revealjs.com/plugins/
       plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
