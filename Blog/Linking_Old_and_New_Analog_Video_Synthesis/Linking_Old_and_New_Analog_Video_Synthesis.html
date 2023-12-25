@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr">
+<html  dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +25,8 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous" />
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
     <!-- Code Style -->
@@ -87,9 +88,11 @@
         position: absolute !important;
         right: 0px !important;
       }
+
       .code-badge-copy-icon {
         font-size: 1.3em !important;
       }
+
       .hide-on-load {
         display: none;
       }
@@ -116,6 +119,7 @@
     <link rel="stylesheet" href="../../css/blog_style.css" />
 
     <!-- Includes other header content if needed -->
+    
   </head>
 
   <body>
@@ -123,7 +127,8 @@
     <div
       class="uk-flex uk-flex-left uk-background-cover"
       style="background-image: url(../../resources/textured_black_sharpened.png); height: 50px"
-      uk-sticky>
+      uk-sticky
+    >
       <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
         <span uk-icon="icon: menu; ratio: 1.5;" style="color: white"></span>
       </button>
@@ -132,7 +137,8 @@
       <h2
         id="heading"
         class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
-        style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px">
+        style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px"
+      >
         <a class="uk-text" style="color: white; font-weight: normal; font-size: 1em" href="../../blog.html">Art & Technology</a>
         &nbsp;&nbsp;
         <span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
@@ -146,107 +152,91 @@
           <a href="../../blog.html" uk-icon="icon: home;"></a>
           <hr />
           <h3>Table of Contents</h3>
-          <div>
-            <ul>
-              <li><a href="#the-hello-world-of-video-synthesis">The Hello World of Video Synthesis</a></li>
-            </ul>
-          </div>
+          <div><ul>
+<li><a href="#the-hello-world-of-video-synthesis"
+id="toc-the-hello-world-of-video-synthesis">The Hello World of Video
+Synthesis</a></li>
+</ul></div>
         </div>
       </div>
 
       <!-- HEADING -->
       <!-- <div class="uk-container uk-padding uk-padding-remove-bottom"> -->
-      <img src="./cover/cover.gif" id="cover-img" class="uk-align-center uk-width-1-1" alt="" style="margin-top: 0; object-fit: contain" />
+      <img src="./cover/cover.png" id="cover-img" class="uk-align-center uk-width-1-1" alt="" style="margin-top: 0; object-fit: contain" />
       <div class="uk-container" style="padding-top: 0.2em; padding-bottom: 1.2em">
-        <span class="title">Linking Old and New Analog Video Synthesis</span>
+        <span class="title">Linking Old and New Analog Video
+Synthesis</span>
         <br />
-        <span class="date-created" style="font-size: 1em">Date created: August 05, 2022</span>
+        <div class="date-created">
+          <span class="" style="font-size: 1em">Date created: August 05,
+2022</span>
+        </div>
         <hr />
       </div>
       <!-- </div> -->
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll">
-        <p>
-          During my time as an MFA student at
-          <a target="_blank" href="https://saic.edu">SAIC</a>
-          in the
-          <a target="_blank" href="https://www.saic.edu/academics/departments/art-and-technology-studies">Art and Technology Studies</a>
-          department, I had the priviledge of experimenting with the Sandin Image Processor (SIP), an analog video synthesizer from the
-          1970s, invented by Dan Sandin. There is a history of how more than one copy ended up in one of the school buildings, and how this
-          synth is placed in the timeline of analog video synthesis, but I will leave that as a possible future blog post for another time.
-          The purpose of this post, is to document what I have learned from my time alone with this synth.
-        </p>
-        <p>
-          Before coming to the school, I had heard about the Sandin Image Processor as being an inspiration for a tool I used called
-          <a target="_blank" href="https://hydra.ojack.xyz">Hydra</a>
-          , a browser-based open source software that turns written javascript into generated visuals. This was popular among the
-          <a target="_blank" href="https://toplap.org/about/">livecoding</a>
-          community, as an accessible way of supplementing sound or performances in general. Hydra also stands well on its own as an artist
-          tool, being used in a variety of ways by video artists. I also use it for teaching certain programming concepts, showing how
-          quickly one can make something happen with just a few
-          <span style="font-weight: bold; cursor: pointer" data-uk-tooltip="A piece of code that you can easily call over and over again.">
-            functions
-          </span>
-          .
-        </p>
-        <p>
-          Since Hydra is inspired by analog modular synthesis, we can also start thinking about concepts like modulation, inputs, and signal
-          mixing.
-        </p>
-        <p>
-          <img src="./Media/hydra1.gif" alt="cam with modulation" />
-          <i style="color: #ccd3d5">Computer camera modulated by an oscillator</i>
-        </p>
-        <p>
-          <img src="./Media/sandin1.gif" alt="sandin cam as fm input for oscillator" />
-          <i style="color: #ccd3d5">Sandin camera as FM input for oscillator</i>
-        </p>
-        <p>
-          To get a sense of what people do with Hydra, you can view an an online gallery of hydra sketches in the form of a
-          <a target="_blank" href="https://twitter.com/hydra_patterns">twitter bot</a>
-          account.
-        </p>
-        <p>
-          Hydra uses shaders, which takes advantage of the architecture of the GPU. On the topic of video synthesis, whether it uses voltage
-          or shader language, I will also be pulling in other examples that are present at the time I am writing this (Fall 2022). Here is a
-          full list of the synths:
-        </p>
-        <p>
-          <strong>Shaders</strong>
-          :
-          <br />
-          1)
-          <a target="_blank" href="https://ojack.xyz/articles/hydra/index.html">Hydra</a>
-          by Olivia Jack
-          <br />
-          2)
-          <a target="_blank" href="https://www.kevinkripper.com/vsynth">VSynth</a>
-          by Kevin Kripper
-          <br />
-          3)
-          <a target="_blank" href="https://lumen-app.com/">Lumen</a>
-          by Paracosm
-        </p>
-        <p>
-          <strong>Analog</strong>
-          :
-          <br />
-          1) Sandin Image Processor
-          <br />
-          2) Paik/Abe Video Synthesizer
-        </p>
-        <h3 id="the-hello-world-of-video-synthesis">The Hello World of Video Synthesis</h3>
-        <p>
-          In my opinion, the
-          <span
-            style="font-weight: bold; cursor: pointer"
-            data-uk-tooltip="A simple program intended to familiarize programmers with a new programming language.">
-            hello world
-          </span>
-          for analog video synthesis, along with audio, should be the generation of an oscillator. The SIP has an oscillator module
-        </p>
-      </div>
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><p>During
+my time as an MFA student at
+<a target="_blank" href="https://saic.edu">SAIC</a> in the
+<a target="_blank" href="https://www.saic.edu/academics/departments/art-and-technology-studies">Art
+and Technology Studies</a> department, I had the priviledge of
+experimenting with the Sandin Image Processor (SIP), an analog video
+synthesizer from the 1970s, invented by Dan Sandin. There is a history
+of how more than one copy ended up in one of the school buildings, and
+how this synth is placed in the timeline of analog video synthesis, but
+I will leave that as a possible future blog post for another time. The
+purpose of this post, is to document what I have learned from my time
+alone with this synth.</p>
+<p>Before coming to the school, I had heard about the Sandin Image
+Processor as being an inspiration for a tool I used called
+<a target="_blank" href="https://hydra.ojack.xyz">Hydra</a>, a
+browser-based open source software that turns written javascript into
+generated visuals. This was popular among the
+<a target="_blank" href="https://toplap.org/about/">livecoding</a>
+community, as an accessible way of supplementing sound or performances
+in general. Hydra also stands well on its own as an artist tool, being
+used in a variety of ways by video artists. I also use it for teaching
+certain programming concepts, showing how quickly one can make something
+happen with just a few <span style="font-weight:bold; cursor: pointer;"
+data-uk-tooltip="A piece of code that you can easily call over and over again.">functions</span>.</p>
+<p>Since Hydra is inspired by analog modular synthesis, we can also
+start thinking about concepts like modulation, inputs, and signal
+mixing.</p>
+<p><img src="./Media/hydra1.gif" alt="cam with modulation" />
+<i style="color: #ccd3d5;">Computer camera modulated by an
+oscillator</i></p>
+<p><img src="./Media/sandin1.gif"
+alt="sandin cam as fm input for oscillator" />
+<i style="color: #ccd3d5;">Sandin camera as FM input for
+oscillator</i></p>
+<p>To get a sense of what people do with Hydra, you can view an an
+online gallery of hydra sketches in the form of a
+<a target="_blank" href="https://twitter.com/hydra_patterns">twitter
+bot</a> account.</p>
+<p>Hydra uses shaders, which takes advantage of the architecture of the
+GPU. On the topic of video synthesis, whether it uses voltage or shader
+language, I will also be pulling in other examples that are present at
+the time I am writing this (Fall 2022). Here is a full list of the
+synths:</p>
+<p><strong>Shaders</strong>:<br />
+1)
+<a target="_blank" href="https://ojack.xyz/articles/hydra/index.html">Hydra</a>
+by Olivia Jack<br />
+2)
+<a target="_blank" href="https://www.kevinkripper.com/vsynth">VSynth</a>
+by Kevin Kripper<br />
+3) <a target="_blank" href="https://lumen-app.com/">Lumen</a> by
+Paracosm</p>
+<p><strong>Analog</strong>:<br />
+1) Sandin Image Processor<br />
+2) Paik/Abe Video Synthesizer</p>
+<h3 id="the-hello-world-of-video-synthesis">The Hello World of Video
+Synthesis</h3>
+<p>In my opinion, the <span style="font-weight:bold; cursor: pointer;"
+data-uk-tooltip="A simple program intended to familiarize programmers with a new programming language.">hello
+world</span> for analog video synthesis, along with audio, should be the
+generation of an oscillator. The SIP has an oscillator module</p></div>
 
       <div class="uk-container uk-margin">
         <ul uk-accordion>
@@ -256,7 +246,8 @@
               class="uk-accordion-title"
               style="background-color: white; border-radius: 25px; border: 2px solid #ccd3d5"
               href="#comments"
-              uk-scroll>
+              uk-scroll
+            >
               Have a Suggestion/Comment?
               <span uk-icon="happy"></span>
             </a>

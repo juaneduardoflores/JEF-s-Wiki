@@ -1,198 +1,376 @@
 <!DOCTYPE html>
 <html  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="pandoc" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="generator" content="pandoc" />
+    <title></title>
 
-	<title></title>
+    <!-- UIKit files -->
+    <link rel="stylesheet" href="../../css/uikit.min.css" />
+    <script src="../../js/uikit.min.js"></script>
+    <script src="../../js/uikit-icons.min.js"></script>
 
-	<link rel="stylesheet" href="../../css/uikit.min.css" />
-	<script src="../../js/uikit.min.js"></script>
-	<script src="../../js/uikit-icons.min.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet" />
+    <!-- Code Style -->
+    <link rel="stylesheet" href="../../css/pojoaque.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 
-	<link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <!-- hljs -->
+    <script>
+      hljs.highlightAll();
+    </script>
 
-	<link rel="stylesheet"
-		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atelier-plateau-light.min.css">
-	<script src="../../js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+    <!-- Makes Inline Code Similar Style to hljs theme -->
+    <script charset="utf-8">
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+        document.querySelectorAll('p code').forEach((el) => {
+          el.classList.add('language-plaintext');
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
 
-	<link rel="stylesheet" href="../../css/blog_style.css" />
+    <!-- Styling of Code -->
+    <style>
+      td.hljs-ln-numbers {
+        text-align: center;
+        color: #ccc;
+        border-right: 1px solid #999;
+        vertical-align: top;
+        padding-right: 5px;
 
-	
-</head>
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-<body>
+      td.hljs-ln-code {
+        padding-left: 10px;
+      }
 
-	<!-- NAV AND HEADING -->
-	<div class="uk-flex uk-flex-left" style="background-color: black; border-bottom: 1px solid white;" uk-sticky>
+      .hljs-ln td.hljs-ln-numbers {
+        padding-left: 10px;
+      }
 
-		<button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
-			<span uk-icon="icon: menu" style="color: white"></span>
-		</button>
+      code {
+        padding: 15px;
+      }
 
-		<!-- HEADING -->
-		<span class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical"
-			style="font-family: 'Cormorant', serif; color: white; font-size: 1.5em;">
-			<a class="uk-text" style="color: white; font-weight: normal; font-size: 1em;"
-				href="../../blog.html">juanedflores</a>&nbsp;&nbsp;
-			<span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
-		</span>
-	</div>
+      .code-badge {
+        display: flex !important;
+        flex-direction: row !important;
+        background: #555 !important;
+        padding: 8px !important;
+        position: absolute !important;
+        right: 0px !important;
+      }
 
-	<div class="uk-align-center uk-margin-remove-top" id="contentArea">
+      .code-badge-copy-icon {
+        font-size: 1.3em !important;
+      }
 
-		<!-- BODY -->
-		<div id="blog-toc" uk-offcanvas="mode: slide; container: #contentArea">
-			<div class="uk-offcanvas-bar">
-				<button class="uk-offcanvas-close" type="button" uk-close></button>
-				<a href="../../blog.html" uk-icon="icon: home"></a>
-				<h3>Table of Contents</h3>
-				<div><ul>
-<li><a href="#learning-c">Learning C++</a>
+      .hide-on-load {
+        display: none;
+      }
+
+      .code-badge-pre {
+        overflow: hidden;
+      }
+
+      .hljs {
+        overflow: auto;
+      }
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- Blog Style CSS -->
+    <link rel="stylesheet" href="../../css/blog_style.css" />
+
+    <!-- Includes other header content if needed -->
+    
+  </head>
+
+  <body>
+    <!-- NAV AND HEADING -->
+    <div
+      class="uk-flex uk-flex-left uk-background-cover"
+      style="background-image: url(../../resources/textured_black_sharpened.png); height: 50px"
+      uk-sticky
+    >
+      <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
+        <span uk-icon="icon: menu; ratio: 1.5;" style="color: white"></span>
+      </button>
+
+      <!-- HEADING -->
+      <h2
+        id="heading"
+        class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
+        style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px"
+      >
+        <a class="uk-text" style="color: white; font-weight: normal; font-size: 1em" href="../../blog.html">Art & Technology</a>
+        &nbsp;&nbsp;
+        <span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
+      </h2>
+    </div>
+
+    <div class="uk-align-center uk-margin-remove-top uk-width-1-2@l uk-width-2-3@m" id="contentArea">
+      <!-- TABLE OF CONTENTS -->
+      <div id="blog-toc" style="top: 50px" uk-offcanvas="mode: slide; container: #contentArea; bg-close: true;">
+        <div class="uk-offcanvas-bar">
+          <a href="../../blog.html" uk-icon="icon: home;"></a>
+          <hr />
+          <h3>Table of Contents</h3>
+          <div><ul>
+<li><a href="#learning-c" id="toc-learning-c">Learning C++</a>
 <ul>
-<li><a href="#resources">Resources</a></li>
-<li><a href="#first-things-to-know">First Things to Know</a></li>
-<li><a href="#examples-to-get-started">Examples to Get Started</a>
+<li><a href="#resources" id="toc-resources">Resources</a></li>
+<li><a href="#first-things-to-know" id="toc-first-things-to-know">First
+Things to Know</a></li>
+<li><a href="#examples-to-get-started"
+id="toc-examples-to-get-started">Examples to Get Started</a>
 <ul>
-<li><a href="#hello-moon">Hello Moon</a></li>
-<li><a href="#variables">Variables</a></li>
-<li><a href="#input">Input</a></li>
-<li><a href="#vectors">Vectors</a></li>
+<li><a href="#hello-moon" id="toc-hello-moon">Hello Moon</a></li>
+<li><a href="#variables" id="toc-variables">Variables</a></li>
+<li><a href="#input" id="toc-input">Input</a></li>
+<li><a href="#vectors" id="toc-vectors">Vectors</a></li>
 </ul></li>
-<li><a href="#data-types">Data Types</a></li>
+<li><a href="#data-types" id="toc-data-types">Data Types</a></li>
 </ul></li>
 </ul></div>
-			</div>
-		</div>
-		<div class="uk-container uk-width-1-2@m"
-			style="background-color: black; padding-top: 1.2em; padding-bottom: 1.2em;">
-			<span class="title" style="color: white;">Learning_C++</span>
-			<br />
-			<span style="font-size: 1em;">Date created: </span>
-		</div>
-		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			<h2 id="learning-c">Learning C++</h2>
-   <h3 id="resources">Resources</h3>
-   <p>Beginner: * Dan Buzzo’s youtube series <a href="https://www.youtube.com/watch?v=HGbkTHCO8P8&amp;list=PL6QF0yo3Zj7DlRpQlfBULd3ngzi-qbLCY">Programming for Artists</a>. * Open Frameworks Book. <a href="https://openframeworks.cc/ofBook/chapters/cplusplus_basics.html">C++ Language Basics</a> Intermediate: * <a href="https://www.youtube.com/c/javidx9/videos">OneLoneCoder</a></p>
-   <h3 id="first-things-to-know">First Things to Know</h3>
-   <ul>
-   <li>C++ is a compiled language, which means you need a compiler in order to turn it into machine code and run it.</li>
-   <li>C++ is based on C with some added features (represented by <code>++</code>). Because of this, it is important to have a thorough knowledge of C.</li>
-   </ul>
-   <h3 id="examples-to-get-started">Examples to Get Started</h3>
-   <h4 id="hello-moon">Hello Moon</h4>
-   <p>A simple program that prints a phrase is the common way to get familiar with a programming language’s syntax and setup.</p>
-   <h5 id="setup">Setup</h5>
-   <ul>
-   <li><p><strong>Text Editor</strong><br />
-   You can use any plain text editor.</p></li>
-   <li><p><strong>Compiler</strong><br />
-   The most frequently used and free compiler is <a href="https://gcc.gnu.org/install/">GNU C/C++ compiler</a>. If you are using MacOS, then you can use the <code>clang</code> C++ compiler available in the “Command Line Tools for XCode”. You can download it at the <a href="https://developer.apple.com/downloads/">Apple Developer Site</a>.</p></li>
-   </ul>
-   <h5 id="the-program">The Program:</h5>
-   <div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-   <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
-   <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="kw">using</span> <span class="kw">namespace</span> std;</span>
-   <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
-   <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="dt">int</span> main() {</span>
-   <span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;hello moon</span><span class="sc">\n</span><span class="st">&quot;</span>;</span>
-   <span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>}</span></code></pre></div>
-   <p><code>#include &lt;iostream&gt;</code><br />
-   This is including a library called ‘iostream’. <code>&lt;iostream&gt;</code> is what we use to get input and output.</p>
-   <p><code>using namespace std;</code><br />
-   In this line we are using a namespace called <code>std</code> (standard).</p>
-   <p><code>cout &lt;&lt; "hello moon\n";</code><br />
-   This line prints “hello moon” follow by a new line <code>\n</code> in the console. The <code>c</code> in <code>cout</code> stands for “character”. <code>out</code> stands for “output”. <code>cout</code> is a stream which outputs to the stream specified. It is by default the standard output stream. By default, most systems have their standard output set to the console where text messages are shown. <code>&lt;&lt;</code> is an insertion operator. It writes the second argument onto its first.</p>
-   <h5 id="compile-it-into-an-executable">Compile It Into An Executable</h5>
-   <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>$ <span class="ex">g++</span> hello_moon.cpp -o hello</span></code></pre></div>
-   <p>This should create a file called “hello”. The <code>-o</code> flag here means it will output to a native executable file with the specified name. In this case the name we specified is “hello”. Go to your terminal and write <code>./hello</code> to execute it.</p>
-   <p>It should print “hello moon” in the terminal!</p>
-   <h4 id="variables">Variables</h4>
-   <div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-   <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
-   <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">using</span> <span class="kw">namespace</span> std;</span>
-   <span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
-   <span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="dt">int</span> main() {</span>
-   <span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>  <span class="dt">int</span> numOfPeople;</span>
-   <span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>  string location;</span>
-   <span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>  <span class="dt">float</span> weightOfStuff;</span>
-   <span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>  <span class="dt">bool</span> isItHappening;</span>
-   <span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>  </span>
-   <span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>  numOfPeople = <span class="dv">10</span>;</span>
-   <span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>  location = <span class="st">&quot;Sausalito&quot;</span>;</span>
-   <span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>  weightOfStuff = <span class="fl">7.25</span>;</span>
-   <span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>  isItHappening = <span class="kw">true</span>; </span>
-   <span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>  </span>
-   <span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;number of people coming to BBQ is &quot;</span> &lt;&lt; numOfPeople &lt;&lt; endl;</span>
-   <span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;location of BBQ is &quot;</span> &lt;&lt; location &lt;&lt; endl;</span>
-   <span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;weight of all the stuff is &quot;</span> &lt;&lt; weightOfStuff &lt;&lt; <span class="st">&quot; kgs.&quot;</span> &lt;&lt; endl;</span>
-   <span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;is is happening? &quot;</span> &lt;&lt; isItHappening &lt;&lt; endl;</span>
-   <span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>}</span></code></pre></div>
-   <p><code>endl</code><br />
-   This inserts a newline (<code>\n</code>) character and <em>flushes</em> the stream. Flushing a stream here ensures that all data that has been written to that stream is output, including clearing any that may have been buffered.</p>
-   <h4 id="input">Input</h4>
-   <div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-   <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
-   <span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="kw">using</span> <span class="kw">namespace</span> std;</span>
-   <span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
-   <span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="dt">int</span> main() {</span>
-   <span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>  <span class="dt">int</span> numOfPeople;</span>
-   <span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>  <span class="dt">float</span> weightOfStuff = <span class="fl">7.25</span>;</span>
-   <span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>  </span>
-   <span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;enter number of people attending BBQ:&quot;</span> &lt;&lt; endl;</span>
-   <span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>  cin &gt;&gt; numOfPeople;</span>
-   <span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>  </span>
-   <span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;number of people coming to BBQ is &quot;</span> &lt;&lt; numOfPeople &lt;&lt; endl;</span>
-   <span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>  cout &lt;&lt; <span class="st">&quot;weight of all the stuff is &quot;</span> &lt;&lt; weightOfStuff * numOfPeople &lt;&lt; <span class="st">&quot; kgs.&quot;</span> &lt;&lt; endl;</span>
-   <span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>}</span></code></pre></div>
-   <h4 id="vectors">Vectors</h4>
-   <p>Vectors in C++ are sequence containers representing arrays that can change in size.</p>
-   <h3 id="data-types">Data Types</h3>
-   <ul>
-   <li>Integer (int) - Whole numbers.</li>
-   <li>Float (float) - Decimal numbers.</li>
-   <li>String (string) - Pieces of text.</li>
-   <li>Boolean - True or False.</li>
-   <li>Vectors</li>
-   </ul>
-   <p>test</p>
-		</div>
-		<div class="uk-container uk-margin uk-width-1-2@m" style="overflow: scroll;">
-			<div id="disqus_thread"></div>
-			<script>
-				/**
-				*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-				*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-				var disqus_config = function () {
-					let pagetitle = "Learning_C++"
-					this.page.url = "https://juanedflores.com/Blog/" + pagetitle.replace(/ /g, "_") + "/" + pagetitle.replace(/ /g, "_") + ".html";
-					this.page.identifier = "/" + pagetitle.replace(/ /g, "_");
-				};
+        </div>
+      </div>
 
-				(function () { // DON'T EDIT BELOW THIS LINE
-					var d = document, s = d.createElement('script');
-					s.src = 'https://juanedflores-blog.disqus.com/embed.js';
-					s.setAttribute('data-timestamp', +new Date());
-					(d.head || d.body).appendChild(s);
-				})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-					Disqus.</a></noscript>
-		</div>
+      <!-- HEADING -->
+      <!-- <div class="uk-container uk-padding uk-padding-remove-bottom"> -->
+      <img src="./cover/cover.png" id="cover-img" class="uk-align-center uk-width-1-1" alt="" style="margin-top: 0; object-fit: contain" />
+      <div class="uk-container" style="padding-top: 0.2em; padding-bottom: 1.2em">
+        <span class="title">Learning_C++</span>
+        <br />
+        <div class="date-created">
+          <span class="" style="font-size: 1em">Date created: </span>
+        </div>
+        <hr />
+      </div>
+      <!-- </div> -->
 
-	</div>
-</body>
+      <!-- BODY -->
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><h2
+id="learning-c">Learning C++</h2>
+<h3 id="resources">Resources</h3>
+<p>Beginner: * Dan Buzzo’s youtube series <a
+href="https://www.youtube.com/watch?v=HGbkTHCO8P8&amp;list=PL6QF0yo3Zj7DlRpQlfBULd3ngzi-qbLCY">Programming
+for Artists</a>. * Open Frameworks Book. <a
+href="https://openframeworks.cc/ofBook/chapters/cplusplus_basics.html">C++
+Language Basics</a> Intermediate: * <a
+href="https://www.youtube.com/c/javidx9/videos">OneLoneCoder</a></p>
+<h3 id="first-things-to-know">First Things to Know</h3>
+<ul>
+<li>C++ is a compiled language, which means you need a compiler in order
+to turn it into machine code and run it.</li>
+<li>C++ is based on C with some added features (represented by
+<code>++</code>). Because of this, it is important to have a thorough
+knowledge of C.</li>
+</ul>
+<h3 id="examples-to-get-started">Examples to Get Started</h3>
+<h4 id="hello-moon">Hello Moon</h4>
+<p>A simple program that prints a phrase is the common way to get
+familiar with a programming language’s syntax and setup.</p>
+<h5 id="setup">Setup</h5>
+<ul>
+<li><p><strong>Text Editor</strong><br />
+You can use any plain text editor.</p></li>
+<li><p><strong>Compiler</strong><br />
+The most frequently used and free compiler is <a
+href="https://gcc.gnu.org/install/">GNU C/C++ compiler</a>. If you are
+using MacOS, then you can use the <code>clang</code> C++ compiler
+available in the “Command Line Tools for XCode”. You can download it at
+the <a href="https://developer.apple.com/downloads/">Apple Developer
+Site</a>.</p></li>
+</ul>
+<h5 id="the-program">The Program:</h5>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;hello moon</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><code>#include &lt;iostream&gt;</code><br />
+This is including a library called ‘iostream’.
+<code>&lt;iostream&gt;</code> is what we use to get input and
+output.</p>
+<p><code>using namespace std;</code><br />
+In this line we are using a namespace called <code>std</code>
+(standard).</p>
+<p><code>cout &lt;&lt; "hello moon\n";</code><br />
+This line prints “hello moon” follow by a new line <code>\n</code> in
+the console. The <code>c</code> in <code>cout</code> stands for
+“character”. <code>out</code> stands for “output”. <code>cout</code> is
+a stream which outputs to the stream specified. It is by default the
+standard output stream. By default, most systems have their standard
+output set to the console where text messages are shown.
+<code>&lt;&lt;</code> is an insertion operator. It writes the second
+argument onto its first.</p>
+<h5 id="compile-it-into-an-executable">Compile It Into An
+Executable</h5>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> g++ hello_moon.cpp <span class="at">-o</span> hello</span></code></pre></div>
+<p>This should create a file called “hello”. The <code>-o</code> flag
+here means it will output to a native executable file with the specified
+name. In this case the name we specified is “hello”. Go to your terminal
+and write <code>./hello</code> to execute it.</p>
+<p>It should print “hello moon” in the terminal!</p>
+<h4 id="variables">Variables</h4>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> numOfPeople<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  string location<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">float</span> weightOfStuff<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">bool</span> isItHappening<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  numOfPeople <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  location <span class="op">=</span> <span class="st">&quot;Sausalito&quot;</span><span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  weightOfStuff <span class="op">=</span> <span class="fl">7.25</span><span class="op">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  isItHappening <span class="op">=</span> <span class="kw">true</span><span class="op">;</span> </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;number of people coming to BBQ is &quot;</span> <span class="op">&lt;&lt;</span> numOfPeople <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;location of BBQ is &quot;</span> <span class="op">&lt;&lt;</span> location <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;weight of all the stuff is &quot;</span> <span class="op">&lt;&lt;</span> weightOfStuff <span class="op">&lt;&lt;</span> <span class="st">&quot; kgs.&quot;</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;is is happening? &quot;</span> <span class="op">&lt;&lt;</span> isItHappening <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><code>endl</code><br />
+This inserts a newline (<code>\n</code>) character and <em>flushes</em>
+the stream. Flushing a stream here ensures that all data that has been
+written to that stream is output, including clearing any that may have
+been buffered.</p>
+<h4 id="input">Input</h4>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> numOfPeople<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">float</span> weightOfStuff <span class="op">=</span> <span class="fl">7.25</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;enter number of people attending BBQ:&quot;</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  cin <span class="op">&gt;&gt;</span> numOfPeople<span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;number of people coming to BBQ is &quot;</span> <span class="op">&lt;&lt;</span> numOfPeople <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">&quot;weight of all the stuff is &quot;</span> <span class="op">&lt;&lt;</span> weightOfStuff <span class="op">*</span> numOfPeople <span class="op">&lt;&lt;</span> <span class="st">&quot; kgs.&quot;</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h4 id="vectors">Vectors</h4>
+<p>Vectors in C++ are sequence containers representing arrays that can
+change in size.</p>
+<h3 id="data-types">Data Types</h3>
+<ul>
+<li>Integer (int) - Whole numbers.</li>
+<li>Float (float) - Decimal numbers.</li>
+<li>String (string) - Pieces of text.</li>
+<li>Boolean - True or False.</li>
+<li>Vectors</li>
+</ul>
+<p>test</p></div>
 
+      <div class="uk-container uk-margin">
+        <ul uk-accordion>
+          <li>
+            <a
+              id="js-scroll-trigger"
+              class="uk-accordion-title"
+              style="background-color: white; border-radius: 25px; border: 2px solid #ccd3d5"
+              href="#comments"
+              uk-scroll
+            >
+              Have a Suggestion/Comment?
+              <span uk-icon="happy"></span>
+            </a>
+            <div class="uk-accordion-content">
+              <div id="disqus_thread"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      var disqus_config = function () {
+        let pagetitle = 'Learning_C++';
+        this.page.url = 'https://juanedflores.com/Blog/' + pagetitle.replace(/ /g, '_') + '/' + pagetitle.replace(/ /g, '_') + '.html';
+        this.page.identifier = '/' + pagetitle.replace(/ /g, '_');
+        this.page.title = pagetitle.replace(/ /g, '_');
+      };
+
+      (function () {
+        // DON'T EDIT BELOW THIS LINE
+        var d = document,
+          s = d.createElement('script');
+        s.src = '//juanedflores-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <!-- highlightjs badge -->
+    <script src="../../js/highlightjs-badge.js"></script>
+
+    <script>
+      var pres = document.querySelectorAll('pre>code');
+      for (var i = 0; i < pres.length; i++) {
+        hljs.highlightBlock(pres[i]);
+      }
+      var options = {
+        contentSelector: '#ArticleBody',
+        // CSS class(es) used to render the copy icon.
+        copyIconClass: 'fa fa-copy',
+        // CSS class(es) used to render the done icon.
+        checkIconClass: 'fa fa-check text-success',
+      };
+      window.highlightJsBadge(options);
+    </script>
+  </body>
 </html>

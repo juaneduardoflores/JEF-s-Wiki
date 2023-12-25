@@ -25,7 +25,8 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous" />
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
     <!-- Code Style -->
@@ -87,9 +88,11 @@
         position: absolute !important;
         right: 0px !important;
       }
+
       .code-badge-copy-icon {
         font-size: 1.3em !important;
       }
+
       .hide-on-load {
         display: none;
       }
@@ -124,7 +127,8 @@
     <div
       class="uk-flex uk-flex-left uk-background-cover"
       style="background-image: url(../../resources/textured_black_sharpened.png); height: 50px"
-      uk-sticky>
+      uk-sticky
+    >
       <button class="uk-button uk-button-default" type="button" style="border: none" uk-toggle="target: #blog-toc">
         <span uk-icon="icon: menu; ratio: 1.5;" style="color: white"></span>
       </button>
@@ -133,7 +137,8 @@
       <h2
         id="heading"
         class="uk-flex uk-flex-center uk-margin-remove uk-padding-small uk-padding-remove-vertical uk-position-center-left"
-        style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px">
+        style="font-family: 'Inter-ExtraLight', serif; color: white; left: 60px"
+      >
         <a class="uk-text" style="color: white; font-weight: normal; font-size: 1em" href="../../blog.html">Art & Technology</a>
         &nbsp;&nbsp;
         <span style="font-family: Rozha One, serif; font-size: 100%">[ BLOG ]</span>
@@ -148,8 +153,11 @@
           <hr />
           <h3>Table of Contents</h3>
           <div><ul>
-<li><a href="#oscilloscope-basics">Oscilloscope Basics</a></li>
-<li><a href="#summing-oscillatos-together">Summing Oscillatos Together</a></li>
+<li><a href="#oscilloscope-basics"
+id="toc-oscilloscope-basics">Oscilloscope Basics</a></li>
+<li><a href="#summing-oscillatos-together"
+id="toc-summing-oscillatos-together">Summing Oscillatos
+Together</a></li>
 </ul></div>
         </div>
       </div>
@@ -158,24 +166,33 @@
       <!-- <div class="uk-container uk-padding uk-padding-remove-bottom"> -->
       <img src="./cover/cover.png" id="cover-img" class="uk-align-center uk-width-1-1" alt="" style="margin-top: 0; object-fit: contain" />
       <div class="uk-container" style="padding-top: 0.2em; padding-bottom: 1.2em">
-        <span class="title">CD40106 Oscillators and Using an Oscilloscope</span>
+        <span class="title">CD40106 Oscillators and Using an
+Oscilloscope</span>
         <br />
-        <span class="date-created" style="font-size: 1em">Date created: September 23, 2022</span>
+        <div class="date-created">
+          <span class="" style="font-size: 1em">Date created: September
+23, 2022</span>
+        </div>
         <hr />
       </div>
       <!-- </div> -->
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><p><strong>1K Resistor + 1uF Capacitor</strong><br />
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><p><strong>1K
+Resistor + 1uF Capacitor</strong><br />
 Vpp (Voltage Peak to Peak) = 7.12 - 7.52V<br />
 Vmax = 8V<br />
 Freq = 1.19kHz</p>
 <h1 id="oscilloscope-basics">Oscilloscope Basics</h1>
-<p>What is an Oscilloscope? To visualize an electrical signal. Dynamically graphing voltage over time.</p>
+<p>What is an Oscilloscope? To visualize an electrical signal.
+Dynamically graphing voltage over time.</p>
 <h1 id="summing-oscillatos-together">Summing Oscillatos Together</h1>
 <p>You need an op amp circuit.</p>
-<p>In depth explanation of the oscillator: https://2n3904blog.com/cd40106-schmitt-trigger-relaxation-oscillator/</p>
-<p># Hysterisis Voltage A Schmitt trigger will be designed to have positive threshold voltage (Vt+) to be higher than negative threshold voltage (Vt-).</p>
+<p>In depth explanation of the oscillator:
+https://2n3904blog.com/cd40106-schmitt-trigger-relaxation-oscillator/</p>
+<p># Hysterisis Voltage A Schmitt trigger will be designed to have
+positive threshold voltage (Vt+) to be higher than negative threshold
+voltage (Vt-).</p>
 <p>For example, for a 74LS14 Vt+ = 1.6V Vt- = 0.8V</p>
 <p>The hysteresis voltage is the difference = 0.8V.</p></div>
 
@@ -187,7 +204,8 @@ Freq = 1.19kHz</p>
               class="uk-accordion-title"
               style="background-color: white; border-radius: 25px; border: 2px solid #ccd3d5"
               href="#comments"
-              uk-scroll>
+              uk-scroll
+            >
               Have a Suggestion/Comment?
               <span uk-icon="happy"></span>
             </a>
