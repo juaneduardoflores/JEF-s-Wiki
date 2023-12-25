@@ -80,6 +80,7 @@ ul li {
 #cover-img {
   background-color: black;
   max-height: 500px;
+  margin-bottom: 10px !important;
 }
 
 .date-created {
@@ -197,6 +198,10 @@ canvas {
 
   #cover-img {
     max-height: 260px;
+  }
+
+  .date-created {
+    font-size: 13px !important;
   }
 
   span.uk-label {
