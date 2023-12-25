@@ -21,53 +21,37 @@ pre {
 }
 
 html {
-  /* overflow: hidden; */
   scroll-behavior: smooth;
-  /* background: rgb(255, 242, 226); */
-  background: #343032;
-  /* background: linear-gradient( */
-  /*   90deg, */
-  /*   rgba(255, 242, 226, 1) 0%, */
-  /*   rgba(249, 253, 226, 0.39957990031950286) 10%, */
-  /*   rgba(218, 223, 220, 1) 50%, */
-  /*   rgba(249, 253, 226, 0.3967787798713235) 90%, */
-  /*   rgba(255, 242, 226, 1) 100% */
-  /* ); */
+  background: #f2f2f2;
 }
 
 body {
-  background: #343032;
-  /* overflow: auto; */
-  /* margin: 0; */
-  /* max-height: 100vh; */
-  /* color: #ffffff; */
-  /* background: rgba(255, 242, 226, 255); */
-  /* background: linear-gradient( */
-  /*   90deg, */
-  /*   rgba(255, 242, 226, 1) 0%, */
-  /*   rgba(249, 253, 226, 0.39957990031950286) 10%, */
-  /*   rgba(218, 223, 220, 1) 50%, */
-  /*   rgba(249, 253, 226, 0.3967787798713235) 90%, */
-  /*   rgba(255, 242, 226, 1) 100% */
-  /* ); */
+  background: #f2f2f2;
 }
 
-#contentArea {
-  background-color: #413c3f;
+#blogEntryArea {
+  background: #f2f2f2;
   padding-bottom: 1em;
 }
 
+#contentArea {
+  background: white;
+  padding-bottom: 1em;
+  border: black solid 1px;
+}
+
 div uk-container {
-  background: rgba(255, 242, 226, 255);
+  /* background: #f2f2f2; */
+  /* background: red; */
 }
 
 a {
-  color: #87fbe9;
+  /* color: #87fbe9; */
 }
 
 p {
   font-size: 1.1em;
-  color: #e4fefa;
+  color: black;
   font-family: 'Inter-ExtraLight', sans-serif;
 }
 
@@ -78,7 +62,8 @@ img {
 p img {
   display: block;
   margin: auto;
-  width: 100%;
+  padding: 1em;
+  /* width: 100%; */
 }
 
 ul li {
@@ -86,9 +71,10 @@ ul li {
 }
 
 .title {
-  color: #ffffff;
-  font-size: 2.8em;
-  font-family: 'Inter-ExtraLight';
+  color: black;
+  font-size: 2.4em;
+  font-family: 'Inter-Black';
+  padding-bottom: 1em;
 }
 
 #cover-img {
@@ -99,28 +85,32 @@ ul li {
 .date-created {
   color: #b9b9b9;
   font-family: 'Inter-ExtraLight', sans-serif;
+  line-height: 2.5;
 }
 
 h1 {
-  color: #ffffff;
+  color: black;
   font-family: 'Inter-ExtraLight';
 }
 
 h2 {
   font-size: 1.5em;
+  font-weight: bold;
+  font-family: 'Inter-Black';
 }
 
-h2,
+h3 {
+  font-size: 1.2em;
+}
+
 h3,
 h4,
 h5 {
-  /* color: #ffb03b; */
-  color: #ffffff;
-  /* text-align: center; */
-  font-family: 'Inter-ExtraLight';
+  color: black;
+  font-family: 'Inter-Black';
   border-bottom: 0.5px solid #ffffff;
   padding-bottom: 0.5em;
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 
 h5 {
