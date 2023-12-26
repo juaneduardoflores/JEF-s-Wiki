@@ -32,12 +32,15 @@ added_new_tag = False
 def main():
     global last_modified, blogEntryTitle, blogEntryDescription, blogEntryTags, tags, inputTitle, added_new_tag, last_modified_formatted
 
-    print("MAIN WAS CALLED \n\n")
+    # NOTE: The main function checks if there are any arguments or not to determine whether we are updating the entry post html file, or creating a new entry and updating.
 
     # If an argument was passed, we are updating, else we are creating
     if (len(sys.argv) > 1):
-        # updating an entry means we are
+        # If arguments is more than 1, we are creating
         inputTitle = str(sys.argv[1])
+        print("WE ARE UPDATING \n\n")
+        print("Input Title: ")
+        print(inputTitle)
         updateEntry()
         sys.exit(0)
 
@@ -111,6 +114,7 @@ def updateEntry():
     target_index = 0
     for l in lineiterator:
         if (found_entry):
+            print("FOUDN THE ENTRY")
             # change the modified date
             if (modifying_date):
                 if (re.match('.*\d{4}-\d{2}-\d{2}.*', l)):
@@ -122,10 +126,13 @@ def updateEntry():
                 cur_entry += str(l)
 
             if (l == ""):
-                # print("ADDING TO LIST..")
+                print("ADDING TO LIST..")
                 index += 1
                 cur_entry += "\n"
                 entries.append(cur_entry)
+                print("\n")
+                print("ENTRIES: \n\n")
+                print(entries)
                 if (modifying_date):
                     target_index = index
                     print("target_index: " + str(target_index))
@@ -140,9 +147,9 @@ def updateEntry():
             inputTitlestr = inputTitlestr.replace('+', '\+')
             print('inputTitlestr: ' + inputTitlestr)
             if (re.match('.*<!-- {} -->'.format(inputTitlestr.replace('_', ' ')), l)):
-                modifying_date = True
                 print("MODIFYING TIME...")
-                sys.exit(0)
+                modifying_date = True
+                # sys.exit(0)
 
             cur_entry += str(l)
             found_entry = True
