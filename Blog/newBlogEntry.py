@@ -3,7 +3,7 @@
 
 # A script that I execute if I ever want to create a new blog entry.
 # Steps:
-#   1.) Asks me for the title of entry:
+#    1.) Asks me for the title of entry:
 #       - creates new directory and directory.md file with template.
 #   2.) Adds the html code for this new entry.
 
@@ -13,7 +13,6 @@ import json
 import sys
 import random
 from datetime import date
-from pathlib import Path
 
 # get todays date
 today = date.today()
@@ -33,6 +32,8 @@ added_new_tag = False
 def main():
     global last_modified, blogEntryTitle, blogEntryDescription, blogEntryTags, tags, inputTitle, added_new_tag, last_modified_formatted
 
+    print("MAIN WAS CALLED \n\n")
+
     # If an argument was passed, we are updating, else we are creating
     if (len(sys.argv) > 1):
         # updating an entry means we are
@@ -50,7 +51,7 @@ def main():
         blogEntryTags = input("Enter any tags followed by comma: ")
         # make an array of tags
         tags = blogEntryTags.split(",")
-        # create the necessary directories
+        #  create the necessary directories
         os.mkdir(blogEntryTitle.replace(" ", "_"))
         os.mkdir(blogEntryTitle.replace(" ", "_") + "/cover")
         # create the new markdown file
@@ -59,7 +60,7 @@ def main():
         # write the header
         f.write(
             "---\ntitle: {}\ndate_created: {}\n---\n\n".format(blogEntryTitle, last_modified_formatted))
-        # 
+        #
         addEntrytoHTML()
 
         if (added_new_tag):
@@ -100,7 +101,7 @@ def updateEntry():
     # finds the blog entries section
     entries_raw = re.findall(
         '<!-- BLOG ENTRIES -->(.*?)<!-- BLOG ENTRIES END -->', htmlFile, re.DOTALL)
-    # splits the blog entries section into individual entries
+    #  splits the blog entries section into individual entries
     lineiterator = iter(entries_raw[0].splitlines())
     entries = []
     cur_entry = ""
@@ -134,7 +135,7 @@ def updateEntry():
 
         if (re.search('<!--', l)):
             print("LOOK AT ME: " + l)
-            # take into account regex special characters
+            #  take into account regex special characters
             inputTitlestr = inputTitle
             inputTitlestr = inputTitlestr.replace('+', '\+')
             print('inputTitlestr: ' + inputTitlestr)
@@ -176,7 +177,7 @@ def updateEntry():
 def addEntrytoHTML():
     global blogEntryTitle, blogEntryDescription, blogEntryTags, last_modified, tags
 
-    # copy the blog.html file
+    #  copy the blog.html file
     os.system("cp ../blog.html ../blog_copy.html")
     # reads the blog.html file
     htmlFile = open("../blog.html", "r").read()
@@ -218,7 +219,7 @@ def addEntrytoHTML():
     template += "<h3 class='uk-card-title'>{}</h3>".format(blogEntryTitle)
     template += "<span>last modified: {}</span>".format(last_modified)
     template += "<p style='color: black'>{}</p>".format(blogEntryDescription)
-    # add tags
+    #  add tags
     template = addTags(template)
     template += "<br /><br />"
     template += "<a href='https://juanedflores.com/Blog/{}/{}.html#disqus_thread'>Link</a>".format(
@@ -274,7 +275,7 @@ def addTags(template):
         # opens the tags.json file to read
         json_file = open("tags.json", "r")
         data = json_file.read()
-        # hold all the objects in file
+        #  hold all the objects in file
         objs = json.loads(data)
         json_file.close()
 
@@ -297,7 +298,7 @@ def addTags(template):
                     newtag = "<span class='uk-label' style='background-color: {}'>{}</span>\n".format(
                         tag_color, tag)
 
-            # if tag doesn't exist, add it to the json file
+            #  if tag doesn't exist, add it to the json file
             if (not keyfound):
                 # give it a random hex color
                 random_number = random.randint(0, 16777215)

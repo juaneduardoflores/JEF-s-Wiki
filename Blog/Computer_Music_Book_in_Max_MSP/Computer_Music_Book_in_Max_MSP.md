@@ -3,14 +3,15 @@ title: Computer Music Book in Max MSP gen~
 date_created: March 28, 2023
 ---
 
-
 ## Introduction
 
-<img src="./imgs/book.jpg" width="50%" />
+This post is about Digital Signal Processing and Sound Synthesis using a program called Max.
 
 ### Computer Music Book
 
-It is important to keep in mind that *Computer Music* was first published in 1985. Despite the incredible difference between computing power when this was written and now, it still serves as a good introduction to digital signal processing. I will be covering:
+<img src="./imgs/book.jpg" width="50%" />
+
+It is important to keep in mind that *Computer Music* was first published in 1985. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. I will be covering:
 
 - Chapter 4: Synthesis Fundamentals
 

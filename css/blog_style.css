@@ -164,6 +164,7 @@ canvas {
   /* font-weight: bold; */
   font-size: 1.7em;
   line-height: 120%;
+  padding-bottom: 100p;
 }
 
 .entry {
@@ -184,8 +185,12 @@ canvas {
     font-size: 1.8em;
   }
 
+  h3.uk-card-title {
+    padding: 300px;
+  }
+
   div.uk-card-body {
-    padding: 0.8em;
+    padding: 0.8em 0.8em 1.2em 0.8em;
   }
 
   div.uk-card-body span {
@@ -214,6 +219,10 @@ canvas {
 
   span.uk-label {
     font-size: 0.7em;
+  }
+
+  a {
+    font-size: 12px;
   }
 
   p {
