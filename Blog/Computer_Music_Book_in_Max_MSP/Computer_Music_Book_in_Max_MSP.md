@@ -17,7 +17,7 @@ One of the authors of *Computer Music*, Charles Dodge, was active in computer mu
 
 <div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">IBM 360/91 console and 2250 display</i></div>
 
-In 1970, he worked with three physicists to compose *Earth's Magnetic Field*, where he mapped sounds to magnetic field data.
+In 1970, he worked with three physicists to compose *Earth's Magnetic Field*, where he mapped sounds to magnetic field data. He also worked on synthesizing the human voice with *Speech Songs (1974)*. Another notable work is *Any Resemblance is Purely Coincidental (1980)* which combined live piano performance with a digital manipulation of a recording.
 
 <img src="./imgs/dodge.png" alt="IBM 360/91 console and 2250 display" width="80%" />
 
@@ -36,5 +36,11 @@ The name Max, by the way, is named after [Max Mathews](https://en.wikipedia.org/
 ### gen~
 
 `gen~` is an extension of the *Max* patching environment that is more efficient and lower level. It is great because it runs at the signal rate (audio rate), instead of using signal vectors (chunks of samples at a time). This is ideal for designing audio effects because we can work from a sample by sample basis. I will be using this environment to go over concepts that are covered in *Computer Music*.
+
+I won't go over too much about how `gen~` works here, instead there is this [online tutorial](https://cycling74.com/tutorials/gen~-for-beginners-part-1-a-place-to-start) written by Gregory Taylor, author of [Generating Sound & Organizing Time](https://cycling74.com/books/go).
+
+## Synthesis Fundamentals
+
+The chapters starts by introducing the concept of Unit Generators, which is essentially an algorithm for audio.
 
 [^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a> 
