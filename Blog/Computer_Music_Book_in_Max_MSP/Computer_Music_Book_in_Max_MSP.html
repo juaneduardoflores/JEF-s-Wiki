@@ -163,10 +163,10 @@ Music Book</a></li>
 <li><a href="#synthesis-fundamentals"
 id="toc-synthesis-fundamentals">Synthesis Fundamentals</a>
 <ul>
-<li><a href="#unit-generator" id="toc-unit-generator">Unit Generator</a>
-<ul>
+<li><a href="#unit-generator" id="toc-unit-generator">Unit
+Generator</a></li>
 <li><a href="#parameters" id="toc-parameters">parameters</a></li>
-</ul></li>
+<li><a href="#wave-tables" id="toc-wave-tables">Wave Tables</a></li>
 </ul></li>
 </ul></div>
         </div>
@@ -266,7 +266,7 @@ which can produce sounds of almost any desired complexity or
 simplicity.” <a href="#fn2" class="footnote-ref" id="fnref2"
 role="doc-noteref"><sup>2</sup></a></p>
 </blockquote>
-<h4 id="parameters">parameters</h4>
+<h3 id="parameters">parameters</h3>
 <p>A UGen might have <em>parameters</em>, that make it possible to
 specify the values of certain variables that change the produced audio.
 Parameters are inputs, that can either be <strong>entered in</strong> by
@@ -325,6 +325,17 @@ Toggle
 <script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </div>
+<h3 id="wave-tables">Wave Tables</h3>
+<p>One thing that is the same for all these programs to generate a sine
+tone, regardless of old or new, is that they are using a
+<code>wave table</code>. This is because this is the most efficient way
+of doing it. Instead of creating a program that would calculate each
+following value, it is much easier on the CPU to look up pre-stored
+values that are in the computer’s memory. A wave table is like a sample,
+or recording, where the program “plays” or goes through each sample and
+restarts from the beginning when it reaches the end. The frequency of
+the sine tone changes depending on how fast or slow you “play” through
+the sample.</p>
 <aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />

@@ -205,6 +205,10 @@ canvas {
   font-size: 1.7em;
 }
 
+#rnbo-root {
+  padding: 2em;
+}
+
 /**
  * For mobile devices
  */

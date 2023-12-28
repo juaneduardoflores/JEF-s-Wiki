@@ -47,7 +47,7 @@ The chapter starts by introducing the concept of a Unit Generator, or UGen for s
 
 > "The instruments are formed by combining a set of basic building blocks called *unit generators*, appropriate combinations of which can produce sounds of almost any desired complexity or simplicity." [^2]
 
-#### parameters
+### parameters
 
 A UGen might have *parameters*, that make it possible to specify the values of certain variables that change the produced audio. Parameters are inputs, that can either be **entered in** by a user manually, or **received** by another UGen. 
 
@@ -91,6 +91,10 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 <script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </div>
+
+### Wave Tables
+
+One thing that is the same for all these programs to generate a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values that are in the computer's memory. A wave table is like a sample, or recording, where the program "plays" or goes through each sample and restarts from the beginning when it reaches the end. The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
 
 
 [^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a>
