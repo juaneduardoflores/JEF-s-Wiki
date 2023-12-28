@@ -11,7 +11,7 @@ This post is about exploring some fundamental concepts in Digital Signal Process
 
 <img src="./imgs/book.jpg" width="50%" />
 
-One of the authors of *Computer Music*, Charles Dodge, was active in computer music composition when it became a new field. In the 1960s, he was at Columbia working on an IBM mainframe computer for his early work, but had to go to Bell Labs to use a digital-to-analog conversion system in order to hear it[^1].
+One of the authors of *Computer Music*, Charles Dodge, was active in computer music composition when it became a new field. In the 1960s, he was at Columbia working on an IBM mainframe computer for his early work, but had to go to Bell Labs to use a digital-to-analog conversion system in order to hear it.[^1]
 
 <img src="./imgs/ibm_computer.jpg" alt="IBM 360/91 console and 2250 display" width="80%" />
 
@@ -41,6 +41,57 @@ I won't go over too much about how `gen~` works here, instead there is this [onl
 
 ## Synthesis Fundamentals
 
-The chapters starts by introducing the concept of Unit Generators, which is essentially an algorithm for audio.
+### Unit Generator
 
-[^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a> 
+The chapter starts by introducing the concept of a Unit Generator, or UGen for short, which is essentially an algorithm for audio. The Unit Generator theory was first developed by Max Mathews and his colleagues at Bell Labs, originally for the *Music N* programming languages. He describes them in his 1960 article in the Bell Telephone System Technical Journal: 
+
+> "The instruments are formed by combining a set of basic building blocks called *unit generators*, appropriate combinations of which can produce sounds of almost any desired complexity or simplicity." [^2]
+
+#### parameters
+
+A UGen might have *parameters*, that make it possible to specify the values of certain variables that change the produced audio. Parameters are inputs, that can either be **entered in** by a user manually, or **received** by another UGen. 
+
+For example, one of the most obvious UGens to start with is an oscillator, one that produces a simple sine tone. Possible parameters for this are:
+
+* Frequency (In Hz)
+* Phase
+* Amplitude
+
+This is similar to analog synthesis, where an oscillator module with a sine wave generator will usually have a knob for frequency and amplitude (or gain).
+
+<img src="./imgs/vintage_osc.jpg" alt="200A Audio Oscillator Production model for 1939" width="60%" />
+
+<div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">200A Audio Oscillator Production model for 1939</i></div>
+
+
+Another programming language for sound synthesis that is still used today, *SuperCollider*, carries on the legacy of UGens. The line of code to produce a sine tone is this:
+
+```C++
+// A UGen that generates a sine wave.
+SinOsc.ar(440, 0, 0.5);
+```
+
+This is the breakdown:
+
+* `SinOsc` is the name of the class.
+* `.ar` specifies that it will output at the audio rate.
+* `(440, 0, 0.5)` are the parameters. It will have a frequency of 440 Hz, phase of 0, and amplitude of 0.5.
+
+In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have algorithms for audio. The objects that are for audio have a tilde (`~`). This means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used.
+
+<img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="40%" />
+
+<div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple sine tone</i></div>
+
+<div id="rnbo-root">
+<button id="toggle-sound">Toggle</button>
+<div id="rnbo-parameter-sliders">
+</div>
+
+<script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</div>
+
+
+[^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a>
+[^2]: Max Mathews, An Acoustical Compiler for Musical and Psychological Stimuli, Bell Telephone System Technical Journal, 1961. <a href="https://ia801601.us.archive.org/32/items/bstj40-3-677">https://archive.org/details/bstj40-3-677</a>

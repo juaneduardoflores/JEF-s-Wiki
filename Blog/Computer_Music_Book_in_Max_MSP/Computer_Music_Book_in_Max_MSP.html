@@ -161,7 +161,13 @@ Music Book</a></li>
 <li><a href="#gen" id="toc-gen">gen~</a></li>
 </ul></li>
 <li><a href="#synthesis-fundamentals"
-id="toc-synthesis-fundamentals">Synthesis Fundamentals</a></li>
+id="toc-synthesis-fundamentals">Synthesis Fundamentals</a>
+<ul>
+<li><a href="#unit-generator" id="toc-unit-generator">Unit Generator</a>
+<ul>
+<li><a href="#parameters" id="toc-parameters">parameters</a></li>
+</ul></li>
+</ul></li>
 </ul></div>
         </div>
       </div>
@@ -192,8 +198,8 @@ called Max, a visual programming language.</p>
 active in computer music composition when it became a new field. In the
 1960s, he was at Columbia working on an IBM mainframe computer for his
 early work, but had to go to Bell Labs to use a digital-to-analog
-conversion system in order to hear it<a href="#fn1" class="footnote-ref"
-id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+conversion system in order to hear it.<a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p><img src="./imgs/ibm_computer.jpg" alt="IBM 360/91 console and 2250 display" width="80%" /></p>
 <div style="text-align: center; padding-bottom: 1em;">
 <i style="color: #ccd3d5;">IBM 360/91 console and 2250 display</i>
@@ -245,8 +251,75 @@ tutorial</a> written by Gregory Taylor, author of <a
 href="https://cycling74.com/books/go">Generating Sound &amp; Organizing
 Time</a>.</p>
 <h2 id="synthesis-fundamentals">Synthesis Fundamentals</h2>
-<p>The chapters starts by introducing the concept of Unit Generators,
-which is essentially an algorithm for audio.</p>
+<h3 id="unit-generator">Unit Generator</h3>
+<p>The chapter starts by introducing the concept of a Unit Generator, or
+UGen for short, which is essentially an algorithm for audio. The Unit
+Generator theory was first developed by Max Mathews and his colleagues
+at Bell Labs, originally for the <em>Music N</em> programming languages.
+He describes them in his 1960 article in the Bell Telephone System
+Technical Journal:</p>
+<blockquote>
+<p>“The instruments are formed by combining a set of basic building
+blocks called <em>unit generators</em>, appropriate combinations of
+which can produce sounds of almost any desired complexity or
+simplicity.” <a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></p>
+</blockquote>
+<h4 id="parameters">parameters</h4>
+<p>A UGen might have <em>parameters</em>, that make it possible to
+specify the values of certain variables that change the produced audio.
+Parameters are inputs, that can either be <strong>entered in</strong> by
+a user manually, or <strong>received</strong> by another UGen.</p>
+<p>For example, one of the most obvious UGens to start with is an
+oscillator, one that produces a simple sine tone. Possible parameters
+for this are:</p>
+<ul>
+<li>Frequency (In Hz)</li>
+<li>Phase</li>
+<li>Amplitude</li>
+</ul>
+<p>This is similar to analog synthesis, where an oscillator module with
+a sine wave generator will usually have a knob for frequency and
+amplitude (or gain).</p>
+<p><img src="./imgs/vintage_osc.jpg" alt="200A Audio Oscillator Production model for 1939" width="60%" /></p>
+<div style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">200A Audio Oscillator Production model for
+1939</i>
+</div>
+<p>Another programming language for sound synthesis that is still used
+today, <em>SuperCollider</em>, carries on the legacy of UGens. The line
+of code to produce a sine tone is this:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode c++"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// A UGen that generates a sine wave.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>SinOsc<span class="op">.</span>ar<span class="op">(</span><span class="dv">440</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="fl">0.5</span><span class="op">);</span></span></code></pre></div>
+<p>This is the breakdown:</p>
+<ul>
+<li><code>SinOsc</code> is the name of the class.</li>
+<li><code>.ar</code> specifies that it will output at the audio
+rate.</li>
+<li><code>(440, 0, 0.5)</code> are the parameters. It will have a
+frequency of 440 Hz, phase of 0, and amplitude of 0.5.</li>
+</ul>
+<p>In Max MSP, the term UGen is not used. Instead, they are called
+objects, but underneath the surface of objects is essentially the same
+as UGens, they have algorithms for audio. The objects that are for audio
+have a tilde (<code>~</code>). This means that it is calculating at the
+audio rate, just like in SuperCollider where <code>.ar</code> is
+used.</p>
+<p><img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="40%" /></p>
+<div style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">A simple sine tone</i>
+</div>
+<div id="rnbo-root">
+<button id="toggle-sound">
+Toggle
+</button>
+<div id="rnbo-parameter-sliders">
+
+</div>
+<script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</div>
 <aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
@@ -254,6 +327,10 @@ role="doc-endnotes">
 <li id="fn1"><p>An interview with Charles Dodge (1993).
 <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a><a
 href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Max Mathews, An Acoustical Compiler for Musical and
+Psychological Stimuli, Bell Telephone System Technical Journal, 1961.
+<a href="https://ia801601.us.archive.org/32/items/bstj40-3-677">https://archive.org/details/bstj40-3-677</a><a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside></div>
 
