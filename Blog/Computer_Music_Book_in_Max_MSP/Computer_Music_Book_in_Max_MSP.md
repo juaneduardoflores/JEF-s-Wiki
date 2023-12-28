@@ -23,7 +23,7 @@ In 1970, he worked with three physicists to compose *Earth's Magnetic Field*, wh
 
 <div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Dodge at the Columbia University Computer Center in 1970 while he was working on Earth's Magnetic Field.</i></div>
 
-It is important to keep in mind that *Computer Music* was first published in 1985. Dodge demonstrates some code examples using the programming languages *Csound* and *Cmusic*. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. I will be covering:
+It is important to keep in mind that *Computer Music* was first published in 1985. Dodge demonstrates some code examples using the programming languages *Csound* and *Cmusic*. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. The ideas are the same, the only difference is that it is now faster and easier with computers today. I will be covering:
 
 - Chapter 4: Synthesis Fundamentals
 
@@ -73,11 +73,11 @@ SinOsc.ar(440, 0, 0.5);
 
 This is the breakdown:
 
-* `SinOsc` is the name of the class.
+* `SinOsc` is the name of the [class](https://en.wikipedia.org/wiki/Class_(computer_programming)).
 * `.ar` specifies that it will output at the audio rate.
 * `(440, 0, 0.5)` are the parameters. It will have a frequency of 440 Hz, phase of 0, and amplitude of 0.5.
 
-In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have algorithms for audio. The objects that are for audio have a tilde (`~`). This means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used.
+In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer (algorithms) to generate or process audio. The objects that are for audio have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
 
 <img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="40%" />
 
