@@ -209,6 +209,32 @@ canvas {
   padding: 2em;
 }
 
+#ezdac-button {
+  background: url('../../resources/ezdac_off.svg') no-repeat left top;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.param-label {
+  padding-right: 10px;
+  display: block;
+  padding-top: 10px;
+}
+
+/* .param-slider { */
+/*   width: 100%; */
+/* } */
+
+input {
+  width: 100%;
+}
+
+#rnbo-root {
+  width: 50%;
+  margin: auto;
+}
+
 /**
  * For mobile devices
  */

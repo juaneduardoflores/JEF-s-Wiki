@@ -63,7 +63,7 @@ async function setup() {
   makeSliders(device);
 
   // DSP toggle button
-  const toggleButton = document.getElementById('toggle-sound');
+  const toggleButton = document.getElementById('ezdac-button');
   const param = device.parametersById.get('toggle');
 
   toggleButton.addEventListener('click', function () {
@@ -72,8 +72,10 @@ async function setup() {
     // You may also want to trigger other actions based on the value of isToggled
     if (isToggled) {
       param.value = 1;
+      document.getElementById('ezdac-button').style.backgroundImage = "url('../../resources/ezdac_on.svg')";
     } else {
       param.value = 0;
+      document.getElementById('ezdac-button').style.backgroundImage = "url('../../resources/ezdac_off.svg')";
     }
   });
 }

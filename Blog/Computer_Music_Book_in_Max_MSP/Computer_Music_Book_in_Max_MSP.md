@@ -11,7 +11,7 @@ This post is about exploring some fundamental concepts in Digital Signal Process
 
 <img src="./imgs/book.jpg" width="50%" />
 
-One of the authors of *Computer Music*, Charles Dodge, was active in computer music composition when it became a new field. In the 1960s, he was at Columbia working on an IBM mainframe computer for his early work, but had to go to Bell Labs to use a digital-to-analog conversion system in order to hear it.[^1]
+One of the authors of *Computer Music*, Charles Dodge, was active in computer music composition when it became a new field. In the 1960s, he was at Columbia and Princeton working on an IBM mainframe computer for his early work, but had to go to Bell Labs to use a digital-to-analog conversion system in order to hear it.[^1]
 
 <img src="./imgs/ibm_computer.jpg" alt="IBM 360/91 console and 2250 display" width="80%" />
 
@@ -23,13 +23,13 @@ In 1970, he worked with three physicists to compose *Earth's Magnetic Field*, wh
 
 <div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Dodge at the Columbia University Computer Center in 1970 while he was working on Earth's Magnetic Field.</i></div>
 
-It is important to keep in mind that *Computer Music* was first published in 1985. Dodge demonstrates some code examples using the programming languages *Csound* and *Cmusic*. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. The ideas are the same, the only difference is that it is now faster and easier with computers today. I will be covering:
+It is important to keep in mind that *Computer Music* was first published in 1985. Dodge demonstrates some code examples using the programming languages *Csound* and *Cmusic*. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. The ideas are the same, the only difference is that it is now faster and easier to get results with computers that are cheaper, accessible, and more powerful. I will be covering:
 
 - Chapter 4: Synthesis Fundamentals
 
 ### Max/MSP
 
-Coincidentally also in 1985, *Max* started to get developed by Miller Puckette. It wasn't until 1989 when it started to use a dedicated DSP board. In 1997, Max saw its first release by the company [Cycling '74](https://cycling74.com/) to include Max/MSP, MSP seeming to stand for "Max Signal Processing" or Miller Smith Puckette's initials. It made Max capable of manipulating real-time digital audio signals without a dedicated DSP board, which made it possible to synthesize sound using a general purpose computer.
+Coincidentally also in 1985, *Max* started to get developed by Miller Puckette at IRCAM (Institut de Recherche et Coordination Acoustique/musique). It wasn't until 1989 when it started to use a dedicated DSP board. In 1997, Max saw its first release by the company [Cycling '74](https://cycling74.com/) to include Max/MSP, MSP seeming to stand for "Max Signal Processing" or Miller Smith Puckette's initials. It made Max capable of manipulating real-time digital audio signals without a dedicated DSP board, which made it possible to synthesize sound using a general purpose computer.
 
 The name Max, by the way, is named after [Max Mathews](https://en.wikipedia.org/wiki/Max_Mathews), another pioneer in computer music.
 
@@ -49,7 +49,7 @@ The chapter starts by introducing the concept of a Unit Generator, or UGen for s
 
 ### parameters
 
-A UGen might have *parameters*, that make it possible to specify the values of certain variables that change the produced audio. Parameters are inputs, that can either be **entered in** by a user manually, or **received** by another UGen. 
+A UGen might have [parameters](https://en.wikipedia.org/wiki/Parameter_(computer_programming)), that make it possible to specify the values of certain variables that change the produced audio. Parameters are inputs, that can either be **entered in** by a user manually, or **received** by another UGen. 
 
 For example, one of the most obvious UGens to start with is an oscillator, one that produces a simple sine tone. Possible parameters for this are:
 
@@ -67,24 +67,27 @@ This is similar to analog synthesis, where an oscillator module with a sine wave
 Another programming language for sound synthesis that is still used today, *SuperCollider*, carries on the legacy of UGens. The line of code to produce a sine tone is this:
 
 ```C++
-// A UGen that generates a sine wave.
-SinOsc.ar(440, 0, 0.5);
+// Generates a sine tone.
+{ SinOsc.ar(freq: 440.0, phase: 0.0, mul: 1.0) }.play;
 ```
 
 This is the breakdown:
 
 * `SinOsc` is the name of the [class](https://en.wikipedia.org/wiki/Class_(computer_programming)).
 * `.ar` specifies that it will output at the audio rate.
-* `(440, 0, 0.5)` are the parameters. It will have a frequency of 440 Hz, phase of 0, and amplitude of 0.5.
+* `(freq: 440.0, phase: 0.0, mul: 1.0)` are the parameters. It will have a frequency of 440 Hz, phase of 0, and amplitude of 0.5.
+* `{}.play;` is to start the process. The curly brackets are necessary because by surrounding the SinOsc with them we are creating a [function](https://en.wikipedia.org/wiki/Function_(computer_programming)), which is needed by the `.play` [method](https://en.wikipedia.org/wiki/Method_(computer_programming)). [^3]
 
-In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer (algorithms) to generate or process audio. The objects that are for audio have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
+I just threw around many computer science terms, don't worry if those don't make sense at the moment.
+
+In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer to generate or process audio. The objects that are for audio have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
 
 <img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="40%" />
 
 <div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple sine tone</i></div>
 
 <div id="rnbo-root">
-<button id="toggle-sound">Toggle</button>
+<button id="ezdac-button"></button>
 <div id="rnbo-parameter-sliders">
 </div>
 
@@ -96,6 +99,13 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 
 One thing that is the same for all these programs to generate a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values that are in the computer's memory. A wave table is like an audio recording, where the program "plays" or goes through each sample, retrieves it, and restarts from the beginning when it reaches the end. The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
 
+In the Max/MSP documentation called "Basics Tutorial 4", it adds this insightful historical note:
+
+> "In the long ago days of MusicN synthesis, the phasor was the only unit generator that could produce a continuous tone. A phasor had to be connected to a wavetable to generate other waveforms."
+
+
 
 [^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a>
 [^2]: Max Mathews, An Acoustical Compiler for Musical and Psychological Stimuli, Bell Telephone System Technical Journal, 1961. <a href="https://ia801601.us.archive.org/32/items/bstj40-3-677">https://archive.org/details/bstj40-3-677</a>
+[^3]: <a href="https://doc.sccode.org/Tutorials/Getting-Started/05-Functions-and-Sound.html">https://doc.sccode.org/Tutorials/Getting-Started/05-Functions-and-Sound.html</a>
+
