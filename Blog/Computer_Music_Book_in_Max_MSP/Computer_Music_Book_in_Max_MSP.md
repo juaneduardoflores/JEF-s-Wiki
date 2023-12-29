@@ -108,9 +108,9 @@ This figure is used to show what they **could** look like, but it can be dauntin
 
 Without worrying too much about what this specific example is doing, we can try creating our own signal flowchart with a simple amplitude modulation example in Max.
 
-<img src="./imgs/simple_ampmod.png" alt="a simpler flowchart" width="60%" />
+<img src="./imgs/simple_ampmod.png" alt="Simple amplitude modulation in Max" width="60%" />
 
-<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simpler flowchart</i></div>
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Simple amplitude modulation in Max</i></div>
 
 <div id="rnbo-root" style="">
 <button class="ezdac-button" id="02_ezdac-button"></button>
@@ -121,7 +121,7 @@ Without worrying too much about what this specific example is doing, we can try 
 
 ### Wave Tables
 
-One thing that is the same for all these programs to generate a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values that are in the computer's memory. A wave table is like an audio recording, where the program "plays" or goes through each sample, retrieves it, and restarts from the beginning when it reaches the end. The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
+One thing that is the same for all these programs to generate a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values that are in the computer's memory. A wave table is like an audio recording, where the program "plays" or goes through each sample, retrieves it, except that in *Wavetable Synthesis* it automatically restarts from the beginning when it reaches the end of the **cycle**. Notice how the MSP object to produce a sine tone is called `[cycle~]`. The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
 
 In the Max/MSP documentation called "Basics Tutorial 4", it adds this insightful historical note:
 
