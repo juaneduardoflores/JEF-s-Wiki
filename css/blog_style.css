@@ -232,6 +232,10 @@ input {
   width: 100%;
 }
 
+.caption {
+  font-size: 15px;
+}
+
 /**
  * For mobile devices
  */
@@ -305,5 +309,9 @@ input {
 
   #rnbo-root {
     width: 100%;
+  }
+
+  .caption {
+    font-size: 14px;
   }
 }

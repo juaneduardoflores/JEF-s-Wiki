@@ -15,13 +15,13 @@ One of the authors of *Computer Music*, Charles Dodge, was active in computer mu
 
 <img src="./imgs/ibm_computer.jpg" alt="IBM 360/91 console and 2250 display" width="80%" />
 
-<div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">IBM 360/91 console and 2250 display</i></div>
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">IBM 360/91 console and 2250 display</i></div>
 
 In 1970, he worked with three physicists to compose *Earth's Magnetic Field*, where he mapped sounds to magnetic field data. He also worked on synthesizing the human voice with *Speech Songs (1974)*. Another notable work is *Any Resemblance is Purely Coincidental (1980)* which combined live piano performance with a digital manipulation of a recording.
 
 <img src="./imgs/dodge.png" alt="IBM 360/91 console and 2250 display" width="80%" />
 
-<div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Dodge at the Columbia University Computer Center in 1970 while he was working on Earth's Magnetic Field.</i></div>
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Dodge at the Columbia University Computer Center in 1970 while he was working on Earth's Magnetic Field.</i></div>
 
 It is important to keep in mind that *Computer Music* was first published in 1985. Dodge demonstrates some code examples using the programming languages *Csound* and *Cmusic*. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. The ideas are the same, the only difference is that it is now faster and easier to get results with computers that are cheaper, accessible, and more powerful. I will be covering:
 
@@ -61,7 +61,7 @@ This is similar to analog synthesis, where an oscillator module with a sine wave
 
 <img src="./imgs/vintage_osc.jpg" alt="200A Audio Oscillator Production model for 1939" width="60%" />
 
-<div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">200A Audio Oscillator Production model for 1939</i></div>
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">200A Audio Oscillator Production model for 1939</i></div>
 
 
 Another programming language for sound synthesis that is still used today, *SuperCollider*, carries on the legacy of UGens. The line of code to produce a sine tone is this:
@@ -82,11 +82,11 @@ I just threw around many computer science terms, don't worry if those don't make
 
 In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer to generate or process audio. The objects that are for audio have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
 
-<img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="40%" />
+<img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="60%" />
 
-<div style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple sine tone</i></div>
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple sine tone</i></div>
 
-<div id="rnbo-root">
+<div id="rnbo-root" style="">
 <button id="ezdac-button"></button>
 <div id="rnbo-parameter-sliders">
 </div>
