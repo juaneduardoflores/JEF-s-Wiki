@@ -38,7 +38,7 @@ The name Max, by the way, is named after [Max Mathews](https://en.wikipedia.org/
 
 ### gen~
 
-`gen~` is an extension of the *Max* patching environment that is more efficient and lower level. It is great because it runs at the signal rate (audio rate), instead of using signal vectors (chunks of samples at a time). This is ideal for designing audio effects because we can work from a sample by sample basis. I will be using this environment to go over concepts that are covered in *Computer Music*.
+`gen~` is an extension of the *Max* patching environment that is more efficient and [lower level](https://en.wikipedia.org/wiki/Low-level_programming_language). It is great because it runs at the signal rate (audio rate), instead of using signal vectors (chunks of samples at a time). This is ideal for designing audio effects because we can work from a sample by sample basis. I will be using this environment to go over concepts that are covered in *Computer Music*.
 
 I won't go over too much about how `gen~` works here, instead there is this [online tutorial](https://cycling74.com/tutorials/gen~-for-beginners-part-1-a-place-to-start) written by Gregory Taylor, author of [Generating Sound & Organizing Time](https://cycling74.com/books/go).
 
@@ -83,7 +83,7 @@ This is the breakdown:
 
 I just threw around many computer science terms, don't worry if those don't make sense at the moment.
 
-In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer to generate or process audio. The MSP objects that are for audio have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
+In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer to generate or process audio. The MSP objects have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
 
 <img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="60%" />
 
@@ -104,7 +104,7 @@ It is common to use a visual representation of signal flow to get an idea of how
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of a signal flowchart</i></div>
 
-This figure is used to show what they **could** look like, but it can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying a constant stream of values with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one UGen with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation.
+This figure is used to show what they **could** look like, but everyone has their own preferences when drawing them. This one from the book can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying a constant stream of values with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one UGen with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation with the variable name ATTEN.
 
 One more thing to note is that each UGen and mathematical operation has one or more inputs, ranging from variables, hardcoded values, or a signal (stream of numbers coming at the audio rate). Without worrying too much about what this specific example is doing, we can try creating our own signal flowchart with a simple amplitude modulation example in Max. 
 
@@ -121,7 +121,7 @@ One more thing to note is that each UGen and mathematical operation has one or m
 
 ### Wave Tables
 
-One thing that is the same for all these programs to generate a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values that are in the computer's memory. A wave table is like an audio recording, where the program "plays" or goes through each sample, retrieves it, except that in *Wavetable Synthesis* it automatically restarts from the beginning when it reaches the end of the **cycle**. Notice how the MSP object to produce a sine tone is called `[cycle~]`. The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
+One thing that is the same for all these programs to generate a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values of a single wave cycle that are in the computer's memory. A wave table is like an audio recording, where the program "plays" or goes through each sample, retrieves it, except that in *Wavetable Synthesis* it automatically restarts from the beginning when it reaches the end of the **cycle**. Notice how the MSP object to produce a sine tone is called `[cycle~]`. The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
 
 In the Max/MSP documentation called "Basics Tutorial 4", it adds this insightful historical note:
 
