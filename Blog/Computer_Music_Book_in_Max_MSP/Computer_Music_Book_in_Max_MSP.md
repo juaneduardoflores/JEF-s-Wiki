@@ -106,7 +106,7 @@ It is common to use a visual representation of signal flow to get an idea of how
 
 This figure is used to show what they **could** look like, but it can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying a constant stream of values with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one UGen with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation.
 
-Without worrying too much about what this specific example is doing, we can try creating our own signal flowchart with a simple amplitude modulation example in Max.
+One more thing to note is that each UGen and mathematical operation has one or more inputs, ranging from variables, hardcoded values, or a signal (stream of numbers coming at the audio rate). Without worrying too much about what this specific example is doing, we can try creating our own signal flowchart with a simple amplitude modulation example in Max. 
 
 <img src="./imgs/simple_ampmod.png" alt="Simple amplitude modulation in Max" width="60%" />
 
