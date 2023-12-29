@@ -80,7 +80,7 @@ This is the breakdown:
 
 I just threw around many computer science terms, don't worry if those don't make sense at the moment.
 
-In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer to generate or process audio. The objects that are for audio have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
+In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer to generate or process audio. The MSP objects that are for audio have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
 
 <img src="./imgs/sine.png" alt="IBM 360/91 console and 2250 display" width="60%" />
 
@@ -94,6 +94,16 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 <script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </div>
+
+### Signal Flowcharts
+
+It is common to use a visual representation of signal flow to get an idea of how a digital audio instrument/effect is made.
+
+<img src="./imgs/signalflow.png" alt="example of a signal flowchart" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of a signal flowchart</i></div>
+
+This figure is used to show what they **could** look like, but it can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying a constant stream of values with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one oscillator with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation.
 
 ### Wave Tables
 
