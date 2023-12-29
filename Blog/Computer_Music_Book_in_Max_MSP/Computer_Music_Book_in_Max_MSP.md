@@ -90,7 +90,6 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple sine tone</i></div>
 
 <div id="rnbo-root" style="">
-<button class="load-button" id="01_load" onclick="loadPatch(1)">Load</button>
 <button class="ezdac-button" id="01_ezdac-button"></button>
 <div class="rnbo-parameter-sliders" id="rnbo-parameter-sliders_device_1">
 </div>
