@@ -189,8 +189,9 @@ Flowcharts</a></li>
       <!-- </div> -->
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><h2
-id="introduction">Introduction</h2>
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><script type="text/javascript" src="js/rnbo.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<h2 id="introduction">Introduction</h2>
 <p>This post is about exploring some fundamental concepts in Digital
 Signal Processing (DSP) and Digital Sound Synthesis by using a program
 called Max, a visual programming language.</p>
@@ -332,13 +333,15 @@ means that it is calculating 44,100 values per second.</p>
 <i style="color: #ccd3d5;">A simple sine tone</i>
 </div>
 <div id="rnbo-root" style="">
-<button id="ezdac-button">
+<button class="load-button" id="01_load" onclick="loadPatch(1)">
+Load
 </button>
-<div id="rnbo-parameter-sliders">
+<button class="ezdac-button" id="01_ezdac-button">
+</button>
+<div id="rnbo-parameter-sliders_device_1"
+class="rnbo-parameter-sliders">
 
 </div>
-<script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
 </div>
 <h3 id="signal-flowcharts">Signal Flowcharts</h3>
 <p>It is common to use a visual representation of signal flow to get an
@@ -355,9 +358,24 @@ control the amplitude of an audio signal. This is because by multiplying
 a constant stream of values with a value higher than 1 we are performing
 <em>amplification</em>, and if we are multiplying by a value between 0
 and 1 we are performing <em>attenuation</em>. In this flowchart however,
-the multiplier is used to modulate one oscillator with another. The book
+the multiplier is used to modulate one UGen with another. The book
 example is using a DIVIDER (<code>a/b</code>), <code>[/~]</code> in Max,
 to control the amplitude, referring its function as attenuation.</p>
+<p>Without worrying too much about what this specific example is doing,
+we can try creating our own signal flowchart with a simple amplitude
+modulation example in Max.</p>
+<p><img src="./imgs/simple_ampmod.png" alt="a simpler flowchart" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">A simpler flowchart</i>
+</div>
+<div id="rnbo-root" style="">
+<button class="ezdac-button" id="02_ezdac-button">
+</button>
+<div id="rnbo-parameter-sliders_device_2"
+class="rnbo-parameter-sliders">
+
+</div>
+</div>
 <h3 id="wave-tables">Wave Tables</h3>
 <p>One thing that is the same for all these programs to generate a sine
 tone, regardless of old or new, is that they are using a

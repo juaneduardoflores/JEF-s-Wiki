@@ -1,5 +1,4 @@
 let isToggled = false;
-let device_01;
 
 async function setup() {
   // Create AudioContext
@@ -17,14 +16,12 @@ async function setup() {
   const patch_02 = await response.json();
 
   // Create the devices
-  const device_01 = await RNBO.createDevice({ context, patcher: patch_01 });
-  const device_02 = await RNBO.createDevice({ context, patcher: patch_02 });
+  const device_01 = await createDevice({ context, patcher: patch_01 });
+  const device_02 = await createDevice({ context, patcher: patch_02 });
 
   // Connect the devices in series
-  // device_01.node.connect(outputNode);
-
-  // device_01.node.connect(effectDevice.node);
-  // device_02.node.connect(outputNode);
+  device_01.node.connect(effectDevice.node);
+  device_02.node.connect(outputNode);
 
   // // Fetch the exported patcher
   // let response, patcher;
@@ -75,64 +72,44 @@ async function setup() {
     context.resume();
   };
 
-  makeSliders(device_01, 1);
-  makeSliders(device_02, 2);
+  makeSliders(device);
 
   // DSP toggle button
-  const toggleButton_01 = document.getElementById('01_ezdac-button');
-  const param_01 = device_01.parametersById.get('toggle');
+  const toggleButton = document.getElementById('01_ezdac-button');
+  const param = device.parametersById.get('toggle');
 
-  toggleButton_01.addEventListener('click', function () {
+  toggleButton.addEventListener('click', function () {
     isToggled = !isToggled;
     this.classList.toggle('active');
     // You may also want to trigger other actions based on the value of isToggled
     if (isToggled) {
-      device_01.node.connect(outputNode);
-      param_01.value = 1;
+      param.value = 1;
       document.getElementById('01_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_on.svg')";
     } else {
-      param_01.value = 0;
+      param.value = 0;
       document.getElementById('01_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_off.svg')";
     }
   });
-
-  const toggleButton_02 = document.getElementById('02_ezdac-button');
-  const param_02 = device_02.parametersById.get('toggle');
-
-  toggleButton_02.addEventListener('click', function () {
-    isToggled = !isToggled;
-    this.classList.toggle('active');
-    // You may also want to trigger other actions based on the value of isToggled
-    if (isToggled) {
-      device_02.node.connect(outputNode);
-      param_02.value = 1;
-      document.getElementById('02_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_on.svg')";
-    } else {
-      param_02.value = 0;
-      document.getElementById('02_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_off.svg')";
-    }
-  });
-
-  // const toggleButton_02 = document.getElementById('02_ezdac-button');
-  // const param_02 = device_02.parametersById.get('toggle');
-  //
-  // toggleButton.addEventListener('click', function () {
-  //   isToggled = !isToggled;
-  //   this.classList.toggle('active');
-  //   // You may also want to trigger other actions based on the value of isToggled
-  //   if (isToggled) {
-  //     param_02.value = 1;
-  //     document.getElementById('01_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_on.svg')";
-  //   } else {
-  //     param_02.value = 0;
-  //     document.getElementById('01_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_off.svg')";
-  //   }
-  // });
 }
 
-function makeSliders(device, patch_number) {
-  console.log(`rnbo-parameter-sliders_device_${patch_number}`);
-  let pdiv = document.getElementById(`rnbo-parameter-sliders_device_${patch_number}`);
+function loadRNBOScript(version) {
+  return new Promise((resolve, reject) => {
+    if (/^\d+\.\d+\.\d+-dev$/.test(version)) {
+      throw new Error('Patcher exported with a Debug Version!\nPlease specify the correct RNBO version to use in the code.');
+    }
+    const el = document.createElement('script');
+    el.src = 'https://c74-public.nyc3.digitaloceanspaces.com/rnbo/' + encodeURIComponent(version) + '/rnbo.min.js';
+    el.onload = resolve;
+    el.onerror = function (err) {
+      console.log(err);
+      reject(new Error('Failed to load rnbo.js v' + version));
+    };
+    document.body.append(el);
+  });
+}
+
+function makeSliders(device) {
+  let pdiv = document.getElementById('01_rnbo-parameter-sliders');
 
   // This will allow us to ignore parameter update events while dragging the slider.
   let isDraggingSlider = false;

@@ -3,6 +3,9 @@ title: Computer Music Book in Max MSP gen~
 date_created: March 28, 2023
 ---
 
+<script type="text/javascript" src="js/rnbo.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
 ## Introduction
 
 This post is about exploring some fundamental concepts in Digital Signal Processing (DSP) and Digital Sound Synthesis by using a program called Max, a visual programming language.
@@ -87,13 +90,12 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple sine tone</i></div>
 
 <div id="rnbo-root" style="">
-<button id="ezdac-button"></button>
-<div id="rnbo-parameter-sliders">
+<button class="load-button" id="01_load" onclick="loadPatch(1)">Load</button>
+<button class="ezdac-button" id="01_ezdac-button"></button>
+<div class="rnbo-parameter-sliders" id="rnbo-parameter-sliders_device_1">
+</div>
 </div>
 
-<script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-</div>
 
 ### Signal Flowcharts
 
@@ -103,7 +105,20 @@ It is common to use a visual representation of signal flow to get an idea of how
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of a signal flowchart</i></div>
 
-This figure is used to show what they **could** look like, but it can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying a constant stream of values with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one oscillator with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation.
+This figure is used to show what they **could** look like, but it can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying a constant stream of values with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one UGen with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation.
+
+Without worrying too much about what this specific example is doing, we can try creating our own signal flowchart with a simple amplitude modulation example in Max.
+
+<img src="./imgs/simple_ampmod.png" alt="a simpler flowchart" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simpler flowchart</i></div>
+
+<div id="rnbo-root" style="">
+<button class="ezdac-button" id="02_ezdac-button"></button>
+<div class="rnbo-parameter-sliders" id="rnbo-parameter-sliders_device_2">
+</div>
+
+</div>
 
 ### Wave Tables
 
@@ -112,8 +127,6 @@ One thing that is the same for all these programs to generate a sine tone, regar
 In the Max/MSP documentation called "Basics Tutorial 4", it adds this insightful historical note:
 
 > "In the long ago days of MusicN synthesis, the phasor was the only unit generator that could produce a continuous tone. A phasor had to be connected to a wavetable to generate other waveforms."
-
-
 
 [^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a>
 [^2]: Max Mathews, An Acoustical Compiler for Musical and Psychological Stimuli, Bell Telephone System Technical Journal, 1961. <a href="https://ia801601.us.archive.org/32/items/bstj40-3-677">https://archive.org/details/bstj40-3-677</a>
