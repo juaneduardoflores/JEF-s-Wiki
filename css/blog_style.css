@@ -214,7 +214,7 @@ canvas {
   margin: auto auto 20px auto;
 }
 
-#ezdac-button {
+.ezdac-button {
   background: url('../../resources/ezdac_off.svg') no-repeat left top;
   height: 60px;
   width: 60px;
