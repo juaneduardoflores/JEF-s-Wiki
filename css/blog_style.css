@@ -210,6 +210,8 @@ canvas {
   padding: 2em;
   border: black solid 1px;
   font-family: Arial;
+  width: 50%;
+  margin: auto;
 }
 
 #ezdac-button {
@@ -228,11 +230,6 @@ canvas {
 
 input {
   width: 100%;
-}
-
-#rnbo-root {
-  width: 50%;
-  margin: auto;
 }
 
 /**
@@ -257,6 +254,10 @@ input {
 
   img.uk-cover {
     height: 200px !important;
+  }
+
+  img {
+    min-width: 250px;
   }
 
   #heading {
@@ -300,5 +301,10 @@ input {
 
   #js-scroll-trigger {
     font-size: 1em;
+  }
+
+  #rnbo-root {
+    width: 100%;
+    margin-bottom: 18px;
   }
 }
