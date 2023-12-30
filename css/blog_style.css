@@ -75,6 +75,10 @@ ul li {
   font-family: 'Inter-ExtraLight', sans-serif;
 }
 
+ol li {
+  font-family: 'Inter-ExtraLight', sans-serif;
+}
+
 .title {
   color: black;
   font-size: 2.4em;
