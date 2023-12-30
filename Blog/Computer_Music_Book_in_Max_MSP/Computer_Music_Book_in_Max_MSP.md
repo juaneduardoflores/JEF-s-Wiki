@@ -95,6 +95,8 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 </div>
 </div>
 
+Note that for this purpose, phase does not effect the sound.
+
 
 ### Signal Flowcharts
 
@@ -104,9 +106,11 @@ It is common to use a visual representation of signal flow to get an idea of how
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of a signal flowchart</i></div>
 
-This figure is used to show what they **could** look like, but everyone has their own preferences when drawing them. This one from the book can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying a constant stream of values with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one UGen with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation with the variable name ATTEN.
+This figure is used to show what they **could** look like, but everyone has their own preferences when drawing them. This one from the book can be daunting as a first example. One might notice that it's somewhat similar to a Max patch. The MULTIPLIER (`*`) is the same as the `[*~]` object in Max. This can be used to control the amplitude of an audio signal. This is because by multiplying the signal with a value higher than 1 we are performing *amplification*, and if we are multiplying by a value between 0 and 1 we are performing *attenuation*. In this flowchart however, the multiplier is used to modulate one UGen with another. The book example is using a DIVIDER (`a/b`), `[/~]` in Max, to control the amplitude, referring its function as attenuation with the variable name ATTEN. The ADDER (`+`) is how to "sum" or "mix" two signals together.
 
-One more thing to note is that each UGen and mathematical operation has one or more inputs, ranging from variables, hardcoded values, or a signal (stream of numbers coming at the audio rate). Without worrying too much about what this specific example is doing, we can try creating our own signal flowchart with a simple amplitude modulation example in Max. 
+One more thing to note is that each UGen and mathematical operation has one or more inputs, ranging from variables, hardcoded values, or a signal (stream of numbers coming at the audio rate).  Since Max is already a visual programming environment, it is already like a signal flowchart, but it is still good practice to draw these when thinking and sketching out ideas when not in front of the computer.
+
+Here is a more minimal patch, a simple amplitude modulation in Max. Also note how the patch cables that are striped with green and black are the ones that are sending audio rate signals.
 
 <img src="./imgs/simple_ampmod.png" alt="Simple amplitude modulation in Max" width="60%" />
 
@@ -121,7 +125,37 @@ One more thing to note is that each UGen and mathematical operation has one or m
 
 ### Wave Tables
 
-One thing that is the same for all these programs to generate a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values of a single wave cycle that are in the computer's memory. A wave table is like an audio recording, where the program "plays" or goes through each sample, retrieves it, except that in *Wavetable Synthesis* it automatically restarts from the beginning when it reaches the end of the **cycle**. Notice how the MSP object to produce a sine tone is called `[cycle~]`. The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
+One thing that is the same for all these programs when generating a sine tone, regardless of old or new, is that they are using a `wave table`. This is because this is the most efficient way of doing it. Instead of creating a program that would calculate each following value, it is much easier on the CPU to look up pre-stored values of a single wave cycle that are in the computer's memory. A wave table is like an audio recording, or a block of samples, where the program "plays" or goes through each sample and retrieves it, except that in *Wavetable Synthesis* it automatically restarts from the beginning when it reaches the end of the **cycle**. Notice how the MSP object to produce a sine tone is called `[cycle~]`. 
+
+From the Max Documentation:
+
+> "The cycle~ object is an interpolating oscillator that reads repeatedly through one cycle of a waveform, using a wavetable of 512 samples. Its default waveform is one cycle of a cosine wave."
+
+Also in the documentation for the cycle~ object, are examples of how to change the default wavetable. A wavetable is essential a [buffer](https://en.wikipedia.org/wiki/Data_buffer), and in Max there exists a `[buffer~]` object where we can store anything we want.
+
+We specify the number of samples for the buffer to be 512, and we can send a message to fill it in with a single cosine cycle. The default waveform would look something like this:
+
+<img src="./imgs/wavetable.png" alt="Filling a buffer with a cosine wave" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Filling a buffer with a cosine wave</i></div>
+
+The example of a wavetable from the book uses a sine wave (starts at 0 instead of 1), but the sound is still the same. Note how in the following figure it also has a table for each individual sample value. For the sake of matching the book, we can use a sine wave in Max too.
+
+<img src="./imgs/wavetable_figure.png" alt="Wavetable from the book" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Wavetable from the book</i></div>
+
+<img src="./imgs/wavetable_sin.png" alt="Wavetable with sine wave" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Wavetable with sine wave</i></div>
+
+<img src="./imgs/wavetable_output.png" alt="Plotting the cycle~ signal" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Plotting the cycle~ signal</i></div>
+
+
+
+The frequency of the sine tone changes depending on how fast or slow you "play" through the sample.
 
 In the Max/MSP documentation called "Basics Tutorial 4", it adds this insightful historical note:
 
