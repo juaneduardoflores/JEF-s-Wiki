@@ -169,6 +169,7 @@ Generator</a></li>
 <li><a href="#signal-flowcharts" id="toc-signal-flowcharts">Signal
 Flowcharts</a></li>
 <li><a href="#wave-tables" id="toc-wave-tables">Wave Tables</a></li>
+<li><a href="#aliasing" id="toc-aliasing">Aliasing</a></li>
 </ul></li>
 </ul></div>
         </div>
@@ -225,9 +226,11 @@ incredible difference between the computing power when this was written
 and now, it still serves as a good introduction to digital signal
 processing. The ideas are the same, the only difference is that it is
 now faster and easier to get results with computers that are cheaper,
-accessible, and more powerful. I will be covering:</p>
+accessible, and more powerful. I will be going over content found from
+the following chapters:</p>
 <ul>
 <li>Chapter 4: Synthesis Fundamentals</li>
+<li>Chapter 5: Synthesis Using Distortion Techniques</li>
 </ul>
 <h3 id="maxmsp">Max/MSP</h3>
 <p>Coincidentally also in 1985, <em>Max</em> started to get developed by
@@ -450,7 +453,8 @@ too.</p>
 <i style="color: #ccd3d5;">Plotting the cycle~ signal</i>
 </div>
 <p>When changing the frequency of the cycle~ object, the computer
-“plays” through the sample at that frequency.</p>
+considers the sampling rate and calculates how fast or slow it needs to
+go through the table to get that target frequency.</p>
 <p>If we wanted to make a custom waveform, an easy way to do that is to
 draw directly on the waveform~ object by setting it to “draw mode”. You
 can change the mode by sending it a message <code>(mode draw)</code>,
@@ -479,6 +483,52 @@ insightful historical note:</p>
 unit generator that could produce a continuous tone. A phasor had to be
 connected to a wavetable to generate other waveforms.”</p>
 </blockquote>
+<p>Wavetable Synthesis is a big topic. There are a lot of resources out
+there if you want to dig deeper. Here are a few that I found to be good
+supplements.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ChmYVCn0lHM">Simon
+Hutchinson Video</a></li>
+<li><a href="https://www.youtube.com/watch?v=2432oaAcCyg">Building an
+Interporlating Wavetable Oscillator in Max</a></li>
+<li><a
+href="https://thewolfsound.com/sound-synthesis/wavetable-synthesis-algorithm/">Jan
+Wilczek - Audio Programmer Article</a></li>
+</ul>
+<h3 id="aliasing">Aliasing</h3>
+<p>There is a problem that occurs when a waveform produces harmonics
+past the <code>Nyquist frequency</code>. Consider a phasor~ with a
+frequency of 3700Hz running at the sampling rate of 44.1K. A phasor is a
+sawtooth wave, and a saw wave has all harmonics that diminish in direct
+proportion to the harmonic number, in other words, the 1st harmonic
+would be 3700Hz at 1/1 amplitude, 2nd would be 7400Hz at 1/2 amplitude,
+3rd would be 11,100Hz at 1/3 amplitude, and so on. So the 8th harmonic
+would be 29,600Hz, which is past the Nyquist frequency. Compare this
+with a ramp with a lower frequency of 1760Hz.</p>
+<p><img src="./imgs/aliasing2.png" alt="Example of ramp with a frequency of 1760 Hz, a lower frequency from the one below." width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Example of ramp with a frequency of 1760 Hz,
+a lower frequency from the one below.</i>
+</div>
+<p><img src="./imgs/aliasing.png" alt="Example of aliasing with a ramp with a frequency of 3700 Hz. Harmonics wrap around" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Example of aliasing. Harmonics wrap
+around</i>
+</div>
+<p>You can see in the 1st spectral plot, that the harmonics ramp down as
+you would expect, but in the 2nd plot, we get unexpected harmonics in
+places that don’t follow the pattern described above. This is because
+the harmonics that went past the Nyquist frequency were wrapped around.
+So the 8th harmonic of 29.6k, would fold over to 44,100 - 29,600 =
+14,500Hz, 9th harmonic would fold over to 44,100 - 33,300 = 10,800Hz,
+and so on.</p>
+<p><img src="./imgs/alias_figure.png" alt="Figure demonstrating how sawtooth harmonics wrap around when they pass the Nyquist frequency" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Figure demonstrating how sawtooth harmonics
+wrap around when they pass the Nyquist frequency</i>
+</div>
+<p>This results in a sound that does not sound completely harmonic.</p>
+<p>A safer way to specify a waveform is in terms of its spectrum.</p>
 <aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />

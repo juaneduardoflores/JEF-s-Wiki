@@ -26,9 +26,10 @@ In 1970, he worked with three physicists to compose *Earth's Magnetic Field*, wh
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Dodge at the Columbia University Computer Center in 1970 while he was working on Earth's Magnetic Field.</i></div>
 
-It is important to keep in mind that *Computer Music* was first published in 1985. Dodge demonstrates some code examples using the programming languages *Csound* and *Cmusic*. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. The ideas are the same, the only difference is that it is now faster and easier to get results with computers that are cheaper, accessible, and more powerful. I will be covering:
+It is important to keep in mind that *Computer Music* was first published in 1985. Dodge demonstrates some code examples using the programming languages *Csound* and *Cmusic*. Despite the incredible difference between the computing power when this was written and now, it still serves as a good introduction to digital signal processing. The ideas are the same, the only difference is that it is now faster and easier to get results with computers that are cheaper, accessible, and more powerful. I will be going over content found from the following chapters:
 
 - Chapter 4: Synthesis Fundamentals
+- Chapter 5: Synthesis Using Distortion Techniques
 
 ### Max/MSP
 
@@ -165,7 +166,7 @@ The example of a wavetable from the book uses a sine wave (starts at 0 instead o
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Plotting the cycle~ signal</i></div>
 
-When changing the frequency of the cycle~ object, the computer "plays" through the sample at that frequency.
+When changing the frequency of the cycle~ object, the computer considers the sampling rate and calculates how fast or slow it needs to go through the table to get that target frequency.
 
 If we wanted to make a custom waveform, an easy way to do that is to draw directly on the waveform~ object by setting it to "draw mode". You can change the mode by sending it a message `(mode draw)`, allowing you to draw the buffer content by clicking and holding the mouse on the object.
 
@@ -182,6 +183,34 @@ You can load this onto the cycle~ object like we did earlier, but if you wanted 
 In the Max/MSP documentation called "Basics Tutorial 4", it adds this insightful historical note:
 
 > "In the long ago days of MusicN synthesis, the phasor was the only unit generator that could produce a continuous tone. A phasor had to be connected to a wavetable to generate other waveforms."
+
+Wavetable Synthesis is a big topic. There are a lot of resources out there if you want to dig deeper. Here are a few that I found to be good supplements.
+
+* [Simon Hutchinson Video](https://www.youtube.com/watch?v=ChmYVCn0lHM)
+* [Building an Interporlating Wavetable Oscillator in Max](https://www.youtube.com/watch?v=2432oaAcCyg)
+* [Jan Wilczek - Audio Programmer Article](https://thewolfsound.com/sound-synthesis/wavetable-synthesis-algorithm/)
+
+### Aliasing
+
+There is a problem that occurs when a waveform produces harmonics past the `Nyquist frequency`. Consider a phasor~ with a frequency of 3700Hz running at the sampling rate of 44.1K. A phasor is a sawtooth wave, and a saw wave has all harmonics that diminish in direct proportion to the harmonic number, in other words, the 1st harmonic would be 3700Hz at 1/1 amplitude, 2nd would be 7400Hz at 1/2 amplitude, 3rd would be 11,100Hz at 1/3 amplitude, and so on. So the 8th harmonic would be 29,600Hz, which is past the Nyquist frequency. Compare this with a ramp with a lower frequency of 1760Hz.
+
+<img src="./imgs/aliasing2.png" alt="Example of ramp with a frequency of 1760 Hz, a lower frequency from the one below." width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of ramp with a frequency of 1760 Hz, a lower frequency from the one below.</i></div>
+
+<img src="./imgs/aliasing.png" alt="Example of aliasing with a ramp with a frequency of 3700 Hz. Harmonics wrap around" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of aliasing. Harmonics wrap around</i></div>
+
+You can see in the 1st spectral plot, that the harmonics ramp down as you would expect, but in the 2nd plot, we get unexpected harmonics in places that don't follow the pattern described above. This is because the harmonics that went past the Nyquist frequency were wrapped around. So the 8th harmonic of 29.6k, would fold over to 44,100 - 29,600 = 14,500Hz, 9th harmonic would fold over to 44,100 - 33,300 = 10,800Hz, and so on.
+
+<img src="./imgs/alias_figure.png" alt="Figure demonstrating how sawtooth harmonics wrap around when they pass the Nyquist frequency" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Figure demonstrating how sawtooth harmonics wrap around when they pass the Nyquist frequency</i></div>
+
+This results in a sound that does not sound completely harmonic.
+
+A safer way to specify a waveform is in terms of its spectrum.
 
 [^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a>
 [^2]: Max Mathews, An Acoustical Compiler for Musical and Psychological Stimuli, Bell Telephone System Technical Journal, 1961. <a href="https://ia801601.us.archive.org/32/items/bstj40-3-677">https://archive.org/details/bstj40-3-677</a>
