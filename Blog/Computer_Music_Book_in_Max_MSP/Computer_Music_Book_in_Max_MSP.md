@@ -192,7 +192,7 @@ Wavetable Synthesis is a big topic. There are a lot of resources out there if yo
 
 ### Aliasing
 
-There is a problem that occurs when a waveform produces harmonics past the `Nyquist frequency`. Consider a phasor~ with a frequency of 3700Hz running at the sampling rate of 44.1K. A phasor is a sawtooth wave, and a saw wave has all harmonics that diminish in direct proportion to the harmonic number, in other words, the 1st harmonic would be 3700Hz at 1/1 amplitude, 2nd would be 7400Hz at 1/2 amplitude, 3rd would be 11,100Hz at 1/3 amplitude, and so on. So the 8th harmonic would be 29,600Hz, which is past the Nyquist frequency. Compare this with a ramp with a lower frequency of 1760Hz.
+There is a problem that occurs when a waveform produces harmonics past the `Nyquist frequency`. Consider a phasor~ with a frequency of 3700 Hz running at the sampling rate of 44.1k. A phasor is a sawtooth wave, and a saw wave has all harmonics that diminish in direct proportion to the harmonic number, in other words, the 1st harmonic (the fundamental) would be 3700 Hz at 1/1 amplitude, 2nd would be 7400 Hz at 1/2 amplitude, 3rd would be 11,100 Hz at 1/3 amplitude, and so on. So the 8th harmonic would be 29,600 Hz, which is past the Nyquist frequency of 22,050 Hz. Compare this with a ramp with a lower frequency of 1760 Hz.
 
 <img src="./imgs/aliasing2.png" alt="Example of ramp with a frequency of 1760 Hz, a lower frequency from the one below." width="60%" />
 
@@ -202,7 +202,7 @@ There is a problem that occurs when a waveform produces harmonics past the `Nyqu
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of aliasing. Harmonics wrap around</i></div>
 
-You can see in the 1st spectral plot, that the harmonics ramp down as you would expect, but in the 2nd plot, we get unexpected harmonics in places that don't follow the pattern described above. This is because the harmonics that went past the Nyquist frequency were wrapped around. So the 8th harmonic of 29.6k, would fold over to 44,100 - 29,600 = 14,500Hz, 9th harmonic would fold over to 44,100 - 33,300 = 10,800Hz, and so on.
+You can see in the 1st spectral plot, that the harmonics ramp down as you would expect, but in the 2nd plot, we get unexpected harmonics in places that don't follow the pattern described above. This is because the harmonics that went past the Nyquist frequency were wrapped around. So the 8th harmonic of 29.6k, would fold over to 44,100 - 29,600 = 14,500 Hz, 9th harmonic would fold over to 44,100 - 33,300 = 10,800 Hz, and so on.
 
 <img src="./imgs/alias_figure.png" alt="Figure demonstrating how sawtooth harmonics wrap around when they pass the Nyquist frequency" width="60%" />
 
@@ -210,7 +210,40 @@ You can see in the 1st spectral plot, that the harmonics ramp down as you would 
 
 This results in a sound that does not sound completely harmonic.
 
-A safer way to specify a waveform is in terms of its spectrum.
+### Generating Functions of Time
+
+The purpose of an *envelope* is to enclose a waveform. Here is a simple envelope that has an *attack* (how the amplitude rises during the onset of the tone), a *sustain* (the amplitude of the tone during its steady state), and a *decay* (how the tone dies away). 
+
+Here there are at least four input parameters:
+
+* rise time
+* amplitude at peak of attack
+* duration of the envelope
+* decay time. 
+
+Also, the shapes of attack and decay segments need to be specified. We can use a wavetable like shown before, but instead I will introduce new Max objects like `[line~]` and `[curve~]`.
+
+
+
+<img src="./imgs/envelope.png" alt="Figure demonstrating an envelope generator, and its effect on a waveform" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Figure demonstrating an envelope generator, and its effect on a waveform</i></div>
+
+<img src="./imgs/adsr.png" alt="Figure demonstrating the sections of a simple envelope" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Figure demonstrating the sections of a simple envelope</i></div>
+
+### Additive Synthesis
+
+### Amplitude Modulation
+
+### Ring Modulation
+
+### Vibrato Stimulation by Frequency Modulation
+
+### Noise Generators
+
+### Synthesis by Means of Spectral Interpolation
 
 [^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a>
 [^2]: Max Mathews, An Acoustical Compiler for Musical and Psychological Stimuli, Bell Telephone System Technical Journal, 1961. <a href="https://ia801601.us.archive.org/32/items/bstj40-3-677">https://archive.org/details/bstj40-3-677</a>
