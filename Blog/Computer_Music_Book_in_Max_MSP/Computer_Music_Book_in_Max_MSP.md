@@ -237,6 +237,8 @@ To create this envelope in Max, we can use a wavetable like shown before, but in
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Demonstrating a plot of line~. Starts from 1, and takes 1 ms to go to 0 when the message object is pressed</i></div>
 
+In several older programming languages, there existed a UGen called "linen". The more customizable object `[curve~]` has an extra "curve parameter", making it possible to also produce exponential curves. Setting it higher than 0 will result in a convex curve, lower than 0 will be concave, and 0 will be a linear ramp.
+
 <img src="./imgs/curve.png" alt="Demonstrating a plot of curve~. Starts from 1, and takes 1000 ms to go to -1 when the message object is pressed. With a curve parameter of -0.5" width="60%" />
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Demonstrating a plot of curve~. Starts from 1, and takes 1000 ms to go to -1 when the message object is pressed. With a curve parameter of -0.5</i></div>
@@ -254,6 +256,25 @@ You can create the simple envelope by specifying a list of values in the message
 <img src="./imgs/simple_env2.png" alt="A simple envelope being applied to an oscillator" width="60%" />
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple envelope being applied to an oscillator</i></div>
+
+<img src="./imgs/adsr2.png" alt="A figure showing an ADSR envelope." width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A figure showing an ADSR envelope.</i></div>
+
+Max MSP does have an `[adsr~]` object.
+
+<img src="./imgs/noteon.png" alt="Plot of 1 second after initiating note." width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Plot of 1 second after initiating note.</i></div>
+
+<img src="./imgs/noteoff.png" alt="Plot of 1 second after turning off note." width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Plot of 1 second after turning off note.</i></div>
+
+<img src="./imgs/function.png" alt="Example using function~" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example using function~</i></div>
+
 
 ### Additive Synthesis
 
