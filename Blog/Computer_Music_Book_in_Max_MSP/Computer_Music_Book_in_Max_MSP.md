@@ -198,15 +198,15 @@ There is a problem that occurs when a waveform produces harmonics past the `Nyqu
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of ramp with a frequency of 1760 Hz, a lower frequency from the one below.</i></div>
 
-<img src="./imgs/aliasing.png" alt="Example of aliasing with a ramp with a frequency of 3700 Hz. Harmonics wrap around" width="60%" />
+<img src="./imgs/aliasing.png" alt="Example of aliasing with a ramp with a frequency of 3700 Hz. The harmonic frequencies fold." width="60%" />
 
-<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of aliasing. Harmonics wrap around</i></div>
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example of aliasing. The harmonic frequencies over Nyquist fold</i></div>
 
-You can see in the 1st spectral plot, that the harmonics ramp down as you would expect, but in the 2nd plot, we get unexpected harmonics in places that don't follow the pattern described above. This is because the harmonics that went past the Nyquist frequency were wrapped around. So the 8th harmonic of 29.6k, would fold over to 44,100 - 29,600 = 14,500 Hz, 9th harmonic would fold over to 44,100 - 33,300 = 10,800 Hz, and so on.
+You can see in the 1st spectral plot, that the harmonics ramp down as you would expect, but in the 2nd plot, we get unexpected harmonics in places that don't follow the pattern described above. This is because the harmonics that went past the Nyquist frequency fold back around into range. So the 8th harmonic of 29.6k, would fold over to 44,100 - 29,600 = 14,500 Hz, 9th harmonic would fold over to 44,100 - 33,300 = 10,800 Hz, and so on.
 
-<img src="./imgs/alias_figure.png" alt="Figure demonstrating how sawtooth harmonics wrap around when they pass the Nyquist frequency" width="60%" />
+<img src="./imgs/alias_figure.png" alt="Figure demonstrating how sawtooth harmonics fold when they pass the Nyquist frequency" width="60%" />
 
-<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Figure demonstrating how sawtooth harmonics wrap around when they pass the Nyquist frequency</i></div>
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Figure demonstrating how sawtooth harmonics fold when they pass the Nyquist frequency</i></div>
 
 This results in a sound that does not sound completely harmonic.
 
@@ -257,6 +257,10 @@ You can create the simple envelope by specifying a list of values in the message
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple envelope being applied to an oscillator</i></div>
 
+A more refined envelope is the ADSR envelope. From the book:
+
+> "The ADSR shape is an attempt to imitate the envelopes found in acoustic instruments. ... Here, the tone remains in the sustained state until the key is released."
+
 <img src="./imgs/adsr2.png" alt="A figure showing an ADSR envelope." width="60%" />
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A figure showing an ADSR envelope.</i></div>
@@ -271,12 +275,38 @@ Max MSP does have an `[adsr~]` object.
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Plot of 1 second after turning off note.</i></div>
 
+Another useful object is `[function~]`. It allows you to draw points and shapes easily, and output it in a line~ or curve~ format from the second to left outlet.
+
 <img src="./imgs/function.png" alt="Example using function~" width="60%" />
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example using function~</i></div>
 
+You can set it to curve mode by setting it on creation (`[function @mode 1]`), or by setting it on the inspector menu under "Appearance". The second to left outlet will now output in curve~ format.
+
+<img src="./imgs/function_curve.png" alt="Example using function~ in curve mode" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example using function~ in curve mode</i></div>
+
+Knowing the extra flexibility of curve~ and its usefulness with sound, it just makes more sense to always use curve~ because it can do everything line~ can do and more.
+
+The function also adds the ability to sustain on a single point position. You can set a sustain point with Cmd + double click. Sending a bang will initiate the function until it reaches a sustain point and will stay there until the "(next)" message is received.
+
+<img src="./imgs/function_sustain.png" alt="Example using function~ using sustain" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Example using function~ using sustain</i></div>
+
 
 ### Additive Synthesis
+
+A waveform at a constant frequency enclosed in an envelope is based on the Helmholtz model of musical sound. Helmholtz showed that the timbre of musical notes, and vowel sounds, are a result of their complex combination of many sounds. Just like white light is a combination of many colors, musical notes are composed of many different tones.
+
+#### Helmholtz's Apparatus for the Synthesis of Sound 
+
+This device created by Helmholtz around 1860 can be considered the very first sound synthesizer. It used tuning forks to generate a fundamental frequency and the first six overtones which may then be combined in varying proportions. By varying the combination of tones and their intensities, one can see how it affects the timbre of the overall sound.
+
+<div style="margin-bottom: 15px"><iframe width="100%" height="480" src="https://www.youtube.com/embed/_OdO8gWayjE?si=ag2h5FDgWyLvvfYS&amp;controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen uk-responsive uk-video></iframe></div>
+
+.
 
 ### Amplitude Modulation
 
