@@ -212,7 +212,7 @@ This results in a sound that does not sound completely harmonic.
 
 ### Generating Functions of Time
 
-The purpose of an *envelope* is to enclose a waveform. Here is a simple envelope that has an *attack* (how the amplitude rises during the onset of the tone), a *sustain* (the amplitude of the tone during its steady state), and a *decay* (how the tone dies away). 
+The purpose of an *envelope* is to enclose a running waveform. Here is a simple envelope that has an *attack* (how the amplitude rises during the onset of the tone), a *sustain* (the amplitude of the tone during its steady state), and a *decay* (how the tone dies away). 
 
 Here there are at least four input parameters:
 
@@ -221,9 +221,7 @@ Here there are at least four input parameters:
 * duration of the envelope
 * decay time. 
 
-Also, the shapes of attack and decay segments need to be specified. We can use a wavetable like shown before, but instead I will introduce new Max objects like `[line~]` and `[curve~]`.
-
-
+Also, the shapes of attack and decay segments need to be specified. 
 
 <img src="./imgs/envelope.png" alt="Figure demonstrating an envelope generator, and its effect on a waveform" width="60%" />
 
@@ -232,6 +230,30 @@ Also, the shapes of attack and decay segments need to be specified. We can use a
 <img src="./imgs/adsr.png" alt="Figure demonstrating the sections of a simple envelope" width="60%" />
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Figure demonstrating the sections of a simple envelope</i></div>
+
+To create this envelope in Max, we can use a wavetable like shown before, but instead I will introduce new Max objects like `[line~]` and `[curve~]`.
+
+<img src="./imgs/line.png" alt="Demonstrating a plot of line~. Starts from 1, and takes 1 ms to go to 0 when the message object is pressed" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Demonstrating a plot of line~. Starts from 1, and takes 1 ms to go to 0 when the message object is pressed</i></div>
+
+<img src="./imgs/curve.png" alt="Demonstrating a plot of curve~. Starts from 1, and takes 1000 ms to go to -1 when the message object is pressed. With a curve parameter of -0.5" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Demonstrating a plot of curve~. Starts from 1, and takes 1000 ms to go to -1 when the message object is pressed. With a curve parameter of -0.5</i></div>
+
+You can create the simple envelope by specifying a list of values in the message object. The message starts with the starting value (0), followed by a comma, and the list of values you want to go through in sequence. For example, if I want an attack of 500ms, sustain of 1000ms, and decay of 500ms, the message would be `(0, 1 500 1 1000 0 500)`.
+
+<img src="./imgs/simple_env.png" alt="A simple envelope with a single line~ object" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple envelope with a single line~ object</i></div>
+
+<img src="./imgs/simple_env3.png" alt="Max patch example of simple envelope using line~" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">Max patch example of simple envelope using line~</i></div>
+
+<img src="./imgs/simple_env2.png" alt="A simple envelope being applied to an oscillator" width="60%" />
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">A simple envelope being applied to an oscillator</i></div>
 
 ### Additive Synthesis
 

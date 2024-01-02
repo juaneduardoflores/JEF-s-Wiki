@@ -547,11 +547,11 @@ wrap around when they pass the Nyquist frequency</i>
 </div>
 <p>This results in a sound that does not sound completely harmonic.</p>
 <h3 id="generating-functions-of-time">Generating Functions of Time</h3>
-<p>The purpose of an <em>envelope</em> is to enclose a waveform. Here is
-a simple envelope that has an <em>attack</em> (how the amplitude rises
-during the onset of the tone), a <em>sustain</em> (the amplitude of the
-tone during its steady state), and a <em>decay</em> (how the tone dies
-away).</p>
+<p>The purpose of an <em>envelope</em> is to enclose a running waveform.
+Here is a simple envelope that has an <em>attack</em> (how the amplitude
+rises during the onset of the tone), a <em>sustain</em> (the amplitude
+of the tone during its steady state), and a <em>decay</em> (how the tone
+dies away).</p>
 <p>Here there are at least four input parameters:</p>
 <ul>
 <li>rise time</li>
@@ -559,9 +559,8 @@ away).</p>
 <li>duration of the envelope</li>
 <li>decay time.</li>
 </ul>
-<p>Also, the shapes of attack and decay segments need to be specified.
-We can use a wavetable like shown before, but instead I will introduce
-new Max objects like <code>[line~]</code> and <code>[curve~]</code>.</p>
+<p>Also, the shapes of attack and decay segments need to be
+specified.</p>
 <p><img src="./imgs/envelope.png" alt="Figure demonstrating an envelope generator, and its effect on a waveform" width="60%" /></p>
 <div class="caption" style="text-align: center; padding-bottom: 1em;">
 <i style="color: #ccd3d5;">Figure demonstrating an envelope generator,
@@ -571,6 +570,41 @@ and its effect on a waveform</i>
 <div class="caption" style="text-align: center; padding-bottom: 1em;">
 <i style="color: #ccd3d5;">Figure demonstrating the sections of a simple
 envelope</i>
+</div>
+<p>To create this envelope in Max, we can use a wavetable like shown
+before, but instead I will introduce new Max objects like
+<code>[line~]</code> and <code>[curve~]</code>.</p>
+<p><img src="./imgs/line.png" alt="Demonstrating a plot of line~. Starts from 1, and takes 1 ms to go to 0 when the message object is pressed" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Demonstrating a plot of line~. Starts from 1,
+and takes 1 ms to go to 0 when the message object is pressed</i>
+</div>
+<p><img src="./imgs/curve.png" alt="Demonstrating a plot of curve~. Starts from 1, and takes 1000 ms to go to -1 when the message object is pressed. With a curve parameter of -0.5" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Demonstrating a plot of curve~. Starts from
+1, and takes 1000 ms to go to -1 when the message object is pressed.
+With a curve parameter of -0.5</i>
+</div>
+<p>You can create the simple envelope by specifying a list of values in
+the message object. The message starts with the starting value (0),
+followed by a comma, and the list of values you want to go through in
+sequence. For example, if I want an attack of 500ms, sustain of 1000ms,
+and decay of 500ms, the message would be
+<code>(0, 1 500 1 1000 0 500)</code>.</p>
+<p><img src="./imgs/simple_env.png" alt="A simple envelope with a single line~ object" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">A simple envelope with a single line~
+object</i>
+</div>
+<p><img src="./imgs/simple_env3.png" alt="Max patch example of simple envelope using line~" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Max patch example of simple envelope using
+line~</i>
+</div>
+<p><img src="./imgs/simple_env2.png" alt="A simple envelope being applied to an oscillator" width="60%" /></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">A simple envelope being applied to an
+oscillator</i>
 </div>
 <h3 id="additive-synthesis">Additive Synthesis</h3>
 <h3 id="amplitude-modulation">Amplitude Modulation</h3>
