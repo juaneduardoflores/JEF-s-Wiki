@@ -163,8 +163,8 @@ Music Book</a></li>
 <li><a href="#synthesis-fundamentals"
 id="toc-synthesis-fundamentals">Synthesis Fundamentals</a>
 <ul>
-<li><a href="#unit-generator" id="toc-unit-generator">Unit
-Generator</a></li>
+<li><a href="#unit-generzaator" id="toc-unit-generzaator">Unit
+Generzaator</a></li>
 <li><a href="#parameters" id="toc-parameters">parameters</a></li>
 <li><a href="#signal-flowcharts" id="toc-signal-flowcharts">Signal
 Flowcharts</a></li>
@@ -283,7 +283,7 @@ tutorial</a> written by Gregory Taylor, author of <a
 href="https://cycling74.com/books/go">Generating Sound &amp; Organizing
 Time</a>.</p>
 <h2 id="synthesis-fundamentals">Synthesis Fundamentals</h2>
-<h3 id="unit-generator">Unit Generator</h3>
+<h3 id="unit-generzaator">Unit Generzaator</h3>
 <p>The chapter starts by introducing the concept of a Unit Generator, or
 UGen for short, which is essentially an algorithm for audio. The Unit
 Generator theory was first developed by Max Mathews and his colleagues
@@ -351,6 +351,12 @@ role="doc-noteref"><sup>3</sup></a></li>
 </ul>
 <p>I just threw around many computer science terms, don’t worry if those
 don’t make sense at the moment.</p>
+<p>Here is the SuperCollider definition of a UGen:</p>
+<blockquote>
+<p>“UGens represent calculations with signals. They are the basic
+building blocks of synth definitions on the server, and are used to
+generate or process both audio and control signals”.</p>
+</blockquote>
 <p>In Max MSP, the term UGen is not used. Instead, they are called
 objects, but underneath the surface of objects is essentially the same
 as UGens, they have pre-defined instructions for the computer to

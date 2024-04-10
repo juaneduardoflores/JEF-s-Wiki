@@ -45,7 +45,7 @@ I won't go over too much about how `gen~` works here, instead there is this [onl
 
 ## Synthesis Fundamentals
 
-### Unit Generator
+### Unit Generzaator
 
 The chapter starts by introducing the concept of a Unit Generator, or UGen for short, which is essentially an algorithm for audio. The Unit Generator theory was first developed by Max Mathews and his colleagues at Bell Labs, originally for the *Music N* programming languages. He describes them in his 1960 article in the Bell Telephone System Technical Journal: 
 
@@ -87,6 +87,10 @@ This is the breakdown:
 * `{}.play;` is to start the process. The curly brackets are necessary because by surrounding the SinOsc with them we are creating a [function](https://en.wikipedia.org/wiki/Function_(computer_programming)), which is needed by the `.play` [method](https://en.wikipedia.org/wiki/Method_(computer_programming)). [^3]
 
 I just threw around many computer science terms, don't worry if those don't make sense at the moment.
+
+Here is the SuperCollider definition of a UGen:
+
+> "UGens represent calculations with signals. They are the basic building blocks of synth definitions on the server, and are used to generate or process both audio and control signals".
 
 In Max MSP, the term UGen is not used. Instead, they are called objects, but underneath the surface of objects is essentially the same as UGens, they have pre-defined instructions for the computer to generate or process audio. The MSP objects have a tilde (`~`). The tilde representing a signal, means that it is calculating at the audio rate, just like in SuperCollider where `.ar` is used. So if the audio rate is set to 44,100, that means that it is calculating 44,100 values per second.
 

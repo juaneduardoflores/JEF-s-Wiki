@@ -24,5 +24,8 @@
   "Python": "#2cbf82",
   "Electronics": "#483a8a",
   "Sound": "#630b7f",
-  "DSP": "#3ad237"
+  "DSP": "#3ad237",
+  "Eurorack": "#c26314",
+  "Analog Synthesis": "#e6366b",
+  "RNBO": "#347fd1"
 }
