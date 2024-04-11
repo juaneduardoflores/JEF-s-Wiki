@@ -5,6 +5,7 @@ date_created: March 28, 2023
 
 <script type="text/javascript" src="js/rnbo.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script src="https://unpkg.com/webaudio-oscilloscope@3.2.1/dist/index.js"></script>
 
 ## Introduction
 
@@ -101,8 +102,16 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 <div id="rnbo-root" style="">
 <button class="ezdac-button" id="01_ezdac-button"></button>
 <div class="rnbo-parameter-sliders" id="rnbo-parameter-sliders_device_1">
+
 </div>
 </div>
+
+<div>
+
+<canvas class="osc" width="120px" height="80px">
+</div>
+
+
 
 Note that for this purpose, phase does not effect the sound.
 
@@ -321,6 +330,7 @@ This device created by Helmholtz around 1860 can be considered the very first so
 ### Noise Generators
 
 ### Synthesis by Means of Spectral Interpolation
+
 
 [^1]: An interview with Charles Dodge (1993). <a href="https://www.jstor.org/stable/3681298">https://www.jstor.org/stable/3681298</a>
 [^2]: Max Mathews, An Acoustical Compiler for Musical and Psychological Stimuli, Bell Telephone System Technical Journal, 1961. <a href="https://ia801601.us.archive.org/32/items/bstj40-3-677">https://archive.org/details/bstj40-3-677</a>

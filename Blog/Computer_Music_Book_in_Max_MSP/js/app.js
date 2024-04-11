@@ -1,5 +1,8 @@
 let isToggled = false;
 let device_01;
+let canvas;
+let outputNode;
+let scope;
 
 async function setup() {
   // Create AudioContext
@@ -7,7 +10,7 @@ async function setup() {
   const context = new WAContext();
 
   // Create gain node and connect it to audio output
-  const outputNode = context.createGain();
+  outputNode = context.createGain();
   outputNode.connect(context.destination);
 
   // Fetch the exported patchers
@@ -19,6 +22,9 @@ async function setup() {
   // Create the devices
   const device_01 = await RNBO.createDevice({ context, patcher: patch_01 });
   const device_02 = await RNBO.createDevice({ context, patcher: patch_02 });
+  //
+  // let cvs = document.querySelector('.osc');
+  // let osc = new _osc.Oscilloscope(context, outputNode, cvs);
 
   // Connect the devices in series
   // device_01.node.connect(outputNode);
@@ -71,6 +77,11 @@ async function setup() {
   // Connect the device to the web audio graph
   // device.node.connect(outputNode);
 
+  // let src = ctx.createMediaStreamSource(stream);
+  // let cvs = document.querySelector(".osc");
+  // let osc = new _osc.Oscilloscope(WAContext, outputNode, cvs);
+  // osc.start();
+
   document.body.onclick = () => {
     context.resume();
   };
@@ -90,6 +101,7 @@ async function setup() {
       device_01.node.connect(outputNode);
       param_01.value = 1;
       document.getElementById('01_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_on.svg')";
+      // osc.start();
     } else {
       param_01.value = 0;
       document.getElementById('01_ezdac-button').style.backgroundImage = "url('../../resources/ezdac_off.svg')";
@@ -225,4 +237,17 @@ function makeSliders(device, patch_number) {
   });
 }
 
+// canvas();
 setup();
+
+// function canvas() {
+//   canvas = document.getElementfromId('osc');
+//
+//   const ctx = canvas.getContext('2d');
+//   ctx.lineWidth = 2;
+//   ctx.strokeStyle = '#000000';
+//
+//   scope = new Oscilloscope(outputNode);
+//   // start default animation loop
+//   // scope.animate(ctx);
+// }

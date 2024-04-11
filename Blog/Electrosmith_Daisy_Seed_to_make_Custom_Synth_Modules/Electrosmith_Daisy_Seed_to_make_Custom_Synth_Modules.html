@@ -158,7 +158,13 @@
 id="toc-maxmsp-gen-and-the-electrosmith-daisy-seed">Max/MSP gen~ and the
 Electrosmith Daisy Seed</a></li>
 <li><a href="#chronoskhairos"
-id="toc-chronoskhairos">Chronos/Khairos</a></li>
+id="toc-chronoskhairos">Chronos/Khairos</a>
+<ul>
+<li><a href="#building-a-sequencer"
+id="toc-building-a-sequencer">Building a Sequencer</a></li>
+<li><a href="#events-and-hits" id="toc-events-and-hits">Events and
+Hits</a></li>
+</ul></li>
 </ul></div>
         </div>
       </div>
@@ -227,8 +233,53 @@ wiki page:
 <a target="\_blank" href="https://github.com/electro-smith/DaisyWiki/wiki">https://github.com/electro-smith/DaisyWiki/wiki</a></p>
 <hr />
 <h2 id="chronoskhairos">Chronos/Khairos</h2>
-<p>This synth is a 3-voice drum machine with a bass, snare, and
-hi-hat.</p></div>
+<p><strong>Description</strong>:</p>
+<ul>
+<li>This synth is a 3-voice drum machine with a bass, snare, and
+hi-hat.</li>
+<li>Patterns can modulated by randomness. It works with a “topographic”
+principle (perlin noise).</li>
+</ul>
+<p><strong>Button Control</strong>:</p>
+<ul>
+<li>Bass Drum pattern hits are manually toggled via the 8 available
+buttons.</li>
+</ul>
+<p><strong>Potentiometer Control</strong>:</p>
+<ul>
+<li>Randomness:</li>
+<li>Density:</li>
+</ul>
+<p><strong>Audio Synthesis</strong>:</p>
+<ul>
+<li>Bass Drum (kick) sound</li>
+<li>Snare sound</li>
+<li>Hi-hat sound</li>
+</ul>
+<h3 id="building-a-sequencer">Building a Sequencer</h3>
+<p>The “Hello World” for any sequencer construction is to have a single
+event triggered repeatedly by a clock.</p>
+<p>To construct a clock, we can start with a <code>[phasor]</code>
+object. The number following phasor is the <em>frequency</em> parameter.
+<code>[phasor 1]</code> will create a ramp that goes from 0.0 to 1.0 in
+one second.</p>
+<p><img width="300px" src="./imgs/ramp1s.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">The live.scope~ object defaults to plotting
+44.1k samples.</i>
+</div>
+<p><img width="500px" src="./imgs/ramp1s_plot.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">This plot better shows what the X and Y axes
+represent.</i>
+</div>
+<p>What we want is for this ramp to trigger an event when it resets its
+cycle. In the analog synthesis world, the term trigger is a very short
+pulse that is used to activate something, in Max/MSP gen~ the term
+<em>click</em> is used. A click is simply an output of 1.0 for one
+sample.</p>
+<p><img src="./imgs/click.png"></img></p>
+<h3 id="events-and-hits">Events and Hits</h3></div>
 
       <div class="uk-container uk-margin">
         <ul uk-accordion>

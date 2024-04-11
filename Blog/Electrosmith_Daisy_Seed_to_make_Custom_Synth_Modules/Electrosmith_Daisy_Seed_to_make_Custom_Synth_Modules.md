@@ -34,4 +34,42 @@ For more options and info about how to get started check out this wiki page: <a 
 
 ## Chronos/Khairos
 
-This synth is a 3-voice drum machine with a bass, snare, and hi-hat.
+**Description**:
+
+- This synth is a 3-voice drum machine with a bass, snare, and hi-hat.
+- Patterns can modulated by randomness. It works with a "topographic" principle (perlin noise).
+
+**Button Control**:
+
+- Bass Drum pattern hits are manually toggled via the 8 available buttons.
+
+**Potentiometer Control**:
+
+- Randomness: 
+- Density:
+
+**Audio Synthesis**:
+
+- Bass Drum (kick) sound
+- Snare sound
+- Hi-hat sound
+
+### Building a Sequencer
+
+The "Hello World" for any sequencer construction is to have a single event triggered repeatedly by a clock.
+
+To construct a clock, we can start with a `[phasor]` object. The number following phasor is the _frequency_ parameter. `[phasor 1]` will create a ramp that goes from 0.0 to 1.0 in one second.
+
+<img width="300px" src="./imgs/ramp1s.png"></img>
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">The live.scope~ object defaults to plotting 44.1k samples.</i></div>
+
+<img width="500px" src="./imgs/ramp1s_plot.png"></img>
+
+<div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">This plot better shows what the X and Y axes represent.</i></div>
+
+What we want is for this ramp to trigger an event when it resets its cycle. In the analog synthesis world, the term trigger is a very short pulse that is used to activate something, in Max/MSP gen~ the term _click_ is used. A click is simply an output of 1.0 for one sample.
+
+  <img src="./imgs/click.png"></img>
+
+### Events and Hits
