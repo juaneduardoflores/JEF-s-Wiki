@@ -46,7 +46,7 @@ I won't go over too much about how `gen~` works here, instead there is this [onl
 
 ## Synthesis Fundamentals
 
-### Unit Generzaator
+### Unit Generator
 
 The chapter starts by introducing the concept of a Unit Generator, or UGen for short, which is essentially an algorithm for audio. The Unit Generator theory was first developed by Max Mathews and his colleagues at Bell Labs, originally for the *Music N* programming languages. He describes them in his 1960 article in the Bell Telephone System Technical Journal: 
 
