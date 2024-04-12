@@ -30,6 +30,16 @@ There are several ways to write an audio program to flash into the Daisy, for ex
 
 For more options and info about how to get started check out this wiki page: <a target="\_blank" href="https://github.com/electro-smith/DaisyWiki/wiki">https://github.com/electro-smith/DaisyWiki/wiki</a>
 
+---
+
+## Generating Sound & Organizing Time
+
+Graham Wakefield and Gregory Taylor's book "Generating Sound and Organizing Time" is a great resource for learning gen~. I will be pulling some useful images from there to demonstrate some of the concepts. I will refer it as the _GO_ book from now on.
+
+<img width="300px" src="./imgs/generating.png"></img>
+
+Learn more about it here: <a target="\_blank" href="https://cycling74.com/books/go">https://cycling74.com/books/go</a>
+
 --- 
 
 ## Chronos/Khairos
@@ -58,7 +68,7 @@ For more options and info about how to get started check out this wiki page: <a 
 
 The "Hello World" for any sequencer construction is to have a single event triggered repeatedly by a clock.
 
-To construct a clock, we can start with a `[phasor]` object. The number following phasor is the _frequency_ parameter. `[phasor 1]` will create a ramp that goes from 0.0 to 1.0 in one second.
+The way to make a clock in Max gen~ is by using a `[phasor]` object. The number following phasor is the _frequency_ parameter. `[phasor 1]` will create a ramp that goes from 0.0 to 1.0 in one second.
 
 <img width="300px" src="./imgs/ramp1s.png"></img>
 
@@ -68,8 +78,12 @@ To construct a clock, we can start with a `[phasor]` object. The number followin
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">This plot better shows what the X and Y axes represent.</i></div>
 
-What we want is for this ramp to trigger an event when it resets its cycle. In the analog synthesis world, the term trigger is a very short pulse that is used to activate something, in Max/MSP gen~ the term _click_ is used. A click is simply an output of 1.0 for one sample.
+What we want is for this ramp to trigger an event when it resets its cycle. In the analog synthesis world, a _trigger_ is a very short pulse that is used to activate something, in Max/MSP gen~ a _click_ is the closest equivalent. A click is simply an output of 1.0 for one sample.
 
-  <img src="./imgs/click.png"></img>
+<img src="./imgs/click.png"></img>
+
+In the _GO_ book, this figure is provided to demonstrate what it should look like, describing the clicks as ticks.
+
+<img src="./imgs/figure1.png"></img>
 
 ### Events and Hits

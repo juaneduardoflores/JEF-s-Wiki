@@ -157,6 +157,9 @@
 <li><a href="#maxmsp-gen-and-the-electrosmith-daisy-seed"
 id="toc-maxmsp-gen-and-the-electrosmith-daisy-seed">Max/MSP gen~ and the
 Electrosmith Daisy Seed</a></li>
+<li><a href="#generating-sound-organizing-time"
+id="toc-generating-sound-organizing-time">Generating Sound &amp;
+Organizing Time</a></li>
 <li><a href="#chronoskhairos"
 id="toc-chronoskhairos">Chronos/Khairos</a>
 <ul>
@@ -232,6 +235,16 @@ Max package for flashing the board is called
 wiki page:
 <a target="\_blank" href="https://github.com/electro-smith/DaisyWiki/wiki">https://github.com/electro-smith/DaisyWiki/wiki</a></p>
 <hr />
+<h2 id="generating-sound-organizing-time">Generating Sound &amp;
+Organizing Time</h2>
+<p>Graham Wakefield and Gregory Taylor’s book “Generating Sound and
+Organizing Time” is a great resource for learning gen~. I will be
+pulling some useful images from there to demonstrate some of the
+concepts. I will refer it as the <em>GO</em> book from now on.</p>
+<p><img width="300px" src="./imgs/generating.png"></img></p>
+<p>Learn more about it here:
+<a target="\_blank" href="https://cycling74.com/books/go">https://cycling74.com/books/go</a></p>
+<hr />
 <h2 id="chronoskhairos">Chronos/Khairos</h2>
 <p><strong>Description</strong>:</p>
 <ul>
@@ -259,10 +272,10 @@ buttons.</li>
 <h3 id="building-a-sequencer">Building a Sequencer</h3>
 <p>The “Hello World” for any sequencer construction is to have a single
 event triggered repeatedly by a clock.</p>
-<p>To construct a clock, we can start with a <code>[phasor]</code>
-object. The number following phasor is the <em>frequency</em> parameter.
-<code>[phasor 1]</code> will create a ramp that goes from 0.0 to 1.0 in
-one second.</p>
+<p>The way to make a clock in Max gen~ is by using a
+<code>[phasor]</code> object. The number following phasor is the
+<em>frequency</em> parameter. <code>[phasor 1]</code> will create a ramp
+that goes from 0.0 to 1.0 in one second.</p>
 <p><img width="300px" src="./imgs/ramp1s.png"></img></p>
 <div class="caption" style="text-align: center; padding-bottom: 1em;">
 <i style="color: #ccd3d5;">The live.scope~ object defaults to plotting
@@ -274,11 +287,14 @@ one second.</p>
 represent.</i>
 </div>
 <p>What we want is for this ramp to trigger an event when it resets its
-cycle. In the analog synthesis world, the term trigger is a very short
-pulse that is used to activate something, in Max/MSP gen~ the term
-<em>click</em> is used. A click is simply an output of 1.0 for one
-sample.</p>
+cycle. In the analog synthesis world, a <em>trigger</em> is a very short
+pulse that is used to activate something, in Max/MSP gen~ a
+<em>click</em> is the closest equivalent. A click is simply an output of
+1.0 for one sample.</p>
 <p><img src="./imgs/click.png"></img></p>
+<p>In the <em>GO</em> book, this figure is provided to demonstrate what
+it should look like, describing the clicks as ticks.</p>
+<p><img src="./imgs/figure1.png"></img></p>
 <h3 id="events-and-hits">Events and Hits</h3></div>
 
       <div class="uk-container uk-margin">
