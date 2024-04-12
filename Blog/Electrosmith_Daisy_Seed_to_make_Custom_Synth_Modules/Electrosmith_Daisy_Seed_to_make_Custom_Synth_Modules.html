@@ -161,7 +161,9 @@ Electrosmith Daisy Seed</a></li>
 id="toc-generating-sound-organizing-time">Generating Sound &amp;
 Organizing Time</a></li>
 <li><a href="#chronoskhairos"
-id="toc-chronoskhairos">Chronos/Khairos</a>
+id="toc-chronoskhairos">Chronos/Khairos</a></li>
+<li><a href="#pocket-calculater" id="toc-pocket-calculater">Pocket
+Calculater</a>
 <ul>
 <li><a href="#building-a-sequencer"
 id="toc-building-a-sequencer">Building a Sequencer</a></li>
@@ -199,8 +201,8 @@ MACHINES: Chicago House Music</a>. Each synth will have their own name
 and sonic output:</p>
 <ul>
 <li>“Chronos/Khairos”: Drum Sequencer</li>
-<li>“Pocket Calculated”: Bass</li>
-<li>“Harmonia Terra”: Lead Synth</li>
+<li>“Pocket Calculator”: Bass</li>
+<li>“Harmonia Terra”: Piano</li>
 </ul>
 <p>Each synth circuit uses a custom PCB circuit with potentiometers and
 buttons for ease of control of parameters. It will also have:</p>
@@ -269,6 +271,18 @@ buttons.</li>
 <li>Snare sound</li>
 <li>Hi-hat sound</li>
 </ul>
+<h2 id="pocket-calculater">Pocket Calculater</h2>
+<p>Inspired by Erica’s Synth Desktop
+<a target="\_blank" href="https://www.ericasynths.lv/shop/standalone-instruments-1/desktop-bassline-db-01/">Bassline</a>.</p>
+<p>Description:</p>
+<ul>
+<li>Shift register for melodic / contour generation</li>
+<li>Euclidean Rhythms</li>
+</ul>
+<p>Potentiometer Control:</p>
+<ul>
+<li></li>
+</ul>
 <h3 id="building-a-sequencer">Building a Sequencer</h3>
 <p>The “Hello World” for any sequencer construction is to have a single
 event triggered repeatedly by a clock.</p>
@@ -288,7 +302,7 @@ represent.</i>
 </div>
 <p>What we want is for this ramp to trigger an event when it resets its
 cycle. In the analog synthesis world, a <em>trigger</em> is a very short
-pulse that is used to activate something, in Max/MSP gen~ a
+pulse (1-2ms) that is used to activate something, in Max/MSP gen~ a
 <em>click</em> is the closest equivalent. A click is simply an output of
 1.0 for one sample.</p>
 <p><img src="./imgs/click.png"></img></p>

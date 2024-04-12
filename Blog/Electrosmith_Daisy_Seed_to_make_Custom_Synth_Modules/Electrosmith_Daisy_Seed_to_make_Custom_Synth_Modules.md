@@ -8,8 +8,8 @@ date_created: April 10, 2024
 The Center for Concrete and Abstract Machines (<a target="\_blank" href="https://ccam.world/">CCAM</a>) has invited me to be on their Synthesis Team for the audio software development of three DIY synths that will be showcased in a workshop called <a target="\_blank" href="https://ccam.world/programs/24-5-10-future-rhythm-machines-chicago-house/">FUTURHYTM MACHINES: Chicago House Music</a>. Each synth will have their own name and sonic output:
 
 - "Chronos/Khairos": Drum Sequencer
-- "Pocket Calculated": Bass
-- "Harmonia Terra": Lead Synth
+- "Pocket Calculator": Bass
+- "Harmonia Terra": Piano
 
 Each synth circuit uses a custom PCB circuit with potentiometers and buttons for ease of control of parameters. It will also have:
 
@@ -64,6 +64,19 @@ Learn more about it here: <a target="\_blank" href="https://cycling74.com/books/
 - Snare sound
 - Hi-hat sound
 
+## Pocket Calculater
+
+Inspired by Erica's Synth Desktop <a target="\_blank" href="https://www.ericasynths.lv/shop/standalone-instruments-1/desktop-bassline-db-01/">Bassline</a>.
+
+Description:
+
+- Shift register for melodic / contour generation
+- Euclidean Rhythms
+
+Potentiometer Control:
+
+- 
+
 ### Building a Sequencer
 
 The "Hello World" for any sequencer construction is to have a single event triggered repeatedly by a clock.
@@ -78,7 +91,7 @@ The way to make a clock in Max gen~ is by using a `[phasor]` object. The number 
 
 <div class="caption" style="text-align: center; padding-bottom: 1em;"><i style="color: #ccd3d5;">This plot better shows what the X and Y axes represent.</i></div>
 
-What we want is for this ramp to trigger an event when it resets its cycle. In the analog synthesis world, a _trigger_ is a very short pulse that is used to activate something, in Max/MSP gen~ a _click_ is the closest equivalent. A click is simply an output of 1.0 for one sample.
+What we want is for this ramp to trigger an event when it resets its cycle. In the analog synthesis world, a _trigger_ is a very short pulse (1-2ms) that is used to activate something, in Max/MSP gen~ a _click_ is the closest equivalent. A click is simply an output of 1.0 for one sample.
 
 <img src="./imgs/click.png"></img>
 
