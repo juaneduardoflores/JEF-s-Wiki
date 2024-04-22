@@ -160,15 +160,31 @@ Electrosmith Daisy Seed</a></li>
 <li><a href="#generating-sound-organizing-time"
 id="toc-generating-sound-organizing-time">Generating Sound &amp;
 Organizing Time</a></li>
+<li><a href="#the-synth-modules" id="toc-the-synth-modules">The Synth
+Modules</a>
+<ul>
 <li><a href="#chronoskhairos"
 id="toc-chronoskhairos">Chronos/Khairos</a></li>
 <li><a href="#pocket-calculater" id="toc-pocket-calculater">Pocket
-Calculater</a>
-<ul>
+Calculater</a></li>
+</ul></li>
 <li><a href="#building-a-sequencer"
-id="toc-building-a-sequencer">Building a Sequencer</a></li>
-<li><a href="#events-and-hits" id="toc-events-and-hits">Events and
+id="toc-building-a-sequencer">Building a Sequencer</a>
+<ul>
+<li><a href="#phasor" id="toc-phasor">Phasor</a></li>
+<li><a href="#trigger-click" id="toc-trigger-click">Trigger
+(click)</a></li>
+<li><a href="#event" id="toc-event">Event</a>
+<ul>
+<li><a href="#go.simple.kick-go.simple.snare-go.simple.hihat"
+id="toc-go.simple.kick-go.simple.snare-go.simple.hihat">go.simple.kick,
+go.simple.snare, go.simple.hihat</a></li>
+</ul></li>
+<li><a href="#adding-bpm" id="toc-adding-bpm">Adding BPM</a></li>
+<li><a href="#steps-and-hits" id="toc-steps-and-hits">Steps and
 Hits</a></li>
+<li><a href="#creating-a-topographic-map"
+id="toc-creating-a-topographic-map">Creating a Topographic Map</a></li>
 </ul></li>
 </ul></div>
         </div>
@@ -190,8 +206,10 @@ Modules</span>
       <!-- </div> -->
 
       <!-- BODY -->
-      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><h2
-id="introduction">Introduction</h2>
+      <div id="ArticleBody" class="uk-container uk-margin" style="overflow-y: scroll"><script type="text/javascript" src="js/rnbo.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="https://unpkg.com/webaudio-oscilloscope@3.2.1/dist/index.js"></script>
+<h2 id="introduction">Introduction</h2>
 <p>The Center for Concrete and Abstract Machines
 (<a target="\_blank" href="https://ccam.world/">CCAM</a>) has invited me
 to be on their Synthesis Team for the audio software development of
@@ -247,7 +265,8 @@ concepts. I will refer it as the <em>GO</em> book from now on.</p>
 <p>Learn more about it here:
 <a target="\_blank" href="https://cycling74.com/books/go">https://cycling74.com/books/go</a></p>
 <hr />
-<h2 id="chronoskhairos">Chronos/Khairos</h2>
+<h2 id="the-synth-modules">The Synth Modules</h2>
+<h3 id="chronoskhairos">Chronos/Khairos</h3>
 <p><strong>Description</strong>:</p>
 <ul>
 <li>This synth is a 3-voice drum machine with a bass, snare, and
@@ -271,7 +290,7 @@ buttons.</li>
 <li>Snare sound</li>
 <li>Hi-hat sound</li>
 </ul>
-<h2 id="pocket-calculater">Pocket Calculater</h2>
+<h3 id="pocket-calculater">Pocket Calculater</h3>
 <p>Inspired by Erica’s Synth Desktop
 <a target="\_blank" href="https://www.ericasynths.lv/shop/standalone-instruments-1/desktop-bassline-db-01/">Bassline</a>.</p>
 <p>Description:</p>
@@ -283,13 +302,15 @@ buttons.</li>
 <ul>
 <li></li>
 </ul>
-<h3 id="building-a-sequencer">Building a Sequencer</h3>
+<h2 id="building-a-sequencer">Building a Sequencer</h2>
 <p>The “Hello World” for any sequencer construction is to have a single
 event triggered repeatedly by a clock.</p>
+<h3 id="phasor">Phasor</h3>
 <p>The way to make a clock in Max gen~ is by using a
 <code>[phasor]</code> object. The number following phasor is the
-<em>frequency</em> parameter. <code>[phasor 1]</code> will create a ramp
-that goes from 0.0 to 1.0 in one second.</p>
+<em>frequency</em> parameter.</p>
+<p>Creating a <code>[phasor 1]</code> will create a ramp going at a rate
+of 1Hz, going from a value of 0.0 to 1.0 in one second.</p>
 <p><img width="300px" src="./imgs/ramp1s.png"></img></p>
 <div class="caption" style="text-align: center; padding-bottom: 1em;">
 <i style="color: #ccd3d5;">The live.scope~ object defaults to plotting
@@ -300,6 +321,7 @@ that goes from 0.0 to 1.0 in one second.</p>
 <i style="color: #ccd3d5;">This plot better shows what the X and Y axes
 represent.</i>
 </div>
+<h3 id="trigger-click">Trigger (click)</h3>
 <p>What we want is for this ramp to trigger an event when it resets its
 cycle. In the analog synthesis world, a <em>trigger</em> is a very short
 pulse (1-2ms) that is used to activate something, in Max/MSP gen~ a
@@ -309,7 +331,237 @@ pulse (1-2ms) that is used to activate something, in Max/MSP gen~ a
 <p>In the <em>GO</em> book, this figure is provided to demonstrate what
 it should look like, describing the clicks as ticks.</p>
 <p><img src="./imgs/figure1.png"></img></p>
-<h3 id="events-and-hits">Events and Hits</h3></div>
+<p>Conveniently, the <em>GO</em> book comes with an abstraction called
+<code>go.ramp2trig</code> that creates a trigger (click) when the ramp
+resets.</p>
+<p><img src="./imgs/trigger_gen.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">gen~ patch with a 1000Hz phasor.</i>
+</div>
+<p><img src="./imgs/triggers.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Plot showing the phasor (blue) and the
+trigger (orange)</i>
+</div>
+<ul uk-accordion>
+<li class=" uk-closed">
+<a class="uk-accordion-title" href="#">Breakdown: go.ramp2trig</a>
+<div class="uk-accordion-content">
+<h3>
+go.ramp2trig Breakdown
+</h3>
+<p>
+The get a trigger out of a phasor we have to send a 1 when we detect a
+big jump/change in value between the current and last sample of the
+phasor output.
+</p>
+<p>
+A quick and dirty way of doing this is by using the <code>[delta]</code>
+operator
+</p>
+<p>
+<b>[delta]</b>
+</p>
+<blockquote>
+Returns the difference between the current and previous input.
+</blockquote>
+<img src="./imgs/delta.png"></img>
+<p>
+</p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">The orange plot shows the output of delta.
+The corresponding row shows a consistent output of 0.0227 until the
+phasor resets, giving an output of -0.9773. This makes sense because
+with an audio rate of 44.1kz and a phasor of 1000Hz, we can get that
+value 1000/44,1000 = 0.02267.</i>
+</div>
+<p>
+The difference in change could be incrementing or decrementing, so we
+should use an <code>abs</code> operator to take both cases into account.
+</p>
+<img src="./imgs/abs.png"></img>
+<p>
+</p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">The green plot shows the output of [abs].
+Values are the same as before but always positive.</i>
+</div>
+<p>
+Lastly, we can use <code>[&lt; 0.5]</code> to see if the change is
+greater than 0.5. If condition is true, it will output a value of 1,
+which is what we need.
+</p>
+<img src="./imgs/trig.png"></img>
+<p>
+</p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">The magenta plot shows the output of [&lt;
+0.5], showing an output of 1 when the change is greater than 0.5.</i>
+</div>
+</div>
+</li>
+</ul>
+<h3 id="event">Event</h3>
+<p>The next step is to have that trigger activate a sound event. As a
+simple example we can trigger an envelope on a running oscillator.</p>
+<p><img src="./imgs/osc.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">A running oscillator of 220Hz.</i>
+</div>
+<p>We pass the <code>[cycle]</code> through a <code>[*]</code> operator
+because the right inlet will be used for the envelope signal. This
+signal will go from 0.0 to 1.0 in a certain amount of time, starting
+when it receives a trigger.</p>
+<p>A very simple way is by using a combination of <code>[counter]</code>
+and <code>[%]</code>.</p>
+<p><img src="./imgs/gate.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Using [counter] and [%].</i>
+</div>
+<p><img src="./imgs/gate_plot.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Plot of envelope.</i>
+</div>
+<p>In this case, a trigger is used to repeatedly turn on the envelope,
+AND turn off.</p>
+<p>The <code>[counter]</code> operator does exactly what it is called,
+it counts how many triggers it receives until is is told to reset. In
+reality, it is adding the value on the left most inlet every sample.
+Whenever it is 0, it adds 0, and when it is 1, it adds 1.</p>
+<p><strong>[counter]</strong>:</p>
+<blockquote>
+<p>Accumulates and outputs a stored count, similarly to Max’s counter
+object, but triggered at sample-rate. The amount to accumulate per
+sample is set by the first input (incr). The count can be reset by a
+non-zero value in the second input (reset). The third inlet (max) sets a
+maximum value; the counter will wrap if it reaches this value. However
+if the maximum value is set to 0 (the default), the counter will assume
+no limit and count indefinitely. The first outlet outputs the current
+count, the second outlet outputs 1 when the count wraps at the maximum
+and zero otherwise, and the third outlet outputs the number of wraps
+(the carry count).</p>
+</blockquote>
+<p><img src="./imgs/counter.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">A plot of [counter] with triggers.</i>
+</div>
+<p>We can start to connect the envelope now to hear the result, but
+there is a problem. The immediate change from 0.0 to 1.0 creates clicks
+which is not ideal.</p>
+<div id="rnbo-root" style="">
+<button class="ezdac-button" id="00_ezdac-button">
+</button>
+<div id="rnbo-parameter-sliders_device_1"
+class="rnbo-parameter-sliders">
+
+</div>
+</div>
+<p><img src="./imgs/envelope.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Hooking up the envelope to the
+oscillator.</i>
+</div>
+<p>A nice way to ease the transition is by using
+<code>[slide]</code>.</p>
+<blockquote>
+Use the slide operator for envelope following and lowpass filtering.
+Related to the MSP slide~ object.
+</blockquote>
+<p>The <code>[slide]</code> operator takes two parameters.</p>
+<ol type="1">
+<li>Slide up value (in samples)</li>
+<li>Slide down value (in samples)</li>
+</ol>
+<p><img src="./imgs/env3.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">gen~ patch with [slide] added.</i>
+</div>
+<p><img src="./imgs/env2.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">The new shape of the envelope.</i>
+</div>
+<p><img width="300" src="./imgs/env1.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">From top to bottom: Sound, Trigger,
+Envelope</i>
+</div>
+<div id="rnbo-root" style="">
+<button class="ezdac-button" id="01_ezdac-button">
+</button>
+<div id="rnbo-parameter-sliders_device_1"
+class="rnbo-parameter-sliders">
+
+</div>
+</div>
+<p>The result in a much cleaner sound. This completes the barebones of a
+sequencer. By adding more sounds triggered at different times we can
+create interesting additive results.</p>
+<p><img src="./imgs/additive.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Adding more sounds triggering at different
+times can lead to interesting results.</i>
+</div>
+<div id="rnbo-root" style="">
+<button class="ezdac-button" id="02_ezdac-button">
+</button>
+<div id="rnbo-parameter-sliders_device_1"
+class="rnbo-parameter-sliders">
+
+</div>
+</div>
+<hr />
+<h4 id="go.simple.kick-go.simple.snare-go.simple.hihat">go.simple.kick,
+go.simple.snare, go.simple.hihat</h4>
+<p>For the sake of getting right to the chase of making a drum
+sequencer, I will be using the provided <code>GO</code> examples that
+synthesize a snare drum, kick, and hihat. These abstractions take a
+trigger to activate the sound.</p>
+<hr />
+<h3 id="adding-bpm">Adding BPM</h3>
+<p>To add BPM, we can create a <code>[param]</code> called BPM, and
+divide it by 60.</p>
+<p><img src="./imgs/BPM.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Adding BPM.</i>
+</div>
+<p><img src="./imgs/param.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">BPM param in the attrui object in Max.</i>
+</div>
+<p>A BPM of 60 will give a frequency of 1Hz, a BPM of 120 will give a
+frequency of 2Hz, etc.</p>
+<h3 id="steps-and-hits">Steps and Hits</h3>
+<p>To create steps from a ramp, we can multiply a ramp by the number of
+steps we want, and then using the <code>[floor]</code> operator.</p>
+<p><img src="./imgs/steps.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Multiplying the ramp and using [floor] to
+create steps.</i>
+</div>
+<p><img src="./imgs/steps2.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Plot of the stepped output.</i>
+</div>
+<p>Here is the plot with the multiplied phasor:</p>
+<p><img src="./imgs/steps3.png"></img></p>
+<p><img src="./imgs/steps4.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Plot including the multiplied phasor and
+stepped output.</i>
+</div>
+<p>Note that the count of the orange plot starts at 0 and goes up to 7.
+To quantize them to be between 0 and 1, we can just divide by 8
+again.</p>
+<p><img src="./imgs/steps5.png"></img></p>
+<p><img src="./imgs/steps6.png"></img></p>
+<div class="caption" style="text-align: center; padding-bottom: 1em;">
+<i style="color: #ccd3d5;">Quantizing the ramp and steps to be between
+0.0 and 1.0.</i>
+</div>
+<hr />
+<h3 id="creating-a-topographic-map">Creating a Topographic Map</h3>
+<p>This module is a topographic drum sequencer, meaning that it derives
+its drum sequences based on a map.</p></div>
 
       <div class="uk-container uk-margin">
         <ul uk-accordion>

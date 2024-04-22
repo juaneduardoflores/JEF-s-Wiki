@@ -101,13 +101,10 @@ In Max MSP, the term UGen is not used. Instead, they are called objects, but und
 
 <div id="rnbo-root" style="">
 <button class="ezdac-button" id="01_ezdac-button"></button>
-<div class="rnbo-parameter-sliders" id="rnbo-parameter-sliders_device_1">
-
-</div>
+<div class="rnbo-parameter-sliders" id="rnbo-parameter-sliders_device_1"></div>
 </div>
 
 <div>
-
 <canvas class="osc" width="120px" height="80px">
 </div>
 
